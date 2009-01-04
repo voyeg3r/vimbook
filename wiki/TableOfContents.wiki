@@ -1,0 +1,42 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Este é o índice no projeto :)
+
+= Detalhes =
+
+Como formatar o wiki
+
+Adicione seu conteúdo.  formate-o assim:
+{{{
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
+
+=Heading1=
+==Heading2==
+===Heading3===
+
+*bold*     _italic_
+`inline code`
+escape: `*`
+
+Indent lists 2 spaces:
+  * bullet item
+  # numbered list
+
+{{{
+verbatim code block
+}}}
+
+Horizontal rule
+----
+
+WikiWordLink
+[http://domain/page label]
+http://domain/page
+
+|| table || cells ||
+}}}
+Mais exemplos [http://code.google.com/p/support/wiki/WikiSyntax aqui].
