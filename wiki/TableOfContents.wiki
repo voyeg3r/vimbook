@@ -4,9 +4,20 @@
 
 Este é o índice no projeto :)
 
-= Detalhes =
-
-Como formatar o wiki
+==Coisas a adicionar no livro==
+Na seção Folders
+{{{
+  zd .......... deleta folder
+  zo .......... abre folder
+  zO .......... abre recursivamente
+  zc .......... fecha folder
+  zC .......... fecha folder abaixo do cursor recursivamente
+  zA .......... abre folder recursivamente
+  zm, zr ...... diminui / aumenta nível de folder 'fdl'
+  [z .......... move o cursor para início do foler aberto
+  ]z .......... move o cursor para o fim do folder aberto
+}}}
+==Como formatar o wiki==
 
 Adicione seu conteúdo.  formate-o assim:
 {{{
