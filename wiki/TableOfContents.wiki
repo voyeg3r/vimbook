@@ -28,21 +28,9 @@ Documentation License), mas ainda não estou certo disso.
 
 Bom, por enquanto é isso.
 
-==Coisas a adicionar no livro==
-Na seção Folders
-{{{
-  zd .......... deleta folder
-  zo .......... abre folder
-  zO .......... abre recursivamente
-  zc .......... fecha folder
-  zC .......... fecha folder abaixo do cursor recursivamente
-  zA .......... abre folder recursivamente
-  zm, zr ...... diminui / aumenta nível de folder 'fdl'
-  [z .......... move o cursor para início do foler aberto
-  ]z .......... move o cursor para o fim do folder aberto
-  zj .......... move para o início do próximo folder
-  zk .......... move para o final do folder anterior
-}}}
+CoisasAadicionarNoLivro
+
+
 ==Como formatar o wiki==
 
 Adicione seu conteúdo.  formate-o assim:
