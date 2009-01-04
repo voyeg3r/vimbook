@@ -1,8 +1,32 @@
 #summary One-sentence summary of this page.
 
 = Introduction =
+A estrutura (diretório) atual do SVN do projeto está assim:
+{{{
+|-- branches
+|-- tags
+`-- trunk
+   `-- src
+       |-- img
+       |   |-- setas.png
+       |   `-- vimlogo.png
+       |-- vimbook.tex
+}}}
 
-Este é o índice no projeto :)
+Em princípio deve-se colocar os arquivos descompactados. Não coloque os
+arquivos temporários gerados pelo LaTeX.
+
+No diretório 'src' fica os arquivos fontes necessários para gerar o "binário",
+neste caso o PDF. Assim como os binários de arquivos executáveis, não acho
+apropriado colocarmos o PDF sob o controle do SVN; é melhor publicarmos apenas
+nos releases oficiais.
+
+Abaixo do diretório src (dentro do trunk) deveremos colocar algo como os
+arquivos AUTHORS, README e COPYING/LICENSE--criei os arquivos vazios. Por
+falar em licença, talvez seja mais apropriada a GNU FDL (GNU Free
+Documentation License), mas ainda não estou certo disso.
+
+Bom, por enquanto é isso.
 
 ==Coisas a adicionar no livro==
 Na seção Folders
