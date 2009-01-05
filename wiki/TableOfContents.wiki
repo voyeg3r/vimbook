@@ -1,6 +1,10 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+=Alterações na página inicial=
+Coloquei detalhes sebre como se juntar ao grupo
+na página inicial do projeto!
+
+= Introducão =
 A estrutura (diretório) atual do SVN do projeto está assim:
 {{{
 |-- branches
