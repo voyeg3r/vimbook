@@ -150,7 +150,7 @@ Obs: no Vim quase todos os comandos podem ser abreviados, no caso
 ``\verb+help+'' pode ser chamado por ``\verb+h+'' e assim por diante.
 Para chamar a ajuda do Vim:  \\
 
-Pressione \verb|<esc>| e em seguida\dots
+Pressione \verb|<Esc>| e em seguida\dots
 
 \begin{verbatim}
 		 :help .... versão longa
@@ -163,8 +163,8 @@ Ou simplesmente:
 			 <F1>
 \end{verbatim}
 
-Siga os links usando o atalho ``\verb+Ctrl-]+'', e para voltar use
-  ``\verb|Ctrl+O|''.
+Siga os links usando o atalho ``\verb|Ctrl-]|'', e para voltar use
+  ``\verb|Ctrl-O|''.
 
 Se você estiver realmente desesperado, digite:
 
@@ -178,7 +178,7 @@ Se você estiver realmente desesperado, digite:
 Recarregue o arquivo que está sendo editado assim:
 
 \begin{verbatim}
-		 <esc> .. para sair do modo de edição
+		 <Esc> .. para sair do modo de edição
 		 :e! .... recarrega o arquivo sem qualquer edição
 \end{verbatim}
 
@@ -197,8 +197,8 @@ ou saia do arquivo sem modifica-lo
 
 \section{Como interpretar atalhos e comandos}\label{Como interpretar atalhos e comandos}
 
-A tecla ``\verb|<ctrl>|'' é representada na maioria dos manuais e na ajuda
-pelo caractere ``\verb|^|'' circunflexo, ou seja, o atalho \verb|Control+L| aparecerá assim:
+A tecla ``\verb|<Ctrl>|'' é representada na maioria dos manuais e na ajuda
+pelo caractere ``\verb|^|'' circunflexo, ou seja, o atalho \verb|Ctrl-L| aparecerá assim:
 
 \begin{verbatim}
 			  ^L
@@ -230,7 +230,7 @@ apaga a linha atual, já em modo de inserção ele irá se comportar como se voc
 usando qualquer outro editor, ou seja, irá inserir duas vezes a letra ``d''.
 
 Em modo normal pressionar a tecla ``v'' inicia uma seleção visual (use as setas de direção).
-Para sair do novo visual \verb|<esc>|, mas o Vim tem, em modo normal teclas de direção mais práticas
+Para sair do novo visual \verb|<Esc>|, mas o Vim tem, em modo normal teclas de direção mais práticas
 
 \begin{verbatim}
 				k
@@ -265,7 +265,7 @@ a letra ``j'' é uma seta abaixo e assim por diante.
 
 Agora começamos a sentir o gostinho de usar o Vim, uma tecla seja
 maiúscula ou minúscula, faz muita diferença se você não estiver em
-modo de inserção, e para sair do modo de inserção sempre use \verb|<esc>|.
+modo de inserção, e para sair do modo de inserção sempre use \verb|<Esc>|.
 
 A tabela abaixo mostra uma referência rápida para os modos de operação do Vim,
 a seguir mais detalhes sobre cada um dos modos.
@@ -277,11 +277,11 @@ a seguir mais detalhes sobre cada um dos modos.
  arquivos carregados.}'', uma espécie de área de transferência. Podemos ter um
  ``\verb|buffer|'' para cada letra do alfabeto, também é possível apagar linhas, e
  colocar trechos no ``\verb|buffer|''. Quando se inicia o Vim já estamos neste modo;
- caso esteja em outro modo basta pressionar ``\verb|<esc>|''.  Para acessar:
+ caso esteja em outro modo basta pressionar ``\verb|<Esc>|''.  Para acessar:
 
 \begin{verbatim}
-	   <esc> ....... sai do modo de inserção
-	   ^l .......... Ctrl-l também sai do modo de inserção
+	   <Esc> ....... sai do modo de inserção
+	   ^[ .......... Ctrl-[ também sai do modo de inserção
 \end{verbatim}
 
 Para ler mais sobre \verb|buffers| veja o capítulo \ref{Registros}.
@@ -342,13 +342,13 @@ para acessar
 Para usar um comando do modo normal no modo ``insert'' faça:
 
 \begin{verbatim}
-		   Control+O (comando)
+		   Ctrl-O (comando)
 \end{verbatim}
 
 Para repetir o último trecho do modo ``insert'' faça:
 
 \begin{verbatim}
-		   i Control+a
+		   i Ctrl-a
 \end{verbatim}
 
 Para repetir o último comando \verb+:+ faça:
@@ -399,12 +399,12 @@ Estando em modo normal
   A ..... entra no modo de inserção no final da linha
   o ..... entra no modo de inserção uma linha abaixo
   O ..... entra em modo de inserção uma linha cima
-  <esc> . sai do modo de inserção
+  <Esc> . sai do modo de inserção
 \end{verbatim}
 
 Uma vez no modo de inserção todas as letras são, assim como nos outros
 editores simples letras, mas lebre-se a tecla mágica para sair do modo
-insert é: \verb+<esc>+.
+insert é: \verb+<Esc>+.
 
 \begin{verbatim}
 			 <ESC> .... lhe leva para o modo normal
@@ -447,10 +447,10 @@ Para ir para linhas específicas digite
 			 ngg ............ vai para linha ``n''
 \end{verbatim}
 
-onde ``\verb|n|'' corresponde ao número da linha
+onde ``\verb|n|'' corresponde ao número da linha.
 
-Para retornar ao modo normal pressione \verb|<esc>| ou use \verb|<control>+L| \verb|^L| (letra
-minúscula)
+Para retornar ao modo normal pressione \verb|<Esc>| ou use \verb|Ctrl-[|
+(\verb|^[|).
 
 \section{Os saltos}\label{Os saltos}
 
@@ -619,8 +619,8 @@ Para rolar uma página de cada vez (em modo normal)
 \begin{verbatim}
   :h jumps .... ajuda sobre a lista de saltos
   :jumps ...... exibe a lista de saltos
-  control-i ... salta para a posição mais recente
-  control-o ... salta para a posição mais antiga
+  Ctrl-i ... salta para a posição mais recente
+  Ctrl-o ... salta para a posição mais antiga
 \end{verbatim}
 
 Observação: lembre-se
@@ -1073,39 +1073,39 @@ nos permitem acessar quaisquer alterações ocorrida no arquivo.
 \subsubsection{Um exemplo didático}
 \label{Um exemplo didático}
 
-Siga estes passos (para cada passo \verb|<esc>|, ou seja, saia do modo
+Siga estes passos (para cada passo \verb|<Esc>|, ou seja, saia do modo
 insert)
 
 
 \begin{description}
 \item [Passo 1] - digite na linha 1 o seguinte texto
 \begin{verbatim}
-			   # controle de fluxo <esc>
+			   # controle de fluxo <Esc>
 \end{verbatim}
 
 \item [Passo 2] - digite na linha 2 o seguinte texto
 \begin{verbatim}
-		   # um laço for <esc>
+		   # um laço for <Esc>
 \end{verbatim}
 
 \item [Passo 3] - Nas linhas 3 e 4 digite...
 
 \begin{verbatim}
 		   for i in range(10):
-			   print i  <esc>
+			   print i  <Esc>
 \end{verbatim}
 
 \item [Passo 4] - pressione ``u'' duas vezes (você voltará ao passo 1)
 \item [Passo 5] - Na linha 2 digite
 
 \begin{verbatim}
-		   # operador ternário <esc>
+		   # operador ternário <Esc>
 \end{verbatim}
 
 \item [Passo 6] - na linha 3 digite
 
 \begin{verbatim}
-		   var = (1 if teste == 0 else 2)  <esc>
+		   var = (1 if teste == 0 else 2)  <Esc>
 \end{verbatim}
 
 \end{description}
@@ -1405,7 +1405,7 @@ espaços coloque o trecho abaixo no seu arquivo de configuração do Vim
 Para iniciar a seleção visual
 
 \begin{verbatim}
-	 esc ........ vai para o modo normal
+	 Esc ........ vai para o modo normal
 	 shift-v .... inicia seleção visual
 	 j .......... aumenta a seleção visual (desce)
 	 zf ......... cria o folder na seleção ativa
@@ -1510,7 +1510,7 @@ Neste outro caso apaguei a linha corrente adicionando-a ao final do registro ``a
 \end{verbatim}
 
 Uma forma prática de usar registros em modo ``insert'' é usando
-\verb+Control-r+
+\verb|Ctrl-r|
 
 
 \begin{verbatim}
@@ -1524,7 +1524,7 @@ Em modo ``insert'' você pode repetir a última inserção de texto
 simplesmente pressionando
 
 \begin{verbatim}
-			   Control-a
+			   Ctrl-a
 \end{verbatim}
 
 \section{Registro de expressões}
@@ -1570,7 +1570,7 @@ Se desejar inserir em uma substituição uma busca prévia, você poderia
 fazer assim em modo de comandos:
 
 \begin{verbatim}
-		   :%s,<control-r>/,novo-texto,g
+		   :%s,<Ctrl-r>/,novo-texto,g
 \end{verbatim}
 
 Observação: veja que estou trocando o delimitador da busca para deixar
@@ -1612,7 +1612,7 @@ Como foi atribuído ao registro \verb+n+ o conteúdo de @\%, ou seja, o nome
 do arquivo, você pode fazer algo assim em modo ``insert'':
 
 \begin{verbatim}
-				control-r n
+				Ctrl-r n
 \end{verbatim}
 
 E o nome do arquivo será inserido
@@ -1677,21 +1677,21 @@ O comando acima é uma abreviação de `split next', ou seja, dividir e próximo
 \label{Como colocar um pedaço de texto em um registro?}
 
 \begin{verbatim}
- <esc> ...... vai para o modo normal
+ <Esc> ...... vai para o modo normal
  "a10j ...... coloca no registro `a' as próximas 10 linhas `10j'
 \end{verbatim}
 
 Para usar você pode:
 
 \begin{verbatim}
- <esc> ...... para ter certeza que está em modo normal
+ <Esc> ...... para ter certeza que está em modo normal
  "ap ........ registro a `paste', ou seja, cole
 \end{verbatim}
 
 Em modo de inserção faça:
 
 \begin{verbatim}
-			 control-r a
+			 Ctrl-r a
 \end{verbatim}
 
 \section{Como criar um registro em modo visual?}
@@ -1779,14 +1779,14 @@ e inserir em modo normal assim:
 ou usar em modo de inserção assim
 
 \begin{verbatim}
-			 Control-r d
+			 Ctrl-r d
 \end{verbatim}
 
 \section{Como selecionar blocos verticais de texto?}
 \label{Como selecionar blocos verticais de texto?}
 
 \begin{verbatim}
-			  Control-v
+			  Ctrl-v
 \end{verbatim}
 
 agora use as letras h,l,k,j como setas de direção até finalizar
@@ -1925,14 +1925,14 @@ e queria que as linhas indentadas passassem a ter
 uma linha em branco antes e depois, assim cheguei
 a este resultado:
 \begin{verbatim}
-		:map ,t <esc>:.s/^\(\s\+\)\(.*\)/\r\1\2\r/g<cr>
+		:map ,t <Esc>:.s/^\(\s\+\)\(.*\)/\r\1\2\r/g<cr>
 
 		Explicando:
 
 		s/isto/aquilo/g .. substitui isto por aquilo
 		:  ........... modo de comando (não coloquei no vimrc)
 		map ,t ....... mapeia ,t para a função desejada
-		<esc> ........ ao executar sai do modo de inserção
+		<Esc> ........ ao executar sai do modo de inserção
 		:  ........... inicia o modo de comando
 		.  ........... na linha corrente
 		s  ........... substitua
@@ -1995,13 +1995,13 @@ No ``modo de inserção'', como visto anteriormente, você pode usar um atalho
 para colar rapidamente o conteúdo de um registrador.
 
 \begin{verbatim}
-			Control+r (registro)
+			Ctrl-r (registro)
 \end{verbatim}
 
 Para colar o conteúdo do registrador ``a''
 
 \begin{verbatim}
-			Control+r a
+			Ctrl-r a
 \end{verbatim}
 
 Para copiar a linha atual para a área de transferência
@@ -2231,7 +2231,7 @@ uma só linha vazia.
 Você pode criar um mapeamento e colocar no seu ~/.vimrc
 
 \begin{verbatim}
-			  map ,s <esc>:%s/\(^\n\{2,}\)/\r/g<cr>
+			  map ,s <Esc>:%s/\(^\n\{2,}\)/\r/g<cr>
 \end{verbatim}
 
 No exemplo acima, ``,s'' é um mapeamento para reduzir linhas em branco
@@ -2349,7 +2349,7 @@ copiar linhas que contém um padrão e a linha subsequente para o final
 Para colocar a última busca em uma substituição faça:
 
 \begin{verbatim}
-			  :%s/Control-r//novo/g
+			  :%s/Ctrl-r//novo/g
 \end{verbatim}
 
 A dupla barra corresponde ao ultimo padrão procurado, e portanto o
@@ -2499,8 +2499,8 @@ a visualizar mais de um ``buffer'' simultaneamente.
 Observação: \verb+Ctrl = ^+
 
 \begin{verbatim}
-		 Ctrl + w + s   Divide a janela atual em duas (:split)
-		 Ctrl + w + o   Faz a janela atual ser a única (:only)
+		 Ctrl-w-s   Divide a janela atual em duas (:split)
+		 Ctrl-w-o   Faz a janela atual ser a única (:only)
 \end{verbatim}
 
 Caso tenha duas janelas e use o atalho acima \verb|^wo| lembre-se de salvar
@@ -2515,20 +2515,20 @@ ainda estará carregado, portanto faça:
 \section{Abrindo e fechando janelas }
 
 \begin{verbatim}
-		 Ctrl + w + n   Abre uma nova janela acima
-		 Ctrl + w + q   Fecha a janela atual
-		 Ctrl + w + c   Fecha a janela atual (:close)
+		 Ctrl-w-n   Abre uma nova janela acima
+		 Ctrl-w-q   Fecha a janela atual
+		 Ctrl-w-c   Fecha a janela atual (:close)
 \end{verbatim}
 
 \section{Manipulando janelas }
 
 \begin{verbatim}
-		 Ctrl + w + w ... Alterna entre janelas
-		 Ctrl + w + j ... desce uma janela `j'
-		 Ctrl + w + k ... sobe  uma janela `k'
-		 Ctrl + w + r ... Rotaciona janelas na tela
-		 Ctrl + w + + ... Aumenta o espaço da janela atual
-		 Ctrl + w + - ... Diminui o espaço da janela atual
+		 Ctrl-w-w ... Alterna entre janelas
+		 Ctrl-w-j ... desce uma janela `j'
+		 Ctrl-w-k ... sobe  uma janela `k'
+		 Ctrl-w-r ... Rotaciona janelas na tela
+		 Ctrl-w-+ ... Aumenta o espaço da janela atual
+		 Ctrl-w-- ... Diminui o espaço da janela atual
 \end{verbatim}
 
 \section{File Explorer }
@@ -2550,7 +2550,7 @@ Para abrir o arquivo sob o cursor em nova janela coloque a linha abaixo no seu \
 Caso queira pode mapear um atalho "no caso abaixo F2" para abrir o File Explorer.
 
 \begin{verbatim}
-			  map <F2> <esc>:Vex<cr>
+			  map <F2> <Esc>:Vex<cr>
 \end{verbatim}
 
 Maiores informações:
@@ -2570,7 +2570,7 @@ Caso esteja editando um arquivo e nele houver referência a outro arquivo tipo:
 Você pode usar este comando para abrir uma nova janela com o arquivo citado
 
 \begin{verbatim}
-			  Control-w f
+			  Ctrl-w f
 \end{verbatim}
 
 Mas lembre-se que posicionar o cursor sobre o nome do arquivo
@@ -2624,7 +2624,7 @@ depois digitamos o caractere a ser repetido
 e por fim saímos do modo de inserção
 
 \begin{verbatim}
-			<esc>
+			<Esc>
 \end{verbatim}
 
 Se desejássemos digitar 10 linhas com o texto
@@ -2636,24 +2636,24 @@ Se desejássemos digitar 10 linhas com o texto
 deveríamos então fazer assim:
 	
 \begin{verbatim}
- <esc> .. para ter certeza que ainda estamos no modo normal
+ <Esc> .. para ter certeza que ainda estamos no modo normal
  10 ..... quantificador antes
  i ...... entrar no modo de inserção
  isto é um teste <enter>
- <esc> .. voltar ao modo normal
+ <Esc> .. voltar ao modo normal
 \end{verbatim}
 
 \section{Repetindo a digitação de uma linha }
 Para repetir a linha acima (modo ``insert'') use
 
 \begin{verbatim}
-			  Control + y
+			  Ctrl-y
 \end{verbatim}
 
 Para repetir a linha abaixo (modo ``insert'')
 
 \begin{verbatim}
-			  Control + e
+			  Ctrl-e
 \end{verbatim}
 
 Para copiar a linha atual
@@ -2671,7 +2671,7 @@ Para colar a linha copiada
 Para repetir uma linha completa
 
 \begin{verbatim}
-			 Control-x Control-l
+			 Ctrl-x Ctrl-l
 \end{verbatim}
 
 O atalho acima só funcionará para uma linha semelhante, experimente
@@ -2679,7 +2679,7 @@ digitar
 
 \begin{verbatim}
 			 uma linha qualquer com algum conteúdo
-			 uma linha <Control-x Control-l>
+			 uma linha <Ctrl-x Ctrl-l>
 \end{verbatim}
 
 e veja o resultado
@@ -2734,19 +2734,19 @@ digitamos
 
 No modo Normal. Tudo o que for digitado a partir daí será gravado no
 registro ``a'' até que terminemos com o comando
-\verb|<esc>q| novamente (no modo Normal). Assim,
+\verb|<Esc>q| novamente (no modo Normal). Assim,
 podemos solucionar nosso problema:
 
 \begin{verbatim}
-		  <esc> ..... para garantir que estamos no modo normal
+		  <Esc> ..... para garantir que estamos no modo normal
 		  qa ........ inicia a gravação da macro 'a'
 		  I ......... entra no modo de inserção no começo da linha
 		  #include " .. insere #include "
-		  <esc> ..... sai do modo de inserção
+		  <Esc> ..... sai do modo de inserção
 		  A" ........ insere o último caractere
-		  <esc> ..... sai do modo de inserção
+		  <Esc> ..... sai do modo de inserção
 		  j ......... desce uma linha
-		  <esc> ..... sai do modo de inserção
+		  <Esc> ..... sai do modo de inserção
 		  q ......... para a gravação da macro
 \end{verbatim}
 
@@ -3156,12 +3156,12 @@ as teclas e combinações. Alguns exemplos:
 
 \begin{verbatim}
 	 tecla       : tecla mapeada
-	 <c-x>       : control-x
-	 <left>	     : seta para a esquerda
+	 <c-x>       : Ctrl-x
+	 <left>	    : seta para a esquerda
 	 <right>     : seta para a direita
-	 <c-m-a>     : ctrl+alt+a
+	 <c-m-a>     : Ctrl-Alt-a
 	 <cr>        : enter
-	 <esc>       : escape
+	 <Esc>       : Escape
 	 <leader>    : normalmente \
 	 <bar>       : | pipe
 	 <cword>     : palavra sob o cursor
@@ -3171,7 +3171,7 @@ as teclas e combinações. Alguns exemplos:
 	 <left>      : salta um caractere para esquerda
 	 <up>        : equivale clicar em 'seta acima'
 	 <m-f4>      : a tecla alt -> m  mais a tecla f4
-	 <c-f>       : control f
+	 <c-f>       : Ctrl-f
 	 <bs>        : backspace
 	 <space>     : espaço
 	 <tab>       : tab
@@ -3247,7 +3247,7 @@ pode ser mapeado para diferentes modos de operação. \\
 Veja este outro mapeamento:
 
 \begin{verbatim}
-			  map <F11> <esc>:set nu!<cr>
+			  map <F11> <Esc>:set nu!<cr>
 \end{verbatim}
 
 Permite habilitar ou desabilitar números de linha do arquivo corrente.
@@ -3262,7 +3262,7 @@ destaque colorido, mas se você quiser limpar pode fazer este
 mapeamento
 
 \begin{verbatim}
-			  nno <S-F11> <esc>:let @/=""<CR>
+			  nno <S-F11> <Esc>:let @/=""<CR>
 \end{verbatim}
 
 É um mapeamento para o modo normal que faz com que a combinação de
@@ -3281,7 +3281,7 @@ O atalho acima `s-f' corresponde a Shift-f
 \label{Remover linhas em branco duplicadas }
 
 \begin{verbatim}
-			  map ,d <esc>:%s/\(^\n\{2,}\)/\r/g<cr>
+			  map ,d <Esc>:%s/\(^\n\{2,}\)/\r/g<cr>
 \end{verbatim}
 
 No mapeamento acima estamos associando o atalho:
@@ -3296,7 +3296,7 @@ substituídas por uma só linha em branco, vejamos como funciona:
 \begin{verbatim}
 		  map ......... mapear
 		  ,d .......... atalho que quermos
-		  <esc> ....... se estive em modo de inserção sai
+		  <Esc> ....... se estive em modo de inserção sai
 		  : ........... em modo de comando
 		  % ........... em todo o arquivo
 		  s ........... substitua
@@ -3331,7 +3331,7 @@ Podemos fazer mapeamentos globais ou que funcionam em apenas um modo:
 		 imap - apenas no modo de Inserção
 \end{verbatim}
 
-Mover linhas com Ctrl+(seta abaixo) ou Ctrl+(seta acima):
+Mover linhas com Ctrl-(seta abaixo) ou Ctrl-(seta acima):
 
 \begin{verbatim}
 		 " tem que estar em modo normal!
@@ -3345,7 +3345,7 @@ Salvando com uma tecla de função:
 		 " salva com F9
 		 nmap <F9> :w<cr>
 		 " F10 - sai do Vim
-		 nmap <F10> <esc>:q<cr>
+		 nmap <F10> <Esc>:q<cr>
 \end{verbatim}
 
 \subsection{Convertendo as iniciais de um documento para maiúsculas}
@@ -3406,13 +3406,13 @@ au BufNewFile,BufRead *.sh if getline(1) == "" | normal ,sh
  " --------------------------------------
  " Ativa fechamento automático para parêntese
  " Set automatic expansion of parenthesis/brackets
- inoremap ( ()<esc>:call BC_AddChar(``)'')<cr>i
- inoremap { {}<esc>:call BC_AddChar(``}'')<cr>i
- inoremap [ []<esc>:call BC_AddChar(``]'')<cr>i
- `` '' ``''<esc>:call BC_AddChar(``''")<cr>i
+ inoremap ( ()<Esc>:call BC_AddChar(``)'')<cr>i
+ inoremap { {}<Esc>:call BC_AddChar(``}'')<cr>i
+ inoremap [ []<Esc>:call BC_AddChar(``]'')<cr>i
+ `` '' ``''<Esc>:call BC_AddChar(``''")<cr>i
  "
- " mapeia Ctrl+j para pular fora de parênteses colchetes etc...
- inoremap <C-j> <esc>:call search(BC_GetChar(), ``W'')<cr>a
+ " mapeia Ctrl-j para pular fora de parênteses colchetes etc...
+ inoremap <C-j> <Esc>:call search(BC_GetChar(), ``W'')<cr>a
  " Function for the above
  function! BC_AddChar(schar)
     if exists(``k'')
@@ -3436,8 +3436,8 @@ au BufNewFile,BufRead *.sh if getline(1) == "" | normal ,sh
 
  " pular fora dos parênteses, colchetes e chaves, mover o cursor
  " no modo de inserção
- imap <c-l> <esc><right>a
- imap <c-h> <esc><left>a
+ imap <c-l> <Esc><right>a
+ imap <c-h> <Esc><left>a
 \end{verbatim}
 
 \subsection{Função para barra de status}\label{Função para barra de status}
@@ -3573,7 +3573,7 @@ Redimensionar janelas
 
 \begin{verbatim}
  " Redimensionar a janela com
- " ALT+seta à  direita e esquerda
+ " Alt-seta à direita e esquerda
  map <M-right> <ESC>:resize +2 <CR>
  map <M-left> <ESC>:resize -2 <CR>
 \end{verbatim}
@@ -3759,7 +3759,7 @@ e destacará em vermelho.
 "Remove espaços redundantes no fim das linhas
 
 \begin{verbatim}
-			 map <F7> <esc>mz:%s/\s\+$//g<cr>`z
+			 map <F7> <Esc>mz:%s/\s\+$//g<cr>`z
 \end{verbatim}
 
 Um detalhe importante
@@ -3774,18 +3774,18 @@ Se não fosse feito isto o cursor iria ficar na linha da última substituição!
 "Abre o vim-vim explorer
 
 \begin{verbatim}
- map <F6> <esc>:vne .<cr><bar>:vertical resize -30<cr><bar>:set nonu<cr>
+ map <F6> <Esc>:vne .<cr><bar>:vertical resize -30<cr><bar>:set nonu<cr>
 \end{verbatim}
 
 Podemos usar ``Expressões Regulares\footnote{\url{http://guia-er.sourceforge.net}}'' em
 buscas do Vim veja um exemplo para retirar todas as tags html
 
 \begin{verbatim}
-		 "mapeamento para retirar tags html com Ctrl+Alt+t
+		 "mapeamento para retirar tags html com Ctrl-Alt-t
 		 nmap <C-M-t> :%s/<[^>]*>//g <cr>
 		 " Quebra a linha atual no local do cursor com F2
 		 nmap <F2> a<CR><Esc>
-		 " join lines  -- Junta as linhas com Shift F2
+		 " join lines  -- Junta as linhas com Shift-F2
 		 nmap <S-F2> A<Del><Space>
 \end{verbatim}
 
@@ -4062,9 +4062,9 @@ página \pageref{Macros: gravando comandos}.
 * No modo de inserção você pode usar
 
 \begin{verbatim}
-	  Control + y  ....... copia caractere a caractere a linha acima
-	  Control + e  ....... copia caractere a caractere a linha abaixo
-	  Contro-x Contro-l .. completa linhas inteiras
+	  Ctrl-y  ....... copia caractere a caractere a linha acima
+	  Ctrl-e  ....... copia caractere a caractere a linha abaixo
+	  Ctrl-x Ctrl-l .. completa linhas inteiras
 \end{verbatim}
 
 * Para um trecho muito copiado coloque o seu conteúdo em um registrador
