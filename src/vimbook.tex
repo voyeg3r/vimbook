@@ -72,12 +72,12 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
        {\Large{\today}}
 	        \end{center}
 
-% logo do vim
+% logo do Vim
   \begin{figure}[h]
     \center
     \includegraphics{img/vimlogo.png}
     \label{logodovim}
-    \caption{Logo do vim}
+    \caption{Logo do Vim}
 \end{figure}
 % fim da imagem
 
@@ -111,7 +111,7 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 O ``Vim'' é um editor extremamente configurável, criado para permitir a edição
 de textos de forma eficiente, também é um melhoramento do editor ``vi'', um
 tradicional programa dos sistemas Unix. Possui uma série de mudanças em relação
-a este último. O próprio slogan do vim é: ``vi improved'', ou seja, Vi Melhorado.  O Vim é
+a este último. O próprio slogan do Vim é: ``vi improved'', ou seja, Vi Melhorado.  O Vim é
 tão conhecido e respeitado entre programadores, e tão útil para programação,
 que muitos o consideram uma verdadeira ``IDE\footnote{Ambiente de
 desenvolvimento}''.
@@ -135,7 +135,7 @@ Ao longo do livro alguns comandos ou dicas podem estar duplicados, isto
 é um ótimo recurso, portanto se ver uma dica duplicada, antes de
 reclamar veja se já sabe o que está sendo passado! \\
 
-Para chamar o vim digite num terminal:
+Para chamar o Vim digite num terminal:
 
 \begin{verbatim}
 			 vim meu_texto.txt
@@ -143,12 +143,12 @@ Para chamar o vim digite num terminal:
 
 \section{Ajuda integrada}
 
-O vim possui uma ajuda integrada muito completa, são mais de 100 arquivos
+O Vim possui uma ajuda integrada muito completa, são mais de 100 arquivos
 somando milhares de linhas, o único inconveniente é o idioma ``inglês'' se bem
 que muito do meu aprendizado de inglês se dever a este detalhe.
-Obs: no vim quase todos os comandos podem ser abreviados, no caso
+Obs: no Vim quase todos os comandos podem ser abreviados, no caso
 ``\verb+help+'' pode ser chamado por ``\verb+h+'' e assim por diante.
-Para chamar a ajuda do vim:  \\
+Para chamar a ajuda do Vim:  \\
 
 Pressione \verb|<esc>| e em seguida\dots
 
@@ -204,13 +204,13 @@ pelo caractere ``\verb|^|'' circunflexo, ou seja, o atalho \verb|Control+L| apar
 			  ^L
 \end{verbatim}
 
-No arquivo de configuração do vim, um ``\verb|<Enter>|'' pode aparecer como:
+No arquivo de configuração do Vim, um ``\verb|<Enter>|'' pode aparecer como:
 
 \begin{verbatim}
 			 <cr>
 \end{verbatim}
 
-Para saber mais sobre como usar atalhos no vim veja a seção \ref{Notas sobre
+Para saber mais sobre como usar atalhos no Vim veja a seção \ref{Notas sobre
 mapeamentos} na página \pageref{Notas sobre mapeamentos} e para ler sobre o
 arquivo de configuração veja o capítulo \ref{cha:Como editar preferências no Vim} na página
 \pageref{cha:Como editar preferências no Vim}.
@@ -218,9 +218,9 @@ arquivo de configuração veja o capítulo \ref{cha:Como editar preferências no
 
 \section{Modos de operação}\label{Modos de operação}
 
-Em oposição à esmagadora maioria dos editores o vim é um editor modal, a
+Em oposição à esmagadora maioria dos editores o Vim é um editor modal, a
 princípio isto dificulta a vida do iniciante, mas abre um universo de
-possibilidades imenso, pois ao trabalhar com modos distintos uma tecla de
+possibilidades, pois ao trabalhar com modos distintos uma tecla de
 atalho pode ter vários significados, senão vejamos:
 Em modo normal pressionar duas vezes a letra ``d''
 \begin{verbatim}
@@ -230,7 +230,7 @@ apaga a linha atual, já em modo insert ele irá se comportar como se você esti
 usando qualquer outro editor, ou seja, irá inserir duas vezes a letra ``d''.
 
 Em modo normal pressionar a tecla ``v'' inicia uma seleção visual (use as setas de direção).
-Para sair do novo visual \verb|<esc>|, mas o vim tem, em modo normal teclas de direção mais práticas
+Para sair do novo visual \verb|<esc>|, mas o Vim tem, em modo normal teclas de direção mais práticas
 
 \begin{verbatim}
 				k
@@ -263,17 +263,17 @@ a letra ``j'' é uma seta abaixo e assim por diante.
   O .... inicia INSERT inserindo uma linha acima
 \end{verbatim}
 
-Agora começamos a sentir o gostinho de usar o vim, uma tecla seja
+Agora começamos a sentir o gostinho de usar o Vim, uma tecla seja
 maiúscula ou minúscula, faz muita diferença se você não estiver em
 modo de inserção, e para sair do do modo insert sempre use \verb|<esc>|.
 
-A tabela abaixo mostra uma referência rápida para os modos de operação do vim,
+A tabela abaixo mostra uma referência rápida para os modos de operação do Vim,
 a seguir mais detalhes sobre cada um dos modos.
 
 \begin{description}
 
 \item [Normal] Neste modo podemos colar o que está no
- ``\verb|buffer|\footnote{No vim a memória é chamada de buffer, assim como
+ ``\verb|buffer|\footnote{No Vim a memória é chamada de buffer, assim como
  arquivos carregados.}'', uma espécie de área de transferência. Podemos ter um
  ``\verb|buffer|'' para cada letra do alfabeto, também é possível apagar linhas, e
  colocar trechos no ``\verb|buffer|''. Quando se inicia o Vim já estamos neste modo;
@@ -378,7 +378,7 @@ Para repetir uma seleção (visual)
 Para saber mais sobre repetição de comandos veja o capítulo \ref{Repetição de comandos},
 na página \pageref{Repetição de comandos}.
 
-No vim cada arquivo aberto é chamado de \verb|buffer| ou seja, dados
+No Vim cada arquivo aberto é chamado de \verb|buffer| ou seja, dados
 carregados na memória, você pode acessar o mesmo buffer em mais de uma
 janela, bem como dividir a janela em vários buffers distintos, veremos
 isso mais adiante.
@@ -427,7 +427,7 @@ qualquer lugar do texto sem tirar as mãos do teclado.
 \section{Big words}
 \label{Big word's}
 
-Para o vim ``{\em{palavras-separadas-por-hífen}}'' são consideradas em separado, portanto se você usar,
+Para o Vim ``{\em{palavras-separadas-por-hífen}}'' são consideradas em separado, portanto se você usar,
 em modo normal ``\verb+w+'' avançar entre as palavras ele pulará uma de
 cada vez, no entanto se usar ``\verb+W+''
 em maiúsculo (como visto) ele pulará a ``a-palavra-inteira'' :)
@@ -505,7 +505,7 @@ Copiar está associado à letra ``\verb|y|''.
 		Y ..... copia a linha atual
 \end{verbatim}
 
-A maioria dos comandos do vim pode ser precedida por um quantificador:
+A maioria dos comandos do Vim pode ser precedida por um quantificador:
 
 \begin{verbatim}
 	 5j ..... desce 5 linhas
@@ -584,7 +584,7 @@ Na verdade o atalho acima lhe mostrará o último ponto onde foi feita
 a atribuição àquela variável que está sob o cursor, uma mão na roda
 para os programadores de plantão!
 
-Obs: observe a  barra de status do vim se o tipo de arquivo está certo,
+Obs: observe a  barra de status do Vim se o tipo de arquivo está certo,
 tipo. Para detalhes sobre como personalizar a barra de status na seção
 \ref{Funçã para barra de status}.
 
@@ -712,7 +712,7 @@ Ou ir para o primeiro
 \section{Usando marcadores}
 \label{Usando marcadores}
 
-No vim podemos marcar o ponto em que o cursor está, você deve estar em
+No Vim podemos marcar o ponto em que o cursor está, você deve estar em
 modo normal, portanto pressione
 
 \begin{verbatim}
@@ -827,7 +827,7 @@ Existe uma semelhança muito grande entre os comandos ``y'' e os comandos ``d'':
 \end{verbatim}
 
 \section{Lista de alterações}
-O vim mantém uma lista de alterações, para avançar nas alterações use
+O Vim mantém uma lista de alterações, para avançar nas alterações use
 
 \begin{verbatim}
 			 g,
@@ -855,7 +855,7 @@ Para mais detalhes
 \section{Forçando a edição de um novo arquivo}\label{sec:Forçando a edição de um novo arquivo}
 
 O Vim como qualquer outro editor é muito exigente no que se refere a alterações
-de arquivo.  Se você estiver editando um arquivo e desejar abandona-lo, o vim
+de arquivo.  Se você estiver editando um arquivo e desejar abandona-lo, o Vim
 perguntará se quer salvar alterações, se você estiver certo de que não quer
 salvar o arquivo atual e deseja imediatamente começar a editar um novo arquivo
 faça:
@@ -874,7 +874,7 @@ desejar ignorar todas as alterações feitas desde a abertura do arquivo
 
 \section{Ordenando}
 
-O vim 7 passa a ter um comando de ordenação que também retira linhas
+O Vim 7 passa a ter um comando de ordenação que também retira linhas
 duplicadas
 
 \begin{verbatim}
@@ -899,7 +899,7 @@ Você tentar fazer:
 			 :sort
 \end{verbatim}
 
-O vim colocará nas três primeiras linhas
+O Vim colocará nas três primeiras linhas
 
 \begin{verbatim}
 			 10
@@ -985,7 +985,7 @@ substituições} Buscas e substituições''.
 \section{O arquivo alternativo}
 \label{O arquivo alternativo}
 
-É muito comum você editar um arquivo no vim, e inocentemente imaginar
+É muito comum você editar um arquivo no Vim, e inocentemente imaginar
 que não vai mais modificar qualquer coisa nele, você então abre um
 novo arquivo:
 
@@ -1064,7 +1064,7 @@ Para mais ajuda sobre ``desfazer'':
 \subsection{Undo tree}
 \label{Undo tree}
 
-Um novo recurso muito interessante foi adicionado ao vim ``a partir da
+Um novo recurso muito interessante foi adicionado ao Vim ``a partir da
 versão 7''  é a chamada árvore do desfazer.  Se
 você desfaz alguma coisa, fez uma alteração um novo ``branch'' ou
 galho, derivação de alteração é criado.  Basicamente, os ``branches''
@@ -1110,7 +1110,7 @@ insert)
 
 \end{description}
 
-Obs: A necessidade do ESC é para demarcar as ações, pois o vim
+Obs: A necessidade do ESC é para demarcar as ações, pois o Vim
 considera cada inserção uma ação.  Agora usando o atalho de desfazer
 tradicional ``u'' e de refazer Ctrl-r observe que não é mais possível
 acessar todas as alterações efetuadas. Em resumo, se você fizer uma
@@ -1215,7 +1215,7 @@ Onde ``m'' cria a marca e ``A'' (maiúsculo) define uma marca ``A'' acessível a
 			 'A
 \end{verbatim}
 
-Isto fará o vim dar um salto até a marca A mesmo que esteja em outro
+Isto fará o Vim dar um salto até a marca A mesmo que esteja em outro
 arquivo, bastando apenas que o mesmo esteja aberto. Para abrir vários
 arquivos uma solução seria:
 
@@ -1256,7 +1256,7 @@ salvando ``write next''.
 
 
 \subsection{Abrindo o último arquivo rapidamente}
-O vim guarda um registro para cada arquivo editado veja
+O Vim guarda um registro para cada arquivo editado veja
 mais no capítulo \ref{Registros} na página \pageref{Registros}.
 
 \begin{verbatim}
@@ -1307,14 +1307,14 @@ mesmo indicar no modeline algo como:
 			  # vim:ft=txt:nu:
 \end{verbatim}
 
-Apesar de usar a extensão `sh' o vim reconhecerá este arquivo como `txt', e
-caso eu não tenha habilitado a numeração, ainda assim o vim usará por causa da
+Apesar de usar a extensão `sh' o Vim reconhecerá este arquivo como `txt', e
+caso eu não tenha habilitado a numeração, ainda assim o Vim usará por causa da
 opção `nu'.  Portanto o uso de modelines  pode ser um grande recurso para o seu
 dia-a-dia pois você pode coloca-las dentro dos comentários!
 
 
 \chapter{Folders}\label{cha:Folders}
-``Folders'' são como dobras nas quais o vim esconde partes do texto,
+``Folders'' são como dobras nas quais o Vim esconde partes do texto,
 algo assim:
 
 \begin{verbatim}
@@ -1322,10 +1322,10 @@ algo assim:
 \end{verbatim}
 
 Deste ponto em diante chamaremos os ``folders'' descritos no manual do
-vim como dobras!  Quando tiver que manipular grandes quantidades de
+Vim como dobras!  Quando tiver que manipular grandes quantidades de
 texto tente usar dobras, isto permite uma visualização completa do
 texto.  Um modo de entender rapidamente como funcionam as dobras no
-vim seria criando uma ``dobra'' para as próximas 10 (dez) linhas com o
+Vim seria criando uma ``dobra'' para as próximas 10 (dez) linhas com o
 comando abaixo:
 
 \begin{verbatim}
@@ -1343,7 +1343,7 @@ Você pode ainda criar uma seleção visual
 
 \section{Métodos de dobras }
 \label{Métodos de dobras }
-os vim tem seis modos ``fold'' são eles:
+O Vim tem seis modos ``fold'' são eles:
 
 \begin{itemize}
 \item Sintaxe syntax
@@ -1393,7 +1393,7 @@ começo da linha este recurso chama-se modeline, leia mais na seção
 \end{verbatim}
 
 Para abrir e fechar as dobras usando a barra de
-espaços coloque o trecho abaixo no seu arquivo de configuração do vim
+espaços coloque o trecho abaixo no seu arquivo de configuração do Vim
 \verb|.vimrc| - veja \ref{cha:Como editar preferências no Vim}.
 
 \begin{verbatim}
@@ -1422,7 +1422,7 @@ Um modo inusitado de se criar folders é:
 \chapter{Registros}
 \label{Registros}
 
-O vim possui nove tipos de registros, cada tipo tem uma utilidade
+O Vim possui nove tipos de registros, cada tipo tem uma utilidade
 específica, por exemplo você pode usar um registro que guarda o último
 comando digitado, pode ainda imprimir dentro do texto o nome do
 próprio arquivo, vamos aos detalhes.
@@ -1463,7 +1463,7 @@ O registro zero armazena o conteúdo da última cópia 'yy', à partir do
 registro 1 vão sendo armazenadas as deleções sucessivas de modo que a
 mais recente deleção será armazenada no registro 1 e os registros vão
 sendo incrementados em direção ao nono.  Deleção menores que uma linha
-não são armazenadas nestes registros, caso em que o vim usa o registro
+não são armazenadas nestes registros, caso em que o Vim usa o registro
 de pequenas deleções ou que se tenha especificado algum outro
 registro.
 
@@ -1473,7 +1473,7 @@ registro.
 
 \section{Registro de pequenas deleções}
 \label{Registro de pequenas deleções}
-Quando você deleta algo menor que uma linha o vim armazena os dados deletados neste registro.
+Quando você deleta algo menor que uma linha o Vim armazena os dados deletados neste registro.
 
 \section{Registros nomeados de ``a até z'' ou ``A até Z''}
 \label{Registros nomeados de ``a até z'' ou ``A até Z''}
@@ -1631,7 +1631,7 @@ ou ainda
 			 :ls
 \end{verbatim}
 
-O vim mostrará os registros numerados e nomeados atualmente em uso
+O Vim mostrará os registros numerados e nomeados atualmente em uso
 
 \section{Listando arquivos abertos}
 \label{Listando arquivos abertos}
@@ -1647,7 +1647,7 @@ Para listar os arquivos aberto faça:
 			 :buffers
 \end{verbatim}
 
-Usando o comando acima o vim exibirá a lista de todos os arquivos
+Usando o comando acima o Vim exibirá a lista de todos os arquivos
 abertos, após exibir a lista você pode escolher um dos arquivos da
 lista, algo como:
 
@@ -1713,7 +1713,7 @@ pressione ``\verb|v|'' para sair do modo visual
 \section{Como definir um registro no vimrc?}
 \label{Como definir um registro no vimrc?}
 
-Se você não sabe ainda como editar preferências no vim
+Se você não sabe ainda como editar preferências no Vim
 leia antes o capítulo \ref{cha:Como editar preferências no Vim}. \\
 
 
@@ -1724,7 +1724,7 @@ Você pode criar uma variável no vimrc assim:
 			 echo var ........... mostra o valor de var
 \end{verbatim}
 
-Pode também dizer ao vim algo como...
+Pode também dizer ao Vim algo como...
 
 \begin{verbatim}
 			 :let @d=strftime("c")<enter>
@@ -2060,7 +2060,7 @@ Selecione o bloco de código, por exemplo
 
 \section{Usando o file explorer}
 \label{Usando o file explorer}
-O vim navega na árvore de diretórios com o comando
+O Vim navega na árvore de diretórios com o comando
 
 \begin{verbatim}
 			  vim .
@@ -2068,8 +2068,8 @@ O vim navega na árvore de diretórios com o comando
 
 Use o ``j'' para descer e o ``k'' para subir ou Enter para editar o
 arquivo selecionado. Outra dica é pressionar F1 ao abrir o
-FileExplorer do vim, você encontra dicas adicionais sobre este modo de
-operação do vim.
+FileExplorer do Vim, você encontra dicas adicionais sobre este modo de
+operação do Vim.
 
 \section{Selecionando ou deletando conteúdo de tags html}
 \label{Selecionando ou deletando conteúdo de tags html}
@@ -2120,7 +2120,7 @@ Ou simplesmente:
 \end{verbatim}
 
 \begin{verbatim}
-		 $ ... significa para o vim final do arquivo
+		 $ ... significa para o Vim final do arquivo
 		 % ... representa o arquivo atual
 \end{verbatim}
 
@@ -2151,7 +2151,7 @@ interpretados como caracteres comuns.
 			 /\cpalavra
 \end{verbatim}
 
-Usando \verb|\c| o vim encontrará ``{\em{palavra}}'', ``{\em{Palavraa}}'' ou
+Usando \verb|\c| o Vim encontrará ``{\em{palavra}}'', ``{\em{Palavraa}}'' ou
 até mesmo ``{\em{PALAVRA}}''. Uma dica é colocar no seu arquivo de
 configuração ``vimrc'' veja o capítulo \ref{cha:Como editar preferências no Vim}.
 
@@ -2378,7 +2378,7 @@ pela palavra 'dicas' em todos os arquivos com extensão `txt'.
 			  :19;+3 co $
 \end{verbatim}
 
-O vim sempre necessita de um intervalo (inicial e final) mas se você
+O Vim sempre necessita de um intervalo (inicial e final) mas se você
 usar ``;'' ele considera a primeira linha como segundo ponto do
 intervalo, e no caso acima estamos dizendo (nas entrelinhas) linhas
 19 e 19+3     \\
@@ -2431,7 +2431,7 @@ Gostaria de um comando que mudasse para
 		 (substr($0, RSTART, RLENGTH) + i++) ``o'``}''
 \end{verbatim}
 
- Mas muitos sistemas não tem awk, e logo a melhor solução mesmo é usar o vim:
+ Mas muitos sistemas não tem awk, e logo a melhor solução mesmo é usar o Vim:
 
 \begin{verbatim}
 		 :let i=1 | 10,20 g/texto\d\+texto/s/\d\+/\=submatch(0)+i/ | let i=i+1
@@ -2449,8 +2449,8 @@ Observação: 10,20 é o intervalo, ou seja, da linha 10 até a linha 20
 
 fonte: \url{http://www.dicas-l.com.br/dicas-l/20081228.php}
 
-\section{Junção de linhas com vim}
-\label{Junção de linhas com vim}
+\section{Junção de linhas com Vim}
+\label{Junção de linhas com Vim}
 Colaboração: Rubens Queiroz de Almeida
 
 Recentemente precisei combinar, em um arquivo, duas linhas
@@ -2533,7 +2533,7 @@ ainda estará carregado, portanto faça:
 
 \section{File Explorer }
 \label{File Explorer }
-Para abrir o gerenciador de arquivos do vim use:
+Para abrir o gerenciador de arquivos do Vim use:
 
 \begin{verbatim}
 		  :Vex ........... abre o file explorer verticalmente
@@ -2784,7 +2784,7 @@ Pode repetir esta substituição em qualquer linha que estiver apenas usando est
 			 &
 \end{verbatim}
 
-O vim substituirá na linha corrente ``isto'' por ``aquilo''. Podemos
+O Vim substituirá na linha corrente ``isto'' por ``aquilo''. Podemos
 repetir a última substituição globalmente assim:
 	
 \begin{verbatim}
@@ -2906,7 +2906,7 @@ Para maiores informações sobre argumentos do comando ``sort'', digite
 \end{verbatim}
 
 O caractere ``\%'' representa a região equivalente ao
-arquivo atual inteiro.  A versão do vim 7 em diante tem um comando sort que permite
+arquivo atual inteiro.  A versão do Vim 7 em diante tem um comando sort que permite
 remover linhas duplicadas 'uniq' e ordenar, sem a necessidade
 de usar comandos externos, para mais detalhes:
 
@@ -2914,7 +2914,7 @@ de usar comandos externos, para mais detalhes:
 			 :h sort
 \end{verbatim}
 
-\section{Ordenando e removendo linhas duplicadas no vim 7}
+\section{Ordenando e removendo linhas duplicadas no Vim 7}
 
 \begin{verbatim}
 			  :sort u
@@ -2941,7 +2941,7 @@ arquivo HTML é possível usar a ferramenta ``tildy'', do W3C:
 * \url{http://www.dicas-l.com.br/dicas-l/20070119.php}
 
 \chapter{Como editar preferências no Vim}\label{cha:Como editar preferências no Vim}
-O arquivo de preferências do vim é ``vimrc'', um arquivo oculto que
+O arquivo de preferências do Vim é ``vimrc'', um arquivo oculto que
 pode ser criado no ``profile'' do usuário.
 
 \begin{verbatim}
@@ -2993,7 +2993,7 @@ estão descritos alguns plugins interessantes!
 
 \begin{verbatim}
 		  " linhas começadas com aspas são comentários
-		  " e portanto serão ignoradas pelo vim
+		  " e portanto serão ignoradas pelo Vim
 \end{verbatim}
 
 Ao fazer modificações comente usando aspas duplas no começo da linha,
@@ -3001,7 +3001,7 @@ os comentários lhe ajudarão mais tarde, pois à medida que o seu vimrc
 cresce podem aparecer dúvidas sobre o que determinado trecho faz :)
 
 
-As alterações no vimrc só será efetivadas na próxima vez que o vim for aberto
+As alterações no vimrc só será efetivadas na próxima vez que o Vim for aberto
 a não ser que você faça um mapeamento para recarregar, mais adiante você verá isto
 por enquanto faça
 
@@ -3034,7 +3034,7 @@ ou digitados como comandos:
   set incsearch "habilita a busca incremental
   set ai       "auto identação
   set aw       "salvamento automático - veja :help aw
-  set ignorecase "faz o vim ignorar maiúsculas e minúsculas nas buscas
+  set ignorecase "faz o Vim ignorar maiúsculas e minúsculas nas buscas
   set smartcase  "Se começar uma busca em maiúsculo ele habilita o case
   set ic        "ignora maiúscula e minúsculas em uma busca
   set scs       "ao fazer uma busca com maiúsculos considerar case sensitive
@@ -3148,7 +3148,7 @@ sua criatividade e do quanto conhece o Vim.
 
 
 \subsection{Notas sobre mapeamentos}\label{Notas sobre mapeamentos}
-Mapeamentos são um ponto importante do vim, com eles podemos controlar
+Mapeamentos são um ponto importante do Vim, com eles podemos controlar
 ações com quaisquer teclas, mas antes temos que saber que:
 
 Para criar mapeamentos, precisamos conhecer a maneira de representar
@@ -3177,7 +3177,7 @@ as teclas e combinações. Alguns exemplos:
 	 <tab>       : tab
 \end{verbatim}
 
-Para ler mais sobre atalhos de tecla no vim acesse 
+Para ler mais sobre atalhos de tecla no Vim acesse 
 
 \begin{verbatim}
              :h index
@@ -3202,8 +3202,8 @@ com ``c'' no caso \verb|cmap|.
 \subsection{Recarregando o arquivo de configuração}
 \label{sec:Recarregando o arquivo de configuração}
 
-Cada alteração no arquivo de configuração do vim só terá efeito na próxima vez que você
-abrir o vim a menos que você coloque isto dentro do mesmo
+Cada alteração no arquivo de configuração do Vim só terá efeito na próxima vez que você
+abrir o Vim a menos que você coloque isto dentro do mesmo
 
 \begin{verbatim}
 " recarregar o vimrc
@@ -3228,7 +3228,7 @@ instantaneamente, e para chamar o vimrc basta usar.
 
 Os mapeamentos abaixo são úteis
 para quem escreve códigos html, permitem inserir caracteres reservados do html
-usando uma barra invertida para proteger os mesmos, o vim substituirá os "barra
+usando uma barra invertida para proteger os mesmos, o Vim substituirá os "barra
 alguma coisa" pelo caractere correspondente.
 
 \begin{verbatim}
@@ -3257,7 +3257,7 @@ ativada. O ``\verb|<cr>|'' ao final representa um ENTER.
 
 \subsection{Limpando o ``registro'' de buscas}\label{Limpando o ``registro'' de buscas}
 
-A cada busca, se a opção `hls' estiver habilitada o vim faz um
+A cada busca, se a opção `hls' estiver habilitada o Vim faz um
 destaque colorido, mas se você quiser limpar pode fazer este
 mapeamento
 
@@ -3307,7 +3307,7 @@ substituídas por uma só linha em branco, vejamos como funciona:
 		  <cr> ........ confirmação do comando
 \end{verbatim}
 
-As barras invertidas podem não ser usadas se o seu vim estiver com a opção
+As barras invertidas podem não ser usadas se o seu Vim estiver com a opção
 magic habilitada
 
 \begin{verbatim}
@@ -3344,7 +3344,7 @@ Salvando com uma tecla de função:
 \begin{verbatim}
 		 " salva com F9
 		 nmap <F9> :w<cr>
-		 " F10 - sai do vim
+		 " F10 - sai do Vim
 		 nmap <F10> <esc>:q<cr>
 \end{verbatim}
 
@@ -3376,7 +3376,7 @@ Veja um exemplo:
 		  au BufNewFile,BufRead *.txt source ~/.vim/syntax/txt.vim
 \end{verbatim}
 
-No exemplo acima o vim aplica autocomandos para arquivos novos
+No exemplo acima o Vim aplica autocomandos para arquivos novos
 ``BufNewfile'' ou existentes ``BufReadd'' do tipo `txt' e para estes tipos
 carrega um arquivo de syntax, ou seja, um esquema de cores específico.
 
@@ -3622,8 +3622,8 @@ em geral é a contrabarra ``\\'', na dúvida
 			 :help <leader>
 \end{verbatim}
 
-\section{Como adicionar o python ao path do vim?}
-\label{Como adicionar o python ao path do vim?}
+\section{Como adicionar o python ao path do Vim?}
+\label{Como adicionar o python ao path do Vim?}
 
 fonte:
 \url{http://vim.wikia.com/wiki/Automatically_add_Python_paths_to_Vim_path}
@@ -3652,7 +3652,7 @@ Isto lhe permite usar 'gf' ou Ctrl-w Ctrl-F para abrir um arquivo sob o cursor
 \section{Criando um menu}
 \label{Criando um menu}
 
-Como no vim podemos ter infinitos comandos fica complicado memorizar tudo
+Como no Vim podemos ter infinitos comandos fica complicado memorizar tudo
 é aí que entram os menus, podemos colocar nossos plugins e atalhos favoritos
 em um menu veja este exemplo
 
@@ -3721,7 +3721,7 @@ Quando o comando
 			 :amenu
 \end{verbatim}
 
-É usado sem nenhum argumento o vim mostra os menus definidos atualmente
+É usado sem nenhum argumento o Vim mostra os menus definidos atualmente
 
 Para listar todas as opções de menu para 'Plugin' por exemplo faça:
 
@@ -3821,7 +3821,7 @@ inoremap <s-tab> <c-r>=InsertTabWrapper (``d'')<cr>
 
 \section{Abreviações}\label{Abreviações}
 Também no \verb|.vimrc| você pode colocar abreviações, que são uma espécie de
-auto-texto para o vim.
+auto-texto para o Vim.
 
 \begin{verbatim}
  iab slas Sérgio Luiz Araújo Silva
@@ -3836,13 +3836,13 @@ auto-texto para o vim.
 \label{Referências}
 * \url{http://www.dicas-l.com.br/dicas-l/20050118.php}
 
-\chapter{Um wiki para o vim}\label{cha:Um wiki para o vim}
+\chapter{Um wiki para o Vim}\label{cha:Um wiki para o Vim}
 
 É inegável a facilidade que um wiki nos traz, os documentos são
 indexados e linkados de forma simples. Já pesquisei uma porção de
 wikis e, para uso pessoal recomendo o potwiki.  O ``linkk'' do potwiki é:
 \url{http://www.vim.org/scripts/script.php?script_id=1018}.
-O potwiki é um wiki completo para o vim, funciona localmente embora
+O potwiki é um wiki completo para o Vim, funciona localmente embora
 possa ser aberto remotamente via ssh\footnote{Sistema de acesso remoto}.
 Para criar um ``k'' no potwiki basta usar WikiNames, são nomes
 iniciados com letra maiúscula e que contenham outra letra em maiúsculo
@@ -3872,7 +3872,7 @@ Outra forma de indicar a página inicial seria colocar no seu .virmc
 
 O potwiki trabalha com WikiWords, ou seja, palavras iniciadas com
 letras em maiúsculo e que tenham outra letra em maiúsculo no meio (sem
-espaços) para iniciá-lo abra o vim e pressione \verb|\ww|.
+espaços) para iniciá-lo abra o Vim e pressione \verb|\ww|.
 
 \begin{verbatim}
   <Leader> é igual a \   - veja :help leader
@@ -4045,7 +4045,7 @@ Veja também: \ref{cha:Movendo-se no documento}
 \label{Não digite duas vezes}
 
 \begin{itemize}
-\item O vim complementa com ``tab''. Veja mais na seção \ref{Complementação com ``tab''} na página \pageref{Complementação com ``tab''}.
+\item O Vim complementa com ``tab''. Veja mais na seção \ref{Complementação com ``tab''} na página \pageref{Complementação com ``tab''}.
 \item Use macros. Detalhes na seção \ref{Macros: gravando comandos}
 página \pageref{Macros: gravando comandos}.
 \item Use abreviações coloque abreviações como abaixo em seu \verb|~/.vimrc|. Veja mais na seção \ref{Abreviações}.
@@ -4086,14 +4086,14 @@ e destaca textos que você abrir que contenham este erro.
 
 \section{Use folders}\label{sec:Use folders}
 
-O vim pode ocultar partes do texto que não estão sendo utilizadas permitindo
+O Vim pode ocultar partes do texto que não estão sendo utilizadas permitindo
 uma melhor visualização do conteúdo. Mais detalhes no capítulo
 \ref{cha:Folders} página \pageref{cha:Folders}.
 
 \section{Use autocomandos }
 \label{Use autocomandos }
 
-No arquivo de configuração do vim \verb|~/.vimrc| você pode criar comandos
+No arquivo de configuração do Vim \verb|~/.vimrc| você pode criar comandos
 automáticos que serão executados diante de uma determinada
 circunstância
 
@@ -4109,7 +4109,7 @@ autocmd BufReadPost *
 
 
 Grupo de comandos para arquivos do tipo ``html''. Observe que o
-autocomando carrega um arquivo de configuração do vim exclusivo para o
+autocomando carrega um arquivo de configuração do Vim exclusivo para o
 tipo html/htm e no caso de arquivos novos ``BufNewFile'' ele já cria um
 esqueleto puxando do endereço indicado.
 
@@ -4125,11 +4125,11 @@ esqueleto puxando do endereço indicado.
    augroup end
 \end{verbatim}
 
-Documentação sobre autocomandos do vim \url{http://www.vim.org/htmldoc/autocmd.html}.
+Documentação sobre autocomandos do Vim \url{http://www.vim.org/htmldoc/autocmd.html}.
 
 \section{Use o file explorer}\label{Use o file explorer}
 
-O vim pode navegar em pastas assim:
+O Vim pode navegar em pastas assim:
 
 \begin{verbatim}
 			   vim .
@@ -4153,7 +4153,7 @@ um meio melhor de fazer e torne um hábito.
 
 \chapter{Plugins}\label{Plugins}
 
-``Plugins'' são um meio de estender as funcionalidades do vim, há
+``Plugins'' são um meio de estender as funcionalidades do Vim, há
 ``plugins'' para diversas tarefas, desde wikis para o Vim até
 ferramentas de auxílio a navegação em arquivos com é o caso do
 ``plugin'' \url{http://www.vim.org/scripts/script.php?script\_id=1658}
@@ -4197,7 +4197,7 @@ Exemplo no GNU/Linux
 				  + PLUGIN
 \end{verbatim}
 
-Obs: Alguns plugins dependem da versão do vim, para saber qual
+Obs: Alguns plugins dependem da versão do Vim, para saber qual
 a que está atualmente instalada:
 
 \begin{verbatim}
@@ -4278,15 +4278,15 @@ programador. \url{http://www.vim.org/scripts/script.php?script\_id=1318}
 Um artigo ensinando como instalar o ``plugin'' snippetsEmu pode ser lido aqui:
  \url{http://vivaotux.blogspot.com/2008/03/instalando-o-plugin-snippetsemu-no-vim.html}
 
-\section{Um wiki para o vim}
-\label{Um wiki para o vim}
+\section{Um wiki para o Vim}
+\label{Um wiki para o Vim}
 
-O ``plugin'' wikipot implementa um wiki para o vim no qual você define
+O ``plugin'' wikipot implementa um wiki para o Vim no qual você define
 um ``link'' com a notação WikiWord, onde um ``link'' é uma palavra que
 começa com uma letra maiúscula e tem outra letra maiúscula no meio
 Obtendo o plugin neste link: \url{http://www.vim.org/scripts/script.php?script\_id=1018}.
 
-\section{Acessando documentação do python no vim}\label{Acessando documentação do python no vim}
+\section{Acessando documentação do python no Vim}\label{Acessando documentação do python no Vim}
 
  \url{http://www.vim.org/scripts/script.php?script\_id=910}
 
@@ -4294,7 +4294,7 @@ Obtendo o plugin neste link: \url{http://www.vim.org/scripts/script.php?script\_
 \label{Formatando textos planos com syntax}
 \url{http://www.vim.org/scripts/script.php?script\_id=2208&rating=helpful#1.3}
 
-Veja como instalar o este plugin no capítulo \ref{cha:Um wiki para o vim}.
+Veja como instalar o este plugin no capítulo \ref{cha:Um wiki para o Vim}.
 
 \chapter{Referências}
 \begin{itemize}
