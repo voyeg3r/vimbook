@@ -3,7 +3,7 @@
 Adicionar o nome do Douglas na seção "Autores" 
 se necessário crie !!!!
 
-Na seção Folders
+==Na seção Folders==
 {{{
   zd .......... deleta folder
   zo .......... abre folder
@@ -18,6 +18,13 @@ Na seção Folders
   zk .......... move para o final do folder anterior
 }}}
 
-Dividir o documento em capítulos e criar um branch
+==Dividir o documento em capítulos e criar um branch==
+
+==Adicionar seção ou capítulo sobre vimdiff==
+{{{
+  vimdiff -o arquivo1 arquivo2 .... exibe diferenças um acima do outro
+  ]c .............................. mostra próxima difrença
+  vim -d .......................... mostra diferença entre dois arquivos
+}}}
 
 Voltar para TableOfContents
