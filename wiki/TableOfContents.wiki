@@ -13,6 +13,19 @@ A estrutura (diretório) atual do SVN do projeto está assim:
        |-- vimbook.tex
 }}}
 
+O fluxo básico de trabalho dos envolvidos será mais ou menos assim:
+{{{
+  1) Fazer o checkout inicial ou svn update caso já tenha feito esse passo antes
+  2) modificar/adicionar os arquivos do projeto (sempre verificando o PDF
+     resultante)
+  2.1) Adicionou um novo arquivo fonte? Então use o svn add
+  2.2) Submeta suas alterações (svn commit -m 'Descrição das alterações')
+  3) retornar ao passo 1
+}}}
+É claro que pode dar conflito do momento em que se faz o 'svn update' até o
+momento em que se submete as alterações: alguém pode ter modificado os
+mesmos arquivos neste interim. Aí tem que olhar o manual do SVN...
+
 Em princípio deve-se colocar os arquivos descompactados. Não coloque os
 arquivos temporários gerados pelo LaTeX.
 
