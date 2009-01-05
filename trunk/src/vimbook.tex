@@ -1312,7 +1312,78 @@ caso eu não tenha habilitado a numeração, ainda assim o Vim usará por causa 
 opção `nu'.  Portanto o uso de modelines  pode ser um grande recurso para o seu
 dia-a-dia pois você pode coloca-las dentro dos comentários!
 
+\section{Edição avançada de linhas}
 
+Seja o seguinte texto:
+
+\begin{verbatim}
+1  este é um texto novo
+2  este é um texto novo
+3  este é um texto novo
+4  este é um texto novo
+5  este é um texto novo
+6  este é um texto novo
+7  este é um texto novo
+8  este é um texto novo
+9  este é um texto novo
+10 este é um texto novo
+\end{verbatim}
+
+Suponha que queira-se apagar ``é um texto'' da linha 5 até o fim (linha 10). Isto pode ser feito
+assim: 
+
+\begin{verbatim}
+   :5,$ normal 0wd3w
+\end{verbatim}
+
+Explicando o comando acima:
+
+\begin{verbatim}
+ :5,$ .... indica o intervalo que é da linha 5 até o fim ``$''
+ normal .. executa em modo normal
+ 0 ....... move o cursor para o começo da linha
+ w ....... pula uma palavra
+ d3w ..... apaga 3 palavras ``w''
+\end{verbatim}
+
+Obs: É claro que um comando de substituição simples
+
+\begin{verbatim}
+   :5,$s/é um texto//g
+\end{verbatim}
+
+Resolveria neste caso, mas a vantagem do método anterior é que
+é válido para três palavras, sejam quais forem.\\
+
+Também é possível empregar comandos de inserção (como {\em i} ou {\em a}) e
+retornar ao modo normal, bastando para isso usar o recurso \verb|Ctrl-v Esc|,
+de forma a simular o acionamento da tecla \verb|Esc| (saída do modo de
+inserção). Por exemplo, suponha agora que deseja-se mudar a frase ``{\em este
+é um texto novo}'' para ``{\em este não é um texto velho}''; pode ser feito
+assim:
+
+\begin{verbatim}
+   :5,$ normal 02winão ^[$ciwvelho
+\end{verbatim}
+
+Decompondo o comando acima temos:
+
+\begin{verbatim}
+ :5,$ .... indica o intervalo que é da linha 5 até o fim ``$''
+ normal .. executa em modo normal
+ 0 ....... move o cursor para o começo da linha
+ 2w ...... pula duas palavras (vai para a palavra "é")
+ i ....... entra no modo de inserção
+ não  .... insere a palavra "não" seguida de espaço " "
+ ^[ ...... sai do modo de inserção (através de Ctrl-v seguido de Esc)
+ $ ....... vai para o fim da linha
+ ciw ..... apaga a última palavra ("novo") e entra em modo de inserção
+ velho ... insere a palavra "velho" no lugar de "novo"
+\end{verbatim}
+
+A combinação \verb|Ctrl-v| é utilizada para inserir caracteres de controle na
+sua forma literal, prevenindo-se assim a interpretação destes neste exato
+momento.
 \chapter{Folders}\label{cha:Folders}
 ``Folders'' são como dobras nas quais o Vim esconde partes do texto,
 algo assim:
@@ -1884,41 +1955,6 @@ Para mais detalhes sobre janelas acesse o capítulo
 com janelas}.
 
 
-\begin{verbatim}
-Digamos que você tem o seguinte texto...
- 1  este é um texto novo
- 2  este é um texto novo
- 3  este é um texto novo
- 4  este é um texto novo
- 5  este é um texto novo
- 6  este é um texto novo
- 7  este é um texto novo
- 8  este é um texto novo
- 9  este é um texto novo
- 10 este é um texto novo
-... e quer apagar ``o'' da linha 5 até o fim, isso pode ser feito assim
- :5,$ normal 0wd3w
-\end{verbatim}
-
-Explicando o comando acima:
-
-\begin{verbatim}
- :5,$ .... indica o intervalo que é da linha 5 até o fim ``$''
- normal .. executa em modo normal
- 0 ....... zero move o cursor para o começo da linha
- w ....... pula uma palavra
- d3w ..... delete 3 palavras ``w''
-\end{verbatim}
-
-Obs: É claro que um comando de substituição simples
-
-\begin{verbatim}
-			 :5,$s/é um texto//g
-\end{verbatim}
-
-Resolveria neste caso, mas a vantagem do método anterior é que
-é válido para três palavras, sejam quais forem. :)
-
 \section{inserindo linha antes e depois}
 Estava editando este livro que você está lendo
 e queria que as linhas indentadas passassem a ter
@@ -1945,7 +1981,6 @@ a este resultado:
 		g ............ em todas as ocorrências da linha
 		<cr> ......... enter
 \end{verbatim}
-
 
 \section{Obtendo informações do arquivo }
 
