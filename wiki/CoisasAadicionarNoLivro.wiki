@@ -3,8 +3,6 @@
 Adicionar o nome do Douglas na seção "Autores" 
 se necessário crie !!!!
 
-==Em modos de operação linha 233==
-Para sair do modo visual 'v'
 
 ==Na seção Folders==
 {{{
