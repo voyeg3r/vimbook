@@ -226,7 +226,7 @@ Em modo normal pressionar duas vezes a letra ``d''
 \begin{verbatim}
 			 dd
 \end{verbatim}
-apaga a linha atual, já em modo insert ele irá se comportar como se você estivesse
+apaga a linha atual, já em modo de inserção ele irá se comportar como se você estivesse
 usando qualquer outro editor, ou seja, irá inserir duas vezes a letra ``d''.
 
 Em modo normal pressionar a tecla ``v'' inicia uma seleção visual (use as setas de direção).
@@ -265,7 +265,7 @@ a letra ``j'' é uma seta abaixo e assim por diante.
 
 Agora começamos a sentir o gostinho de usar o Vim, uma tecla seja
 maiúscula ou minúscula, faz muita diferença se você não estiver em
-modo de inserção, e para sair do do modo insert sempre use \verb|<esc>|.
+modo de inserção, e para sair do modo de inserção sempre use \verb|<esc>|.
 
 A tabela abaixo mostra uma referência rápida para os modos de operação do Vim,
 a seguir mais detalhes sobre cada um dos modos.
@@ -280,8 +280,8 @@ a seguir mais detalhes sobre cada um dos modos.
  caso esteja em outro modo basta pressionar ``\verb|<esc>|''.  Para acessar:
 
 \begin{verbatim}
-	   <esc> ....... sai do modo insert
-	   ^l .......... Ctrl-l também sai do modo insert
+	   <esc> ....... sai do modo de inserção
+	   ^l .......... Ctrl-l também sai do modo de inserção
 \end{verbatim}
 
 Para ler mais sobre \verb|buffers| veja o capítulo \ref{Registros}.
@@ -393,16 +393,16 @@ movimentação vamos recapitular um pouco do que foi visto: \\
 Estando em modo normal
 
 \begin{verbatim}
-  i ..... entra no modo insert antes do caractere atual
-  I ..... entra no modo insert no começo da linha
-  a ..... entra no modo insert após o caractere atual
-  A ..... entra no modo insert no final da linha
-  o ..... entra no modo insert uma linha abaixo
-  O ..... entra em modo insert uma linha cima
-  <esc> . sai do modo insert
+  i ..... entra no modo de inserção antes do caractere atual
+  I ..... entra no modo de inserção no começo da linha
+  a ..... entra no modo de inserção após o caractere atual
+  A ..... entra no modo de inserção no final da linha
+  o ..... entra no modo de inserção uma linha abaixo
+  O ..... entra em modo de inserção uma linha cima
+  <esc> . sai do modo de inserção
 \end{verbatim}
 
-Uma vez no modo insert todas as letras são, assim como nos outros
+Uma vez no modo de inserção todas as letras são, assim como nos outros
 editores simples letras, mas lebre-se a tecla mágica para sair do modo
 insert é: \verb+<esc>+.
 
@@ -470,7 +470,7 @@ minúscula)
   % ..... localiza parênteses correspondente
   `' .... salta exatamente para a posição em que o cursor estava
   d$ .... deleta do ponto atual até o final da linha
-  gi .... entra em modo insert no ponto da última edição
+  gi .... entra em modo de inserção no ponto da última edição
   gv .... repete a última seleção visual e posiciona o cursor neste local
   gf .... abre o arquivo sob o cursor
   gd .... salta para declaração de variável sob o cursor
@@ -1590,7 +1590,7 @@ claro o uso do registro de buscas ``/''
  :reg           : mostra o conteúdo de todos os registros
 \end{verbatim}
 
-Em modo insert
+Em modo de inserção
 
 \begin{verbatim}
  <C-R>-         : Insere o registro de pequenas deleções
@@ -1688,7 +1688,7 @@ Para usar você pode:
  "ap ........ registro a `paste', ou seja, cole
 \end{verbatim}
 
-Em modo insert faça:
+Em modo de inserção faça:
 
 \begin{verbatim}
 			 control-r a
@@ -1758,7 +1758,7 @@ As atribuições acima correspondem a:
 
 \begin{enumerate}
  \item  Guarda a data na variável ``d''
- \item  Mapeamento para o modo insert ``imap'' digite ,d
+ \item  Mapeamento para o modo de inserção ``imap'' digite ,d
  \item  Mapeamento para o modo normal ``nmap'' digite ,d
 \end{enumerate}
 
@@ -1776,7 +1776,7 @@ e inserir em modo normal assim:
 			 "dp
 \end{verbatim}
 
-ou usar em modo insert assim
+ou usar em modo de inserção assim
 
 \begin{verbatim}
 			 Control-r d
@@ -1932,7 +1932,7 @@ a este resultado:
 		s/isto/aquilo/g .. substitui isto por aquilo
 		:  ........... modo de comando (não coloquei no vimrc)
 		map ,t ....... mapeia ,t para a função desejada
-		<esc> ........ ao executar sai do modo insert
+		<esc> ........ ao executar sai do modo de inserção
 		:  ........... inicia o modo de comando
 		.  ........... na linha corrente
 		s  ........... substitua
@@ -1991,7 +1991,7 @@ o nome do registrador antes:
  "a3yw .. copia 3 palavras, sem apagar, para o registrador a
 \end{verbatim}
 
-No ``modo insert'', como visto anteriormente, você pode usar um atalho
+No ``modo de inserção'', como visto anteriormente, você pode usar um atalho
 para colar rapidamente o conteúdo de um registrador.
 
 \begin{verbatim}
@@ -2603,13 +2603,13 @@ de digitar um por um, você pode digitar o comando:
 
 Veja, passo a passo, o que aconteceu:
 
- Antes de entrar em modo insert usamos um quantificador
+ Antes de entrar em modo de inserção usamos um quantificador
 
 \begin{verbatim}
 			 `80'
 \end{verbatim}
 
- depois iniciamos o modo insert
+ depois iniciamos o modo de inserção
 
 \begin{verbatim}
 			 i
@@ -2621,7 +2621,7 @@ depois digitamos o caractere a ser repetido
 			-
 \end{verbatim}
 
-e por fim saímos do modo insert
+e por fim saímos do modo de inserção
 
 \begin{verbatim}
 			<esc>
@@ -2638,7 +2638,7 @@ deveríamos então fazer assim:
 \begin{verbatim}
  <esc> .. para ter certeza que ainda estamos no modo normal
  10 ..... quantificador antes
- i ...... entrar no modo insert
+ i ...... entrar no modo de inserção
  isto é um teste <enter>
  <esc> .. voltar ao modo normal
 \end{verbatim}
@@ -2740,13 +2740,13 @@ podemos solucionar nosso problema:
 \begin{verbatim}
 		  <esc> ..... para garantir que estamos no modo normal
 		  qa ........ inicia a gravação da macro 'a'
-		  I ......... entra no modo insert no começo da linha
+		  I ......... entra no modo de inserção no começo da linha
 		  #include " .. insere #include "
-		  <esc> ..... sai do modo insert
+		  <esc> ..... sai do modo de inserção
 		  A" ........ insere o último caractere
-		  <esc> ..... sai do modo insert
+		  <esc> ..... sai do modo de inserção
 		  j ......... desce uma linha
-		  <esc> ..... sai do modo insert
+		  <esc> ..... sai do modo de inserção
 		  q ......... para a gravação da macro
 \end{verbatim}
 
@@ -3240,7 +3240,7 @@ alguma coisa" pelo caractere correspondente.
 
 O termo ``inoremap'' significa: em modo ``insert'' não remapear, ou seja
 ele mapeia o atalho e não permite que o mesmo seja remapeado, e o
-mapeamento só funciona em modo insert, isso significa que um atalho
+mapeamento só funciona em modo de inserção, isso significa que um atalho
 pode ser mapeado para diferentes modos de operação. \\
 
 
@@ -3296,7 +3296,7 @@ substituídas por uma só linha em branco, vejamos como funciona:
 \begin{verbatim}
 		  map ......... mapear
 		  ,d .......... atalho que quermos
-		  <esc> ....... se estive em modo insert sai
+		  <esc> ....... se estive em modo de inserção sai
 		  : ........... em modo de comando
 		  % ........... em todo o arquivo
 		  s ........... substitua
@@ -3435,7 +3435,7 @@ au BufNewFile,BufRead *.sh if getline(1) == "" | normal ,sh
  imap [ []<left>
 
  " pular fora dos parênteses, colchetes e chaves, mover o cursor
- " no modo insert
+ " no modo de inserção
  imap <c-l> <esc><right>a
  imap <c-h> <esc><left>a
 \end{verbatim}
@@ -3802,7 +3802,7 @@ na página \pageref{Buscas e substituições}''
 	set complete=.,w,k
 
 "------ complementação de palavras ----
-"usa o tab em modo insert para completar palavras
+"usa o tab em modo de inserção para completar palavras
 
 	function! InsertTabWrapper(direction)
 		let col = col(``.'') - 1
@@ -4059,7 +4059,7 @@ página \pageref{Macros: gravando comandos}.
 
 
 
-* No modo insert você pode usar
+* No modo de inserção você pode usar
 
 \begin{verbatim}
 	  Control + y  ....... copia caractere a caractere a linha acima
