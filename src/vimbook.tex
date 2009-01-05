@@ -255,12 +255,12 @@ a letra ``j'' é uma seta abaixo e assim por diante.
 \label{Entrando em modo de edição}
 
 \begin{verbatim}
-  a .... inicia INSERT um caractere após o atual
-  i .... inicia INSERT antes do caractere atual
-  A .... inicia INSERT no final da linha
-  I .... inicia INSERT no começo da linha
-  o .... inicia INSERT inserindo uma linha abaixo
-  O .... inicia INSERT inserindo uma linha acima
+  a .... inicia inserção de texto após o atual
+  i .... inicia inserção de texto antes do caractere atual
+  A .... inicia inserção de texto no final da linha
+  I .... inicia inserção de texto no começo da linha
+  o .... inicia inserção de texto na linha abaixo
+  O .... inicia inserção de texto na linha acima
 \end{verbatim}
 
 Agora começamos a sentir o gostinho de usar o Vim, uma tecla seja
@@ -287,10 +287,10 @@ a seguir mais detalhes sobre cada um dos modos.
 Para ler mais sobre \verb|buffers| veja o capítulo \ref{Registros}.
 
 \item [Inserção]
- Neste modo é feita a inserção de texto, para entrar neste modo
- basta pressionar a tecla ``\verb|i|'' de
- insert ou ``\verb|c|'' (change) ou  tecla ``\verb|a|'' de ``append''.
- Para substituir um único caractere você pode usar:
+Neste modo é feita a inserção de texto. Para entrar neste modo basta
+pressionar a tecla ``\verb|i|'' ({\em insert}) ou ``\verb|c|'' ({\em change})
+ou tecla ``\verb|a|'' ({\em append}).  Para substituir um único caractere você
+pode usar:
 
 \begin{verbatim}
   r<char> ...... onde char pode ser qualquer caractere
@@ -339,13 +339,13 @@ para acessar
 
 \section{Dicas}
 \label{Dicas}
-Para usar um comando do modo normal no modo ``insert'' faça:
+Para usar um comando do modo normal no modo de inserção faça:
 
 \begin{verbatim}
 		   Ctrl-O (comando)
 \end{verbatim}
 
-Para repetir o último trecho do modo ``insert'' faça:
+Para repetir o último trecho do modo de inserção faça:
 
 \begin{verbatim}
 		   i Ctrl-a
@@ -357,7 +357,7 @@ Para repetir o último comando \verb+:+ faça:
 			  @:
 \end{verbatim}
 
-Para inserir texto da área de transferência (caso esteja em modo ``insert'') faça:
+Para inserir texto da área de transferência (caso esteja em modo de inserção) faça:
 
 \begin{verbatim}
 			  Shift-insert
@@ -404,7 +404,7 @@ Estando em modo normal
 
 Uma vez no modo de inserção todas as letras são, assim como nos outros
 editores simples letras, mas lebre-se a tecla mágica para sair do modo
-insert é: \verb+<Esc>+.
+de inserção é: \verb+<Esc>+.
 
 \begin{verbatim}
 			 <ESC> .... lhe leva para o modo normal
@@ -1074,7 +1074,7 @@ nos permitem acessar quaisquer alterações ocorrida no arquivo.
 \label{Um exemplo didático}
 
 Siga estes passos (para cada passo \verb|<Esc>|, ou seja, saia do modo
-insert)
+de inserção)
 
 
 \begin{description}
@@ -1509,7 +1509,7 @@ Neste outro caso apaguei a linha corrente adicionando-a ao final do registro ``a
 	 "# ..... contém o nome do arquivo alternativo
 \end{verbatim}
 
-Uma forma prática de usar registros em modo ``insert'' é usando
+Uma forma prática de usar registros em modo de inserção é usando
 \verb|Ctrl-r|
 
 
@@ -1520,7 +1520,7 @@ Uma forma prática de usar registros em modo ``insert'' é usando
 	  Ctrl-r a .... insere o registro `a'
 \end{verbatim}
 
-Em modo ``insert'' você pode repetir a última inserção de texto
+Em modo de inserção você pode repetir a última inserção de texto
 simplesmente pressionando
 
 \begin{verbatim}
@@ -1609,7 +1609,7 @@ coloque em seu \verb+~/.vimrc+
 \end{verbatim}
 
 Como foi atribuído ao registro \verb+n+ o conteúdo de @\%, ou seja, o nome
-do arquivo, você pode fazer algo assim em modo ``insert'':
+do arquivo, você pode fazer algo assim em modo de inserção:
 
 \begin{verbatim}
 				Ctrl-r n
@@ -2044,8 +2044,8 @@ Tornando todo o texto maiúsculo
 
 \begin{verbatim}
 	 >> ..... Indenta a linha atual
-	 ^T ..... Indenta a linha atual em modo ``insert''
-	 ^D ..... Remove indentação em modo ``insert''
+	 ^T ..... Indenta a linha atual em modo de inserção
+	 ^D ..... Remove indentação em modo de inserção
 	 >ip .... indenta o parágrafo atual
 \end{verbatim}
 
@@ -2644,13 +2644,13 @@ deveríamos então fazer assim:
 \end{verbatim}
 
 \section{Repetindo a digitação de uma linha }
-Para repetir a linha acima (modo ``insert'') use
+Para repetir a linha acima (modo de inserção) use
 
 \begin{verbatim}
 			  Ctrl-y
 \end{verbatim}
 
-Para repetir a linha abaixo (modo ``insert'')
+Para repetir a linha abaixo (modo de inserção)
 
 \begin{verbatim}
 			  Ctrl-e
@@ -3185,7 +3185,7 @@ Para ler mais sobre atalhos de tecla no Vim acesse
 
 No Vim podemos mapear uma tecla para o modo normal, realizando
 determinada operação e a mesma tecla pode desempenhar outra função
-qualquer em modo ``insert'' ou comando, veja:
+qualquer em modo de inserção ou comando, veja:
 
 \begin{verbatim}
 		  " mostra o nome do arquivo com o caminho
@@ -3196,7 +3196,7 @@ qualquer em modo ``insert'' ou comando, veja:
 \end{verbatim}
 
 A única diferença nos mapeamentos acima é que o mapeamento para modo
-``insert'' começa com ``i'', assim como para o modo ``comando'' ``:'' começa
+de inserção começa com ``i'', assim como para o modo ``comando'' ``:'' começa
 com ``c'' no caso \verb|cmap|.
 
 \subsection{Recarregando o arquivo de configuração}
@@ -3238,7 +3238,7 @@ alguma coisa" pelo caractere correspondente.
 			inoremap \. &amp;middot;
 \end{verbatim}
 
-O termo ``inoremap'' significa: em modo ``insert'' não remapear, ou seja
+O termo ``inoremap'' significa: em modo de inserção não remapear, ou seja
 ele mapeia o atalho e não permite que o mesmo seja remapeado, e o
 mapeamento só funciona em modo de inserção, isso significa que um atalho
 pode ser mapeado para diferentes modos de operação. \\
@@ -3683,9 +3683,9 @@ Caso haja espaços no nome a definir você pode fazer assim
 	 :vmenu ... Modo Visual
 	 :omenu ... Operator-pending modo
 	 :menu! ... Insert e Comando
-	 :imenu ... Modo Insert
+	 :imenu ... Modo de inserção
 	 :cmenu ... Modo de comando
-	 :amenu ... todos os modos
+	 :amenu ... Todos os modos
 \end{verbatim}
 
 \section{Exemplo de menu}
