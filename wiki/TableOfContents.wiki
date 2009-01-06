@@ -4,6 +4,9 @@
 Coloquei detalhes sebre como se juntar ao grupo
 na página inicial do projeto!
 
+==Promova o grupo==
+[http://groups.google.com.br/group/vimbook/manage_promote]
+
 = Introducão =
 A estrutura (diretório) atual do SVN do projeto está assim:
 {{{
