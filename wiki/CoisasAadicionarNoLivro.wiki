@@ -1,8 +1,8 @@
 #summary One-sentence summary of this page.
-
-Adicionar o nome do Douglas na seção "Autores" 
-se necessário crie !!!!
-
+{{{
+Página 66 contrabarra (para o latex mostrar contrabarra tem que 
+ser \\ duas vezes
+}}}
 
 ==Na seção Folders==
 {{{
