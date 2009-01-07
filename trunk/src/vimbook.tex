@@ -62,23 +62,23 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 %%%%%%%%%%%%%%%%%%%% Título do documento %%%%%%%%%%%%%%%%%%%%%%%
 \begin{titlepage}
  \begin{flushleft}
-	\vspace{2mm}
-	\vspace{2mm}
-	\vspace{2mm}
+   \vspace{2mm}
+   \vspace{2mm}
+   \vspace{2mm}
  \end{flushleft}
-	%\vspace{2cm}
+   %\vspace{2cm}
 \begin{center}
-	\rule{12cm}{1mm} \\ \vspace{2mm}
-	{\LARGE{\bf{\titulo}}} \\
-	\vspace{-1mm}
-	\rule{12cm}{1mm} \\
+   \rule{12cm}{1mm} \\ \vspace{2mm}
+   {\LARGE{\bf{\titulo}}} \\
+   \vspace{-1mm}
+   \rule{12cm}{1mm} \\
 
 %               \begin{center}
-%	{\Large{\em{Sérgio Luiz Araújo Silva}}}\\
-%		   voyeg3r@gmail.com \\
-%			\vspace{0.5cm}
+%   {\Large{\em{Sérgio Luiz Araújo Silva}}}\\
+%         voyeg3r@gmail.com \\
+%         \vspace{0.5cm}
 %       {\Large{\today}}
-%	        \end{center}
+%           \end{center}
 
 % logo do Vim
   \vspace{2cm}
@@ -90,13 +90,13 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 \end{figure}
 % fim da imagem
 
-	\vspace{3cm}
-	\begin{flushright}
-	\begin{minipage}[t]{8cm}
-	       ``Um guia simples, com exemplos de comandos
-			 para uso no dia-a-dia. A idéia é que este
-			 material cresça e torne-se uma referência confiável
-			 e prática. Use este livro nos termos da {\em Licença de Documentação Livre GNU} (GFDL).'' \\
+   \vspace{3cm}
+   \begin{flushright}
+   \begin{minipage}[t]{8cm}
+          ``Um guia simples, com exemplos de comandos
+          para uso no dia-a-dia. A idéia é que este
+          material cresça e torne-se uma referência confiável
+          e prática. Use este livro nos termos da {\em Licença de Documentação Livre GNU} (GFDL).'' \\
           \par Este trabalho está em constante aprimoramento, e é fruto da
           colaboração de voluntários. Participe do desenvolvimento enviando sugestões e
           melhorias; acesse o site do projeto no endereço: \\
@@ -104,16 +104,16 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
           \url{http://code.google.com/p/vimbook}
 \end{center}
         
-%			 Este trabalho é a compilação do livro sobre o Vim acessível no site:
-%		\url{http://pt.wikibooks.org/wiki/Vim} usando como ferramenta o \LaTeX\,
-%		pode e deve ser melhorado para
-%	     que o Software Livre cresça cada vez mais!  No meu
-%		 blog\footnote{http://vivaotux.blogspot.com} costumo postar dicas sobre
-%	 o Vim, shell script, sed, etc.
-	\end{minipage} \\
-	\end{flushright}
+%          Este trabalho é a compilação do livro sobre o Vim acessível no site:
+%      \url{http://pt.wikibooks.org/wiki/Vim} usando como ferramenta o \LaTeX\,
+%      pode e deve ser melhorado para
+%        que o Software Livre cresça cada vez mais!  No meu
+%       blog\footnote{http://vivaotux.blogspot.com} costumo postar dicas sobre
+%    o Vim, shell script, sed, etc.
+   \end{minipage} \\
+   \end{flushright}
 
-	\vspace{3cm}
+   \vspace{3cm}
 
    {\small Versão gerada em \\ \bf \today}
 \end{center}
@@ -361,7 +361,7 @@ Para acessar (a partir do modo normal):
 ou para ir para uma linha qualquer:
 
 \begin{verbatim}
-     :100 <enter>
+     :100 <Enter>
 \end{verbatim}
 
 para acessar
@@ -441,9 +441,10 @@ editores simples letras, mas lebre-se a tecla mágica para sair do modo
 de inserção é: \verb+<Esc>+.
 
 \begin{verbatim}
-     <ESC> .... lhe leva para o modo normal
-     as letras h,k,l,j funcionam como setas:
+     <Esc> .... lhe leva para o modo normal
 \end{verbatim}
+
+As letras h, k, l, j funcionam como setas:
 
 \begin{verbatim}
         k
@@ -477,7 +478,7 @@ em maiúsculo (como visto) ele pulará a ``a-palavra-inteira'' :)
 Para ir para linhas específicas digite
 
 \begin{verbatim}
-     :n<ENTER>  ..... vai para linha ``n''
+     :n<Enter>  ..... vai para linha ``n''
      ngg ............ vai para linha ``n''
 \end{verbatim}
 
@@ -545,9 +546,9 @@ A maioria dos comandos do Vim pode ser precedida por um quantificador:
      5j ..... desce 5 linhas
      d5j .... deleta as próximas 5 linhas
      k ...... em modo normal sobe uma linha
-     5k ..... sobe 5 linha
-     y5k .... copia 5 linha (para cima)
-     w ...... pula uma palavra a frente
+     5k ..... sobe 5 linhas
+     y5k .... copia 5 linhas (para cima)
+     w ...... pula uma palavra para frente
      5w ..... pula 5 palavras
      d5w .... deleta 5 palavras
      b ...... retrocede uma palavra
@@ -559,7 +560,7 @@ A maioria dos comandos do Vim pode ser precedida por um quantificador:
      dG ..... deleta até o final do arquivo
      yG ..... copia até o final do arquivo
      yfx .... copia até o próximo ``x''
-	 y5j .... copia 5 linhas
+     y5j .... copia 5 linhas
 \end{verbatim}
 
 Podemos pular sentenças:
@@ -750,7 +751,7 @@ No Vim podemos marcar o ponto em que o cursor está, você deve estar em
 modo normal, portanto pressione
 
 \begin{verbatim}
-     <ESC>
+     <Esc>
 \end{verbatim}
 
 você estará em modo normal, assim podem pressionar a tecla ``\verb+m+''
@@ -1146,7 +1147,7 @@ de inserção)
 
 \end{description}
 
-Obs: A necessidade do ESC é para demarcar as ações, pois o Vim
+Obs: A necessidade do Esc é para demarcar as ações, pois o Vim
 considera cada inserção uma ação.  Agora usando o atalho de desfazer
 tradicional ``u'' e de refazer Ctrl-r observe que não é mais possível
 acessar todas as alterações efetuadas. Em resumo, se você fizer uma
@@ -1535,15 +1536,15 @@ comando digitado, pode ainda imprimir dentro do texto o nome do
 próprio arquivo, vamos aos detalhes.
 
 \begin{itemize}
-	\item O registro sem nome ``''
-	\item 10 registros nomeados de ``9''
-	\item O registro de pequenas deleções "-
-	\item 26 registros nomeados de ``z'' ou de ``Z''
-	\item 4 registros somente leitura
-	\item O registro de expressões "=
-	\item Os registro de seleção e  "*, "+ and "~
-	\item O registro ``o''
-	\item Registro do último padrão de busca "/
+   \item O registro sem nome ``''
+   \item 10 registros nomeados de ``9''
+   \item O registro de pequenas deleções "-
+   \item 26 registros nomeados de ``z'' ou de ``Z''
+   \item 4 registros somente leitura
+   \item O registro de expressões "=
+   \item Os registro de seleção e  "*, "+ and "~
+   \item O registro ``o''
+   \item Registro do último padrão de busca "/
 \end{itemize}
 
 \section{O registro sem nome ``''}
@@ -1834,7 +1835,7 @@ Você pode criar uma variável no vimrc assim:
 Pode também dizer ao Vim algo como...
 
 \begin{verbatim}
-     :let @d=strftime("c")<enter>
+     :let @d=strftime("c")<Enter>
 \end{verbatim}
 
 Neste caso estou dizendo a ele que guarde na variável `d' at d,
@@ -1847,7 +1848,7 @@ vimrc:
 
 A diferença entre digitar diretamente um comando e adiciona-lo ao
 vimrc é que uma vez no vimrc o registro em questão estará sempre
-disponível, observe também as sutis diferenças, um enter inserido
+disponível, observe também as sutis diferenças, um {\tt Enter} inserido
 manualmente é apenas uma indicação de uma ação que você fará
 pressionando a tecla especificada, já o comando mapeado vira
 ``\verb|<cr>|'', veja ainda que no vimrc os dois pontos ``\verb|:|''
@@ -1921,9 +1922,9 @@ O comando acima quer dizer
 \label{Referências}
 
 \begin{itemize}
-	\item \url{http://rayninfo.co.uk/vimtips.html}
-	\item \url{http://aprendolatex.wordpress.com}
-	\item \url{http://pt.wikibooks.org/wiki/Latex}
+   \item \url{http://rayninfo.co.uk/vimtips.html}
+   \item \url{http://aprendolatex.wordpress.com}
+   \item \url{http://pt.wikibooks.org/wiki/Latex}
 \end{itemize}
 
 \chapter{Buscas e substituições}\label{Buscas e substituições}
@@ -2018,7 +2019,7 @@ este resultado:
      \1 ........... repete na substituição o grupo 1
      \r ........... insere uma quebra de linha
      g ............ em todas as ocorrências da linha
-     <cr> ......... enter
+     <cr> ......... Enter
 \end{verbatim}
 
 \section{Obtendo informações do arquivo }
@@ -2240,7 +2241,7 @@ se você não sabe ainda como colocar estas preferências no arquivo de configur
 ativa-las em modo de comando precedendo-as com dois pontos, assim:
 
 \begin{verbatim}
-     :set ignorecase<enter>
+     :set ignorecase<Enter>
 \end{verbatim}
 
 Procurando palavras repetidas
@@ -2665,7 +2666,7 @@ Para inserir um texto que deve ser repetido várias vezes:
      # Digite o número de repetições;
      # Entre em modo de inserção;
      # Digite o texto;
-     # Saia do modo de inserção (tecle ESC).
+     # Saia do modo de inserção (tecle Esc).
 \end{verbatim}
 
 Por exemplo, se você quiser inserir oitenta traços numa linha, em vez
@@ -2708,12 +2709,12 @@ Se desejássemos digitar 10 linhas com o texto
 \end{verbatim}
 
 deveríamos então fazer assim:
-	
+   
 \begin{verbatim}
      <Esc> .. para ter certeza que ainda estamos no modo normal
      10 ..... quantificador antes
      i ...... entrar no modo de inserção
-     isto é um teste <enter>
+     isto é um teste <Enter>
      <Esc> .. voltar ao modo normal
 \end{verbatim}
 
@@ -2860,7 +2861,7 @@ Pode repetir esta substituição em qualquer linha que estiver apenas usando est
 
 O Vim substituirá na linha corrente ``isto'' por ``aquilo''. Podemos
 repetir a última substituição globalmente assim:
-	
+   
 \begin{verbatim}
      g&
 \end{verbatim}
@@ -3200,7 +3201,7 @@ O Vim colocará no comando
      :sort -u
 \end{verbatim}
 
-Bastando pressionar \verb|<enter>|.
+Bastando pressionar \verb|<Enter>|.
 Observação: esta macro prévia pode ficar no vimrc ou ser digitada em comando ``:''
 
 
@@ -3231,10 +3232,10 @@ as teclas e combinações. Alguns exemplos:
 \begin{verbatim}
      tecla       : tecla mapeada
      <c-x>       : Ctrl-x
-     <left>	    : seta para a esquerda
+     <left>      : seta para a esquerda
      <right>     : seta para a direita
      <c-m-a>     : Ctrl-Alt-a
-     <cr>        : enter
+     <cr>        : Enter
      <Esc>       : Escape
      <leader>    : normalmente \
      <bar>       : | pipe
@@ -3327,7 +3328,7 @@ Veja este outro mapeamento:
 Permite habilitar ou desabilitar números de linha do arquivo corrente.
 A exclamação ao final torna o comando booleano, ou seja, se a
 numeração estiver ativa será desabilitada, caso contrário será
-ativada. O ``\verb|<cr>|'' ao final representa um ENTER.
+ativada. O ``\verb|<cr>|'' ao final representa um {\tt Enter}.
 
 \subsection{Limpando o ``registro'' de buscas}\label{Limpando o ``registro'' de buscas}
 
@@ -3376,7 +3377,7 @@ substituídas por uma só linha em branco, vejamos como funciona:
      s ........... substitua
      \n .......... quebra de linha
      {2,} ........ duas ou mais vezes
-     \r .......... trocado por \r enter
+     \r .......... trocado por \r Enter
      g ........... globalmente
      <cr> ........ confirmação do comando
 \end{verbatim}
@@ -3518,11 +3519,11 @@ extensão .sh
 
 \begin{verbatim}
      set statusline=%F%m%r%h%w\
-    	 [FORMAT=%{&ff}]\
-    	 [TYPE=%Y]\
-    	 [ASCII=\%03.3b]\
-    	 [HEX=\%02.2B]\
-    	 [POS=%04l,%04v][%p%%]\ [LEN=%L]
+        [FORMAT=%{&ff}]\
+        [TYPE=%Y]\
+        [ASCII=\%03.3b]\
+        [HEX=\%02.2B]\
+        [POS=%04l,%04v][%p%%]\ [LEN=%L]
 \end{verbatim}
 Caso este código não funcione acesse este link: \url{http://www.linux.com/feature/120126}.
 
@@ -3649,8 +3650,8 @@ Redimensionar janelas
 \begin{verbatim}
      " Redimensionar a janela com
      " Alt-seta à direita e esquerda
-     map <M-right> <ESC>:resize +2 <CR>
-     map <M-left> <ESC>:resize -2 <CR>
+     map <M-right> <Esc>:resize +2 <CR>
+     map <M-left> <Esc>:resize -2 <CR>
 \end{verbatim}
 
 \subsection{Função para pular para uma linha}
@@ -3873,22 +3874,22 @@ na página \pageref{Buscas e substituições}''
      "Word completion
      "Complementação de palavras
      
-     	set dictionary+=/usr/dict/words
-     	set complete=.,w,k
+     set dictionary+=/usr/dict/words
+     set complete=.,w,k
      
      "------ complementação de palavras ----
      "usa o tab em modo de inserção para completar palavras
      
-     	function! InsertTabWrapper(direction)
-     		let col = col(``.'') - 1
-     		if !col || getline(``.'')[col - 1] !~ '\k'
-     			return ``>''
-     		elseif ``d'' == a:direction
-     			return ``>''
-     		else
-     			return ``>''
-     		endif
-     	endfunction
+     function! InsertTabWrapper(direction)
+        let col = col(``.'') - 1
+        if !col || getline(``.'')[col - 1] !~ '\k'
+           return ``>''
+        elseif ``d'' == a:direction
+           return ``>''
+        else
+           return ``>''
+        endif
+     endfunction
      
      inoremap <tab> <c-r>=InsertTabWrapper (``d'')<cr>
      inoremap <s-tab> <c-r>=InsertTabWrapper (``d'')<cr>
@@ -4221,8 +4222,8 @@ um meio melhor de fazer e torne um hábito.
 \section{Referências}
 \label{Referências}
 \begin{itemize}
-	\item \url{http://www.moolenaar.net/habits\_2007.pdf} por Bram Moolenaar
-	\item \url{http://vim.wikia.com/wiki/Did\_you\_know}
+   \item \url{http://www.moolenaar.net/habits\_2007.pdf} por Bram Moolenaar
+   \item \url{http://vim.wikia.com/wiki/Did\_you\_know}
 \end{itemize}
 
 
