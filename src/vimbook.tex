@@ -1487,17 +1487,24 @@ começo da linha este recurso chama-se modeline, leia mais na seção
 \section{Manipulando dobras }\label{Manipulando dobras }
 
 \begin{verbatim}
-     zo .......... abre uma dobra
+     zo .......... abre a dobra
+     zO .......... abre a dobra, recursivamente
+     za .......... abre/fecha (alterna) a dobra
+     zA .......... abre/fecha (alterna) a dobra, recursivamente
      zR .......... abre todas as dobras do arquivo atual
      zc .......... fecha uma dobra
+     zC .......... fecha a dobra abaixo do cursor, recursivamente
      zfap ........ cria uma dobra para o parágrafo `ap' atual
-     zd .......... apaga o `folder' (não o seu conteúdo)
      zf/casa ..... cria uma dobra até a palavra casa
      zf'a ........ cria uma dobra até a marca `a'
-     zj .......... desce `j' até a próxima dobra
-     zk .......... sobe `k' até a dobra anterior
-     zi .......... desabilita ou habilita os folders
-     :set fdl=0 .. nivel de folder 0 (foldlevel)
+     zd .......... apaga a dobra (não o seu conteúdo)
+     zj .......... move para o início da próxima dobra
+     zk .......... move para o final da dobra anterior
+     [z .......... move o cursor para início da dobra aberta
+     ]z .......... move o cursor para o fim da dobra aberta
+     zi .......... desabilita ou habilita as dobras
+     zm, zr ...... diminui/aumenta nível da dobra 'fdl'
+     :set fdl=0 .. nível da dobra 0 (foldlevel)
 \end{verbatim}
 
 Para abrir e fechar as dobras usando a barra de
@@ -3692,7 +3699,7 @@ O atalho
      <leader>
 \end{verbatim}
 
-em geral é a contrabarra ``\\'', na dúvida
+em geral é a contrabarra ``$\backslash$'', na dúvida
 
 \begin{verbatim}
      :help <leader>
