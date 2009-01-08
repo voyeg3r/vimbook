@@ -1,4 +1,10 @@
 #summary One-sentence summary of this page.
+{{{
+  Alguém já observou se há menção ao 'J' para juntar linhas
+  ficaria legal mencionando-se um erro comun que é 
+  tentar descer no documento em modo normal mas o CAPS está 
+  ativo e acaba juntando as linhas
+}}}
 
 ==Dividir o documento em capítulos e criar um branch==
 
