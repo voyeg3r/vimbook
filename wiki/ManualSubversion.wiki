@@ -6,3 +6,7 @@ ele tem muito mais que o básico para usar svn,
 eu estou lendo e digo que vale a pena!
 
 http://code.google.com/p/svnbook-pt-br/
+
+Plugin para o vim: 
+ * http://code.google.com/p/vcscommand/
+ * http://www.vim.org/scripts/script.php?script_id=90
