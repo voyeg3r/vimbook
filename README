@@ -1,0 +1,15 @@
+Arquivo:  leia-me
+Criado: Qui 08/Jan/2009 hs 20:32
+Last Change: Qui 08 Jan 2009 20:35:15 BRT
+autor: Sérgio Luiz Araújo Silva
+
+=============================================
+Requisitos: Você deve ter instalado o LaTeX
+e o mesmo deve usar codificação utf8
+
+Para gerar o livro entre no diretório src e execute o comando make:
+	
+ make
+
+Se tudo correr bem você terá o livro vimbook.pdf
+
