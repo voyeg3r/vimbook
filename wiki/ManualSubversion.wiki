@@ -1,0 +1,3 @@
+=Introdução=
+Um bom manual do svn pode ser encontrado aqui, ele tem muito mais que o básico para usar svn, eu estou lendo e digo que vale a pena!
+http://code.google.com/p/svnbook-pt-br/
