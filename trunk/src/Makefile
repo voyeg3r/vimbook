@@ -15,7 +15,7 @@ MAKE = make
 
 ########################################################################
 
-auto:
+$(DOC).pdf: $(DOC).tex
 	$(TEX) $(DOC).tex
 
 clean:
@@ -33,3 +33,6 @@ clean:
 	$(RM) $(DOC).bib~
 	$(RM) Makefile~
 	$(RM) texput.log core
+
+show: $(DOC).pdf
+	xpdf $(DOC).pdf
