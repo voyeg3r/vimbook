@@ -1,4 +1,4 @@
-# Links e dicas sobre subversion
+#Links e dicas sobre subversion
 =Introdução=
 Um bom manual do svn pode ser encontrado aqui, 
 ele tem muito mais que o básico para usar svn, 
