@@ -1,15 +1,30 @@
 Arquivo:  leia-me
 Criado: Qui 08/Jan/2009 hs 20:32
-Last Change: Qui 08 Jan 2009 20:35:15 BRT
-autor: Sérgio Luiz Araújo Silva
+ vim:nolist:
+Last Change: Sex 09 Jan 2009 08:04:47 BRT
+autor: groups.google.com.br/group.vimbook
 
-=============================================
-Requisitos: Você deve ter instalado o LaTeX
+Onde obter o pdf mais recente:
+http://code.google.com/p/vimbook/downloads/list
+	
+
+====================
+Para gerar o livro 
+====================
+
+* Requisitos: 
+
+Você deve ter instalado o LaTeX
 e o mesmo deve usar codificação utf8
 
-Para gerar o livro entre no diretório src e execute o comando make:
+Como fazer:
+entre no diretório src e execute o comando make:
 	
  make
 
 Se tudo correr bem você terá o livro vimbook.pdf
+
+Para limpar os arquivo temporário gerados 
+ 
+ make clean
 
