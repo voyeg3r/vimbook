@@ -1,9 +1,10 @@
 #summary One-sentence summary of this page.
 
 ==Para adicionar ao README==
+{{{
 Se você planeja efetuar mudanças, use este comando para baixar o código via HTTPS:
 # Membros do projeto podem alterar o código
-[svn checkout https://vimbook.googlecode.com/svn/trunk/] vimbook --username voyeg3r
+svn checkout https://vimbook.googlecode.com/svn/trunk/ vimbook --username voyeg3r
 
 Quando o sistema pedir senha, entre com seu código. Para obter o seu código
 de acesso visite: http://code.google.com/hosting/settings
@@ -11,7 +12,7 @@ de acesso visite: http://code.google.com/hosting/settings
 Acesso anônimo apenas leitura
 # Non-members may check out a read-only working copy anonymously over HTTP.
 svn checkout http://vimbook.googlecode.com/svn/trunk/ vimbook-read-only
-
+}}}
 
 ==Dividir o documento em capítulos e criar um branch==
 
