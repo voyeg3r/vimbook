@@ -1,10 +1,17 @@
 #summary One-sentence summary of this page.
-{{{
-  Alguém já observou se há menção ao 'J' para juntar linhas
-  ficaria legal mencionando-se um erro comun que é 
-  tentar descer no documento em modo normal mas o CAPS está 
-  ativo e acaba juntando as linhas
-}}}
+
+==Para adicionar ao README==
+Se você planeja efetuar mudanças, use este comando para baixar o código via HTTPS:
+# Membros do projeto podem alterar o código
+[svn checkout https://vimbook.googlecode.com/svn/trunk/] vimbook --username voyeg3r
+
+Quando o sistema pedir senha, entre com seu código. Para obter o seu código
+de acesso visite: http://code.google.com/hosting/settings
+
+Acesso anônimo apenas leitura
+# Non-members may check out a read-only working copy anonymously over HTTP.
+svn checkout http://vimbook.googlecode.com/svn/trunk/ vimbook-read-only
+
 
 ==Dividir o documento em capítulos e criar um branch==
 
