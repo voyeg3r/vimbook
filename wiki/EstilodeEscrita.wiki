@@ -7,8 +7,22 @@ Definir um estilo de escrita é fundamental para que o trabalho, especialmente o
 
 = Regras de estilo =
 
+== Regras básicas ==
+
    * Escrever na forma *impessoal*. Isto é, em vez de "_você deve_ ..." (2ª pessoa) ou "_nós devemos_ ..." (3ª pessoa), escrever "*deve-se* ...".
    * Evitar _estrangeirismo_ sempre quando não ficar forçoso. 
    * Palavras estrangeiras devem ser escritas em _itálico_. Use `{\em expressão}` no LaTeX.
+
+== Escrita de combinação de teclas ==
+
+   Usar `Modificador-tecla`. Por exemplo: 
+      * `Ctrl-a`: modificador *Ctrl* junto com a tecla *a*
+      * `Shift-u`: modificador *Shift* junto com a tecla *u*
+      * `Ctrl-Alt-c`: modificadores *Ctrl* e *Alt* juntos com a tecla *c*
+      * `Ctrl-a-b`: modificador *Ctrl* junto com as teclas *a* e *b*
+
+== Formatação do ambiente _verbatim_ ==
+
+   Os conteúdos dentro do ambiente _verbatim_ (`\begin{verbatim} ... \end{verbatim}`) devem ter um deslocamento de *5 espaços* em relação ao começo da linha. Há uma exceção, porém: quando o conteúdo em questão for um trecho de um texto sendo usado para demonstrar algum comando do Vim; neste caso não se usa espaçamento, pois estes podem comprometer a correta funcionalidade do comando (p.e. os comandos `^` e `0`, do modo normal, têm significado distintos dependendo da presença ou ausência de espaços no início da linha).
 
 = Recomendações =
