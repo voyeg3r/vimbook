@@ -1,5 +1,10 @@
 #summary One-sentence summary of this page.
 
+Escrever sobre o comando 
+{{{
+ :dig
+}}}
+
 ==Um capítulo sobre instalação no windows e no Linux==
 Instalação no windows
  * http://www.vim.org/download.php
