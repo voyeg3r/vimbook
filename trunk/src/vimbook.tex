@@ -2984,7 +2984,14 @@ conteúdo de um arquivo. De forma geral, fazemos isso digitando (no
 modo normal):
 
 \begin{verbatim}
-     :ls! .... visualiza o conteúdo do diretório
+     :!ls .... visualiza o conteúdo do diretório
+\end{verbatim}
+
+Lembrando que o anexando um simples ponto, a saída do comando torna-se o 
+domcumento que está sendo editado:
+
+\begin{verbatim}
+     :.!ls .... imprime na tela o conteúdo do diretório
 \end{verbatim}
 
 A seguir, veja alguns exemplos de utilização:
