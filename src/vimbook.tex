@@ -173,7 +173,7 @@ Para chamar o Vim digite num terminal:
 
 \begin{verbatim}
      vim meu_texto.txt
-\end{verbatim}
+end{verbatim}
 
 \section{Ajuda integrada}
 
@@ -3073,6 +3073,42 @@ arquivo HTML é possível usar a ferramenta ``tildy'', do W3C:
 \begin{verbatim}
      :%!tildy
 \end{verbatim}
+
+\section{Compilando e verificando erros}
+Se o seu projeto já possui um Makefile, então você pode fazer uso do comando :make
+para poder compilar seus programas no conforto de seu Vim:
+%Uma ferramenta bastante útil é a de poder compilar seus programa de dentro do Vim
+%e ainda verificar os erros e warnings. O :make executará o comando que está
+%definido na variável makeprg, que normalmente é o comando make mesmo:
+
+\begin{verbatim}
+		:make
+\end{verbatim}
+
+A vantagem de fazer isso é poder usar outra ferramenta bastante interessante, a jenela
+de quickfix:
+%Se durante a sua compilação você obteve algum erro ou warning, você poderá abrir
+%uma janela chamada de quickfix:
+
+\begin{verbatim}
+		:cwindow
+\end{verbatim}
+
+O comando cwindow abrirá uma janela em um split horizontal com a listagem de erros e warnings.
+Você poderá navegar pela lista usando os cursores e ir diretamente para o arquivo e linha da 
+ocorrência.
+
+\section{Grep}
+Do mesmo jeito que você usa grep na sua linha de comando você pode usar o grep interno
+do Vim. Exatamente do mesmo jeito:
+
+\begin{verbatim}
+		:grep <caminho> <padrão> <opções>
+\end{verbatim}
+
+Use a janela de quickfix aqui também para exibir os resultados do grep e poder ir diretamente 
+a eles.
+%Use cwindow e a janela de quickfix para exibir os resultados e poder ir diretamente a eles.
 
 \section{Referências}
 * \url{http://www.dicas-l.com.br/dicas-l/20070119.php}
