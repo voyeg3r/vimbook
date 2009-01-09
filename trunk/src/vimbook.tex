@@ -850,7 +850,7 @@ texto em uma outra posição. Outros comandos:
      d/casa/+1 - deleta até a linha após a palava casa
 \end{verbatim}
 
-Se você trocar a letra `d' nos comandos acima por `c' de change
+Se você trocar a letra `d' nos comandos acima por `c' de {\em change}
 ``mudança'' ao invés de deletar será feita uma mudança de conteúdo.
 Por exemplo:
 
@@ -928,7 +928,7 @@ faça:
      :enew!
 \end{verbatim}
 
-O comando acima é uma abreviação de `edit new' De modo similar você pode
+O comando acima é uma abreviação de {\em edit new} De modo similar você pode
 desejar ignorar todas as alterações feitas desde a abertura do arquivo
 
 \begin{verbatim}
@@ -1130,8 +1130,8 @@ Para mais ajuda sobre ``desfazer'':
 
 Um novo recurso muito interessante foi adicionado ao Vim ``a partir da
 versão 7''  é a chamada árvore do desfazer.  Se
-você desfaz alguma coisa, fez uma alteração um novo ``branch'' ou
-galho, derivação de alteração é criado.  Basicamente, os ``branches''
+você desfaz alguma coisa, fez uma alteração um novo {\em branch} ou
+galho, derivação de alteração é criado.  Basicamente, os {\em branches}
 nos permitem acessar quaisquer alterações ocorrida no arquivo.
 
 \subsubsection{Um exemplo didático}
@@ -1174,9 +1174,9 @@ de inserção)
 
 \end{description}
 
-Obs: A necessidade do Esc é para demarcar as ações, pois o Vim
+Obs: A necessidade do {\tt Esc} é para demarcar as ações, pois o Vim
 considera cada inserção uma ação.  Agora usando o atalho de desfazer
-tradicional ``u'' e de refazer Ctrl-r observe que não é mais possível
+tradicional ``u'' e de refazer {\tt Ctrl-r} observe que não é mais possível
 acessar todas as alterações efetuadas. Em resumo, se você fizer uma
 nova alteração após um desfazer (alteração derivada) o comando refazer
 não mais vai ser possível para aquele momento. \\
@@ -1311,7 +1311,7 @@ O comando acima diz: grave e vá para o próximo!
 \label{Dicas extras}
 
 Para manipular vários arquivos você pode mudar de buffer (arquivo)
-salvando ``write next''.
+salvando ({\em write next}).
 
 \begin{verbatim}
      :wn
@@ -1365,7 +1365,7 @@ em diante cada opção fica assim:
 \end{verbatim}
 
 Por exemplo: posso salvar um arquivo com extensão \verb|.sh| e dentro do
-mesmo indicar no modeline algo como:
+mesmo indicar no {\em modeline} algo como:
 
 \begin{verbatim}
      # vim:ft=txt:nu:
@@ -1373,7 +1373,7 @@ mesmo indicar no modeline algo como:
 
 Apesar de usar a extensão `sh' o Vim reconhecerá este arquivo como `txt', e
 caso eu não tenha habilitado a numeração, ainda assim o Vim usará por causa da
-opção `nu'.  Portanto o uso de modelines  pode ser um grande recurso para o seu
+opção `nu'.  Portanto o uso de {\em modelines} pode ser um grande recurso para o seu
 dia-a-dia pois você pode coloca-las dentro dos comentários!
 
 \section{Edição avançada de linhas}
@@ -1449,14 +1449,14 @@ A combinação \verb|Ctrl-v| é utilizada para inserir caracteres de controle na
 sua forma literal, prevenindo-se assim a interpretação destes neste exato
 momento.
 \chapter{Folders}\label{cha:Folders}
-``Folders'' são como dobras nas quais o Vim esconde partes do texto,
+{\em Folders} são como dobras nas quais o Vim esconde partes do texto,
 algo assim:
 
 \begin{verbatim}
      +-- 10 linhas ---------------------------
 \end{verbatim}
 
-Deste ponto em diante chamaremos os ``folders'' descritos no manual do
+Deste ponto em diante chamaremos os {\em folders} descritos no manual do
 Vim como dobras!  Quando tiver que manipular grandes quantidades de
 texto tente usar dobras, isto permite uma visualização completa do
 texto.  Um modo de entender rapidamente como funcionam as dobras no
@@ -1478,12 +1478,12 @@ Você pode ainda criar uma seleção visual
 
 \section{Métodos de dobras }
 \label{Métodos de dobras }
-O Vim tem seis modos ``fold'' são eles:
+O Vim tem seis modos {\em fold}, são eles:
 
 \begin{itemize}
-\item Sintaxe syntax
-\item Indentação indent
-\item Marcas marker
+\item Sintaxe ({\em syntax})
+\item Indentação ({\em indent})
+\item Marcas ({\em marker})
 \item Manual
 \end{itemize}
 
@@ -1506,9 +1506,9 @@ linha do seu arquivo algo assim:
      vim:fdm=marker:fdl=0:
 \end{verbatim}
 
-Obs: \verb|fdm| significa foldmethod, e \verb|fdl| significa
-foldlevel. Deve haver um espaço entre a palavra inicial ``vim'' e o
-começo da linha este recurso chama-se modeline, leia mais na seção
+Obs: \verb|fdm| significa {\em foldmethod}, e \verb|fdl| significa
+{\em foldlevel}. Deve haver um espaço entre a palavra inicial ``vim'' e o
+começo da linha este recurso chama-se {\em modeline}, leia mais na seção
 ``\ref{sec:Modelines} modelines'' na página \pageref{sec:Modelines}.
 
 \section{Manipulando dobras }\label{Manipulando dobras }
@@ -1542,7 +1542,7 @@ espaços coloque o trecho abaixo no seu arquivo de configuração do Vim
      nnoremap <space> @=((foldclosed(line(".")) < 0) ? 'zc' : 'zo')<CR>
 \end{verbatim}
 
-\section{Criando folders usando o modo visual}
+\section{Criando dobras usando o modo visual}
 \label{Criando folders usando o modo visual}
 Para iniciar a seleção visual
 
@@ -1550,15 +1550,15 @@ Para iniciar a seleção visual
      Esc ........ vai para o modo normal
      shift-v .... inicia seleção visual
      j .......... aumenta a seleção visual (desce)
-     zf ......... cria o folder na seleção ativa
+     zf ......... cria a dobra na seleção ativa
 \end{verbatim}
 
-Um modo inusitado de se criar folders é:
+Um modo inusitado de se criar dobras é:
 
 \begin{verbatim}
      Shift-v ..... inicia seleção visual
      /chapter/-2 . extende a seleção até /chapter -2 linhas
-     zf .......... cria o folder
+     zf .......... cria a dobra
 \end{verbatim}
 
 \chapter{Registros}
@@ -1676,18 +1676,37 @@ simplesmente pressionando
      "=
 \end{verbatim}
 
-Este registro na verdade é usando em algumas funções avançadas
+Este registro na verdade é usado em algumas funções avançadas.
 
 \section{Registros de arrastar e mover}
 \label{Registros de arrastar e mover}
 
+O registro 
 \begin{verbatim}
-     "*, "+ and "~
+     "*
 \end{verbatim}
+ é responsável por armazenar o último texto selecionado (p.e., através do
+mouse). Já o registro 
+\begin{verbatim}
+     "+
+\end{verbatim}
+é o denominado ``área de transferência'', normalmente utilizado para se
+transferir conteúdos entre aplicações---este registro é preenchido, por
+exemplo, usando-se a típica combinação {\tt Ctrl-v} encontrada em muitas
+aplicações. Finalmente, o registro 
+\begin{verbatim}
+     "~
+\end{verbatim}
+armazena o texto colado pela operação mais recente de ``arrastar-e-soltar''
+({\em drag-and-drop}). 
 
-Use estes registros para armazenar e recuperar textos em modo gráfico
-veja 'quotestar' e 'quoteplus', quando a área de transferência não
-está disponível ou funcional.
+%O registro \verb|"*| é responsável por armazenar o último texto selecionado
+%(p.e., através do mouse). O registro \verb|"+| é o denominado ``área de transferência'',
+%normalmente utilizado para se transferir conteúdos entre aplicações---este
+%registro é preenchido, por exemplo, usando-se a típica combinação {\tt Ctrl-v}
+%encontrada em muitas aplicações. Já o registro \verb|"~| armazena o texto
+%colado pela operação mais recente de ``arrastar-e-soltar'' ({\em
+%drag-and-drop}). 
 
 \section{Registro buraco negro "\_}
 \label{Registro buraco negro}
@@ -1813,7 +1832,7 @@ O comando acima diz \verb|`grave' --> w|  e próximo \verb|`next' --> n|
      :sn
 \end{verbatim}
 
-O comando acima é uma abreviação de `split next', ou seja, dividir e próximo.
+O comando acima é uma abreviação de {\em split next}, ou seja, dividir e próximo.
 
 \section{Como colocar um pedaço de texto em um registro?}
 \label{Como colocar um pedaço de texto em um registro?}
@@ -2401,13 +2420,13 @@ numerar linhas
      :let i=1 | g/^/s//\=i."\t"/ | let i=i+1
 \end{verbatim}
 
-Para copiar linhas começadas com ``Error'' para o final do arquivo faça:
+Para copiar linhas começadas com {\em Error} para o final do arquivo faça:
 
 \begin{verbatim}
      :g/^Error/ copy $
 \end{verbatim}
 
-Obs: O comando copy pode ser abreviado `co' ou ainda você pode usar `t'
+Obs: O comando {\em copy} pode ser abreviado `co' ou ainda você pode usar `t'
 para mais detalhes leia
 
 \begin{verbatim}
@@ -2420,35 +2439,35 @@ Entre as linhas que contiverem ``fred'' e ``joe'' substitua
      :g/fred/,/joe/s/isto/aquilo/gic
 \end{verbatim}
 
-As opções `gic' correspondem a global, ignore case e confirm, podendo ser
-omitidas deixando só o global. \\
+As opções `gic' correspondem a {\em global}, {\em ignore case} e {\em
+confirm}, podendo ser omitidas deixando só o {\em global}. \\
 
 
-pegar caracteres numéricos e jogar no final do arquivo?
+Pegar caracteres numéricos e jogar no final do arquivo?
 
 \begin{verbatim}
      :g/^\d\+.*/m $
 \end{verbatim}
 
-inverter a ordem das linhas do arquivo?
+Inverter a ordem das linhas do arquivo?
 
 \begin{verbatim}
      :g/^/m0
 \end{verbatim}
 
-apagar as linhas que contém ``Line commented''
+Apagar as linhas que contém {\em Line commented}
 
 \begin{verbatim}
      :g/Line commented/d
 \end{verbatim}
 
-copiar determinado padrão para um registro
+Copiar determinado padrão para um registro
 
 \begin{verbatim}
      :g/pattern/ normal "Ayy
 \end{verbatim}
 
-copiar linhas que contém um padrão e a linha subsequente para o final
+Copiar linhas que contém um padrão e a linha subsequente para o final
 
 \begin{verbatim}
      :g/padrão/;+1 copy $
@@ -2909,7 +2928,7 @@ repetir a última substituição globalmente assim:
 O atalho acima repete o último comando no próprio modo de comandos
 
 \section{Scripts Vim}\label{Scripts Vim}
-Usando um ``script'' para modificar um nome em vários arquivos: 
+Usando um {\em script} para modificar um nome em vários arquivos: 
 Crie um arquivo chamado `subst.vim' contendo os comandos de substituição e o
 comando de salvamento :wq.
 
@@ -2918,7 +2937,7 @@ comando de salvamento :wq.
      wq
 \end{verbatim}
 
-Para executar um ``script'', digite o comando
+Para executar um {\em script}, digite o comando
 
 \begin{verbatim}
      :source nome_do_script.vim
@@ -2966,7 +2985,8 @@ Observação: lembre-se \verb|Ctrl = ^|
      ^r:
 \end{verbatim}
 
-Se preceder com ``:'' você repete o comando, equivale a acessar o histórico de comandos com as setas
+Se preceder com ``:'' você repete o comando, equivale a acessar o histórico de
+comandos com as setas
 
 \begin{verbatim}
      :^r:
@@ -2997,7 +3017,7 @@ domcumento que está sendo editado:
 A seguir, veja alguns exemplos de utilização:
 
 \section{Ordenando}
-Podemos usar o comando ``sort''' que ordena o conteúdo de um arquivo dessa forma:
+Podemos usar o comando {\em sort} que ordena o conteúdo de um arquivo dessa forma:
 
 \begin{verbatim}
      :5,15!sort ..... odena da linha 5 até a linha 15
@@ -3005,10 +3025,10 @@ Podemos usar o comando ``sort''' que ordena o conteúdo de um arquivo dessa form
 
 O comando acima ordena da linha 5 até a linha 15.
 
-O comando ``sort'' existe tanto no Windows quanto nos sistemas Unix.
-Digitando simplesmente ``sort'', sem argumentos, o comportamento padrão
+O comando {\em sort} existe tanto no Windows quanto nos sistemas Unix.
+Digitando simplesmente {\em sort}, sem argumentos, o comportamento padrão
 é de classificar na ordem alfabética (baseando-se na linha inteira).
-Para maiores informações sobre argumentos do comando ``sort'', digite
+Para maiores informações sobre argumentos do comando {\em sort}, digite
 
 \begin{verbatim}
      sort --help ou man sort (no Unix) ou
@@ -3021,10 +3041,10 @@ Para maiores informações sobre argumentos do comando ``sort'', digite
      :%!uniq
 \end{verbatim}
 
-O caractere ``\%'' representa a região equivalente ao
-arquivo atual inteiro.  A versão do Vim 7 em diante tem um comando sort que permite
-remover linhas duplicadas 'uniq' e ordenar, sem a necessidade
-de usar comandos externos, para mais detalhes:
+O caractere ``\%'' representa a região equivalente ao arquivo atual inteiro.
+A versão do Vim 7 em diante tem um comando {\em sort} que permite remover
+linhas duplicadas {\em uniq} e ordenar, sem a necessidade de usar comandos
+externos, para mais detalhes:
 
 \begin{verbatim}
      :h sort
@@ -3045,7 +3065,7 @@ Quando a ordenação envolver números faça:
 \section{Beautifiers}
 
 A maior parte das linguagens de programação possui ferramentas
-externas chamadas ``beautifiers'', que servem para embelezar o código,
+externas chamadas {\em beautifiers}, que servem para embelezar o código,
 através da indentação e espaçamento. Por exemplo, para embelezar um
 arquivo HTML é possível usar a ferramenta ``tildy'', do W3C:
 
@@ -3058,7 +3078,7 @@ arquivo HTML é possível usar a ferramenta ``tildy'', do W3C:
 
 \chapter{Como editar preferências no Vim}\label{cha:Como editar preferências no Vim}
 O arquivo de preferências do Vim é ``vimrc'', um arquivo oculto que
-pode ser criado no ``profile'' do usuário.
+pode ser criado no {\em profile} do usuário.
 
 \begin{verbatim}
      ~/.vimrc
@@ -3222,8 +3242,8 @@ O comando \verb|gqap| ajusta o parágrafo atual em modo normal
      :set list
 \end{verbatim}
 
-\section{Setando macros prévias }
-\label{Setando macros prévias }
+\section{Definindo macros previamente}
+\label{Definindo macros previamente}
 Definindo uma macro de nome \verb|s| para ordenar e retirar linhas duplicadas
 
 \begin{verbatim}
@@ -3354,7 +3374,7 @@ alguma coisa" pelo caractere correspondente.
      inoremap \. &amp;middot;
 \end{verbatim}
 
-O termo ``inoremap'' significa: em modo de inserção não remapear, ou seja
+O termo {\em inoremap} significa: em modo de inserção não remapear, ou seja
 ele mapeia o atalho e não permite que o mesmo seja remapeado, e o
 mapeamento só funciona em modo de inserção, isso significa que um atalho
 pode ser mapeado para diferentes modos de operação. \\
@@ -3424,7 +3444,7 @@ substituídas por uma só linha em branco, vejamos como funciona:
 \end{verbatim}
 
 As barras invertidas podem não ser usadas se o seu Vim estiver com a opção
-magic habilitada
+{\em magic} habilitada
 
 \begin{verbatim}
      :set magic
@@ -3447,7 +3467,7 @@ Podemos fazer mapeamentos globais ou que funcionam em apenas um modo:
      imap - apenas no modo de Inserção
 \end{verbatim}
 
-Mover linhas com Ctrl-(seta abaixo) ou Ctrl-(seta acima):
+Mover linhas com {\tt Ctrl-(seta abaixo)} ou {\tt Ctrl-(seta acima)}:
 
 \begin{verbatim}
      " tem que estar em modo normal!
@@ -3649,7 +3669,7 @@ basta pressionar, sh em modo normal
      map ,sh :call InsertHeadBash()<cr>
 \end{verbatim}
 
-\subsection{Função para inserir cabeçalhos python}
+\subsection{Função para inserir cabeçalhos Python}
 \label{Função para inserir cabeçalhos python}
 
 \begin{verbatim}
@@ -3733,13 +3753,13 @@ O atalho
      <leader>
 \end{verbatim}
 
-em geral é a contrabarra ``$\backslash$'', na dúvida
+em geral é a barra invertida ``$\backslash$'', na dúvida
 
 \begin{verbatim}
      :help <leader>
 \end{verbatim}
 
-\section{Como adicionar o python ao path do Vim?}
+\section{Como adicionar o Python ao {\em path} do Vim?}
 \label{Como adicionar o python ao path do Vim?}
 
 fonte:
@@ -3764,7 +3784,7 @@ Coloque o seguinte script em:
      EOF
 \end{verbatim}
 
-Isto lhe permite usar 'gf' ou Ctrl-w Ctrl-F para abrir um arquivo sob o cursor
+Isto lhe permite usar 'gf' ou {\tt Ctrl-w Ctrl-F} para abrir um arquivo sob o cursor
 
 \section{Criando um menu}
 \label{Criando um menu}
@@ -3849,8 +3869,8 @@ Para listar todas as opções de menu para 'Plugin' por exemplo faça:
 \section{Outros mapeamentos}
 \label{Outros mapeamentos}
 
-Destaca espaços e tabs redundantes <br>
-Highlight redundant whitespace and tabs.
+Destaca espaços e tabulações redundantes {\tt <br>}
+%Highlight redundant whitespace and tabs.
 
 \begin{verbatim}
      highlight RedundantWhitespace ctermbg=red guibg=red
@@ -4004,9 +4024,9 @@ espaços) para iniciá-lo abra o Vim e pressione \verb|\ww|.
      \wr  .... recarrega WikiWords
 \end{verbatim}
 
-\section{Salvamento automático para o wiki }
+\section{Salvamento automático para o Wiki }
 \label{Salvamento automático para o wiki }
-Procure por uma seção autowrite no manual do potwiki
+Procure por uma seção {\em autowrite} no manual do potwiki
 
 \begin{verbatim}
      :help potwiki
@@ -4153,7 +4173,7 @@ arquivos txt e mudar de um para o outro assim:
      :wn
 \end{verbatim}
 
-O ``w'' significa gravar e o ``n'' significa next, ou seja, gravaria-mos
+O ``w'' significa gravar e o ``n'' significa {\em next}, ou seja, gravaria-mos
 o que foi modificado no arquivo atual e mudaríamos para o próximo.
 
 Veja também: \ref{cha:Movendo-se no documento}
@@ -4201,14 +4221,14 @@ Crie abreviações para erros comuns no seu arquivo de configuração (~/.vimrc)
 As linhas acima criam uma abreviação para erro de digitação da palavra 'the'
 e destaca textos que você abrir que contenham este erro.
 
-\section{Use folders}\label{sec:Use folders}
+\section{Use dobras}\label{sec:Use folders}
 
 O Vim pode ocultar partes do texto que não estão sendo utilizadas permitindo
 uma melhor visualização do conteúdo. Mais detalhes no capítulo
 \ref{cha:Folders} página \pageref{cha:Folders}.
 
-\section{Use autocomandos }
-\label{Use autocomandos }
+\section{Use autocomandos}
+\label{Use autocomandos}
 
 No arquivo de configuração do Vim \verb|~/.vimrc| você pode criar comandos
 automáticos que serão executados diante de uma determinada
@@ -4252,7 +4272,8 @@ O Vim pode navegar em pastas assim:
      vim .
 \end{verbatim}
 
-Você pode usar ``j'' e ``k'' para navegar e Enter para editar o arquivo selecionado
+Você pode usar ``j'' e ``k'' para navegar e {\tt Enter} para editar o arquivo
+selecionado
 
 \section{Torne as boas práticas um hábito }\label{Torne as boas práticas um hábito }
 
@@ -4300,7 +4321,7 @@ No Windows
      ~/vimfiles/plugin/
 \end{verbatim}
 
-Obs: Caso não exista a pasta você pode cria-la!
+Obs: Caso não exista a pasta você pode criá-la!
 
 Exemplo no GNU/Linux
 
@@ -4321,10 +4342,10 @@ a que está atualmente instalada:
      :ver
 \end{verbatim}
 
-\section{Plugin para LaTeX}
+\section{Plugin para \LaTeX}
 \label{Plugin para LaTeX}
-Um plugin completo para LaTeX está acessível aqui: \url{http://vim-latex.sourceforge.net/}
-Uma vez adicionado o plugin você pode inserir seus `Templates'
+Um plugin completo para \LaTeX está acessível aqui: \url{http://vim-latex.sourceforge.net/}
+Uma vez adicionado o plugin você pode inserir seus {\em templates}
 em:
 
 \begin{verbatim}
@@ -4332,7 +4353,7 @@ em:
 \end{verbatim}
 
 
-\section{Criando folders para arquivos LaTeX}
+\section{Criando folders para arquivos \LaTeX}
 \label{Criando folders para arquivos LaTeX}
 
 \begin{verbatim}
@@ -4340,12 +4361,12 @@ em:
      set foldmethod=marker
 \end{verbatim}
 
-adicionar ``labels'' (marcadores) às seções de um documento latex
+Adicionar marcadores ({\em labels}) às seções de um documento \LaTeX
 \begin{verbatim}
      .s/^\(\\section\)\({.*}\)/\1\2\r\\label\2
 \end{verbatim}
 
-\section{Criando seções latex}\label{Criando seções latex}
+\section{Criando seções \LaTeX}\label{Criando seções latex}
 o comando abaixo substitui
 
 \begin{verbatim}
@@ -4384,7 +4405,7 @@ Para entender este plugin acesse este vídeo:
 \label{Complementação de códigos}
 
 O ``plugin'' snippetsEmu é um misto entre complementação de códigos e
-os chamados modelos ou ``templates''. Insere um trecho de código pronto,
+os chamados modelos ou {\em templates}. Insere um trecho de código pronto,
 mas vai além disso, permitindo saltar para trechos do modelo inserido
 através de um atalho configurável de modo a agilizar o trabalho do
 programador. \url{http://www.vim.org/scripts/script.php?script\_id=1318}
