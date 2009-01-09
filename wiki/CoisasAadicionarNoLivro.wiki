@@ -4,7 +4,7 @@
 {{{
 Se você planeja efetuar mudanças, use este comando para baixar o código via HTTPS:
 # Membros do projeto podem alterar o código
-svn checkout https://vimbook.googlecode.com/svn/trunk/ vimbook --username voyeg3r
+svn checkout https://vimbook.googlecode.com/svn/trunk/ vimbook --username seunome
 
 Quando o sistema pedir senha, entre com seu código. Para obter o seu código
 de acesso visite: http://code.google.com/hosting/settings
