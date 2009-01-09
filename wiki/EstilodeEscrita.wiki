@@ -1,0 +1,14 @@
+#summary Estilo de escrita usado no livro
+
+= Introdução =
+
+Definir um estilo de escrita é fundamental para que o trabalho, especialmente os colaborativos, fique coeso. Este documento visa definir as _regras de estilo_ e também, para os casos mais relaxados, as _recomendações_ de escrita.
+
+
+= Regras de estilo =
+
+   * Escrever na forma *impessoal*. Isto é, em vez de "_você deve_ ..." (2ª pessoa) ou "_nós devemos_ ..." (3ª pessoa), escrever "*deve-se* ...".
+   * Evitar _estrangeirismo_ sempre quando não ficar forçoso. 
+   * Palavras estrangeiras devem ser escritas em _itálico_. Use `{\em expressão}` no LaTeX.
+
+= Recomendações =
