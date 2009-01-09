@@ -1,5 +1,7 @@
 #summary One-sentence summary of this page.
 
+==Um capítulo sobre instalação no windows e no Linux==
+
 ==Para adicionar ao README==
 {{{
 Se você planeja efetuar mudanças, use este comando para baixar o código via HTTPS:
