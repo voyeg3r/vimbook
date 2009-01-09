@@ -1,6 +1,11 @@
 #summary One-sentence summary of this page.
 
 ==Um capítulo sobre instalação no windows e no Linux==
+Instalação no windows
+http://www.vim.org/download.php
+
+Instalação no linux
+ * ubuntu apt-get install vim-gnome vim-doc
 
 ==Para adicionar ao README==
 {{{
