@@ -2,7 +2,7 @@
 
 ==Um capítulo sobre instalação no windows e no Linux==
 Instalação no windows
-http://www.vim.org/download.php
+ * http://www.vim.org/download.php
 
 Instalação no linux
  * ubuntu apt-get install vim-gnome vim-doc
