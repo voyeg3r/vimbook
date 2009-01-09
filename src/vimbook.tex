@@ -11,20 +11,14 @@
 \usepackage[portuges]{babel}
 \usepackage[pdftex]{color,graphicx}
 \usepackage[T1]{fontenc} %fonte computer modern
-%font palatino
-%\usepackage[T1]{fontenc}
-%\usepackage[sc]{mathpazo}
-%\linespread{1.05} % palatino necessita de valores diferentes
 \usepackage{graphicx}
 \usepackage{url}
 \RequirePackage{enumerate} %extensão para o pacote enumerate
 \usepackage{marvosym} % gera alguns símbolos
 \usepackage{hyperref} % gera os links no pdf
-%\usepackage{mathdesign}
 \usepackage{pifont} % simbolos de setas
 \usepackage{hyperref}
 \usepackage{fancyhdr}
-%\usepackage{bookman}
 
 \hypersetup{backref=true,pdfpagemode=UseOutlines,colorlinks=true,a5paper,
 breaklinks=true,hyperindex,linkcolor=blue,anchorcolor=black,citecolor=green,
@@ -48,10 +42,6 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 
 \newcommand{\titulo}{\Huge \sc Pequeno guia do Vim}
 
-%\title{Livro do Vim}
-%\author{Sérgio Luiz Araújo Silva}
-%\date{\today}
-% insere um simbolo
 \newcommand{\dica}[1]{{{\large \ding{42}}}}
 
 \setlength{\parindent}{0em}
@@ -72,13 +62,6 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
    {\LARGE{\bf{\titulo}}} \\
    \vspace{-1mm}
    \rule{12cm}{1mm} \\
-
-%               \begin{center}
-%   {\Large{\em{Sérgio Luiz Araújo Silva}}}\\
-%         voyeg3r@gmail.com \\
-%         \vspace{0.5cm}
-%       {\Large{\today}}
-%           \end{center}
 
 % logo do Vim
   \vspace{2cm}
@@ -104,12 +87,6 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
           \url{http://code.google.com/p/vimbook}
 \end{center}
         
-%          Este trabalho é a compilação do livro sobre o Vim acessível no site:
-%      \url{http://pt.wikibooks.org/wiki/Vim} usando como ferramenta o \LaTeX\,
-%      pode e deve ser melhorado para
-%        que o Software Livre cresça cada vez mais!  No meu
-%       blog\footnote{http://vivaotux.blogspot.com} costumo postar dicas sobre
-%    o Vim, shell script, sed, etc.
    \end{minipage} \\
    \end{flushright}
 
@@ -144,22 +121,21 @@ $\vdots$ & $\vdots$ \\
 
 O ``Vim'' é um editor extremamente configurável, criado para permitir a edição
 de textos de forma eficiente. Também é um melhoramento do editor ``Vi'', um
-tradicional programa dos sistemas Unix. Possui uma série de mudanças em relação
-a este último. O próprio slogan do Vim é: ``Vi IMproved'', ou seja, Vi Melhorado.  O Vim é
-tão conhecido e respeitado entre programadores, e tão útil para programação,
-que muitos o consideram uma verdadeira ``IDE\footnote{Ambiente de
-desenvolvimento}''.
+tradicional programa dos sistemas Unix. Possui uma série de mudanças em
+relação a este último. O próprio slogan do Vim é {\em Vi IMproved}, ou seja,
+{\em Vi Melhorado}.  O Vim é tão conhecido e respeitado entre programadores, e tão
+útil para programação, que muitos o consideram uma verdadeira
+``IDE\footnote{Ambiente Integrado de desenvolvimento.}''.
 
 Ele é capaz de reconhecer mais de 500 sintaxes de linguagens de programação e
 marcação, possui mapeamento para teclas, macros, abreviações, busca por
-{\em{Expressões Regulares}}\footnote{http://guia-er.sourceforge.net/guia-er.html},
-%\url{run:caminhodoficheiro}{texto}
-entre outras facilidades. Conta com uma comunidade bastante atuante e é, ao
-lado do Emacs\footnote{http://www.gnu.org/software/emacs/} um dos editores mais
-usados nos sistemas GNU/Linux\footnote{O kernel Linux sem os programas GNU não serviria para muita coisa},
-mas pode ser também instalado em outros sistemas,
-como o Windows e o Macintosh.  O ``site'' oficial do Vim é:
-\url{http://www.vim.org}.
+{\em{Expressões
+Regulares}}\footnote{http://guia-er.sourceforge.net/guia-er.html}, entre
+outras facilidades. Conta com uma comunidade bastante atuante e é, ao lado do
+Emacs\footnote{http://www.gnu.org/software/emacs/} um dos editores mais usados
+nos sistemas GNU/Linux\footnote{O kernel Linux sem os programas GNU não
+serviria para muita coisa.}, mas pode ser também instalado em outros sistemas,
+como o Windows e o Macintosh.  O site oficial do Vim é \url{http://www.vim.org}.
 
 
 \section{Dicas iniciais}\label{Dicas iniciais}
@@ -173,7 +149,7 @@ Para chamar o Vim digite num terminal:
 
 \begin{verbatim}
      vim meu_texto.txt
-end{verbatim}
+\end{verbatim}
 
 \section{Ajuda integrada}
 
@@ -205,8 +181,6 @@ Se você estiver realmente desesperado, digite:
 \begin{verbatim}
      :help!
 \end{verbatim}
-
-
 
 \section{Em caso de erros }\label{Em caso de erros }
 Recarregue o arquivo que está sendo editado assim:
@@ -274,16 +248,6 @@ Para sair do novo visual \verb|<Esc>|, mas o Vim tem, em modo normal teclas de d
 
 Imagine as letras acima como teclas de direção, a letra ``k'' é uma seta acima
 a letra ``j'' é uma seta abaixo e assim por diante.
-
-% imagem
-%  \begin{figure}[htb]
-%    \center
-%    \includegraphics{img/setas.png}
-%    \label{setas}
-%    \caption{Setas de direção}
-%\end{figure}
-% fim da imagem
-
 
 \section{Entrando em modo de edição}
 \label{Entrando em modo de edição}
@@ -845,15 +809,14 @@ texto em uma outra posição. Outros comandos:
 \begin{verbatim}
      diw .. apaga palavra mesmo que não esteja posicionado no início
      dip .. apaga o parágrafo atual
-     ..
      d4b .. apaga as quatro palavras anteriores
      dfx .. apaga até o próximo ``x''
      d/casa/+1 - deleta até a linha após a palava casa
 \end{verbatim}
 
 Se você trocar a letra `d' nos comandos acima por `c' de {\em change}
-``mudança'' ao invés de deletar será feita uma mudança de conteúdo.
-Por exemplo:
+(``mudança'') ao invés de deletar será feita uma mudança de conteúdo.  Por
+exemplo:
 
 \begin{verbatim}
      ciw .............. modifica uma palavra
@@ -864,7 +827,7 @@ Por exemplo:
 
 \section{Copiando sem deletar}\label{Copiando sem deletar}
 
-O comando ``y'' ``yank'' permite copiar uma parte do texto para a memória sem deletar.
+O comando ``y'' ({\em yank}) permite copiar uma parte do texto para a memória sem deletar.
 Existe uma semelhança muito grande entre os comandos ``y'' e os comandos ``d'':
 
 \begin{verbatim}
@@ -1050,24 +1013,23 @@ substituições} Buscas e substituições''.
 \section{O arquivo alternativo}
 \label{O arquivo alternativo}
 
-É muito comum você editar um arquivo no Vim, e inocentemente imaginar
-que não vai mais modificar qualquer coisa nele, você então abre um
-novo arquivo:
+É muito comum um usuário concluir a edição em um arquivo no Vim e
+inocentemente imaginar que não vai mais modificar qualquer coisa nele, então
+este usuário abre um novo arquivo:
 
 \begin{verbatim}
      :e novo-arquivo.txt
 \end{verbatim}
 
-Mas não mais que de repente você lembra ``Poxa eu queria colocar mais
-uma linha no arquivo em que estava'' Para estes casos use o atalho
+Mas de repente o usuário lembra que seria necessário adicionar uma linha no
+arquivo recém editado, neste caso usa-se o atalho
 
 \begin{verbatim}
      Ctrl-6
 \end{verbatim}
 
-Dica: Este comando é booleano, ou seja, cada vez que você pressionar o atalho
-ele pula para o último arquivo editado!
-
+cuja função é alternar entre o arquivo atual e o último editado. Para retornar
+ao outro arquivo basta portanto pressionar \verb|Ctrl-6| novamente.
 
 \section{Incrementando números em modo normal}\label{Incrementando números em modo normal}
 Posicione o cursor sobre um número e pressione
@@ -1702,14 +1664,6 @@ aplicações. Finalmente, o registro
 \end{verbatim}
 armazena o texto colado pela operação mais recente de ``arrastar-e-soltar''
 ({\em drag-and-drop}). 
-
-%O registro \verb|"*| é responsável por armazenar o último texto selecionado
-%(p.e., através do mouse). O registro \verb|"+| é o denominado ``área de transferência'',
-%normalmente utilizado para se transferir conteúdos entre aplicações---este
-%registro é preenchido, por exemplo, usando-se a típica combinação {\tt Ctrl-v}
-%encontrada em muitas aplicações. Já o registro \verb|"~| armazena o texto
-%colado pela operação mais recente de ``arrastar-e-soltar'' ({\em
-%drag-and-drop}). 
 
 \section{Registro buraco negro "\_}
 \label{Registro buraco negro}
@@ -3077,40 +3031,36 @@ arquivo HTML é possível usar a ferramenta ``tildy'', do W3C:
 \end{verbatim}
 
 \section{Compilando e verificando erros}
-Se o seu projeto já possui um Makefile, então você pode fazer uso do comando :make
-para poder compilar seus programas no conforto de seu Vim:
-%Uma ferramenta bastante útil é a de poder compilar seus programa de dentro do Vim
-%e ainda verificar os erros e warnings. O :make executará o comando que está
-%definido na variável makeprg, que normalmente é o comando make mesmo:
+Se o seu projeto já possui um Makefile, então você pode fazer uso do comando
+{\tt :make} para poder compilar seus programas no conforto de seu Vim:
 
 \begin{verbatim}
 		:make
 \end{verbatim}
 
-A vantagem de fazer isso é poder usar outra ferramenta bastante interessante, a jenela
-de quickfix:
-%Se durante a sua compilação você obteve algum erro ou warning, você poderá abrir
-%uma janela chamada de quickfix:
+A vantagem de fazer isso é poder usar outra ferramenta bastante interessante, a janela
+de {\em quickfix}:
 
 \begin{verbatim}
 		:cwindow
 \end{verbatim}
 
-O comando cwindow abrirá uma janela em um split horizontal com a listagem de erros e warnings.
-Você poderá navegar pela lista usando os cursores e ir diretamente para o arquivo e linha da 
-ocorrência.
+O comando {\tt cwindow} abrirá uma janela em um {\em split} horizontal com a
+listagem de erros e {\em warnings}.  Você poderá navegar pela lista usando os
+cursores e ir diretamente para o arquivo e linha da ocorrência.
 
 \section{Grep}
-Do mesmo jeito que você usa grep na sua linha de comando você pode usar o grep interno
-do Vim. Exatamente do mesmo jeito:
+
+Do mesmo jeito que você usa {\em grep} na sua linha de comando você pode usar
+o {\em grep} interno do Vim. Exatamente do mesmo jeito:
 
 \begin{verbatim}
 		:grep <caminho> <padrão> <opções>
 \end{verbatim}
 
-Use a janela de quickfix aqui também para exibir os resultados do grep e poder ir diretamente 
+Use a janela de {\em quickfix} aqui também para exibir os resultados do {\em
+grep} e poder ir diretamente 
 a eles.
-%Use cwindow e a janela de quickfix para exibir os resultados e poder ir diretamente a eles.
 
 \section{Referências}
 * \url{http://www.dicas-l.com.br/dicas-l/20070119.php}
