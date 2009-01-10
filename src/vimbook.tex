@@ -1962,9 +1962,9 @@ Posiciona o cursor três linhas após a ocorrência da palavra ``teste'' \\
 \section{Usando ``Expressões Regulares'' em buscas}
 
 \begin{verbatim}
-     / ............ inicia uma busca (modo normal)
-     \%x69 ........ código da letra `i'
-     /\%x69  ...... localiza a letra `i' - hexadecimal 069
+     / ........... inicia uma busca (modo normal)
+     \%x69 ....... código da letra `i'
+     /\%x69 ...... localiza a letra `i' - hexadecimal 069
      
      \d .......... localiza números
      ^ ........... começo de linha
@@ -1983,10 +1983,10 @@ Para aprender mais sobre Expressões Regulares leia:
   \item :help regex
 \end{enumerate}
 
-Um meio mais rápido para encontrar a próxima ocorrência de
-uma palavra sob o cursor, é teclar \verb|*|. Para encontrar uma ocorrência
-anterior da palavra sob o cursor, tecle \verb|#|. (Para isso, o cursor deve
-estar posicionado sobre a palavra que deseja procurar.)
+Um meio mais rápido para encontrar a próxima ocorrência de uma palavra sob o
+cursor é teclar \verb|*|. Para encontrar uma ocorrência anterior da palavra
+sob o cursor, tecle \verb|#|---em ambos os casos o cursor deve estar
+posicionado sobre a palavra que deseja procurar.
 
 \section{Editando em nova janela}\label{Editando em nova janela}
 
@@ -1994,7 +1994,7 @@ Caso deseje manter o arquivo atual e editar 'simultaneamente' outro arquivo
 pode dividir a janela assim:
 
 \begin{verbatim}
-     Ctrl-w n
+     Ctrl-w-n
 \end{verbatim}
 
 Para mais detalhes sobre janelas acesse o capítulo
@@ -2002,37 +2002,37 @@ Para mais detalhes sobre janelas acesse o capítulo
 com janelas}.
 
 
-\section{inserindo linha antes e depois}
+\section{Inserindo linha antes e depois}
 
-Estava editando este livro que você está lendo e queria que as linhas
-indentadas passassem a ter uma linha em branco antes e depois, assim cheguei a
-este resultado:
+Suponha que se queira um comando, considere \verb|,t|, que faça com que a
+linha indentada corrente passe a ter uma linha em branco antes e depois; isto
+pode ser obtido pelo seguinte mapeamento:
 
 \begin{verbatim}
      :map ,t <Esc>:.s/^\(\s\+\)\(.*\)/\r\1\2\r/g<cr>
 \end{verbatim}
      
-     Explicando:
+Explicando:
      
 \begin{verbatim}
+     : ................ entra no modo de comando
+     map ,t ........... mapeia ,t para a função desejada
+     <Esc> ............ ao executar sai do modo de inserção
      s/isto/aquilo/g .. substitui isto por aquilo
-     :  ........... modo de comando (não coloquei no vimrc)
-     map ,t ....... mapeia ,t para a função desejada
-     <Esc> ........ ao executar sai do modo de inserção
-     :  ........... inicia o modo de comando
-     .  ........... na linha corrente
-     s  ........... substitua
-     ^  ........... começo de linha
-     \s\+  ........ um espaço ou mais (barras são escapes)
-     .* ........... qualquer coisa depois
-     \(grupo\) .... agrupo para referenciar com \1
-     \1 ........... repete na substituição o grupo 1
-     \r ........... insere uma quebra de linha
-     g ............ em todas as ocorrências da linha
-     <cr> ......... Enter
+     : ................ inicia o modo de comando
+     . ................ na linha corrente
+     s ................ substitua
+     ^ ................ começo de linha
+     \s\+ ............. um espaço ou mais (barras são escapes)
+     .* ............... qualquer coisa depois
+     \(grupo\) ........ agrupo para referenciar com \1
+     \1 ............... repete na substituição o grupo 1
+     \r ............... insere uma quebra de linha
+     g ................ em todas as ocorrências da linha
+     <cr> ............. Enter
 \end{verbatim}
 
-\section{Obtendo informações do arquivo }
+\section{Obtendo informações do arquivo}
 
 \begin{verbatim}
      ga ............. mostra o código do caractere em decimal hexa e octal
