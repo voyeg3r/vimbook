@@ -23,7 +23,7 @@ de que você tem que estar {\em logado} como administrador da máquina para roda
 
 \section{Instalação no Linux}
 
-Nos sistemas GNU/Linux baseados em Debian\footnote{http://www.debian.org/index.pt.html} basta 
+Nos sistemas GNU/Linux baseados em Debian\footnote{http://www.debian.org/index.pt.html} 
 você precisa: 
 
 \begin{itemize}
