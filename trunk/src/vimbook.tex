@@ -2278,7 +2278,7 @@ incluindo quebras de linha. Buscará as três seqüências:
      World
 \end{verbatim}
 
-* Buscar linhas de até 30 caracteres de comprimento
+Buscar linhas de até 30 caracteres de comprimento
 
 \begin{verbatim}
      /^.\{,30\}$
@@ -2288,13 +2288,13 @@ incluindo quebras de linha. Buscará as três seqüências:
      ^ ...... representa começo de linha
 \end{verbatim}
 
-* Apaga todas as tags html/xml de um arquivo
+Apaga todas as tags html/xml de um arquivo
 
 \begin{verbatim}
      :%s/<[^>]*>//g
 \end{verbatim}
 
-* Apaga linhas vazias
+Apaga linhas vazias
 
 \begin{verbatim}
      :%g/^$/d
@@ -2306,7 +2306,7 @@ Ou
      :%s/^[\ \t]*\n//g
 \end{verbatim}
 
-* Remover duas ou mais linhas vazias entre parágrafos diminuindo para
+Remover duas ou mais linhas vazias entre parágrafos diminuindo para
 uma só linha vazia.
 
 \begin{verbatim}
