@@ -6,11 +6,38 @@ Escrever sobre o comando
 }}}
 
 ==Um capítulo sobre instalação no windows e no Linux==
-Instalação no windows
- * http://www.vim.org/download.php
+{{{
+% Arquivo: capítulos sobre instalação do Gvim no windows 
+% vim:enc=utf8:
+% Criado: seg 12/jan/2009 hs 08:31
+% Last Change: 12-01-2009 08:44:18
+% autor: grupo vimbook -- code.google.com/p/vimbook
 
-Instalação no linux
- * ubuntu apt-get install vim-gnome vim-doc
+\chapter{Instalação do Vim}
+\section{Instalação no Windows}
+
+Há uma versão gráfica do vim instalável para vários sistemas, incluindo o Windows
+podemos encontra-la em \url{http://www.vim.org/download.php#pc}, para instalar basta
+baixar o instalador no link indicado e disparar o instalador com um duplo clique, lembre-se 
+de que você tem que estar {\em logado} como administrador da máquina para rodar o instalador.
+
+\section{Instalação no Linux}
+
+Nos sistemas GNU/Linux baseados em Debian\footnote{http://www.debian.org/index.pt.html} basta 
+você precisa: 
+
+\begin{itemize}
+\item Estar logado com privilégios administrativos
+\item Ter conexão com internet devidamente configurada ou CDs de instalação
+\item executar no terminal os seguintes comandos
+
+\begin{verbatim}
+     apt-get update
+	 apt-get install vim-gnome vim-doc
+\end{verbatim}
+
+\end{itemize}
+}}}
 
 ==Para adicionar ao README==
 {{{
