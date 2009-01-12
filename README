@@ -1,7 +1,7 @@
 Arquivo:  leia-me
 Criado: Qui 08/Jan/2009 hs 20:32
  vim:nolist:
-Last Change: Sex 09 Jan 2009 08:09:15 BRT
+Last Change: Seg 12 Jan 2009 13:37:25 BRT
 autor: groups.google.com.br/group.vimbook
 
 ==============================
@@ -25,6 +25,8 @@ entre no diretório src e execute o comando make:
  make
 
 Se tudo correr bem você terá o livro vimbook.pdf
+mova o arquivo pdf para um local seguro e limpe o repositório
+usando o comando que se segue:
 
 Para limpar os arquivo temporário gerados 
  
