@@ -33,7 +33,7 @@ você precisa:
 
 \begin{verbatim}
      apt-get update
-	 apt-get install vim-gnome vim-doc
+     apt-get install vim-gnome vim-doc
 \end{verbatim}
 
 \end{itemize}
