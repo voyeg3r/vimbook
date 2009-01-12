@@ -26,3 +26,5 @@ Definir um estilo de escrita é fundamental para que o trabalho, especialmente o
    Os conteúdos dentro do ambiente _verbatim_ (`\begin{verbatim} ... \end{verbatim}`) devem ter um deslocamento de *5 espaços* em relação ao começo da linha. Há uma exceção, porém: quando o conteúdo em questão for um trecho de um texto sendo usado para demonstrar algum comando do Vim; neste caso não se usa espaçamento, pois estes podem comprometer a correta funcionalidade do comando (p.e. os comandos `^` e `0`, do modo normal, têm significado distintos dependendo da presença ou ausência de espaços no início da linha).
 
 = Recomendações =
+
+   * Seguir as novas regras da língua portuguesa em função da mudança ortográfica.
