@@ -13,15 +13,15 @@ Escrever sobre o comando
 % Last Change: 12-01-2009 08:44:18
 % autor: grupo vimbook -- code.google.com/p/vimbook
 
-\chapter{Instalação do Vim}
-\section{Instalação no Windows}
+\section{Instalação do Vim}
+\subsection{Instalação no Windows}
 
 Há uma versão gráfica do vim instalável para vários sistemas, incluindo o Windows
 podemos encontra-la em \url{http://www.vim.org/download.php#pc}, para instalar basta
 baixar o instalador no link indicado e disparar o instalador com um duplo clique, lembre-se 
 de que você tem que estar {\em logado} como administrador da máquina para rodar o instalador.
 
-\section{Instalação no Linux}
+\subsection{Instalação no Linux}
 
 Nos sistemas GNU/Linux baseados em Debian\footnote{http://www.debian.org/index.pt.html} 
 você precisa: 
