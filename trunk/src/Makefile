@@ -35,4 +35,4 @@ clean:
 	$(RM) texput.log core
 
 show: $(DOC).pdf
-	xpdf $(DOC).pdf
+	evince $(DOC).pdf
