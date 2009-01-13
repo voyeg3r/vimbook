@@ -5,54 +5,6 @@ Escrever sobre o comando
  :dig
 }}}
 
-==Um capítulo sobre instalação no windows e no Linux==
-{{{
-% Arquivo: capítulos sobre instalação do Gvim no windows 
-% vim:enc=utf8:
-% Criado: seg 12/jan/2009 hs 08:31
-% Last Change: 12-01-2009 08:44:18
-% autor: grupo vimbook -- code.google.com/p/vimbook
-
-\section{Instalação do Vim}
-\subsection{Instalação no Windows}
-
-Há uma versão gráfica do vim instalável para vários sistemas, incluindo o Windows
-podemos encontra-la em \url{http://www.vim.org/download.php#pc}, para instalar basta
-baixar o instalador no link indicado e disparar o instalador com um duplo clique, lembre-se 
-de que você tem que estar {\em logado} como administrador da máquina para rodar o instalador.
-
-\subsection{Instalação no Linux}
-
-Nos sistemas GNU/Linux baseados em Debian\footnote{http://www.debian.org/index.pt.html} 
-você precisa: 
-
-\begin{itemize}
-\item Estar logado com privilégios administrativos
-\item Ter conexão com internet devidamente configurada ou CDs de instalação
-\item executar no terminal os seguintes comandos
-
-\begin{verbatim}
-     apt-get update
-     apt-get install vim-gnome vim-doc
-\end{verbatim}
-
-\end{itemize}
-}}}
-
-==Para adicionar ao README==
-{{{
-Se você planeja efetuar mudanças, use este comando para baixar o código via HTTPS:
-# Membros do projeto podem alterar o código
-svn checkout https://vimbook.googlecode.com/svn/trunk/ vimbook --username seunome
-
-Quando o sistema pedir senha, entre com seu código. Para obter o seu código
-de acesso visite: http://code.google.com/hosting/settings
-
-Acesso anônimo apenas leitura
-# Non-members may check out a read-only working copy anonymously over HTTP.
-svn checkout http://vimbook.googlecode.com/svn/trunk/ vimbook-read-only
-}}}
-
 ==Dividir o documento em capítulos e criar um branch==
 
 ==Adicionar seção ou capítulo sobre vimdiff==
