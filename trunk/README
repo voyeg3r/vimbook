@@ -1,7 +1,7 @@
 Arquivo:  leia-me
 Criado: Qui 08/Jan/2009 hs 20:32
  vim:nolist:
-Last Change: Seg 12 Jan 2009 13:37:25 BRT
+Last Change: Ter 13 Jan 2009 13:05:02 BRT
 autor: groups.google.com.br/group.vimbook
 
 ==============================
@@ -31,4 +31,25 @@ usando o comando que se segue:
 Para limpar os arquivo temporário gerados 
  
  make clean
+
+=================================
+Como contribuir com o projeto?
+=================================
+Há um grupo de discussão no google groups:
+http://groups.google.com.br/group/vimbook
+
+O projeto é hospedado no google-code
+http://code.google.com/p/vimbook
+
+Se você planeja efetuar mudanças, use este comando para baixar o código via HTTPS:
+# Membros do projeto podem alterar o código
+svn checkout https://vimbook.googlecode.com/svn/trunk/ vimbook --username seunome
+
+Quando o sistema pedir senha, entre com seu código. Para obter o seu código
+de acesso visite: http://code.google.com/hosting/settings
+
+Acesso anônimo apenas leitura
+# Non-members may check out a read-only working copy anonymously over HTTP.
+svn checkout http://vimbook.googlecode.com/svn/trunk/ vimbook-read-only
+
 
