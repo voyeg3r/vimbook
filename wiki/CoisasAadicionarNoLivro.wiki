@@ -4,6 +4,7 @@ Setar automaticamente o diretório do buffer como padrão
 (na seção personalização)
 {{{
 set autochdir 
+" quando esta opção está ativa alguns plugins podem não funcionar
 }}}
 
 Escrever sobre o comando 
