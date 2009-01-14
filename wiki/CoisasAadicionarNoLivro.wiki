@@ -1,5 +1,11 @@
 #summary One-sentence summary of this page.
 
+Setar automaticamente o diretório do buffer como padrão
+(na seção personalização)
+{{{
+set autochdir 
+}}}
+
 Escrever sobre o comando 
 {{{
  :dig
