@@ -2449,6 +2449,12 @@ Deletar linhas que não contenham um padrão
      :v/dicas/d  ..... deleta linhas que não contenham 'dicas'
 \end{verbatim}
 
+Incrementar números no começo da linha
+
+\begin{verbatim}
+     :.,20g/^\d/exe "normal! \<c-a>"
+\end{verbatim}
+
 \section{Dicas }
 Para colocar a última busca em uma substituição faça:
 
