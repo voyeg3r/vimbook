@@ -17,7 +17,7 @@ no dia-a-dia, por exemplo:
 	simultaneamente, você mantém três ou quatro arquivos abertos, define
 	algumas macros e algumas variáveis que não estão no vimrc, em uma situação
 	normal se você fechar o vim a quase totalidade dessas informações se perde,
-	com alguma exceção (veja {\em {\verb+:h viminfo+}), mas a lista de arquivos   abertos
+	com alguma exceção (veja {\em \verb+:h viminfo+}), mas a lista de arquivos   abertos
 	se perde, para evitar isto podemos criar uma sessão que pode ser ``carregada''
 	futuramente e que irá restaurar todas as informações, é como um retrato de um
 	momento.''
