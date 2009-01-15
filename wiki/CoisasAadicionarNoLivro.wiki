@@ -1,29 +1,29 @@
-#summary One-sentence summary of this page.
+#summary Espaço temporário para propostas de inclusões e alterações no livro.
 
-==Capítulo ou seção sobre "seções"==
+==Capítulo ou seção sobre "sessões"==
 {{{
-% Arquivo: salvando seções de trabalho
+% Arquivo: salvando sessões de trabalho
 % vim:ft=tex:
 % Criado: qui 15/jan/2009 hs 10:24
 % Last Change: 15-01-2009 10:55:54
 
-\chapter{Salvando seções de trabalho}
-\label{cha:Salvando seções de trabalho}
+\chapter{Salvando sessões de trabalho}
+\label{cha:Salvando sessões de trabalho}
 
-Uma seção do Vim guarda uma série de informações que lhe poupam trabalho
+Uma sessão do Vim guarda uma série de informações que lhe poupam trabalho
 no dia-a-dia, por exemplo:
 \begin{citation}
 	``Você esta trabalhando em um projeto no qual edita vários arquivos
 	simultaneamente, você mantém três ou quatro arquivos abertos, define
 	algumas macros e algumas variáveis que não estão no vimrc, em uma situação
 	normal se você fechar o vim a quase totalidade dessas informações se perde,
-	com alguma excessão (veja {\em {\tt :h viminfo}}), mas a lista de arquivos abertos
-	se perde, para evitar isto podemos criar uma seção que pode ser ``carregada''
+	com alguma exceção (veja {\em {\tt :h viminfo}}), mas a lista de arquivos abertos
+	se perde, para evitar isto podemos criar uma sessão que pode ser ``carregada''
 	futuramente e que irá restaurar todas as informações, é como um retrato de um
 	momento.''
 \end{citation}
 
-\section{O que uma seção armazena?}
+\section{O que uma sessão armazena?}
 \begin{itemize}
  \item Mapeamentos globais
  \item Variáveis globais
@@ -32,30 +32,30 @@ no dia-a-dia, por exemplo:
  \item Posição e tamanho da janela
 \end{itemize}
 
-\section{Criando a primeira seção}
-\label{sec:Criando a primeira seção}
+\section{Criando a primeira sessão}
+\label{sec:Criando a primeira sessão}
 
 \begin{verbatim}
-     :mksession secao1.vim ......... cria a seção 1
-     :mksession! secao1.vim ........ sobrescreve a seção 1
-     :so ~/.vim/secoes/secao1.vim .. carrega uma seção
+     :mksession secao1.vim ......... cria a sessão 1
+     :mksession! secao1.vim ........ sobrescreve a sessão 1
+     :so ~/.vim/secoes/secao1.vim .. carrega uma sessão
 \end{verbatim}
 
-Após restaurar a seção, o nome da seção corrente é acessível através 
+Após restaurar a sessão, o nome da sessão corrente é acessível através 
 de uma variável interna  ``\verb+v:this_session+'', caso queira exibir 
-na linha de comando o nome da seção ativa (incluindo o caminho), faço:
+na linha de comando o nome da sessão ativa (incluindo o caminho), faço:
 
 \begin{verbatim}
      :echo v:this_session
 \end{verbatim}
 
-Podemos fazer mapeamentos para atualizar a seção atual e exibir detalhes da
+Podemos fazer mapeamentos para atualizar a sessão atual e exibir detalhes da
 mesma:
 
 \begin{verbatim}
-     "mapeamento para gravar seção
+     "mapeamento para gravar sessão
      nmap <F4> :wa<Bar>exe "mksession! " . v:this_session<CR>:so ~/sessions/
-     "mapeamento para exibir a seção ativa
+     "mapeamento para exibir a sessão ativa
      map <s-F4> <esc>:echo v:this_session<cr>
 \end{verbatim}
 
@@ -81,7 +81,7 @@ Escrever sobre o comando
 ==Adicionar seção ou capítulo sobre vimdiff==
 {{{
   vimdiff -o arquivo1 arquivo2 .... exibe diferenças um acima do outro
-  ]c .............................. mostra próxima difrença
+  ]c .............................. mostra próxima diferença
   vim -d .......................... mostra diferença entre dois arquivos
 }}}
 
