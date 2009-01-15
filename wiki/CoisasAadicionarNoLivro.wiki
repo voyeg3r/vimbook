@@ -1,68 +1,6 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
-==Capítulo ou seção sobre "sessões"==
-{{{
-% Arquivo: salvando sessões de trabalho
-% vim:ft=tex:
-% Criado: qui 15/jan/2009 hs 10:24
-% Last Change: 15-01-2009 10:55:54
 
-\chapter{Salvando sessões de trabalho}
-\label{cha:Salvando sessões de trabalho}
-
-Uma sessão do Vim guarda uma série de informações que lhe poupam trabalho
-no dia-a-dia, por exemplo:
-\begin{citation}
-	``Você esta trabalhando em um projeto no qual edita vários arquivos
-	simultaneamente, você mantém três ou quatro arquivos abertos, define
-	algumas macros e algumas variáveis que não estão no vimrc, em uma situação
-	normal se você fechar o vim a quase totalidade dessas informações se perde,
-	com alguma exceção (veja {\em \verb+:h viminfo+}), mas a lista de arquivos   abertos
-	se perde, para evitar isto podemos criar uma sessão que pode ser ``carregada''
-	futuramente e que irá restaurar todas as informações, é como um retrato de um
-	momento.''
-\end{citation}
-
-\section{O que uma sessão armazena?}
-\begin{itemize}
- \item Mapeamentos globais
- \item Variáveis globais
- \item Arquivos abertos incluindo a lista de buffers
- \item Diretório corrente \verb+:h curdir+
- \item Posição e tamanho da janela
-\end{itemize}
-
-\section{Criando a primeira sessão}
-\label{sec:Criando a primeira sessão}
-
-\begin{verbatim}
-     :mksession secao1.vim ......... cria a sessão 1
-     :mksession! secao1.vim ........ sobrescreve a sessão 1
-     :so ~/.vim/secoes/secao1.vim .. carrega uma sessão
-\end{verbatim}
-
-Após restaurar a sessão, o nome da sessão corrente é acessível através 
-de uma variável interna  ``\verb+v:this_session+'', caso queira exibir 
-na linha de comando o nome da sessão ativa (incluindo o caminho), faço:
-
-\begin{verbatim}
-     :echo v:this_session
-\end{verbatim}
-
-Podemos fazer mapeamentos para atualizar a sessão atual e exibir detalhes da
-mesma:
-
-\begin{verbatim}
-     "mapeamento para gravar sessão
-     nmap <F4> :wa<Bar>exe "mksession! " . v:this_session<CR>:so ~/sessions/
-     "mapeamento para exibir a sessão ativa
-     map <s-F4> <esc>:echo v:this_session<cr>
-\end{verbatim}
-
-
-
-
-}}}
 
 Setar automaticamente o diretório do buffer como padrão
 (na seção personalização)
