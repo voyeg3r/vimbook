@@ -126,40 +126,46 @@ tradicional programa dos sistemas Unix. Possui uma série de mudanças em
 relação a este último. O próprio slogan do Vim é {\em Vi IMproved}, ou seja,
 {\em Vi Melhorado}.  O Vim é tão conhecido e respeitado entre programadores, e tão
 útil para programação, que muitos o consideram uma verdadeira
-``IDE\footnote{Ambiente Integrado de desenvolvimento.}''.
+``IDE\footnote{Ambiente Integrado de Desenvolvimento.}''.
 
 Ele é capaz de reconhecer mais de 500 sintaxes de linguagens de programação e
 marcação, possui mapeamento para teclas, macros, abreviações, busca por
 {\em{Expressões
 Regulares}}\footnote{http://guia-er.sourceforge.net/guia-er.html}, entre
 outras facilidades. Conta com uma comunidade bastante atuante e é, ao lado do
-Emacs\footnote{http://www.gnu.org/software/emacs/} um dos editores mais usados
+Emacs\footnote{http://www.gnu.org/software/emacs/}, um dos editores mais usados
 nos sistemas GNU/Linux\footnote{O kernel Linux sem os programas GNU não
-serviria para muita coisa.}, mas pode ser também instalado em outros sistemas,
-como o Windows e o Macintosh.  O site oficial do Vim é \url{http://www.vim.org}.
+serviria para muita coisa.}, embora esteja também disponível em outros sistemas,
+como o Windows e o Macintosh. O site oficial do Vim é \url{http://www.vim.org}.
 
 \section{Instalação do Vim}
+
 \subsection{Instalação no Windows}
 
-Há uma versão gráfica do vim instalável para vários sistemas, incluindo o Windows,
-podemos encontra-la em \url{http://www.vim.org/download.php#pc}, para instalar basta
-baixar o instalador no link indicado e dispara-lo com um duplo clique, lembre-se 
-de que você tem que estar {\em logado} como administrador da máquina para rodar o instalador.
+Há uma versão gráfica do Vim disponível para vários sistemas, incluindo o Windows;
+esta versão pode ser encontrada em \url{http://www.vim.org/download.php#pc}. 
+Para instalá-lo basta baixar o instalador no link indicado e dispará-lo com um
+duplo clique (este procedimento requer privilégios de administrador).
 
-\subsection{Instalação no Linux}
+\subsection{Instalação no GNU/Linux}
 
-Nos sistemas GNU/Linux baseados em Debian\footnote{http://www.debian.org/index.pt.html} 
-você precisa: 
-
+A maioria das distribuições GNU/Linux traz o Vim em seus repositórios, sendo
+que é bastante comum o Vim já vir incluído na instalação típica da distribuição.
+A forma de instalação preferível depende do Vim:
 \begin{itemize}
-\item Estar logado com privilégios administrativos
-\item Ter conexão com internet devidamente configurada ou CDs de instalação
-\item executar no terminal os seguintes comandos
+\item Já vir instalado por {\em default} -- neste caso nada precisa ser feito.
 
-\begin{verbatim}
-     apt-get update
-     apt-get install vim-gnome vim-doc
-\end{verbatim}
+\item Estar disponível no repositório mas não instalado -- em distribuições
+derivadas da Debian GNU/Linux\footnote{http://www.debian.org/index.pt.html},
+a instalação do Vim através dos repositórios é usualmente executada
+digitando-se {\tt `apt-get install vim'}\footnote{Recomenda-se também instalar
+a documentação em HTML do Vim: {\tt `apt-get install vim-doc'}} em um {\em terminal} (este procedimento
+requer privilégios de administrador e, tipicamente, conexão com a internet).
+
+\item Não estar disponível no repositório da distribuição -- cenário
+improvável, mas
+nas sua ocorrência o Vim pode ser instalado através da compilação do
+código-fonte; basta seguir as instruções em \url{http://www.vim.org/download.php}.
 
 \end{itemize}
 
