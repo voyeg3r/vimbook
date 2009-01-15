@@ -17,9 +17,11 @@ Definir um estilo de escrita é fundamental para que o trabalho, especialmente o
 
    Usar `Modificador-tecla`. Por exemplo: 
       * `Ctrl-a`: modificador *Ctrl* junto com a tecla *a*
-      * `Shift-u`: modificador *Shift* junto com a tecla *u*
+      * `Shift-u`: modificador *Shift* junto com a tecla *u* (no entanto, prefira usar apenas a letra maiúscula *U*, a não ser que se queira destacar o uso do `Shift`)
       * `Ctrl-Alt-c`: modificadores *Ctrl* e *Alt* juntos com a tecla *c*
       * `Ctrl-a-b`: modificador *Ctrl* junto com as teclas *a* e *b*
+
+   Letra _minúscula_ é diferente de letra _maiúscula_. Assim, a tecla *J*, por exemplo, tem o mesmo significado que `Shift-j`, mas prefira a primeira versão.
 
 == Formatação do ambiente _verbatim_ ==
 
