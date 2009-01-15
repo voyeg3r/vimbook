@@ -1,12 +1,13 @@
-#Links e dicas sobre subversion.
+#summary Links e dicas sobre Subversion.
 
 =Introdução=
-Um bom manual do svn pode ser encontrado aqui, 
-ele tem muito mais que o básico para usar svn, 
-eu estou lendo e digo que vale a pena!
+
+Um bom manual do _Subversion_ (*svn*), o sistema de controle de versões usado
+neste projeto, pode ser encontrado no link abaixo. Ele tem muito mais do que o
+básico para usar *svn*, vale a pena.
 
 http://code.google.com/p/svnbook-pt-br/
 
-Plugin para o vim: 
+Plugin para o Vim: 
  * http://code.google.com/p/vcscommand/
  * http://www.vim.org/scripts/script.php?script_id=90
