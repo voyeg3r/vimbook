@@ -45,8 +45,9 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 \newcommand{\dica}[1]{{{\large \ding{42}}}}
 
 \setlength{\parindent}{0em}
+\setlength{\parskip}{5pt plus 1pt minus 1pt} 
+
 \begin{document}
-%\maketitle
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,}
 
 %%%%%%%%%%%%%%%%%%%% Título do documento %%%%%%%%%%%%%%%%%%%%%%%
@@ -3090,6 +3091,83 @@ a eles.
 \section{Referências}
 * \url{http://www.dicas-l.com.br/dicas-l/20070119.php}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Salvando Sessões de Trabalho}
+\label{cha:Salvando Sessões de Trabalho}
+
+Suponha a situação em que um usuário está trabalhando em um projeto no qual
+vários arquivos são editados simultaneamente; quatro arquivos estão abertos,
+algumas macros foram criadas e variáveis que não constam no \verb|vimrc| foram
+definidas. Em uma situação normal, se o Vim for fechado a quase totalidade
+dessas informações se perde\footnote{Algumas informações, no entanto, são
+automaticamente armazenadas no arquivo {\tt viminfo}; veja {\tt :h viminfo} }; 
+para evitar isto uma sessão pode ser criada, gerando-se um
+``retrato do estado atual'', e então restaurada futuramente pelo
+usuário---na prática é como se o usuário não tivesse saído do editor. 
+
+Uma sessão do Vim guarda, portanto, uma série de informações sobre a edição
+corrente, de modo a permitir que o usuário possa restaurá-la quando desejar.
+Sessões são bastante úteis, por exemplo, para se alternar entre diferentes
+projetos, carregando-se rapidamente os arquivos e definições relativas a cada
+projeto.
+
+\section{O que uma sessão armazena?}
+
+Uma sessão é composta das seguintes informações:
+
+\begin{itemize}
+ \item Mapeamentos globais
+ \item Variáveis globais
+ \item Arquivos abertos incluindo a lista de {\it buffers}
+ \item Diretório corrente ({\tt :h curdir})
+ \item Posição e tamanho das janelas (o leiaute) 
+\end{itemize}
+
+\section{Criando sessões}
+\label{sec:Criando sessões}
+
+Sessões são criadas através do comando \verb|:mksession|:
+
+\begin{verbatim}
+     :mksession sessao.vim .... cria a sessão e armazena-a em sessao.vim
+     :mksession! sessao.vim ... salva a sessão e sobrescreve-a em sessao.vim
+\end{verbatim}
+
+\section{Restaurando sessões}
+
+Após gravar sessões, elas podem ser carregadas ao iniciar o Vim:
+
+\begin{verbatim}
+     vim -S sessao.vim
+\end{verbatim}
+
+ou então de dentro do próprio Vim (no modo de comando):
+
+\begin{verbatim}
+     :so sessao.vim
+\end{verbatim}
+
+Após restaurar a sessão, o nome da sessão corrente é acessível através de uma
+variável interna ``\verb+v:this_session+''; caso queira-se exibir na linha de
+comando o nome da sessão ativa (incluindo o caminho), faz-se:
+
+\begin{verbatim}
+     :echo v:this_session
+\end{verbatim}
+
+Podemos fazer mapeamentos para atualizar a sessão atual e exibir detalhes da
+mesma:
+
+\begin{verbatim}
+     "mapeamento para gravar sessão
+     nmap <F4> :wa<Bar>exe "mksession! " . v:this_session<CR>:so ~/sessions/
+
+     "mapeamento para exibir a sessão ativa
+     map <s-F4> <esc>:echo v:this_session<cr>
+\end{verbatim}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Como editar preferências no Vim}\label{cha:Como editar preferências no Vim}
 O arquivo de preferências do Vim é ``vimrc'', um arquivo oculto que
 pode ser criado no {\em profile} do usuário.
