@@ -20,7 +20,7 @@ no dia-a-dia, por exemplo:
 	com alguma excessão (veja {\em {\tt :h viminfo}}), mas a lista de arquivos abertos
 	se perde, para evitar isto podemos criar uma seção que pode ser ``carregada''
 	futuramente e que irá restaurar todas as informações, é como um retrato de um
-	momento.
+	momento.''
 \end{citation}
 
 \section{O que uma seção armazena?}
