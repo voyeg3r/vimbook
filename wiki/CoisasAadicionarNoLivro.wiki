@@ -1,6 +1,9 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
-
+{{{
+Diretório do google sobre o vim (fontes de pesquisa)
+http://directory.google.com/Top/Computers/Software/Editors/Vi/
+}}}
 
 Setar automaticamente o diretório do buffer como padrão
 (na seção personalização)
