@@ -7,7 +7,7 @@ projeto.
 ==Promova o grupo==
 [http://groups.google.com.br/group/vimbook/manage_promote]
 
-= Introducão =
+= Introdução =
 
 == Estrutura do diretório de trabalho ==
 
@@ -42,30 +42,21 @@ Primeiramente é preciso fazer o _checkout_ inicial; este passo é feito
 normalmente apenas uma única vez. A dinâmica de trabalho então concentra-se no
 ciclo:
 
-   # *svn update* (atualiza o diretório de trabalho para a versão mais
-   recente)
-   # *Edição* do projeto através da modificação/adição de arquivos e *teste* das
-   alterações (verificar o PDF resultante)
-      * adicionou um novo arquivo fonte? Então use o `svn add`
-   # Submeter as alterações realizadas (`svn commit -m 'Descrição das alterações'`)
-      * alguém mexeu no mesmo arquivo neste interim e o svn acusou conflito?
-      Não se preocupe, problemas de conflito virtualmente só ocorrem quando as
-      alterações são feitas no mesmo trecho do arquivo. Dê um *svn update*
-      para instruir o svn a incorporar as mudanças do outro usuário nas suas;
-      cheque então o arquivo e confirme se está correto (caso não esteja
-      modifique-o), teste o PDF, e finalmente submeta as alterações
-      (_commit_).
-   # Retorne ao _passo 1_ e repita o ciclo para novas modificações
+1) *svn update* (atualiza o diretório de trabalho para a versão mais recente)
+
+2) *Edição* do projeto através da _modificação/adição_ de arquivos e *teste* das alterações (verificar o PDF resultante)
+      * Adicionou um novo arquivo fonte? Então use o comando `svn add`
+
+3) Submeter as alterações realizadas (`svn commit -m 'Descrição das alterações'`)
+      * Alguém mexeu no mesmo arquivo neste interim e o svn acusou conflito? Não se preocupe, problemas de conflito virtualmente só ocorrem quando as alterações são feitas no mesmo trecho do arquivo. Dê um *svn update* para instruir o svn a incorporar as mudanças do outro usuário nas suas; cheque então o arquivo e confirme se está correto (caso não esteja modifique-o), teste o PDF, e finalmente submeta de novo as alterações (_commit_).
+
+4) Retorne ao _Passo *1*_ e repita o ciclo para novas modificações
 
 === Observações ===
 
-Em princípio deve-se colocar os arquivos descompactados. Não coloque os
-arquivos temporários gerados pelo LaTeX.
+Em princípio deve-se colocar os arquivos descompactados. Não coloque os arquivos temporários gerados pelo LaTeX.
 
-No diretório 'src' fica os arquivos fontes necessários para gerar o "binário",
-neste caso o PDF. Assim como os binários de arquivos executáveis, não acho
-apropriado colocarmos o PDF sob o controle do SVN; é melhor publicarmos apenas
-nos _releases_ oficiais.
+No diretório 'src' fica os arquivos fontes necessários para gerar o "binário", neste caso o PDF. Assim como os binários de arquivos executáveis, não acho apropriado colocarmos o PDF sob o controle do SVN; é melhor publicarmos apenas nos _releases_ oficiais.
 
 
 == Coisas a adicionar/modificar no livro ==
