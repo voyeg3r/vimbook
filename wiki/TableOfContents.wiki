@@ -47,7 +47,7 @@ ciclo:
 2) *Edição* do projeto através da _modificação/adição_ de arquivos e *teste* das alterações (verificar o PDF resultante)
       * Adicionou um novo arquivo fonte? Então use o comando `svn add`
 
-3) Submeter as alterações realizadas (`svn commit -m 'Descrição das alterações'`)
+3) *Submeter* as alterações realizadas (`svn commit -m 'Descrição das alterações'`)
       * Alguém mexeu no mesmo arquivo neste interim e o svn acusou conflito? Não se preocupe, problemas de conflito virtualmente só ocorrem quando as alterações são feitas no mesmo trecho do arquivo. Dê um *svn update* para instruir o svn a incorporar as mudanças do outro usuário nas suas; cheque então o arquivo e confirme se está correto (caso não esteja modifique-o), teste o PDF, e finalmente submeta de novo as alterações (_commit_).
 
 4) Retorne ao _Passo *1*_ e repita o ciclo para novas modificações
