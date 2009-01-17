@@ -804,8 +804,8 @@ você estará em modo normal, assim podem pressionar a tecla ``\verb+m+''
 seguida de uma das letras do alfabeto
 
 \begin{verbatim}
-     ma ....... cria uma marca 'a'
-     `a ....... move o cursor para a marca 'a'
+     ma ....... cria uma marca `a'
+     `a ....... move o cursor para a marca `a'
 \end{verbatim}
 
 \section{Marcas globais}
@@ -903,7 +903,7 @@ encontra-se o cursor, ou ``p'' para colar o texto na posição imediatamente
 após o cursor.
 
 \begin{verbatim}
-     vip .... adiciona seleção visual ao parágrafo atual 'inner paragraph'
+     vip .... adiciona seleção visual ao parágrafo atual `inner paragraph'
      yip .... copia o parágrafo atual
      yit .... copia a tag agual `inner tag' útil para arquivos html xml
 \end{verbatim}
@@ -1024,7 +1024,7 @@ O comando acima move (`m') da linha 10 até a linha 20 para o final \verb|$|.
      :g /palavra/ m 0
 \end{verbatim}
 
-Move as linhas contendo 'palavra' para o começo (linha zero)
+Move as linhas contendo `palavra' para o começo (linha zero)
 
 
 \begin{verbatim}
@@ -1240,7 +1240,7 @@ Para sair do editor, salvando o arquivo atual, digite :x (ou :wq).
 
 \begin{verbatim}
      :w ............................ salva
-     :w 'novonome' ................. salvar como
+     :w `novonome' ................. salvar como
      :wq  .......................... salva e sai'
      :saveas nome .................. salvar como
      :x ............................ salva se existirem modificações
@@ -1538,7 +1538,7 @@ começo da linha este recurso chama-se {\em modeline}, leia mais na seção
      [z .......... move o cursor para início da dobra aberta
      ]z .......... move o cursor para o fim da dobra aberta
      zi .......... desabilita ou habilita as dobras
-     zm, zr ...... diminui/aumenta nível da dobra 'fdl'
+     zm, zr ...... diminui/aumenta nível da dobra `fdl'
      :set fdl=0 .. nível da dobra 0 (foldlevel)
 \end{verbatim}
 
@@ -2033,7 +2033,7 @@ posicionado sobre a palavra que deseja procurar.
 
 \section{Editando em nova janela}\label{Editando em nova janela}
 
-Caso deseje manter o arquivo atual e editar 'simultaneamente' outro arquivo
+Caso deseje manter o arquivo atual e editar `simultaneamente' outro arquivo
 pode dividir a janela assim:
 
 \begin{verbatim}
@@ -2879,7 +2879,7 @@ podemos solucionar nosso problema:
 
 \begin{verbatim}
      <Esc> ....... para garantir que estamos no modo normal
-     qa .......... inicia a gravação da macro 'a'
+     qa .......... inicia a gravação da macro `a'
      I ........... entra no modo de inserção no começo da linha
      #include " .. insere #include "
      <Esc> ....... sai do modo de inserção
@@ -3228,7 +3228,7 @@ No GNU/Linux procure ou crie uma pasta chamada .vim que deve ficar em
      /home/user/.vim
 \end{verbatim}
 
-Nesta pasta '.vim' ou 'vimfiles' deve haver pastas tipo
+Nesta pasta '.vim' ou `vimfiles' deve haver pastas tipo
 
 \begin{verbatim}
      vimfiles
@@ -3426,7 +3426,7 @@ as teclas e combinações. Alguns exemplos:
      <cfile><    : arquivo sob o cursor sem extensão
      <sfile>     : conteúdo do arquivo sob o cursor
      <left>      : salta um caractere para esquerda
-     <up>        : equivale clicar em 'seta acima'
+     <up>        : equivale clicar em `seta acima'
      <m-f4>      : a tecla alt -> m  mais a tecla f4
      <c-f>       : Ctrl-f
      <bs>        : backspace
@@ -3900,12 +3900,12 @@ Coloque o seguinte script em:
      for p in sys.path:
          # Add each directory in sys.path, if it exists.
          if os.path.isdir(p):
-             # Command 'set' needs backslash before each space.
+             # Command `set' needs backslash before each space.
              vim.command(r``s'' % (p.replace(`` '', r`` '')))
      EOF
 \end{verbatim}
 
-Isto lhe permite usar 'gf' ou {\tt Ctrl-w Ctrl-F} para abrir um arquivo sob o cursor
+Isto lhe permite usar `gf' ou {\tt Ctrl-w Ctrl-F} para abrir um arquivo sob o cursor
 
 \section{Criando um menu}
 \label{Criando um menu}
@@ -4339,7 +4339,7 @@ Crie abreviações para erros comuns no seu arquivo de configuração (~/.vimrc)
      syntax keyword WordError teh
 \end{verbatim}
 
-As linhas acima criam uma abreviação para erro de digitação da palavra 'the'
+As linhas acima criam uma abreviação para erro de digitação da palavra `the'
 e destaca textos que você abrir que contenham este erro.
 
 \section{Use dobras}\label{sec:Use folders}
