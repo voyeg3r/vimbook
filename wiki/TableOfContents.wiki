@@ -1,37 +1,63 @@
-#summary One-sentence summary of this page.
+#summary Informações sobre este projeto e seu fluxo de trabalho
 
 =Alterações na página inicial=
-Coloquei detalhes sebre como se juntar ao grupo
-na página inicial do projeto!
+Os detalhes sobre como se juntar ao grupo constam na página inicial do
+projeto.
 
 ==Promova o grupo==
 [http://groups.google.com.br/group/vimbook/manage_promote]
 
 = Introducão =
+
+== Estrutura do diretório de trabalho ==
+
 A estrutura (diretório) atual do SVN do projeto está assim:
+
 {{{
 |-- branches
 |-- tags
-`-- trunk
-   `-- src
-       |-- img
-       |   |-- setas.png
-       |   `-- vimlogo.png
-       |-- vimbook.tex
+|-- trunk
+|   |-- AUTHORS
+|   |-- COPYING
+|   |-- README
+|   `-- src
+|       |-- Makefile
+|       |-- img
+|       |   |-- setas.png
+|       |   `-- vimlogo.png
+|       |-- vimbook.tex
+`-- wiki
+    |-- CoisasAadicionarNoLivro.wiki
+    |-- EstilodeEscrita.wiki
+    |-- ManualSubversion.wiki
+    `-- TableOfContents.wiki
 }}}
 
-O fluxo básico de trabalho dos envolvidos será mais ou menos assim:
-{{{
-  1) Fazer o checkout inicial ou svn update caso já tenha feito esse passo antes
-  2) modificar/adicionar os arquivos do projeto (sempre verificando o PDF
-     resultante)
-  2.1) Adicionou um novo arquivo fonte? Então use o svn add
-  2.2) Submeta suas alterações (svn commit -m 'Descrição das alterações')
-  3) retornar ao passo 1
-}}}
-É claro que pode dar conflito do momento em que se faz o 'svn update' até o
-momento em que se submete as alterações: alguém pode ter modificado os
-mesmos arquivos neste interim. Aí tem que olhar o manual do SVN...
+== Fluxo de trabalho usando o SVN ==
+
+O fluxo básico de trabalho dos envolvidos será mais ou menos como descrito a
+seguir.
+
+Primeiramente é preciso fazer o _checkout_ inicial; este passo é feito
+normalmente apenas uma única vez. A dinâmica de trabalho então concentra-se no
+ciclo:
+
+   # *svn update* (atualiza o diretório de trabalho para a versão mais
+   recente)
+   # *Edição* do projeto através da modificação/adição de arquivos e *teste* das
+   alterações (verificar o PDF resultante)
+      * adicionou um novo arquivo fonte? Então use o `svn add`
+   # Submeter as alterações realizadas (`svn commit -m 'Descrição das alterações'`)
+      * alguém mexeu no mesmo arquivo neste interim e o svn acusou conflito?
+      Não se preocupe, problemas de conflito virtualmente só ocorrem quando as
+      alterações são feitas no mesmo trecho do arquivo. Dê um *svn update*
+      para instruir o svn a incorporar as mudanças do outro usuário nas suas;
+      cheque então o arquivo e confirme se está correto (caso não esteja
+      modifique-o), teste o PDF, e finalmente submeta as alterações
+      (_commit_).
+   # Retorne ao _passo 1_ e repita o ciclo para novas modificações
+
+=== Observações ===
 
 Em princípio deve-se colocar os arquivos descompactados. Não coloque os
 arquivos temporários gerados pelo LaTeX.
@@ -39,21 +65,17 @@ arquivos temporários gerados pelo LaTeX.
 No diretório 'src' fica os arquivos fontes necessários para gerar o "binário",
 neste caso o PDF. Assim como os binários de arquivos executáveis, não acho
 apropriado colocarmos o PDF sob o controle do SVN; é melhor publicarmos apenas
-nos releases oficiais.
+nos _releases_ oficiais.
 
-Abaixo do diretório src (dentro do trunk) deveremos colocar algo como os
-arquivos AUTHORS, README e COPYING/LICENSE--criei os arquivos vazios. Por
-falar em licença, talvez seja mais apropriada a GNU FDL (GNU Free
-Documentation License), mas ainda não estou certo disso.
 
-Bom, por enquanto é isso.
+== Coisas a adicionar/modificar no livro ==
 
 CoisasAadicionarNoLivro
 
 
-==Como formatar o wiki==
+==Como formatar o Wiki==
 
-Adicione seu conteúdo.  formate-o assim:
+Adicione seu conteúdo. Formate-o assim:
 {{{
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
@@ -84,4 +106,5 @@ http://domain/page
 
 || table || cells ||
 }}}
+
 Mais exemplos [http://code.google.com/p/support/wiki/WikiSyntax aqui].
