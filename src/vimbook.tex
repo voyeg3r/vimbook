@@ -2031,6 +2031,17 @@ cursor é teclar \verb|*|. Para encontrar uma ocorrência anterior da palavra
 sob o cursor, tecle \verb|#|---em ambos os casos o cursor deve estar
 posicionado sobre a palavra que deseja procurar.
 
+\section{Destacando um padrões}\label{sec:Destacando um padrões}
+
+Você pode destacar linhas com mais de 30 caracteres assim:
+
+\begin{verbatim}
+     :match ErrorMsg /\%>30v/ . destaca linhas maiores que 30 caracteres
+     :match none .............. remove o destaque
+     para saber mais leia :h %>
+\end{verbatim}
+
+
 \section{Editando em nova janela}\label{Editando em nova janela}
 
 Caso deseje manter o arquivo atual e editar `simultaneamente' outro arquivo
