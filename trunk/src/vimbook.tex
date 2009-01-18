@@ -1010,6 +1010,17 @@ O comando acima diz: Ordene numericamente da linha 1 até a linha 15
 \end{verbatim}
 
 
+\section{Convertendo para maiúsculas}
+\label{sec:Convertendo para maiúsculas}
+
+\begin{verbatim}
+     gUU ....... converte a linha para maiúsculo
+	 guu ....... converte a linha para minúsculo
+	 gUiw ...... converte a palavra atual para maiúsculo
+	 ~ ......... altera o {\em case} do caractere atual
+\end{verbatim}
+
+
 \section{Editando em modo de comando}\label{sec:Editando em modo de comando}
 
 Para mover um trecho usando o modo de comandos faça:
@@ -3206,6 +3217,61 @@ mesma:
      map <s-F4> <esc>:echo v:this_session<cr>
 \end{verbatim}
 
+\section{viminfo}
+
+Se o Vim for fechado e iniciado novamente, normalmente perderá uma 
+porção considerável de informações. A diretiva {\tt viminfo} pode ser usada
+para memorizar estas informações.
+
+\begin{itemize}
+\item Histórico da linha de comando
+\item Histórico de buscas
+\item Histórico de entradas {\em input-line history}
+\item Conteúdo de registros não vazios
+\item Marcas de vários arquivos
+\item Último padrão de busca/substituição 
+\item A lista de buffers
+\item Variáveis globais
+\end{itemize}
+
+Deve-se colocar no arquivo de configuração algo como:
+	
+\begin{verbatim}
+set viminfo=%,'50,\"100,/100,:100,n
+\end{verbatim}
+
+Algumas opões da diretiva ``viminfo''
+
+\begin{description}
+\item [!] Quando incluido salva e restaura variáveis globais (variáveis
+com letra maiúscula) e que não contém letras em minúsculo como MATENHAISTO.
+
+\item ["] Número máximo de linhas salvas para cada registro.
+
+\item [\%] Quando incluido salva e restaura a lista de buffers. Caso o Vim seja 
+iniciado com um nome como argumento, a lista de {\em buffers} não é restaurada. {\em Buffers} sem
+nome e {\em buffers} de ajuda não são armazenados no ``viminfo''.
+                                      
+\item ['] Número máximo de arquivos recém editados.
+
+\item [/] Máximo de itens do histórico de buscas.
+
+\item [:] Máximo de itens do histórico da linha de comando
+
+\item [<] Número máximo de linhas salvas por cada registro, se zero
+os registros não serão salvos. Quando não incluido, todas as linhas são salvas.
+
+\end{description}
+
+Para ver mais opções sobre o arquivo ``viminfo'' leia {\tt :h viminfo}.
+
+Pode-se também usar um arquivo de ``Sessão''. A diferença é que ``viminfo'' não 
+depende do local de trabalho (escopo).
+
+Quando o arquivo ``viminfo'' existe e não está vazio, as informações novas
+são combinadas com as existentes. A opção ``viminfor'' é uma string contendo
+informações sobre o que deve ser armazenado, e contém limites de o quanto 
+vai ser armazenado para cada item.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Como Editar Preferências no Vim}\label{cha:Como editar preferências no Vim}
@@ -3992,7 +4058,7 @@ Quando o comando
 
 É usado sem nenhum argumento o Vim mostra os menus definidos atualmente
 
-Para listar todas as opções de menu para 'Plugin' por exemplo faça:
+Para listar todas as opções de menu para `Plugin' por exemplo faça:
 
 \begin{verbatim}
      :amenu Plugin
