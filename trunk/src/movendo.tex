@@ -1,0 +1,354 @@
+\chapter{Movendo-se no Documento}\label{cha:Movendo-se no Documento}
+
+Antes de mergulharmos mais a fundo nas teclas e atalhos de
+movimentação vamos recapitular um pouco do que foi visto: \\
+
+
+
+Estando em modo normal
+
+\begin{verbatim}
+     i ..... entra no modo de inserção antes do caractere atual
+     I ..... entra no modo de inserção no começo da linha
+     a ..... entra no modo de inserção após o caractere atual
+     A ..... entra no modo de inserção no final da linha
+     o ..... entra no modo de inserção uma linha abaixo
+     O ..... entra em modo de inserção uma linha cima
+     <Esc> . sai do modo de inserção
+\end{verbatim}
+
+Uma vez no modo de inserção todas as letras são, assim como nos outros
+editores simples letras, mas lebre-se a tecla mágica para sair do modo
+de inserção é: \verb+<Esc>+.
+
+\begin{verbatim}
+     <Esc> .... lhe leva para o modo normal
+\end{verbatim}
+
+As letras h, k, l, j funcionam como setas:
+
+\begin{verbatim}
+        k
+     h     l
+        j
+\end{verbatim}
+
+Ou seja, a letra ``k'' é usada para subir no texto, a letra ``j'' para
+descer, a letra ``h'' para mover-se para a esquerda e a letra ``l''
+para mover-se para a direita. A idéia é que se consiga ir para
+qualquer lugar do texto sem tirar as mãos do teclado.
+
+
+
+\section{Big words}
+\label{Big word's}
+
+Para o Vim ``{\em{palavras-separadas-por-hífen}}'' são consideradas em separado, portanto se você usar,
+em modo normal ``\verb+w+'' avançar entre as palavras ele pulará uma de
+cada vez, no entanto se usar ``\verb+W+''
+em maiúsculo (como visto) ele pulará a ``a-palavra-inteira'' :)
+
+\begin{verbatim}
+     E .... pula para o final de palavras com hifen
+     B .... pula palavras com hifen (retrocede)
+     W .... pula palavras hifenizadas (começo)
+\end{verbatim}
+
+
+
+Para ir para linhas específicas digite
+
+\begin{verbatim}
+     :n<Enter>  ..... vai para linha ``n''
+     ngg ............ vai para linha ``n''
+\end{verbatim}
+
+onde ``\verb|n|'' corresponde ao número da linha.
+
+Para retornar ao modo normal pressione \verb|<Esc>| ou use \verb|Ctrl-[|
+(\verb|^[|).
+
+\section{Os saltos}\label{Os saltos}
+
+\begin{verbatim}
+     gg .... vai para o início do arquivo
+     G ..... vai para o final do arquivo
+     0 ..... vai para o início da linha
+     $ ..... vai para o final da linha
+     yG .... copia da linha atual até o final do arquivo
+     25gg .. salta para a linha 25
+     '' .... salta para a linha da última posição em que o cursor estava
+     fx .... para primeria ocorrência de x
+     tx .... Para ir para uma letra antes de x
+     Fx .... Para ir para ocorrência anterior de x
+     Tx .... Para ir para uma letra após o último x
+     * ..... Próxima ocorrência de palavra sob o cursor
+     % ..... localiza parênteses correspondente
+     `' .... salta exatamente para a posição em que o cursor estava
+     d$ .... deleta do ponto atual até o final da linha
+     gi .... entra em modo de inserção no ponto da última edição
+     gv .... repete a última seleção visual e posiciona o cursor neste local
+     gf .... abre o arquivo sob o cursor
+     gd .... salta para declaração de variável sob o cursor
+     gD .... salta para declaraçao (global) de variável sob o cursor
+     w ...... move para o início da próxima palavra
+     W ...... pula para próxima palavra (desconsidera hífens)
+     E ...... pula para o final da próxima palavra (desconsidera hifens)
+     e ...... move o cursor para o final da próxima palavra
+     zt ..... movo o cursor para o topo da página
+     zm ..... move o cursor para o meio da página
+\end{verbatim}
+
+\section{Copiar e Deletar}\label{sec:Copiar e Deletar}
+
+Deletar está associado à letra ``\verb|d|''.
+
+\begin{verbatim}
+     dd .... deleta linha atual
+     D ..... deleta restante da linha
+\end{verbatim}
+
+
+``Dica'': Você pode combinar o comando de deleção ``\verb+d+'' com o
+comando de movimento (considere o modo normal) para apagar até a
+próxima vírgula use: ``\verb+df,+''. \\
+
+
+Copiar está associado à letra ``\verb|y|''.
+
+\begin{verbatim}
+     yy .... copia a linha atual
+     Y ..... copia a linha atual
+\end{verbatim}
+
+A maioria dos comandos do Vim pode ser precedida por um quantificador:
+
+\begin{verbatim}
+     5j ..... desce 5 linhas
+     d5j .... deleta as próximas 5 linhas
+     k ...... em modo normal sobe uma linha
+     5k ..... sobe 5 linhas
+     y5k .... copia 5 linhas (para cima)
+     w ...... pula uma palavra para frente
+     5w ..... pula 5 palavras
+     d5w .... deleta 5 palavras
+     b ...... retrocede uma palavra
+     5b ..... retrocede 5 palavras
+     fx ..... posiciona o cursor em ``x''
+     dfx .... deleta até o próximo ``x''
+     d5j .... deleta 5 linhas
+     dgg .... deleta da linha atual até o começo do arquivo
+     dG ..... deleta até o final do arquivo
+     yG ..... copia até o final do arquivo
+     yfx .... copia até o próximo ``x''
+     y5j .... copia 5 linhas
+\end{verbatim}
+
+Podemos pular sentenças:
+
+\begin{verbatim}
+     ) .... pula uma sentença para frente
+     ( .... pula uma sentença para tráz
+     } .... pula um parágrafo para frente
+     { .... pula um parágrafo para tráz
+     y) ... copia uma sentença para frente
+     d} ... deleta um parágrafo para frente
+\end{verbatim}
+
+O que foi deletado ou copiado pode ser colado:
+
+\begin{verbatim}
+     p .... cola o que foi copiado ou deletado abaixo
+     P .... cola o que foi copiado ou deletado acima
+\end{verbatim}
+
+Caso tenha uma estrutura como abaixo:
+
+\begin{verbatim}
+     def pot(x):
+        return x**2
+\end{verbatim}
+
+E tiver uma referência qualquer para a função \verb+pot+ e desejar
+mover-se até sua definição basta posicionar o cursor sobre a palavra
+\verb+pot+ e pressionar (em modo normal)
+
+\begin{verbatim}
+     gd
+\end{verbatim}
+
+Se a variável for global, ou seja, estive fora do documento
+(provavelmente em outro) use:
+
+\begin{verbatim}
+     gD
+\end{verbatim}
+
+Quando definimos uma variável tipo
+
+\begin{verbatim}
+     var = `teste'
+\end{verbatim}
+
+e em algum ponto do documento houver referência a esta variável e
+quiser-mos ver seu conteúdo fazemos
+
+\begin{verbatim}
+     [i
+\end{verbatim}
+Na verdade o atalho acima lhe mostrará o último ponto onde foi feita
+a atribuição àquela variável que está sob o cursor, uma mão na roda
+para os programadores de plantão!
+
+Obs: observe a  barra de status do Vim se o tipo de arquivo está certo,
+tipo. Para detalhes sobre como personalizar a barra de status na seção
+\ref{Funçã para barra de status}.
+
+\begin{verbatim}
+     ft=python
+\end{verbatim}
+
+a busca por definições de função só funciona se o tipo de arquivo
+estiver correto
+
+\begin{verbatim}
+     :set ft=python
+\end{verbatim}
+
+outro detalhe para voltar ao último ponto em que você estava
+
+\begin{verbatim}
+     ''
+\end{verbatim}
+
+\section{Paginando}
+\label{Paginando}
+
+Para rolar uma página de cada vez (em modo normal)
+
+\begin{verbatim}
+     Ctrl-f
+     Ctrl-b
+\end{verbatim}
+
+
+\begin{verbatim}
+     :h jumps .... ajuda sobre a lista de saltos
+     :jumps ...... exibe a lista de saltos
+     Ctrl-i ... salta para a posição mais recente
+     Ctrl-o ... salta para a posição mais antiga
+\end{verbatim}
+
+Observação: lembre-se
+
+\begin{verbatim}
+     ^ .... equivale a Ctrl
+     ^I ... equivale a Ctrl-I
+\end{verbatim}
+
+
+Retroceder na lista de saltos, incluindo outros arquivos,
+
+\begin{verbatim}
+     ^o
+\end{verbatim}
+
+Avançar na lista de saltos
+
+\begin{verbatim}
+     ^i
+\end{verbatim}
+
+Abrir o último arquivo editado:
+
+\begin{verbatim}
+     '0
+\end{verbatim}
+
+Abrir o penúltimo arquivo editado
+
+\begin{verbatim}
+     '1
+\end{verbatim}
+
+Para pular para uma definição de função (para mais detalhes veja :h gd)
+
+\begin{verbatim}
+     gd
+\end{verbatim}
+
+Para pular para o fim do parágrafo faça
+
+\begin{verbatim}
+     }
+\end{verbatim}
+
+Para pular para a coluna 10 da linha atual
+
+\begin{verbatim}
+     10|
+\end{verbatim}
+
+Pular para definição de uma variável
+
+\begin{verbatim}
+     [i   ........ Mostra a definição mais próxima de uma variável
+\end{verbatim}
+
+O atalho acima é útil quando se está programando, se estiver num
+trecho de código pode visualizar o conteúdo das variáveis que foram
+definidas acima
+
+Você pode abrir vários arquivos tipo \verb|*.txt| e fazer
+algo como gravar e ir para o próximo arquivo com o comando a
+seguir:
+
+\begin{verbatim}
+     :wn
+\end{verbatim}
+
+Ou gravar um arquivo e voltar ao anterior
+
+\begin{verbatim}
+     :wp
+\end{verbatim}
+
+Pode ainda ``rebobinar'' sua lista de arquivos :)
+
+\begin{verbatim}
+     :rew[wind]
+\end{verbatim}
+
+Ou ir para o primeiro
+
+\begin{verbatim}
+     :fir[ist]
+\end{verbatim}
+
+\section{Usando marcadores}
+\label{Usando marcadores}
+
+No Vim podemos marcar o ponto em que o cursor está, você deve estar em
+modo normal, portanto pressione
+
+\begin{verbatim}
+     <Esc>
+\end{verbatim}
+
+você estará em modo normal, assim podem pressionar a tecla ``\verb+m+''
+seguida de uma das letras do alfabeto
+
+\begin{verbatim}
+     ma ....... cria uma marca `a'
+     `a ....... move o cursor para a marca `a'
+\end{verbatim}
+
+\section{Marcas globais}
+\label{Marcas globais}
+Marcas globais são marcas que permitem pular de um arquivo a outro.
+Para criar uma marca global use a letra que designa a marca em
+maiúsculo.
+
+\begin{verbatim}
+     mA ....... cria uma marca global A
+\end{verbatim}

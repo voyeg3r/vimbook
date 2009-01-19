@@ -1,0 +1,658 @@
+\chapter{Buscas e Substituições}\label{Buscas e substituições}
+
+Para fazer uma busca, certifique-se de que está em modo normal,
+pressione ``/'' e digite a expressão a ser procurada. \\
+
+
+Para encontrar a primeira ocorrência de ``foo'' no texto:
+
+\begin{verbatim}
+     /foo
+\end{verbatim}
+
+Para repetir a busca basta pressionar a tecla ``\verb+n+'' e para
+repetir a busca em sentido oposto ``\verb+N+''.
+
+\begin{verbatim}
+     /teste/+3
+\end{verbatim}
+
+Posiciona o cursor três linhas após a ocorrência da palavra ``teste'' \\
+
+
+\section{Usando ``Expressões Regulares'' em buscas}
+
+\begin{verbatim}
+     / ........... inicia uma busca (modo normal)
+     \%x69 ....... código da letra `i'
+     /\%x69 ...... localiza a letra `i' - hexadecimal 069
+     
+     \d .......... localiza números
+     ^ ........... começo de linha
+     $ ........... final de linha
+     \+ .......... um ou mais
+     /^\d\+$ ..... localiza somente dígitos
+     
+     \s .......... localiza espaços
+     /\s\+$ ...... localiza espaços no final da linha 
+\end{verbatim}
+
+Para aprender mais sobre Expressões Regulares leia:
+
+\begin{enumerate}
+  \item \url{http://guia-er.sourceforge.net}
+  \item :help regex
+\end{enumerate}
+
+Um meio mais rápido para encontrar a próxima ocorrência de uma palavra sob o
+cursor é teclar \verb|*|. Para encontrar uma ocorrência anterior da palavra
+sob o cursor, tecle \verb|#|---em ambos os casos o cursor deve estar
+posicionado sobre a palavra que deseja procurar.
+
+\section{Destacando padrões}\label{sec:Destacando padrões}
+
+Você pode destacar linhas com mais de 30 caracteres assim:
+
+\begin{verbatim}
+     :match ErrorMsg /\%>30v/ . destaca linhas maiores que 30 caracteres
+     :match none .............. remove o destaque
+     para saber mais leia :h %>
+\end{verbatim}
+
+
+\section{Editando em nova janela}\label{Editando em nova janela}
+
+Caso deseje manter o arquivo atual e editar `simultaneamente' outro arquivo
+pode dividir a janela assim:
+
+\begin{verbatim}
+     Ctrl-w-n
+\end{verbatim}
+
+Para mais detalhes sobre janelas acesse o capítulo
+\ref{cha:Trabalhando com janelas} na página \pageref{cha:Trabalhando
+com janelas}.
+
+
+\section{Inserindo linha antes e depois}
+
+Suponha que se queira um comando, considere \verb|,t|, que faça com que a
+linha indentada corrente passe a ter uma linha em branco antes e depois; isto
+pode ser obtido pelo seguinte mapeamento:
+
+\begin{verbatim}
+     :map ,t <Esc>:.s/^\(\s\+\)\(.*\)/\r\1\2\r/g<cr>
+\end{verbatim}
+     
+Explicando:
+     
+\begin{verbatim}
+     : ................ entra no modo de comando
+     map ,t ........... mapeia ,t para a função desejada
+     <Esc> ............ ao executar sai do modo de inserção
+     s/isto/aquilo/g .. substitui isto por aquilo
+     : ................ inicia o modo de comando
+     . ................ na linha corrente
+     s ................ substitua
+     ^ ................ começo de linha
+     \s\+ ............. um espaço ou mais (barras são escapes)
+     .* ............... qualquer coisa depois
+     \(grupo\) ........ agrupo para referenciar com \1
+     \1 ............... repete na substituição o grupo 1
+     \r ............... insere uma quebra de linha
+     g ................ em todas as ocorrências da linha
+     <cr> ............. Enter
+\end{verbatim}
+
+\section{Obtendo informações do arquivo}
+
+\begin{verbatim}
+     ga ............. mostra o código do caractere em decimal hexa e octal
+     ^g ............. mostra o caminho e o nome do arquivo
+\end{verbatim}
+
+Obs: O código do caractere pode ser usado para substituições,
+especialmente em se tratando de caracteres de controle como tabulações
+``\verb|^I|'' ou final de linha DOS/Windows ``\verb|\%x0d|''. Você pode apagar os
+caracteres de final de linha Dos/Windows usando uma simples
+substituição, veja mais adiante:
+
+\begin{verbatim}
+     :%s/\%x0d//g
+\end{verbatim}
+
+Na seção \ref{cha:Como editar preferências no Vim} há um código para a barra de
+status que faz com que a mesma exiba o código do caractere sob o cursor na
+seção \ref{Funçã para barra de status}.
+
+\section{Trabalhando com registradores}
+\label{Trabalhando com registradores}
+
+Você não precisa copiar e colar diferentes partes do texto para uma
+mesma área de transferência.  Para isso, você pode usar os
+``registros''.  Os registradores são indicados por aspas seguido por uma letra.
+Exemplos: ``a'', ``b'', ``c'', etc.
+
+Como copiar o texto para um registrador? É simples: basta especificar
+o nome do registrador antes:
+
+\begin{verbatim}
+     "add ... apaga uma linha, copiando seu conteúdo para o registrador a
+     "bdd ... apaga uma linha, copiando seu conteúdo para o registrador b
+     "ap .... cola" o conteúdo do registrador a
+     "ab .... cola" o conteúdo do registrador b
+     "x3dd .. apaga 3 linhas, copiando o conteúdo para o registrador ``x''
+     "ayy  .. copia uma linha, sem apagar, para o registrador a
+     "a3yy .. copia 3 linhas, sem apagar, para o registrador a
+     "ayw  .. copia uma palavra, sem apagar, para o registrador a
+     "a3yw .. copia 3 palavras, sem apagar, para o registrador a
+\end{verbatim}
+
+No ``modo de inserção'', como visto anteriormente, você pode usar um atalho
+para colar rapidamente o conteúdo de um registrador.
+
+\begin{verbatim}
+     Ctrl-r (registro)
+\end{verbatim}
+
+Para colar o conteúdo do registrador ``a''
+
+\begin{verbatim}
+     Ctrl-r a
+\end{verbatim}
+
+Para copiar a linha atual para a área de transferência
+
+\begin{verbatim}
+     "+yy
+\end{verbatim}
+
+Para colar da área de transferência
+
+\begin{verbatim}
+     "+p
+\end{verbatim}
+
+\section{Edições complexas }
+\label{Edições complexas }
+
+Trocando palavras de lugar: coloque o cursor no espaço antes da 1ª palavra e digite:
+
+\begin{verbatim}
+     deep
+\end{verbatim}
+
+Trocando letras de lugar:
+
+\begin{verbatim}
+     xp
+\end{verbatim}
+
+Trocando linhas de lugar:
+
+\begin{verbatim}
+     ddp
+\end{verbatim}
+
+Tornando todo o texto maiúsculo
+ gggUG
+
+\section{Indentando }
+
+\begin{verbatim}
+     >> ..... Indenta a linha atual
+     ^T ..... Indenta a linha atual em modo de inserção
+     ^D ..... Remove indentação em modo de inserção
+     >ip .... indenta o parágrafo atual
+\end{verbatim}
+
+\section{Corrigindo a indentação de códigos}
+\label{Corrigindo a indentação de códigos}
+Selecione o bloco de código, por exemplo
+
+\begin{verbatim}
+     vip  ..... visual ``h'' (selecione este parágrafo)
+     =  ....... corrija a indentação do que selecionei :)
+\end{verbatim}
+
+\section{Usando o file explorer}
+\label{Usando o file explorer}
+O Vim navega na árvore de diretórios com o comando
+
+\begin{verbatim}
+     vim .
+\end{verbatim}
+
+Use o ``j'' para descer e o ``k'' para subir ou Enter para editar o
+arquivo selecionado. Outra dica é pressionar F1 ao abrir o
+FileExplorer do Vim, você encontra dicas adicionais sobre este modo de
+operação do Vim.
+
+\section{Selecionando ou deletando conteúdo de tags html}
+\label{Selecionando ou deletando conteúdo de tags html}
+
+\begin{verbatim}
+     <tag> conteúdo da tag </tag>
+     basta usar (em modo normal) as teclas
+     vit ............... visual ``inner tag | esta tag''
+\end{verbatim}
+
+Este recurso também funciona com parênteses
+
+\begin{verbatim}
+     vi( ..... visual select
+     vi" ..... visual select
+     di( ..... delete inner (, ou seja, seu conteúdo
+\end{verbatim}
+
+
+\section{Substituições }
+\label{Substituições }
+
+Para fazer uma busca, certifique-se de que está em modo normal, em
+seguida digite use o comando ``s'', conforme será explicado.
+
+Para substituir ``foo'' por ``bar'' na linha atual:
+
+\begin{verbatim}
+     :s/foo/bar
+\end{verbatim}
+
+Para substituir ``o'' por ``r'' da primeira à décima linha do arquivo:
+
+\begin{verbatim}
+     :1,10 s/foo/bar
+\end{verbatim}
+
+Para substituir ``foo'' por ``bar'' da primeira à última linha do arquivo:
+
+\begin{verbatim}
+     :1,$ s/foo/bar
+\end{verbatim}
+
+Ou simplesmente:
+
+\begin{verbatim}
+     :% s/foo/bar
+\end{verbatim}
+
+\begin{verbatim}
+     $ ... significa para o Vim final do arquivo
+     % ... representa o arquivo atual
+\end{verbatim}
+
+O comando ``s'' possui muitas opções que modificam seu comportamento.
+
+\section{Exemplos }
+\label{Exemplos }
+
+Busca usando alternativas:
+
+\begin{verbatim}
+     /end\(if\|while\|for\)
+\end{verbatim}
+
+Buscará ``if'', ``while'' e ``for''.  Observe que é necessário `escapar' os
+caracteres \verb|\(|, \verb|\|| e \verb|\)|, caso contrário eles serão
+interpretados como caracteres comuns.
+
+Quebra de linha
+
+\begin{verbatim}
+     /quebra\nde linha
+\end{verbatim}
+
+Ignorando maiúsculas e minúsculas
+
+\begin{verbatim}
+     /\cpalavra
+\end{verbatim}
+
+Usando \verb|\c| o Vim encontrará ``{\em{palavra}}'', ``{\em{Palavraa}}'' ou
+até mesmo ``{\em{PALAVRA}}''. Uma dica é colocar no seu arquivo de
+configuração ``vimrc'' veja o capítulo \ref{cha:Como editar preferências no Vim}.
+
+\begin{verbatim}
+     set ignorecase .. ignora maiúsculas e minúsculas na bucsca
+     set smartcase ... se busca contiver maiúsculas ele passa a considerá-las
+     set hlsearch .... mostra o que está sendo buscado em cores
+     set incsearch ... ativa a busca incremental
+\end{verbatim}
+
+se você não sabe ainda como colocar estas preferências no arquivo de configuração pode
+ativa-las em modo de comando precedendo-as com dois pontos, assim:
+
+\begin{verbatim}
+     :set ignorecase<Enter>
+\end{verbatim}
+
+Procurando palavras repetidas
+
+\begin{verbatim}
+     /\<\(\w*\) \1\>
+\end{verbatim}
+
+Multilinha
+
+\begin{verbatim}
+     /Hello\_s\+World
+\end{verbatim}
+
+Buscará `World', separado por qualquer número de espaços,
+incluindo quebras de linha. Buscará as três seqüências:
+
+\begin{verbatim}
+     Hello World
+     
+     Hello    World
+     
+     Hello
+     World
+\end{verbatim}
+
+Buscar linhas de até 30 caracteres de comprimento
+
+\begin{verbatim}
+     /^.\{,30\}$
+\end{verbatim}
+
+\begin{verbatim}
+     ^ ...... representa começo de linha
+\end{verbatim}
+
+Apaga todas as tags html/xml de um arquivo
+
+\begin{verbatim}
+     :%s/<[^>]*>//g
+\end{verbatim}
+
+Apaga linhas vazias
+
+\begin{verbatim}
+     :%g/^$/d
+\end{verbatim}
+
+Ou
+
+\begin{verbatim}
+     :%s/^[\ \t]*\n//g
+\end{verbatim}
+
+Remover duas ou mais linhas vazias entre parágrafos diminuindo para
+uma só linha vazia.
+
+\begin{verbatim}
+     :%s/\(^\n\{2,}\)/\r/g
+\end{verbatim}
+
+Você pode criar um mapeamento e colocar no seu ~/.vimrc
+
+\begin{verbatim}
+     map ,s <Esc>:%s/\(^\n\{2,}\)/\r/g<cr>
+\end{verbatim}
+
+No exemplo acima, ``,s'' é um mapeamento para reduzir linhas em branco
+sucessivas para uma só  \\
+
+
+Remove não dígitos (não pega números)
+
+\begin{verbatim}
+     :%s/^\D.*//g
+\end{verbatim}
+
+Remove final de linha DOS/Windows \verb|^M| que tem código hexadecimal igual a
+``0d''
+
+\begin{verbatim}
+     :%s/\%x0d//g
+\end{verbatim}
+
+Troca palavras de lugar usando expressões regulares
+
+\begin{verbatim}
+     :%s/\(.\+\)\s\(.\+\)/\2 \1/
+\end{verbatim}
+
+Modificando todas as tags html para minúsculo
+
+\begin{verbatim}
+     :%s/<\([^>]*\)>/<\L\1>/g
+\end{verbatim}
+
+Move linhas 10 a 12 para além da linha 30
+
+\begin{verbatim}
+     :10,12m30
+\end{verbatim}
+
+\section{O comando global ``g''}\label{sec:O comando global ``g''}
+
+buscando um padrão e gravando em outro arquivo
+
+\begin{verbatim}
+     :'a,'b g/^Error/ . w >> errors.txt
+\end{verbatim}
+
+Apenas imprimir linhas que contém determinada palavra, isto é útil 
+quando você quer ter uma visão sobre um determina aspecto 
+do seu arquivo vejamos:
+
+\begin{verbatim}
+     :set nu ..... habilita numeração 
+     :g/Error/p .. apenas mostra as linhas correspondentes
+\end{verbatim}
+
+numerar linhas
+
+\begin{verbatim}
+     :let i=1 | g/^/s//\=i."\t"/ | let i=i+1
+\end{verbatim}
+
+Para copiar linhas começadas com {\em Error} para o final do arquivo faça:
+
+\begin{verbatim}
+     :g/^Error/ copy $
+\end{verbatim}
+
+Obs: O comando {\em copy} pode ser abreviado `co' ou ainda você pode usar `t'
+para mais detalhes leia
+
+\begin{verbatim}
+     :h co
+\end{verbatim}
+
+Entre as linhas que contiverem ``fred'' e ``joe'' substitua
+
+\begin{verbatim}
+     :g/fred/,/joe/s/isto/aquilo/gic
+\end{verbatim}
+
+As opções `gic' correspondem a {\em global}, {\em ignore case} e {\em
+confirm}, podendo ser omitidas deixando só o {\em global}. \\
+
+
+Pegar caracteres numéricos e jogar no final do arquivo?
+
+\begin{verbatim}
+     :g/^\d\+.*/m $
+\end{verbatim}
+
+Inverter a ordem das linhas do arquivo?
+
+\begin{verbatim}
+     :g/^/m0
+\end{verbatim}
+
+Apagar as linhas que contém {\em Line commented}
+
+\begin{verbatim}
+     :g/Line commented/d
+\end{verbatim}
+
+Copiar determinado padrão para um registro
+
+\begin{verbatim}
+     :g/pattern/ normal "Ayy
+\end{verbatim}
+
+Copiar linhas que contém um padrão e a linha subsequente para o final
+
+\begin{verbatim}
+     :g/padrão/;+1 copy $
+\end{verbatim}
+
+Deletar linhas que não contenham um padrão
+
+\begin{verbatim}
+     :v/dicas/d  ..... deleta linhas que não contenham `dicas'
+\end{verbatim}
+
+Incrementar números no começo da linha
+
+\begin{verbatim}
+     :.,20g/^\d/exe "normal! \<c-a>"
+\end{verbatim}
+
+\section{Dicas }
+Para colocar a última busca em uma substituição faça:
+
+\begin{verbatim}
+     :%s/Ctrl-r//novo/g
+\end{verbatim}
+
+A dupla barra corresponde ao ultimo padrão procurado, e portanto o
+comando abaixo fará a substituição da ultima busca por casinha
+
+\begin{verbatim}
+     :%s//casinha/g
+\end{verbatim}
+
+\section{Filtrando arquivos com o vimgrep}
+\label{Filtrando arquivos com o vimgrep}
+
+Por vezes sabemos que aquela anotação foi feita, mas no momento esquecemos em qual
+arquivo está, no exemplo abaixo procuramos a palavra dicas à partir da nossa pasta pessoal
+pela palavra `dicas' em todos os arquivos com extensão `txt'.
+
+\begin{verbatim}
+     ~/ ............ equivale a /home/user
+     :lvimgrep /dicas/ ~/**/*.txt | ls
+\end{verbatim}
+
+
+\section{Copiar a partir de um ponto}
+
+\begin{verbatim}
+     :19;+3 co $
+\end{verbatim}
+
+O Vim sempre necessita de um intervalo (inicial e final) mas se você
+usar ``;'' ele considera a primeira linha como segundo ponto do
+intervalo, e no caso acima estamos dizendo (nas entrelinhas) linhas
+19 e 19+3     \\
+
+
+De forma análoga podemos usar como referência um padrão qualquer
+
+\begin{verbatim}
+     :/palavra/;+10 m 0
+\end{verbatim}
+
+O comando acima diz: à partir da linha que contém ``palavra'' incluindo as 10 próximas linhas
+mova ``m'' para a primeira linha ``0'', ou seja, antes da linha 1.
+
+\section{Dicas das lista vi-br}
+
+ Fonte: \url{http://groups.yahoo.com/group/vi-br/message/853}
+
+ Problema:
+ Essa deve ser uma pergunta comum.
+ Suponha o seguinte conteúdo de arquivo:
+
+\begin{verbatim}
+     ... // várias linhas
+     texto1000texto    // linha i
+     texto1000texto    // linha i+1
+     texto1000texto    // linha i+2
+     texto1000texto    // linha i+3
+     texto1000texto    // linha i+4
+     ... // várias linhas
+\end{verbatim}
+
+Gostaria de um comando que mudasse para
+
+\begin{verbatim}
+     ... // várias linhas
+     texto1001texto    // linha i
+     texto1002texto    // linha i+1
+     texto1003texto    // linha i+2
+     texto1004texto    // linha i+3
+     texto1005texto    // linha i+4
+     ... // várias linhas
+\end{verbatim}
+
+ Ou seja, somasse 1 a cada um dos números entre os textos
+ especificando como range as linhas i,i+4
+
+\begin{verbatim}
+     :10,20! awk 'BEGIN{i=1}{if (match($0, ``+'')) print ``o''
+     (substr($0, RSTART, RLENGTH) + i++) ``o'``}''
+\end{verbatim}
+
+ Mas muitos sistemas não tem awk, e logo a melhor solução mesmo é usar o Vim:
+
+\begin{verbatim}
+     :let i=1 | 10,20 g/texto\d\+texto/s/\d\+/\=submatch(0)+i/ | let i=i+1
+\end{verbatim}
+
+Observação: 10,20 é o intervalo, ou seja, da linha 10 até a linha 20
+
+\begin{verbatim}
+     :help /
+     :help :s
+     :help pattern
+\end{verbatim}
+
+\section{Dicas do dicas-l}
+
+fonte: \url{http://www.dicas-l.com.br/dicas-l/20081228.php}
+
+\section{Junção de linhas com Vim}
+\label{Junção de linhas com Vim}
+Colaboração: Rubens Queiroz de Almeida
+
+Recentemente precisei combinar, em um arquivo, duas linhas
+consecutivas. O arquivo original continha linhas como:
+
+\begin{verbatim}
+     Matrícula: 123456
+     Senha: yatVind7kned
+     Matrícula: 123456
+     Senha: invanBabnit3
+\end{verbatim}
+
+E assim por diante. Eu precisava converter este arquivo para algo como:
+
+\begin{verbatim}
+     Matrícula: 123456 - Senha: yatVind7kned
+     Matrícula: 123456 - Senha: invanBabnit3
+\end{verbatim}
+
+Para isto, basta executar o comando:
+
+\begin{verbatim}
+     :g/^Matrícula/s/\n/ - /
+\end{verbatim}
+
+Explicando:
+
+\begin{verbatim}
+     s/isto/aquilo/g .. substitui isto por aquilo
+     g ................ comando global
+     /................. inicia padrão de busca
+     ^ ................ indica começo de linha
+     Matrícula ........ palavra a ser buscada
+     s ................ inicia substituição
+     /\n/ - / ......... troca quebra de linha (\n), por -
+\end{verbatim}

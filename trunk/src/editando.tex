@@ -1,0 +1,647 @@
+\chapter{Editando}
+\label{Editando}
+
+Que tal abrir um arquivo já na linha 10 por exemplo?
+
+\begin{verbatim}
+     vim +10 /caminho/para/o/arquivo
+\end{verbatim}
+
+Ou ainda abrir na linha que contém um determinado padrão?
+
+\begin{verbatim}
+     vim +/padrão arquivo
+\end{verbatim}
+
+Obs: caso o padrão tenha espaços no nome coloque entre parênteses ou
+use escape ``$\backslash$'' a fim de não obter erro.
+
+\section{Deletando uma parte do texto}\label{Deletando uma parte do texto}
+
+O comando ``d'' remove o conteúdo para a memória.
+
+\begin{verbatim}
+     x .... apaga o caractere sob o cursor
+     d5x .. apaga os próximos 5 caracteres
+     dd  .. apaga a linha atual
+     5dd .. apaga 5 linhas (também pode ser: d5d)
+     dw  .. apaga uma palavra
+     5dw .. apaga 5 palavras (também pode ser: d5w)
+     dl  .. apaga uma letra (sinônimo: x)
+     5dl .. apaga 5 letras (também pode ser: d5l ou 5x)
+     d0  .. apaga até o início da linha
+     d^  .. apaga até o primeiro caractere da linha
+     d$  .. apaga até o final da linha (sinônimo: D)
+     dgg .. apaga até o início do arquivo
+     dG  .. apaga até o final do arquivo
+     D .... apaga o resto da linha
+\end{verbatim}
+
+Depois do texto ter sido colocado na memória, digite `p' para `inserir' o
+texto em uma outra posição. Outros comandos:
+
+\begin{verbatim}
+     diw .. apaga palavra mesmo que não esteja posicionado no início
+     dip .. apaga o parágrafo atual
+     d4b .. apaga as quatro palavras anteriores
+     dfx .. apaga até o próximo ``x''
+     d/casa/+1 - deleta até a linha após a palava casa
+\end{verbatim}
+
+Se você trocar a letra `d' nos comandos acima por `c' de {\em change}
+(``mudança'') ao invés de deletar será feita uma mudança de conteúdo.  Por
+exemplo:
+
+\begin{verbatim}
+     ciw .............. modifica uma palavra
+     cip .............. modifica um parágrafo
+     cis .............. modifica uma sentença
+     C ................ modifica até o final da linha
+\end{verbatim}
+
+\section{Copiando sem deletar}\label{Copiando sem deletar}
+
+O comando ``y'' ({\em yank}) permite copiar uma parte do texto para a memória sem deletar.
+Existe uma semelhança muito grande entre os comandos ``y'' e os comandos ``d'':
+
+\begin{verbatim}
+     yy  .... copia a linha atual (sinônimo: Y)
+     5yy .... copia 5 linhas (também pode ser: y5y ou 5Y)
+     y/pat .. copia até `pat'
+     yw  .... copia uma palavra
+     5yw .... copia 5 palavras (também pode ser: y5w)
+     yl  .... copia uma letra
+     5yl .... copia 5 letras (também pode ser: y5l)
+     y^  .... copia da posição atual até o início da linha (sinônimo: y0)
+     y$  .... copia da posição atual até o final da linha
+     ygg .... copia da posição atual até o início do arquivo
+     yG  .... copia da posição atual até o final do arquivo
+\end{verbatim}
+
+Digite ``P'' (p maiúsculo) para colar o texto recém copiado na posição onde
+encontra-se o cursor, ou ``p'' para colar o texto na posição imediatamente
+após o cursor.
+
+\begin{verbatim}
+     vip .... adiciona seleção visual ao parágrafo atual `inner paragraph'
+     yip .... copia o parágrafo atual
+     yit .... copia a tag agual `inner tag' útil para arquivos html xml
+\end{verbatim}
+
+\section{Lista de alterações}
+O Vim mantém uma lista de alterações, para avançar nas alterações use
+
+\begin{verbatim}
+     g,
+\end{verbatim}
+
+Para recuar nas alterações
+
+\begin{verbatim}
+     g;
+\end{verbatim}
+
+Para visualizar a lista de alterações
+
+\begin{verbatim}
+     :changes
+\end{verbatim}
+
+Para mais detalhes
+
+\begin{verbatim}
+     :h changes
+\end{verbatim}
+
+
+\section{Forçando a edição de um novo arquivo}\label{sec:Forçando a edição de um novo arquivo}
+
+O Vim como qualquer outro editor é muito exigente no que se refere a alterações
+de arquivo.  Se você estiver editando um arquivo e desejar abandona-lo, o Vim
+perguntará se quer salvar alterações, se você estiver certo de que não quer
+salvar o arquivo atual e deseja imediatamente começar a editar um novo arquivo
+faça:
+
+\begin{verbatim}
+     :enew!
+\end{verbatim}
+
+O comando acima é uma abreviação de {\em edit new} De modo similar você pode
+desejar ignorar todas as alterações feitas desde a abertura do arquivo
+
+\begin{verbatim}
+     :e!
+\end{verbatim}
+
+
+\section{Ordenando}
+
+O Vim 7 passa a ter um comando de ordenação que também retira linhas
+duplicadas
+
+\begin{verbatim}
+     :sort u ... ordena e retira linhas duplicadas
+     :sort n ... ordena numericamente
+\end{verbatim}
+
+Obs: a ordenação numérica é diferente da ordenação alfabética se em um
+trecho contendo algo como:
+
+\begin{verbatim}
+     8
+     9
+     10
+     11
+     12
+\end{verbatim}
+
+Você tentar fazer:
+
+\begin{verbatim}
+     :sort
+\end{verbatim}
+
+O Vim colocará nas três primeiras linhas
+
+\begin{verbatim}
+     10
+     11
+     12
+\end{verbatim}
+
+Portanto lembre-se que se a ordenação envolver números use:
+
+\begin{verbatim}
+     :sort n
+\end{verbatim}
+
+Você pode fazer a ordenação em um intervalo assim:
+
+\begin{verbatim}
+     :1,15 sort n
+\end{verbatim}
+
+O comando acima diz: Ordene numericamente da linha 1 até a linha 15
+
+\section{Removendo linhas duplicadas}
+
+\begin{verbatim}
+     :sort u
+\end{verbatim}
+
+
+\section{Convertendo para maiúsculas}
+\label{sec:Convertendo para maiúsculas}
+
+\begin{verbatim}
+     gUU ....... converte a linha para maiúsculo
+     guu ....... converte a linha para minúsculo
+     gUiw ...... converte a palavra atual para maiúsculo
+     ~ ......... altera o case do caractere atual
+\end{verbatim}
+
+
+\section{Editando em modo de comando}\label{sec:Editando em modo de comando}
+
+Para mover um trecho usando o modo de comandos faça:
+
+\begin{verbatim}
+     :10,20m $
+\end{verbatim}
+
+O comando acima move (`m') da linha 10 até a linha 20 para o final \verb|$|.
+
+\begin{verbatim}
+     :g /palavra/ m 0
+\end{verbatim}
+
+Move as linhas contendo `palavra' para o começo (linha zero)
+
+
+\begin{verbatim}
+     :10,20y a
+\end{verbatim}
+
+Copia da linha `10' até a linha `20' para o registro `a'
+
+\begin{verbatim}
+     :56pu a
+\end{verbatim}
+
+Cola o registro `a' na linha 56
+
+\begin{verbatim}
+     :g/padrão/d
+\end{verbatim}
+
+O comando acima deleta todas as linhas contendo a palavra `padrão'
+
+Podemos inverter a lógica do comando global \verb+g+:
+
+\begin{verbatim}
+     :g!/padrão/d
+\end{verbatim}
+
+
+Não delete as linhas contendo padrão, ou seja, delete tudo menos as linhas
+contendo a palavra `padrão'. Para ler mais sobre o comando ``global'' utilizado 
+nesta seção veja o capítulo \ref{sec:O comando global ``g''}.
+
+\begin{verbatim}
+     :7,10copy $
+\end{verbatim}
+
+Da linha 7 até a linha 10 copie para o final
+Veja mais sobre edição no modo de comando na seção ``\ref{Buscas e
+substituições} Buscas e substituições''.
+
+\section{O arquivo alternativo}
+\label{O arquivo alternativo}
+
+É muito comum um usuário concluir a edição em um arquivo no Vim e
+inocentemente imaginar que não vai mais modificar qualquer coisa nele, então
+este usuário abre um novo arquivo:
+
+\begin{verbatim}
+     :e novo-arquivo.txt
+\end{verbatim}
+
+Mas de repente o usuário lembra que seria necessário adicionar uma linha no
+arquivo recém editado, neste caso usa-se o atalho
+
+\begin{verbatim}
+     Ctrl-6
+\end{verbatim}
+
+cuja função é alternar entre o arquivo atual e o último editado. Para retornar
+ao outro arquivo basta portanto pressionar \verb|Ctrl-6| novamente.
+
+\section{Incrementando números em modo normal}\label{Incrementando números em modo normal}
+Posicione o cursor sobre um número e pressione
+
+\begin{verbatim}
+     Ctrl-a ..... incrementa o número
+     Ctrl-x ..... decrementa o número
+\end{verbatim}
+
+\section{Repetindo a digitação de linhas}
+\label{Repetindo a digitação de linhas}
+
+\begin{verbatim}
+     Ctrl-y ......... repete linha acima
+     Ctrl-e ......... repete linha abaixo
+     Ctrl-x Ctrl-l .. repete linhas inteiras
+     Ctrl-a ......... repete a última inserção
+\end{verbatim}
+
+Para saber mais sobre repetição de comandos veja o capítulo \ref{Repetição de comandos},
+na página \pageref{Repetição de comandos}.
+
+\section{Movendo um trecho de forma inusitada}
+\label{Movendo um trecho de forma inusitada}
+
+\begin{verbatim}
+     :20,30m 0 ..... move da linha `20' até `30' para o começo
+     :20,/pat/m 5 .. move da linha `20' até `pat' para a linha 5
+\end{verbatim}
+
+
+\section{Uma calculadora diferente}
+\label{Uma calculadora diferente}
+Sempre que desejar inserir um cálculo você pode usar o atalho
+
+\begin{verbatim}
+     Ctrl-r=
+     Ctrl-r=5*850
+\end{verbatim}
+
+
+\section{Desfazendo}
+\label{Desfazendo}
+
+Se você cometer um erro, não se preocupe! Use o comando ``u'':
+
+\begin{verbatim}
+     u ............ desfazer
+     U ............ desfaz mudanças na última linha editada
+     Ctrl-r  ...... refazer
+\end{verbatim}
+
+Para mais ajuda sobre ``desfazer'':
+
+\begin{verbatim}
+     :help undo
+\end{verbatim}
+
+\subsection{Undo tree}
+\label{Undo tree}
+
+Um novo recurso muito interessante foi adicionado ao Vim ``a partir da
+versão 7''  é a chamada árvore do desfazer.  Se
+você desfaz alguma coisa, fez uma alteração um novo {\em branch} ou
+galho, derivação de alteração é criado.  Basicamente, os {\em branches}
+nos permitem acessar quaisquer alterações ocorridas no arquivo.
+
+\subsubsection{Um exemplo didático}
+\label{Um exemplo didático}
+
+Siga estes passos (para cada passo \verb|<Esc>|, ou seja, saia do modo
+de inserção)
+
+
+\begin{description}
+\item [Passo 1] - digite na linha 1 o seguinte texto
+\begin{verbatim}
+     # controle de fluxo <Esc>
+\end{verbatim}
+
+\item [Passo 2] - digite na linha 2 o seguinte texto
+\begin{verbatim}
+     # um laço for <Esc>
+\end{verbatim}
+
+\item [Passo 3] - Nas linhas 3 e 4 digite...
+
+\begin{verbatim}
+     for i in range(10):
+         print i  <Esc>
+\end{verbatim}
+
+\item [Passo 4] - pressione ``u'' duas vezes (você voltará ao passo 1)
+\item [Passo 5] - Na linha 2 digite
+
+\begin{verbatim}
+     # operador ternário <Esc>
+\end{verbatim}
+
+\item [Passo 6] - na linha 3 digite
+
+\begin{verbatim}
+     var = (1 if teste == 0 else 2)  <Esc>
+\end{verbatim}
+
+\end{description}
+
+Obs: A necessidade do {\tt Esc} é para demarcar as ações, pois o Vim
+considera cada inserção uma ação.  Agora usando o atalho de desfazer
+tradicional ``u'' e de refazer {\tt Ctrl-r} observe que não é mais possível
+acessar todas as alterações efetuadas. Em resumo, se você fizer uma
+nova alteração após um desfazer (alteração derivada) o comando refazer
+não mais vai ser possível para aquele momento. \\
+
+Agora volte até a alteração 1 e use seguidas vezes:
+
+\begin{verbatim}
+     g+
+\end{verbatim}
+
+e / ou
+
+\begin{verbatim}
+     g-
+\end{verbatim}
+
+Dessa forma você acessará todas as alterações ocorridas no texto!
+
+\section{Salvando}
+
+A maneira mais simples de salvar um arquivo, é usar o comando
+
+\begin{verbatim}
+     :w
+\end{verbatim}
+
+
+Para especificar um novo nome para o arquivo, simplesmente digite
+
+\begin{verbatim}
+     :w! >> ``file''
+\end{verbatim}
+
+O conteúdo será gravado no arquivo ``file'' e você continuará no arquivo original.
+
+Também existe o comando
+
+\begin{verbatim}
+     :saveas nome
+\end{verbatim}
+
+salva o arquivo com um novo nome e muda para esse novo arquivo (o arquivo original não é apagado).
+Para sair do editor, salvando o arquivo atual, digite :x (ou :wq).
+
+\begin{verbatim}
+     :w ............................ salva
+     :w `novonome' ................. salvar como
+     :wq  .......................... salva e sai'
+     :saveas nome .................. salvar como
+     :x ............................ salva se existirem modificações
+     :10,20 w! ~/Desktop/teste.txt . sava um trecho para outro arquivo
+     :w! ........................... salvamento forçado
+     :e! ........................... reinicia a edição ignorando alterações
+\end{verbatim}
+
+Para mais informações, digite:
+
+\begin{verbatim}
+     :help writing
+\end{verbatim}
+
+\section{Usando marcas}
+\label{sec:Usando marcas}
+
+As marcas são um meio eficiente de se pular para um local no arquivo. Para
+criar uma,  estando em modo normal faça:
+
+\begin{verbatim}
+     ma
+\end{verbatim}
+
+Onde ``m'' indica a criação de uma marca e ``a'' é o nome da marca. Para pular para a marca ``a'' faça:
+
+\begin{verbatim}
+     `a
+\end{verbatim}
+
+Para voltar ao ponto do último salto
+
+\begin{verbatim}
+     ''
+\end{verbatim}
+
+Para deletar de até a marca ``a'' (em modo normal)
+
+\begin{verbatim}
+     d'a
+\end{verbatim}
+
+\section{Marcas globais}
+Durante a edição de vários arquivos defina uma marca global com o comando
+
+\begin{verbatim}
+     mA
+\end{verbatim}
+
+Onde ``m'' cria a marca e ``A'' (maiúsculo) define uma marca ``A'' acessível a qualquer momento com o comando
+
+\begin{verbatim}
+     'A
+\end{verbatim}
+
+Isto fará o Vim dar um salto até a marca A mesmo que esteja em outro
+arquivo, mesmo que você tenha acabado de fecha-lo. Para abrir vários
+arquivos uma solução seria:
+
+\begin{verbatim}
+     vim *.txt
+\end{verbatim}
+
+Para ir para o próximo arquivo:
+
+\begin{verbatim}
+     :bn
+\end{verbatim}
+
+Para ir para o arquivo anterior
+
+\begin{verbatim}
+     :bp
+\end{verbatim}
+
+Caso existam modificações no arquivo você terá que salvar antes, veja: 
+
+\begin{verbatim}
+     :wn
+\end{verbatim}
+
+O comando acima diz: grave e vá para o próximo!
+
+
+\subsection{Abrindo o último arquivo rapidamente}
+O Vim guarda um registro para cada arquivo editado veja
+mais no capítulo \ref{Registros} na página \pageref{Registros}.
+
+\begin{verbatim}
+     '0 ........ abre o último arquivo editado
+     '1 ........ abre o penúltimo arquivo editado
+     Ctrl-6 .... abre o arquivo alternativo (booleano)
+\end{verbatim}
+
+Bom, já que abrimos o nosso último arquivo editado com o comando
+
+\begin{verbatim}
+     `0
+\end{verbatim}
+
+podemos, e provavelmente o faremos, editar no mesmo ponto em que estávamos
+editando da última vez
+
+\begin{verbatim}
+     gi
+\end{verbatim}
+
+Na seção \ref{Buscas e substituições} você encontra mais dicas de edição!
+
+
+\subsection{Modelines}\label{sec:Modelines}
+
+São um modo de guardar preferências no próprio arquivo, suas
+preferências viajam literalmente junto com o arquivo, basta usar em
+uma das 5 primeiras linhas ou na última linha do arquivo algo
+como:
+
+\begin{verbatim}
+     # vim:ft=sh:
+\end{verbatim}
+
+OBS: Você deve colocar um espaço entre a palavra `vim' e a primeira
+coluna, ou seja, a palavra `vim' deve vir precedida de um espaço, daí
+em diante cada opção fica assim:
+
+\begin{verbatim}
+     :opção:
+\end{verbatim}
+
+Por exemplo: posso salvar um arquivo com extensão \verb|.sh| e dentro do
+mesmo indicar no {\em modeline} algo como:
+
+\begin{verbatim}
+     # vim:ft=txt:nu:
+\end{verbatim}
+
+Apesar de usar a extensão `sh' o Vim reconhecerá este arquivo como `txt', e
+caso eu não tenha habilitado a numeração, ainda assim o Vim usará por causa da
+opção `nu'.  Portanto o uso de {\em modelines} pode ser um grande recurso para o seu
+dia-a-dia pois você pode coloca-las dentro dos comentários!
+
+\section{Edição avançada de linhas}
+
+Seja o seguinte texto:
+
+\begin{verbatim}
+1  este é um texto novo
+2  este é um texto novo
+3  este é um texto novo
+4  este é um texto novo
+5  este é um texto novo
+6  este é um texto novo
+7  este é um texto novo
+8  este é um texto novo
+9  este é um texto novo
+10 este é um texto novo
+\end{verbatim}
+
+Suponha que queira-se apagar ``é um texto'' da linha 5 até o fim (linha 10). Isto pode ser feito
+assim: 
+
+\begin{verbatim}
+     :5,$ normal 0wd3w
+\end{verbatim}
+
+Explicando o comando acima:
+
+\begin{verbatim}
+     :5,$ .... indica o intervalo que é da linha 5 até o fim ``$''
+     normal .. executa em modo normal
+     0 ....... move o cursor para o começo da linha
+     w ....... pula uma palavra
+     d3w ..... apaga 3 palavras ``w''
+\end{verbatim}
+
+Obs: É claro que um comando de substituição simples
+
+\begin{verbatim}
+     :5,$s/é um texto//g
+\end{verbatim}
+
+Resolveria neste caso, mas a vantagem do método anterior é que
+é válido para três palavras, sejam quais forem.\\
+
+Também é possível empregar comandos de inserção (como {\em i} ou {\em a}) e
+retornar ao modo normal, bastando para isso usar o recurso \verb|Ctrl-v Esc|,
+de forma a simular o acionamento da tecla \verb|Esc| (saída do modo de
+inserção). Por exemplo, suponha agora que deseja-se mudar a frase ``{\em este
+é um texto novo}'' para ``{\em este não é um texto velho}''; pode ser feito
+assim:
+
+\begin{verbatim}
+     :5,$ normal 02winão ^[$ciwvelho
+\end{verbatim}
+
+Decompondo o comando acima temos:
+
+\begin{verbatim}
+     :5,$ .... indica o intervalo que é da linha 5 até o fim ``$''
+     normal .. executa em modo normal
+     0 ....... move o cursor para o começo da linha
+     2w ...... pula duas palavras (vai para a palavra "é")
+     i ....... entra no modo de inserção
+     não  .... insere a palavra "não" seguida de espaço " "
+     ^[ ...... sai do modo de inserção (através de Ctrl-v seguido de Esc)
+     $ ....... vai para o fim da linha
+     ciw ..... apaga a última palavra ("novo") e entra em modo de inserção
+     velho ... insere a palavra "velho" no lugar de "novo"
+\end{verbatim}
+
+A combinação \verb|Ctrl-v| é utilizada para inserir caracteres de controle na
+sua forma literal, prevenindo-se assim a interpretação destes neste exato
+momento.

@@ -1,0 +1,223 @@
+\chapter{Hábitos para Edição Efetiva}
+\label{cha:Hábitos para edição efetiva}
+
+
+Um dos grandes problemas relacionados com os softwares é sua subutilização. Por
+inércia o usuário tende a aprender o mínimo para a utilização de um programa e
+deixa de lado recursos que poderiam lhe ser de grande valia. O mantenedor do
+Vim  Bram Moolenaar\footnote{http://www.moolenaar.net} recentemente publicou vídeos
+e manuais sobre os ``7 hábitos para edição efetiva de
+textos\footnote{http://br-linux.org/linux/7-habitos-da-edicao-de-texto-efetiva}'',
+este capítulo pretende resumir alguns conceitos mostrados por Bram Moolenaar em
+seu artigo.
+
+\section{Mova-se rapidamente no texto}
+\label{sec:Mova-se rapidamente no texto}
+
+Leia sobre como mover-se no documento no capítulo \ref{cha:Movendo-se no documento}
+
+\section{Use marcas}
+veja a seção \ref{sec:Usando marcas} na página \pageref{sec:Usando marcas}.
+
+\begin{verbatim}
+     ma ..... em modo normal cria uma marca `a'
+     'a ..... move o cursor até a marca `a'
+     d'a .... deleta até a marca `a'
+     y'a .... copia até a marca `a'
+\end{verbatim}
+
+
+
+\begin{verbatim}
+     gg ... vai para a linha 1 do arquivo
+     G .... vai para a última linha do arquivo
+     0 .... vai para o início da linha
+     $ .... vai para o fim da linha
+     fx ... pula até a próxima ocorrência de ``x''
+     dfx .. deleta até a próxima ocorrência de ``x''
+     g, ... avança na lista de alterações
+     g; ... retrocede na lista de alterações
+     p .... cola o que foi deletado/copiado abaixo
+     P .... cola o que foi deletado/copiado acima
+     H .... posiciona o cursor no primeiro caractere da tela
+     M .... posiciona o cursor no meio da tela
+     L .... posiciona o cursor na última linha da tela
+\end{verbatim}
+
+\begin{verbatim}
+     * Use asterisco  para localizar a palavra sob o cursor
+     * Use o percent % serve para localizar fechamento de parêntese chaves etc
+\end{verbatim}
+
+\begin{verbatim}
+     '.  apostrofo + ponto retorna ao último local editado
+     '' retorna ao local do ultimo salto
+\end{verbatim}
+
+Suponha que você está procurando a palavra `argc':
+
+\begin{verbatim}
+     /argc
+\end{verbatim}
+
+Digita `n' para buscar a próxima ocorrência
+
+\begin{verbatim}
+     n
+\end{verbatim}
+
+Um jeito mais fácil seria:
+
+\begin{verbatim}
+     "coloque a linha abaixo no seu vimrc
+     :set hlsearch
+\end{verbatim}
+
+Agora use asterisco para destacar todas as ocorrências do padrão desejado
+e use a letra `n' para pular entre ocorrências, caso deseje seguir o caminho
+inverso use `N'.
+
+\section{Use quantificadores}
+\label{Use quantificadores}
+Em modo normal você pode fazer
+
+\begin{verbatim}
+     10j ..... desce 10 linhas
+     5dd ..... apaga as próximas 5 linhas
+     :50 ..... vai para a linha 50
+     50gg .... vai para a linha 50
+\end{verbatim}
+
+
+\section{Edite vários arquivos de uma só vez }
+\label{Edite vários arquivos de uma só vez }
+
+O Vim pode abrir vários arquivos que contenham um determinado padrão.
+Um exemplo seria abrir dezenas de arquivos html e trocar a ocorrência
+bgcolor=``f'' Para bgcolor=``e'' Usaríamos o seguinte comando
+
+\begin{verbatim}
+     vim *.html :bufdo :%s/bgcolor=``f''/bgcolor=``e''/g :wall :qall
+\end{verbatim}
+
+Ainda com relação à edição de vários arquivos poderia-mos abrir alguns
+arquivos txt e mudar de um para o outro assim:
+
+\begin{verbatim}
+     :wn
+\end{verbatim}
+
+O ``w'' significa gravar e o ``n'' significa {\em next}, ou seja, gravaria-mos
+o que foi modificado no arquivo atual e mudaríamos para o próximo.
+
+Veja também: \ref{cha:Movendo-se no documento}
+
+\section{Não digite duas vezes}
+\label{Não digite duas vezes}
+
+\begin{itemize}
+\item O Vim complementa com ``tab''. Veja mais na seção \ref{Complementação com ``tab''} na página \pageref{Complementação com ``tab''}.
+\item Use macros. Detalhes na seção \ref{Macros: gravando comandos}
+página \pageref{Macros: gravando comandos}.
+\item Use abreviações coloque abreviações como abaixo em seu \verb|~/.vimrc|. Veja mais na seção \ref{Abreviações}.
+\item as abreviações fazem o mesmo que auto-correção e auto-texto em outros editores
+\end{itemize}
+
+\begin{verbatim}
+     iab tambem também
+     iab linux GNU/Linux
+\end{verbatim}
+
+
+
+* No modo de inserção você pode usar
+
+\begin{verbatim}
+     Ctrl-y  ....... copia caractere a caractere a linha acima
+     Ctrl-e  ....... copia caractere a caractere a linha abaixo
+     Ctrl-x Ctrl-l .. completa linhas inteiras
+\end{verbatim}
+
+* Para um trecho muito copiado coloque o seu conteúdo em um registrador
+
+\begin{verbatim}
+     "ayy ... copia a linha atual para o registrador ``a''
+     "ap  ... cola o registrador ``a''
+\end{verbatim}
+
+Crie abreviações para erros comuns no seu arquivo de configuração (~/.vimrc)
+
+\begin{verbatim}
+     iabbrev teh the
+     syntax keyword WordError teh
+\end{verbatim}
+
+As linhas acima criam uma abreviação para erro de digitação da palavra `the'
+e destaca textos que você abrir que contenham este erro.
+
+\section{Use dobras}\label{sec:Use folders}
+
+O Vim pode ocultar partes do texto que não estão sendo utilizadas permitindo
+uma melhor visualização do conteúdo. Mais detalhes no capítulo
+\ref{cha:Folders} página \pageref{cha:Folders}.
+
+\section{Use autocomandos}
+\label{Use autocomandos}
+
+No arquivo de configuração do Vim \verb|~/.vimrc| você pode criar comandos
+automáticos que serão executados diante de uma determinada
+circunstância
+
+O comando abaixo será executado em qualquer arquivo existente, posicionando o cursor no último local editado
+
+\begin{verbatim}
+     "autocmd BufEnter * lcd %:p:h
+     autocmd BufReadPost *
+       \ if line("'\"") > 0 && line("'\"") <= line("$") |
+       \   exe "normal g`\"" |
+       \ endif
+\end{verbatim}
+
+
+Grupo de comandos para arquivos do tipo ``html''. Observe que o
+autocomando carrega um arquivo de configuração do Vim exclusivo para o
+tipo html/htm e no caso de arquivos novos ``BufNewFile'' ele já cria um
+esqueleto puxando do endereço indicado.
+
+\begin{verbatim}
+     augroup html
+      au! <--> Remove all html autocommands
+       au!
+       au BufNewFile,BufRead *.html,*.shtml,*.htm set ft=html
+       au BufNewFile,BufRead,BufEnter  *.html,*.shtml,*.htm so ~/docs/vim/.vimrc-html
+       au BufNewFile *.html 0r ~/docs/vim/skel.html
+       au BufNewFile *.html*.shtml,*.htm /body/+  " coloca o cursor após o corpo <body>
+       au BufNewFile,BufRead *.html,*.shtml,*.htm set noautoindent
+     augroup end
+\end{verbatim}
+
+Documentação sobre autocomandos do Vim \url{http://www.vim.org/htmldoc/autocmd.html}.
+
+\section{Use o file explorer}\label{Use o file explorer}
+
+O Vim pode navegar em pastas assim:
+
+\begin{verbatim}
+     vim .
+\end{verbatim}
+
+Você pode usar ``j'' e ``k'' para navegar e {\tt Enter} para editar o arquivo
+selecionado
+
+\section{Torne as boas práticas um hábito }\label{Torne as boas práticas um hábito }
+
+Para cada prática produtiva procure adquirir um hábito e mantenha-se
+atento ao que pode ser melhorado. Imagine tarefas complexas, procure
+um meio melhor de fazer e torne um hábito.
+
+\section{Referências}
+\label{Referências}
+\begin{itemize}
+   \item \url{http://www.moolenaar.net/habits\_2007.pdf} por Bram Moolenaar
+   \item \url{http://vim.wikia.com/wiki/Did\_you\_know}
+\end{itemize}

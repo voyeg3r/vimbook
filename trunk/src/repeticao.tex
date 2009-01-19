@@ -1,0 +1,293 @@
+\chapter{Repetição de Comandos}\label{Repetição de comandos}
+
+Para repetir a última edição saia do modo de Inserção e pressione ponto (.):
+
+\begin{verbatim}
+     .
+\end{verbatim}
+
+Para inserir um texto que deve ser repetido várias vezes:
+
+\begin{verbatim}
+     # Posicione o cursor no local desejado;
+     # Digite o número de repetições;
+     # Entre em modo de inserção;
+     # Digite o texto;
+     # Saia do modo de inserção (tecle Esc).
+\end{verbatim}
+
+Por exemplo, se você quiser inserir oitenta traços numa linha, em vez
+de digitar um por um, você pode digitar o comando:
+
+\begin{verbatim}
+     80i-<Esc>
+\end{verbatim}
+
+Veja, passo a passo, o que aconteceu:
+
+ Antes de entrar em modo de inserção usamos um quantificador
+
+\begin{verbatim}
+     `80'
+\end{verbatim}
+
+ depois iniciamos o modo de inserção
+
+\begin{verbatim}
+     i
+\end{verbatim}
+
+depois digitamos o caractere a ser repetido
+
+\begin{verbatim}
+     -
+\end{verbatim}
+
+e por fim saímos do modo de inserção
+
+\begin{verbatim}
+     <Esc>
+\end{verbatim}
+
+Se desejássemos digitar 10 linhas com o texto
+
+\begin{verbatim}
+     isto é um teste
+\end{verbatim}
+
+deveríamos então fazer assim:
+   
+\begin{verbatim}
+     <Esc> .. para ter certeza que ainda estamos no modo normal
+     10 ..... quantificador antes
+     i ...... entrar no modo de inserção
+     isto é um teste <Enter>
+     <Esc> .. voltar ao modo normal
+\end{verbatim}
+
+\section{Repetindo a digitação de uma linha }
+Para repetir a linha acima (modo de inserção) use
+
+\begin{verbatim}
+     Ctrl-y
+\end{verbatim}
+
+Para repetir a linha abaixo (modo de inserção)
+
+\begin{verbatim}
+     Ctrl-e
+\end{verbatim}
+
+Para copiar a linha atual
+
+\begin{verbatim}
+     yy
+\end{verbatim}
+
+Para colar a linha copiada
+
+\begin{verbatim}
+     p
+\end{verbatim}
+
+Para repetir uma linha completa
+
+\begin{verbatim}
+     Ctrl-x Ctrl-l
+\end{verbatim}
+
+O atalho acima só funcionará para uma linha semelhante, experimente
+digitar
+
+\begin{verbatim}
+     uma linha qualquer com algum conteúdo
+     uma linha <Ctrl-x Ctrl-l>
+\end{verbatim}
+
+e veja o resultado
+
+\section{Guardando trechos em ``registros''}
+\label{sec:Guardando trechos em ``registros''}
+
+Os registradores ``z'' são uma espécie de área de transferência múltipla.
+
+Você deve estar em modo normal e então digitar uma aspa dupla e uma
+das 26 letras do alfabeto, em seguida uma ação por exemplo, `y'
+(copiar) `d' (apagar). Depois, mova o cursor para a linha
+desejada e cole com "rp, onde `r' corresponde ao
+registrador para onde o trecho foi copiado.
+
+\begin{verbatim}
+     "ayy ... copia a linha atual para o registrador '``a'''
+     "ap  ... cola o conteúdo do registrador '``a''' abaixo
+     "bdd ... apaga a linha atual para o registrador '``b'''
+\end{verbatim}
+
+\section{Macros: gravando comandos}\label{Macros: gravando comandos}
+
+Imagine que você tem o seguinte trecho de código:
+
+\begin{verbatim}
+     stdio.h
+     fcntl.h
+     unistd.h
+     stdlib.h
+\end{verbatim}
+
+e quer que ele fique assim:
+
+\begin{verbatim}
+     #include "stdio.h"
+     #include "fcntl.h"
+     #include "unistd.h"
+     #include "stdlib.h"
+\end{verbatim}
+
+Não podemos simplesmente executar repetidas vezes um comando do Vim, pois
+precisamos incluir texto tanto no começo quanto no fim da linha?  É necessário
+mais de um comando para isso.  É aí que entram as macros. Podemos gravar até 26
+macros, já que elas são guardadas nos registros do Vim, que são identificados
+pelas letras do alfabeto. Para começar a gravar uma macro no registro '``a''',
+digitamos
+
+\begin{verbatim}
+     qa
+\end{verbatim}
+
+No modo Normal. Tudo o que for digitado a partir daí será gravado no
+registro ``a'' até que terminemos com o comando
+\verb|<Esc>q| novamente (no modo Normal). Assim,
+podemos solucionar nosso problema:
+
+\begin{verbatim}
+     <Esc> ....... para garantir que estamos no modo normal
+     qa .......... inicia a gravação da macro `a'
+     I ........... entra no modo de inserção no começo da linha
+     #include " .. insere #include "
+     <Esc> ....... sai do modo de inserção
+     A" .......... insere o último caractere
+     <Esc> ....... sai do modo de inserção
+     j ........... desce uma linha
+     <Esc> ....... sai do modo de inserção
+     q ........... para a gravação da macro
+\end{verbatim}
+
+Agora você só precisa posicionar o cursor na primeira letra de uma linha como esta
+
+\begin{verbatim}
+     stdio.h
+\end{verbatim}
+
+E executar a macro do registro ``a'' quantas vezes for necessário,
+usando o comando \verb|@a|. Para executar quatro vezes, digite:
+
+\begin{verbatim}
+     4@a
+\end{verbatim}
+
+Este comando executa quatro vezes o conteúdo do registro ``a''.
+
+Caso tenha executado a macro uma vez pode repeti-la com o comando
+
+\begin{verbatim}
+     @@
+\end{verbatim}
+
+\section{Repetindo substituições }
+Se você fizer uma substituição em um intervalo como abaixo
+
+\begin{verbatim}
+     :5,32s/isto/aquilo/g
+\end{verbatim}
+
+Pode repetir esta substituição em qualquer linha que estiver apenas usando este símbolo
+
+\begin{verbatim}
+     &
+\end{verbatim}
+
+O Vim substituirá na linha corrente ``isto'' por ``aquilo''. Podemos
+repetir a última substituição globalmente assim:
+   
+\begin{verbatim}
+     g&
+\end{verbatim}
+
+\section{Repetindo comandos}\label{Repetindo comandos}
+
+\begin{verbatim}
+     @:
+\end{verbatim}
+
+O atalho acima repete o último comando no próprio modo de comandos
+
+\section{Scripts Vim}\label{Scripts Vim}
+Usando um {\em script} para modificar um nome em vários arquivos: 
+Crie um arquivo chamado `subst.vim' contendo os comandos de substituição e o
+comando de salvamento :wq.
+
+\begin{verbatim}
+     %s/bgcolor="e"/bgcolor="e"/g
+     wq
+\end{verbatim}
+
+Para executar um {\em script}, digite o comando
+
+\begin{verbatim}
+     :source nome_do_script.vim
+\end{verbatim}
+
+\section{Usando o comando bufdo}\label{Usando o comando bufdo}
+
+Com o comando :bufdo podemos executar um comando em um
+conjunto de arquivos de forma rápida. No exemplo a seguir, abriremos
+todos os arquivos HTML do diretório atual, efetuarei uma substituição
+e em seguida salvo todos.
+
+\begin{verbatim}
+     vim *.html
+     :bufdo %s/bgcolor="e"/bgcolor="e"/g | :wall
+\end{verbatim}
+
+Para fechar todos os arquivos faça:
+
+\begin{verbatim}
+     :qall
+\end{verbatim}
+
+O comando :wall salva ``write'' todos ``all'' os arquivos
+abertos pelo comando vim *.html. Opcionalmente você pode
+combinar ``l'' e ``l'' com o comando :wqall, que
+salva todos os arquivos abertos e em seguida sai do Vim.
+
+\section{Colocando a última busca em um comando }
+Observação: lembre-se \verb|Ctrl = ^|
+
+\begin{verbatim}
+     :^r/
+\end{verbatim}
+
+\section{Inserindo o nome do arquivo no comando }
+
+\begin{verbatim}
+     :^r%
+\end{verbatim}
+
+\section{Inserindo o último comando }
+
+\begin{verbatim}
+     ^r:
+\end{verbatim}
+
+Se preceder com ``:'' você repete o comando, equivale a acessar o histórico de
+comandos com as setas
+
+\begin{verbatim}
+     :^r:
+\end{verbatim}
+
+\section{Para repetir exatamente a última inserção }
+
+\begin{verbatim}
+     i<c-a>
+\end{verbatim}
