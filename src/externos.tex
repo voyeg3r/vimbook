@@ -1,0 +1,111 @@
+\chapter{Comandos Externos}
+O Vim permite executar comandos externos para processar ou filtrar o
+conteúdo de um arquivo. De forma geral, fazemos isso digitando (no
+modo normal):
+
+\begin{verbatim}
+     :!ls .... visualiza o conteúdo do diretório
+\end{verbatim}
+
+Lembrando que anexando um simples ponto, a saída do comando torna-se o 
+domcumento que está sendo editado:
+
+\begin{verbatim}
+     :.!ls .... imprime na tela o conteúdo do diretório
+\end{verbatim}
+
+A seguir, veja alguns exemplos de utilização:
+
+\section{Ordenando}
+Podemos usar o comando {\em sort} que ordena o conteúdo de um arquivo dessa forma:
+
+\begin{verbatim}
+     :5,15!sort ..... odena da linha 5 até a linha 15
+\end{verbatim}
+
+O comando acima ordena da linha 5 até a linha 15.
+
+O comando {\em sort} existe tanto no Windows quanto nos sistemas Unix.
+Digitando simplesmente {\em sort}, sem argumentos, o comportamento padrão
+é de classificar na ordem alfabética (baseando-se na linha inteira).
+Para maiores informações sobre argumentos do comando {\em sort}, digite
+
+\begin{verbatim}
+     sort --help ou man sort (no Unix) ou
+     sort /? (no Windows).
+\end{verbatim}
+
+\section{Removendo linhas duplicadas}
+
+\begin{verbatim}
+     :%!uniq
+\end{verbatim}
+
+O caractere ``\%'' representa a região equivalente ao arquivo atual inteiro.
+A versão do Vim 7 em diante tem um comando {\em sort} que permite remover
+linhas duplicadas {\em uniq} e ordenar, sem a necessidade de usar comandos
+externos, para mais detalhes:
+
+\begin{verbatim}
+     :h sort
+\end{verbatim}
+
+\section{Ordenando e removendo linhas duplicadas no Vim 7}
+
+\begin{verbatim}
+     :sort u
+\end{verbatim}
+
+Quando a ordenação envolver números faça:
+
+\begin{verbatim}
+     :sort n
+\end{verbatim}
+
+\section{Beautifiers}
+
+A maior parte das linguagens de programação possui ferramentas
+externas chamadas {\em beautifiers}, que servem para embelezar o código,
+através da indentação e espaçamento. Por exemplo, para embelezar um
+arquivo HTML é possível usar a ferramenta ``tidy'', do W3C:
+
+\begin{verbatim}
+     :%!tidy
+\end{verbatim}
+
+\section{Compilando e verificando erros}
+Se o seu projeto já possui um Makefile, então você pode fazer uso do comando
+{\tt :make} para poder compilar seus programas no conforto de seu Vim:
+
+\begin{verbatim}
+		:make
+\end{verbatim}
+
+A vantagem de fazer isso é poder usar outra ferramenta bastante interessante, a janela
+de {\em quickfix}:
+
+\begin{verbatim}
+		:cwindow
+\end{verbatim}
+
+O comando {\tt cwindow} abrirá uma janela em um {\em split} horizontal com a
+listagem de erros e {\em warnings}.  Você poderá navegar pela lista usando os
+cursores e ir diretamente para o arquivo e linha da ocorrência.
+
+\section{Grep}
+
+Do mesmo jeito que você usa {\em grep} na sua linha de comando você pode usar
+o {\em grep} interno do Vim. Exatamente do mesmo jeito:
+
+\begin{verbatim}
+		:grep <caminho> <padrão> <opções>
+\end{verbatim}
+
+Use a janela de {\em quickfix} aqui também para exibir os resultados do {\em
+grep} e poder ir diretamente 
+a eles.
+
+\section{Referências}
+* \url{http://www.dicas-l.com.br/dicas-l/20070119.php}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

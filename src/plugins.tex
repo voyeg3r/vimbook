@@ -1,0 +1,144 @@
+\chapter{Plugins}\label{Plugins}
+
+``Plugins'' são um meio de estender as funcionalidades do Vim, há
+``plugins'' para diversas tarefas, desde wikis para o Vim até
+ferramentas de auxílio a navegação em arquivos com é o caso do
+``plugin'' \url{http://www.vim.org/scripts/script.php?script\_id=1658}
+NerdTree, que divide uma janela que permite navegar pelos diretórios
+do sistema a fim de abrir arquivos a serem editados.
+
+\section{Como testar um plugin sem instalá-lo?}
+\label{Como testar um plugin sem instala-lo?}
+
+\begin{verbatim}
+     :source <path>/<plugin>
+\end{verbatim}
+
+Caso o plugin atenda suas necessidades você pode instala-lo. Este
+procedimento também funciona para temas de cor!
+
+
+
+No GNU/Linux
+\begin{verbatim}
+     ~/.vim/plugin/
+\end{verbatim}
+
+No Windows
+
+\begin{verbatim}
+     ~/vimfiles/plugin/
+\end{verbatim}
+
+Obs: Caso não exista a pasta você pode criá-la!
+
+Exemplo no GNU/Linux
+
+\begin{verbatim}
+     + /HOME/USER
+           |
+           |
+            + .VIM
+                |
+                |
+                + PLUGIN
+\end{verbatim}
+
+Obs: Alguns plugins dependem da versão do Vim, para saber qual
+a que está atualmente instalada:
+
+\begin{verbatim}
+     :ver
+\end{verbatim}
+
+\section{Plugin para \LaTeX}
+\label{Plugin para LaTeX}
+Um plugin completo para \LaTeX está acessível aqui: \url{http://vim-latex.sourceforge.net/}
+Uma vez adicionado o plugin você pode inserir seus {\em templates}
+em:
+
+\begin{verbatim}
+     ~/.vim/ftplugin/latex-suite/templates
+\end{verbatim}
+
+
+\section{Criando folders para arquivos \LaTeX}
+\label{Criando folders para arquivos LaTeX}
+
+\begin{verbatim}
+     set foldmarker=\\begin,\\end
+     set foldmethod=marker
+\end{verbatim}
+
+Adicionar marcadores ({\em labels}) às seções de um documento \LaTeX
+\begin{verbatim}
+     .s/^\(\\section\)\({.*}\)/\1\2\r\\label\2
+\end{verbatim}
+
+\section{Criando seções \LaTeX}\label{Criando seções latex}
+o comando abaixo substitui
+
+\begin{verbatim}
+     ==seção==
+\end{verbatim}
+
+   por
+
+\begin{verbatim}
+     \section{seção}
+\end{verbatim}
+
+\begin{verbatim}
+     :.s/^==\s\?\([^=]*\)\s\?==/\\section{\1}/g
+     
+     : ......... comando
+     . ......... linha atual
+     s ......... substitua
+     ^ ......... começo de linha
+     == ........ dois sinais de igual
+     \s\? ...... seguido ou não de espaço
+     [^=] ...... não pode haver = (^ dentro de [] é negação)
+     * ......... diz que o que vem antes pode vir zero ou mais vezes
+     \s\? ...... seguido ou não de espaço
+     \\ ........ insere uma barra invertida
+     \1 ........ repete o primeiro trecho entre ()
+\end{verbatim}
+
+\section{Plugin para manipular arquivos}
+\url{http://www.vim.org/scripts/script.php?script_id=2337#0.1.9}
+Para entender este plugin acesse este vídeo:
+ \url{http://www.screencast.com/t/P6nJkJ0DE}
+
+
+\section{Complementação de códigos}
+\label{Complementação de códigos}
+
+O ``plugin'' snippetsEmu é um misto entre complementação de códigos e
+os chamados modelos ou {\em templates}. Insere um trecho de código pronto,
+mas vai além disso, permitindo saltar para trechos do modelo inserido
+através de um atalho configurável de modo a agilizar o trabalho do
+programador. \url{http://www.vim.org/scripts/script.php?script\_id=1318}
+
+\section{Instalação}
+\label{Instalação}
+
+Um artigo ensinando como instalar o ``plugin'' snippetsEmu pode ser lido aqui:
+ \url{http://vivaotux.blogspot.com/2008/03/instalando-o-plugin-snippetsemu-no-vim.html}
+
+\section{Um wiki para o Vim}
+\label{Um wiki para o Vim}
+
+O ``plugin'' wikipot implementa um wiki para o Vim no qual você define
+um ``link'' com a notação WikiWord, onde um ``link'' é uma palavra que
+começa com uma letra maiúscula e tem outra letra maiúscula no meio
+Obtendo o plugin neste link: \url{http://www.vim.org/scripts/script.php?script\_id=1018}.
+
+\section{Acessando documentação do python no Vim}\label{Acessando documentação do python no Vim}
+
+ \url{http://www.vim.org/scripts/script.php?script\_id=910}
+
+\section{Formatando textos planos com syntax}
+\label{Formatando textos planos com syntax}
+\url{http://www.vim.org/scripts/script.php?script\_id=2208&rating=helpful#1.3}
+
+Veja como instalar o este plugin no capítulo \ref{cha:Um wiki para o Vim}.

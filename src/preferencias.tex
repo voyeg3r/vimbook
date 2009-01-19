@@ -1,0 +1,897 @@
+\chapter{Como Editar Preferências no Vim}\label{cha:Como editar preferências no Vim}
+O arquivo de preferências do Vim é ``vimrc'', um arquivo oculto que
+pode ser criado no {\em profile} do usuário.
+
+\begin{verbatim}
+     ~/.vimrc
+     /home/seuusuario/.vimrc
+\end{verbatim}
+
+Caso use o Windows o arquivo é:
+
+\begin{verbatim}
+     ~\_vimrc
+     c:\documents and settings\seuusuario\_vimrc
+\end{verbatim}
+
+\section{Onde colocar plugins e temas de cor}
+\label{Onde colocar plugins e temas de cor}
+
+No Windows procure ou crie uma pasta chamada ``vimfiles'' que fica em
+
+\begin{verbatim}
+     c:\documents and settings\seuusuario\
+\end{verbatim}
+
+No GNU/Linux procure ou crie uma pasta chamada .vim que deve ficar em
+
+\begin{verbatim}
+     /home/user/.vim
+\end{verbatim}
+
+Nesta pasta '.vim' ou `vimfiles' deve haver pastas tipo
+
+\begin{verbatim}
+     vimfiles
+        |
+        +--color
+        |
+        +--doc
+        |
+        +--syntax
+        |
+        +--plugin
+\end{verbatim}
+
+Na seção Plugins \ref{Plugins} página \pageref{Plugins}
+estão descritos alguns plugins interessantes!
+
+\section{Comentários }
+\label{Comentários }
+
+\begin{verbatim}
+     " linhas começadas com aspas são comentários
+     " e portanto serão ignoradas pelo Vim
+\end{verbatim}
+
+Ao fazer modificações comente usando aspas duplas no começo da linha,
+os comentários lhe ajudarão mais tarde, pois à medida que o seu vimrc
+cresce podem aparecer dúvidas sobre o que determinado trecho faz :)
+
+
+As alterações no vimrc só será efetivadas na próxima vez que o Vim for aberto
+a não ser que você faça um mapeamento para recarregar, mais adiante você verá isto
+por enquanto faça
+
+\begin{verbatim}
+     :source ~/vimrc ....... se estiver no GNU/Linux
+     :source ~/_vimrc ...... caso use o sitema virótico
+\end{verbatim}
+
+\section{``Set''}
+\label{``Set''}
+Os comandos `set' podem ser colocados no \verb|.vimrc|:
+
+\begin{verbatim}
+     set nu
+\end{verbatim}
+
+ou digitados como comandos:
+
+\begin{verbatim}
+     :set nu
+\end{verbatim}
+
+\begin{verbatim}
+     set nu       "mostra numeração de linhas
+     set showmode "mostra o modo em que estamos
+     set showcmd  "mostra no status os comandos inseridos
+     set ts=4     "tamanho das tabulações
+     syntax on    "habilita cores
+     set hls      "destaca com cores os termos procurados
+     set incsearch "habilita a busca incremental
+     set ai       "auto identação
+     set aw       "salvamento automático - veja :help aw
+     set ignorecase "faz o Vim ignorar maiúsculas e minúsculas nas buscas
+     set smartcase  "Se começar uma busca em maiúsculo ele habilita o case
+     set ic        "ignora maiúscula e minúsculas em uma busca
+     set scs       "ao fazer uma busca com maiúsculos considerar case sensitive
+     set backup
+     set backupext=.backup
+     set backupdir=~/.backup,./
+     set cul        "abreviação de cursor line (destaca linha atual)
+     set ve=all     "permite mover o cursor para áreas onde não há texto
+     set ttyfast    "Envia mais caracteres ao terminal, melhorando o redraw de janelas.
+     set columns=88 "Determina a largura da janela.
+     set mousemodel=popup "exibe o conteúdo de folders e sugestões spell
+     set viminfo=%,'50,\"100,/100,:100,n  "guarda informações sobre buffers ...
+\end{verbatim}
+
+O comando \verb|gqap| ajusta o parágrafo atual em modo normal
+
+\begin{verbatim}
+     " * coloca 2 espaços após o . quando usando o gq
+     "set nojoinspaces
+     " ****************************************************************
+     " *                                                              *
+     " *   geralmente usamos ^I para representar uma tabulação        *
+     " *   <Tab>, e $ para indicar o fim de linha. Mas é possível     *
+     " *   customizar essas opções. sintaxe:                          *
+     " *                                                              *
+     " *   set listchars=key:string,key:string                        *
+     " *                                                              *
+     " *                                                              *
+     " * - eol:{char}                                                 *
+     " *                                                              *
+     " *     Define o caracter a ser posto depois do fim da linha     *
+     " *                                                              *
+     " * - tab:{char1}{char2}                                         *
+     " *                                                              *
+     " *     O tab é mostrado pelo primeiro caracter {char1} e        *
+     " *     seguido por {char2}                                      *
+     " *                                                              *
+     " * - trail:{char}                                               *
+     " *                                                              *
+     " *     Esse caracter representa os espaços em branco.           *
+     " *                                                              *
+     " * - extends:{char}                                             *
+     " *                                                              *
+     " *    Esse caracter representa o início do fim da linha         *
+     " *    sem quebrá-la                                             *
+     " *    Está opção funciona com a opção nowrap habilitada         * 
+     " *                                                              *
+     " ****************************************************************
+     "exemplo 1:
+     "set listchars=tab:>-,trail:.,eol:#,extends:@
+     
+     "exemplo 2:
+     "set listchars=tab:>-
+     
+     "exemplo 3:
+     "set listchars=tab:>-
+     
+     "exemplo 4:
+     set nowrap    "Essa opção desabilita a quebra de linha
+     "set listchars=extends:+
+     
+     Caso esteja usando o gvim pode setar um esquema de cores
+     set colo desert
+\end{verbatim}
+
+\section{Exibindo caracteres invisíveis}
+\label{Exibindo caracteres invisíveis}
+
+\begin{verbatim}
+     :set list
+\end{verbatim}
+
+\section{Definindo macros previamente}
+\label{Definindo macros previamente}
+Definindo uma macro de nome \verb|s| para ordenar e retirar linhas duplicadas
+
+\begin{verbatim}
+     let @s=":sort u"
+\end{verbatim}
+
+Para executar a macro \verb|s| definida acima faça:
+
+\begin{verbatim}
+     @s
+\end{verbatim}
+
+O Vim colocará no comando
+
+\begin{verbatim}
+     :sort -u
+\end{verbatim}
+
+Bastando pressionar \verb|<Enter>|.
+Observação: esta macro prévia pode ficar no vimrc ou ser digitada em comando ``:''
+
+
+\begin{verbatim}
+     :5,20sort u
+     "da linha 5 até a linha 20 ordene e retire duplicados
+     
+     :sort n
+     " ordene meu documento considerando números
+     " isto é útil pois se a primeira coluna contiver
+     " números a ordenação pode ficar errada caso não usemos
+     " o parâmetro ``n''
+\end{verbatim}
+
+\section{Mapeamentos}\label{Mapeamentos}
+
+Mapeamentos permitem criar atalhos de teclas para quase tudo. Tudo depende de
+sua criatividade e do quanto conhece o Vim. 
+
+
+\subsection{Notas sobre mapeamentos}\label{Notas sobre mapeamentos}
+Mapeamentos são um ponto importante do Vim, com eles podemos controlar
+ações com quaisquer teclas, mas antes temos que saber que:
+
+Para criar mapeamentos, precisamos conhecer a maneira de representar
+as teclas e combinações. Alguns exemplos:
+
+\begin{verbatim}
+     tecla       : tecla mapeada
+     <c-x>       : Ctrl-x
+     <left>      : seta para a esquerda
+     <right>     : seta para a direita
+     <c-m-a>     : Ctrl-Alt-a
+     <cr>        : Enter
+     <Esc>       : Escape
+     <leader>    : normalmente \
+     <bar>       : | pipe
+     <cword>     : palavra sob o cursor
+     <cfile>     : arquivo sob o cursor
+     <cfile><    : arquivo sob o cursor sem extensão
+     <sfile>     : conteúdo do arquivo sob o cursor
+     <left>      : salta um caractere para esquerda
+     <up>        : equivale clicar em `seta acima'
+     <m-f4>      : a tecla alt -> m  mais a tecla f4
+     <c-f>       : Ctrl-f
+     <bs>        : backspace
+     <space>     : espaço
+     <tab>       : tab
+\end{verbatim}
+
+Para ler mais sobre atalhos de tecla no Vim acesse 
+
+\begin{verbatim}
+     :h index
+\end{verbatim}
+
+No Vim podemos mapear uma tecla para o modo normal, realizando
+determinada operação e a mesma tecla pode desempenhar outra função
+qualquer em modo de inserção ou comando, veja:
+
+\begin{verbatim}
+     " mostra o nome do arquivo com o caminho
+     map <F2> :echo expand("%:p")
+     
+     " insere um texto qualquer
+     imap <F2> Nome de uma pessoa
+\end{verbatim}
+
+A única diferença nos mapeamentos acima é que o mapeamento para modo
+de inserção começa com ``i'', assim como para o modo ``comando'' ``:'' começa
+com ``c'' no caso \verb|cmap|.
+
+\subsection{Recarregando o arquivo de configuração}
+\label{sec:Recarregando o arquivo de configuração}
+
+Cada alteração no arquivo de configuração do Vim só terá efeito na próxima vez que você
+abrir o Vim a menos que você coloque isto dentro do mesmo
+
+\begin{verbatim}
+     " recarregar o vimrc
+     " Source the .vimrc or _vimrc file, depending on system
+     if &term == "win32" || "pcterm" || has("gui_win32")
+        map ,v :e $HOME/_vimrc<CR>
+        nmap <F12> :<C-u>source ~/_vimrc <BAR> echo "Vimrc recarregado!"<CR>
+     else
+        map ,v :e $HOME/.vimrc<CR>
+        nmap <F12> :<C-u>source ~/.vimrc <BAR> echo "Vimrc recarregado!"<CR>
+     endif
+\end{verbatim}
+
+Agora basta pressionar ``\verb|<F12>|'' em modo normal e as alterações passam a valer
+instantaneamente, e para chamar o vimrc basta usar.
+
+\begin{verbatim}
+     ,v
+\end{verbatim}
+
+
+
+Os mapeamentos abaixo são úteis
+para quem escreve códigos html, permitem inserir caracteres reservados do html
+usando uma barra invertida para proteger os mesmos, o Vim substituirá os "barra
+alguma coisa" pelo caractere correspondente.
+
+\begin{verbatim}
+     inoremap \&amp; &amp;amp;
+     inoremap \&lt; &amp;lt;
+     inoremap \&gt; &amp;gt;
+     inoremap \. &amp;middot;
+\end{verbatim}
+
+O termo {\em inoremap} significa: em modo de inserção não remapear, ou seja
+ele mapeia o atalho e não permite que o mesmo seja remapeado, e o
+mapeamento só funciona em modo de inserção, isso significa que um atalho
+pode ser mapeado para diferentes modos de operação. \\
+
+
+Veja este outro mapeamento:
+
+\begin{verbatim}
+     map <F11> <Esc>:set nu!<cr>
+\end{verbatim}
+
+Permite habilitar ou desabilitar números de linha do arquivo corrente.
+A exclamação ao final torna o comando booleano, ou seja, se a
+numeração estiver ativa será desabilitada, caso contrário será
+ativada. O ``\verb|<cr>|'' ao final representa um {\tt Enter}.
+
+\subsection{Limpando o ``registro'' de buscas}\label{Limpando o ``registro'' de buscas}
+
+A cada busca, se a opção `hls' estiver habilitada o Vim faz um
+destaque colorido, mas se você quiser limpar pode fazer este
+mapeamento
+
+\begin{verbatim}
+     nno <S-F11> <Esc>:let @/=""<CR>
+\end{verbatim}
+
+É um mapeamento para o modo normal que faz com que a combinação de
+teclas Shift-F11 limpe o ``registro`' de buscas
+
+\subsection{Destacar palavra sob o cursor }
+\label{Destacar palavra sob o cursor }
+
+\begin{verbatim}
+     nmap <s-f> :let @/=">"<CR>
+\end{verbatim}
+
+O atalho acima `s-f' corresponde a Shift-f
+
+\subsection{Remover linhas em branco duplicadas }
+\label{Remover linhas em branco duplicadas }
+
+\begin{verbatim}
+     map ,d <Esc>:%s/\(^\n\{2,}\)/\r/g<cr>
+\end{verbatim}
+
+No mapeamento acima estamos associando o atalho:
+
+\begin{verbatim}
+     ,d
+\end{verbatim}
+
+\dots~à ação desejada, fazer com que linhas em branco sucessivas sejam
+substituídas por uma só linha em branco, vejamos como funciona:
+
+\begin{verbatim}
+     map ......... mapear
+     ,d .......... atalho que quermos
+     <Esc> ....... se estive em modo de inserção sai
+     : ........... em modo de comando
+     % ........... em todo o arquivo
+     s ........... substitua
+     \n .......... quebra de linha
+     {2,} ........ duas ou mais vezes
+     \r .......... trocado por \r Enter
+     g ........... globalmente
+     <cr> ........ confirmação do comando
+\end{verbatim}
+
+As barras invertidas podem não ser usadas se o seu Vim estiver com a opção
+{\em magic} habilitada
+
+\begin{verbatim}
+     :set magic
+\end{verbatim}
+
+Por acaso este é um padrão portanto tente usar assim pra ver se funciona
+
+\begin{verbatim}
+     map ,d :%s/\n{2,}/\r/g<cr>
+\end{verbatim}
+
+\subsection{Mapeamentos globais}
+
+
+Podemos fazer mapeamentos globais ou que funcionam em apenas um modo:
+
+\begin{verbatim}
+     map  - funciona em qualquer modo
+     nmap - apenas no modo Normal
+     imap - apenas no modo de Inserção
+\end{verbatim}
+
+Mover linhas com {\tt Ctrl-(seta abaixo)} ou {\tt Ctrl-(seta acima)}:
+
+\begin{verbatim}
+     " tem que estar em modo normal!
+     nmap <C-Down> ddp
+     nmap <C-Up> ddkP
+\end{verbatim}
+
+Salvando com uma tecla de função:
+
+\begin{verbatim}
+     " salva com F9
+     nmap <F9> :w<cr>
+     " F10 - sai do Vim
+     nmap <F10> <Esc>:q<cr>
+\end{verbatim}
+
+\subsection{Convertendo as iniciais de um documento para maiúsculas}
+\label{Convertendo as iniciais de um documento para maiúsculas}
+
+\begin{verbatim}
+     " MinusculasMaiusculas: converte a primeira letra de cada
+     " frase para MAIÚSCULAS
+     nmap ,mm :%s/\C\([.!?][])"']*\($\|[ ]\)\_s*\)\(\l\)/\1\U\3/g<CR>
+     " caso queira confirmação coloque uma letra ``c'' no final da linha acima:
+     " (...) \3/gc<CR>
+\end{verbatim}
+
+\section{Autocomandos }\label{Autocomandos }
+
+Autocomandos habilitam comandos automáticos para situações
+específicas. Se você deseja que seja executada uma determinada ação ao
+iniciar um novo arquivo o seu autocomando deverá ser mais ou menos
+assim:
+
+\begin{verbatim}
+     au BufNewFile tipo ação
+\end{verbatim}
+
+Veja um exemplo:
+
+\begin{verbatim}
+     au BufNewFile,BufRead *.txt source ~/.vim/syntax/txt.vim
+\end{verbatim}
+
+No exemplo acima o Vim aplica autocomandos para arquivos novos
+``BufNewfile'' ou existentes ``BufReadd'' do tipo `txt' e para estes tipos
+carrega um arquivo de syntax, ou seja, um esquema de cores específico.
+
+\begin{verbatim}
+     " http://aurelio.net/doc/vim/txt.vim    coloque em ~/.vim/syntax
+     au BufNewFile,BufRead *.txt source ~/.vim/syntax/txt.vim
+\end{verbatim}
+
+Para arquivos do tipo txt `*.txt' use um arquivo de syntax em particular
+
+O autocomando abaixo coloca um cabeçalho para scripts `bash' caso a
+linha 1 esteja vazia, observe que os arquivos em questão tem que ter a
+extensão .sh
+
+\begin{verbatim}
+     au BufNewFile,BufRead *.sh if getline(1) == "" | normal ,sh
+\end{verbatim}
+
+
+\section{Funções}
+\label{sec:Funções}
+
+\subsection{Fechamento automático de parênteses}
+\label{sec:Fechamento automático de parênteses}
+
+\begin{verbatim}
+     " --------------------------------------
+     " Ativa fechamento automático para parêntese
+     " Set automatic expansion of parenthesis/brackets
+     inoremap ( ()<Esc>:call BC_AddChar(``)'')<cr>i
+     inoremap { {}<Esc>:call BC_AddChar(``}'')<cr>i
+     inoremap [ []<Esc>:call BC_AddChar(``]'')<cr>i
+     `` '' ``''<Esc>:call BC_AddChar(``''")<cr>i
+     "
+     " mapeia Ctrl-j para pular fora de parênteses colchetes etc...
+     inoremap <C-j> <Esc>:call search(BC_GetChar(), ``W'')<cr>a
+     " Function for the above
+     function! BC_AddChar(schar)
+        if exists(``k'')
+            let b:robstack = b:robstack . a:schar
+        else
+            let b:robstack = a:schar
+        endif
+     endfunction
+     function! BC_GetChar()
+        let l:char = b:robstack[strlen(b:robstack)-1]
+        let b:robstack = strpart(b:robstack, 0, strlen(b:robstack)-1)
+        return l:char
+     endfunction
+    
+    '''Outra opção para fechamento de parênteses'''
+    
+     " Fechamento automático de parênteses
+     imap { {}<left>
+     imap ( ()<left>
+     imap [ []<left>
+    
+     " pular fora dos parênteses, colchetes e chaves, mover o cursor
+     " no modo de inserção
+     imap <c-l> <Esc><right>a
+     imap <c-h> <Esc><left>a
+\end{verbatim}
+
+\subsection{Função para barra de status}\label{Função para barra de status}
+
+\begin{verbatim}
+     set statusline=%F%m%r%h%w\
+        [FORMAT=%{&ff}]\
+        [TYPE=%Y]\
+        [ASCII=\%03.3b]\
+        [HEX=\%02.2B]\
+        [POS=%04l,%04v][%p%%]\ [LEN=%L]
+\end{verbatim}
+Caso este código não funcione acesse este link: \url{http://www.linux.com/feature/120126}.
+
+
+\subsection{Rolar outra janela}\label{Rolar outra janela}
+
+Se você dividir janelas tipo
+
+\begin{verbatim}
+     Ctrl-w n
+\end{verbatim}
+
+pode colocar esta função no seu \verb|.vimrc|
+
+\begin{verbatim}
+     " rola janela alternativa
+     fun! ScrollOtherWindow(dir)
+     if a:dir == ``n''
+        let move = ``>''
+     elseif a:dir == ``p''
+        let move = ``>''
+     endif
+     exec ``p'' . move . ``p''
+     endfun
+     nmap <silent> <M-Down> :call ScrollOtherWindow(``n'')<CR>
+     nmap <silent> <M-Up> :call ScrollOtherWindow(``p'')<CR>
+\end{verbatim}
+
+Esta função é acionada com o atalho `alt' + setas acima e abaixo
+
+\subsection{Função para numerar linhas}\label{Função para numerar linhas}
+link para a dica: \url{http://vim.wikia.com/wiki/Number_a_group_of_lines}
+
+\subsection{Função para trocar o esquema de cores}
+
+\begin{verbatim}
+     function! <SID>SwitchColorSchemes()
+       if exists(``e'')
+        if g:colors_name == 'native'
+          colorscheme billw
+        elseif g:colors_name == 'billw'
+          colorscheme desert
+        elseif g:colors_name == 'desert'
+          colorscheme navajo-night
+        elseif g:colors_name == 'navajo-night'
+          colorscheme  zenburn
+        elseif g:colors_name == 'zenburn'
+          colorscheme bmichaelsen
+        elseif g:colors_name == 'bmichaelsen'
+          colorscheme wintersday
+        elseif g:colors_name == 'wintersday'
+          colorscheme summerfruit
+        elseif g:colors_name == 'summerfruit'
+          colorscheme native
+        endif
+       endif
+     endfunction
+     map <silent> <F6> :call <SID>SwitchColorSchemes()<CR>
+\end{verbatim}
+
+baixe os esquemas aqui:
+\url{http://nanasi.jp/old/colorscheme_0.html}
+
+\subsection{Uma função para inserir cabeçalho de script}
+\label{Uma função para inserir cabeçalho de script bash}
+para chamar a função
+basta pressionar, sh em modo normal
+
+\begin{verbatim}
+     " Cria um cabeçalho para scripts bash
+     fun! InsertHeadBash()
+        normal(1G)
+        :set ft=bash
+        :set ts=4
+        call append(0, ``h'')
+        call append(1, ``:'' . strftime("%a %d/%b/%Y hs %H:%M"))
+        call append(2, "# ultima modificação:``(''%a %d/%b/%Y hs %H:%M"))
+        call append(3, "# NOME DA SUA EMPRESA")
+        call append(3, "# Propósito do script")
+        normal($)
+     endfun
+     map ,sh :call InsertHeadBash()<cr>
+\end{verbatim}
+
+\subsection{Função para inserir cabeçalhos Python}
+\label{Função para inserir cabeçalhos python}
+
+\begin{verbatim}
+     " função para inserir cabeçalhos python
+     fun! BufNewFile_PY()
+      normal(1G)
+      :set ft=python
+      :set ts=2
+      call append(0, "#!/usr/bin/env python")
+      call append(1, "# # -*- coding: ISO-8859-1 -*-")
+      call append(2, ``:'' . strftime("%a %d/%b/%Y hs %H:%M"))
+      call append(3, `` '' . strftime("%a %d/%b/%Y hs %H:%M"))
+      call append(4, "# Instituicao: <+nome+>")
+      call append(5, "# Proposito do script: <+descreva+>")
+      call append(6, "# Autor: <+seuNome+>")
+      call append(7, "# site: <+seuSite+>")
+      normal gg
+     endfun
+     autocmd BufNewFile *.py call BufNewFile_PY()
+     map ,py :call BufNewFile_PY()<cr>A
+   
+     " Ao editar um arquivo será aberto no último ponto em
+     " que foi editado
+   
+     autocmd BufReadPost *
+       \ if line('``\''``('''\``'') <= line(``$'') |
+       \   exe ''normal g`\``" |
+       \ endif
+\end{verbatim}
+
+\begin{verbatim}
+     " Permite recarregar o Vim para que modificações no
+     " Próprio vimrc seja ativadas com o mesmo sendo editado
+     nmap <F12> :<C-u>source $HOME/.vimrc <BAR> echo "Vimrc recarregado!"<CR>
+\end{verbatim}
+
+Redimensionar janelas
+
+\begin{verbatim}
+     " Redimensionar a janela com
+     " Alt-seta à direita e esquerda
+     map <M-right> <Esc>:resize +2 <CR>
+     map <M-left> <Esc>:resize -2 <CR>
+\end{verbatim}
+
+\subsection{Função para pular para uma linha}
+\label{Função para pular para uma linha}
+
+\begin{verbatim}
+     "ir para linha
+     " ir para uma linha específica
+     function! GoToLine()
+     let ln = inputdialog("ir para a linha...")
+     exe ``:'' . ln
+     endfunction
+     "no meu caso o mapeamento é com Ctrl-l
+     "use o que melhor lhe convier
+     imap <S-l> <C-o>:call GoToLine()<CR>
+     nmap <S-l> :call GoToLine()<CR>
+\end{verbatim}
+
+\subsection{Função para gerar backup}
+\label{Função para gerar backup}
+
+A função abaixo é útil para ser usada quando você vai editar um arquivo
+gerando modificações significativas, assim você poderá restaurar o backup se necessário
+
+\begin{verbatim}
+     " A mapping to make a backup of the current file.
+     fun! WriteBackup()
+        let fname = expand("%:p") . "__" . strftime("%d-%m-%Y--%H.%M.%S")
+        silent exe ":w " . fname
+        echo "Wrote " . fname
+     endfun
+     nnoremap <Leader>ba :call WriteBackup()<CR>
+\end{verbatim}
+
+O atalho
+
+\begin{verbatim}
+     <leader>
+\end{verbatim}
+
+em geral é a barra invertida ``$\backslash$'', na dúvida
+
+\begin{verbatim}
+     :help <leader>
+\end{verbatim}
+
+\section{Como adicionar o Python ao {\em path} do Vim?}
+\label{Como adicionar o python ao path do Vim?}
+
+fonte:
+\url{http://vim.wikia.com/wiki/Automatically_add_Python_paths_to_Vim_path}
+Coloque o seguinte script em:
+
+\begin{verbatim}
+     * ~/.vim/after/ftplugin/python.vim    (on Unix systems)
+     %* $HOME/vimfiles/after/ftplugin/python.vim    (on Windows systems)
+\end{verbatim}
+
+\begin{verbatim}
+     python << EOF
+     import os
+     import sys
+     import vim
+     for p in sys.path:
+         # Add each directory in sys.path, if it exists.
+         if os.path.isdir(p):
+             # Command `set' needs backslash before each space.
+             vim.command(r``s'' % (p.replace(`` '', r`` '')))
+     EOF
+\end{verbatim}
+
+Isto lhe permite usar `gf' ou {\tt Ctrl-w Ctrl-F} para abrir um arquivo sob o cursor
+
+\section{Criando um menu}
+\label{Criando um menu}
+
+Como no Vim podemos ter infinitos comandos fica complicado memorizar tudo
+é aí que entram os menus, podemos colocar nossos plugins e atalhos favoritos
+em um menu veja este exemplo
+
+\begin{verbatim}
+     amenu Ferramentas.ExibirNomeDoTema :echo g:colors_name<cr>
+\end{verbatim}
+
+O comando acima diz:
+
+\begin{verbatim}
+     amenu ........................ cria um menu
+     Ferramentas.ExibirNomeDoTema . Menu plugin submenu ExibirNomeDoTema
+     :echo g:colors_name<cr> ...... comando para exibir o nome do tema de cores atual
+\end{verbatim}
+
+Caso haja espaços no nome a definir você pode fazer assim
+
+\begin{verbatim}
+     amenu Ferramentas.Exibir\ nome\ do\ tema :echo g:colors_name<cr>
+\end{verbatim}
+
+\section{Criando menus para um modo específico}
+\label{Criando menus para um modo específico}
+
+\begin{verbatim}
+     :menu .... Normal, Visual e Operator-pending
+     :nmenu ... Modo Normal
+     :vmenu ... Modo Visual
+     :omenu ... Operator-pending modo
+     :menu! ... Insert e Comando
+     :imenu ... Modo de inserção
+     :cmenu ... Modo de comando
+     :amenu ... Todos os modos
+\end{verbatim}
+
+\section{Exemplo de menu}
+\label{Exemplo de menu}
+
+\begin{verbatim}
+     " cores
+     menu T&emas.cores.quagmire :colo quagmire<CR>
+     menu T&emas.cores.inkpot :colo inkpot<CR>
+     menu T&emas.cores.google :colo google<CR>
+     menu T&emas.cores.ir_black :colo ir_black<CR>
+     menu T&emas.cores.molokai :colo molokai<CR>
+     " Fontes
+     menu T&emas.fonte.Inconsolata :set gfn=Inconsolata:h10<CR>
+     menu T&emas.fonte.Anonymous :set anti gfn=Anonymous:h8<CR>
+     menu T&emas.fonte.Envy\ Code :set anti gfn=Envy_Code_R:h10<CR>
+     menu T&emas.fonte.Monaco :set gfn=monaco:h9<CR>
+     menu T&emas.fonte.Crisp :set anti gfn=Crisp:h12<CR>
+     menu T&emas.fonte.Liberation\ Mono :set gfn=Liberation\ Mono:h10<CR>
+\end{verbatim}
+
+O comando
+
+\begin{verbatim}
+     :update
+\end{verbatim}
+
+Atualiza o menu recém modificado.
+
+Quando o comando
+
+\begin{verbatim}
+     :amenu
+\end{verbatim}
+
+É usado sem nenhum argumento o Vim mostra os menus definidos atualmente
+
+Para listar todas as opções de menu para `Plugin' por exemplo faça:
+
+\begin{verbatim}
+     :amenu Plugin
+\end{verbatim}
+
+\section{Outros mapeamentos}
+\label{Outros mapeamentos}
+
+Destaca espaços e tabulações redundantes {\tt <br>}
+%Highlight redundant whitespace and tabs.
+
+\begin{verbatim}
+     highlight RedundantWhitespace ctermbg=red guibg=red
+     match RedundantWhitespace /\s\+$\| \+\ze\t/
+\end{verbatim}
+
+Explicando com detalhes
+
+\begin{verbatim}
+     \s ..... espaço
+     \+ ..... uma ou mais vezes
+     $ ...... no final da linha
+     \| ..... ou
+     `` '' .. espaço (veja imagem acima)
+     \+ ..... uma ou mais vezes
+     \ze .... até o fim
+     \t ..... tabulação
+\end{verbatim}
+
+Portanto a expressão regular acima localizará espaços ou tabulações no final de linha
+e destacará em vermelho.
+
+"Remove espaços redundantes no fim das linhas
+
+\begin{verbatim}
+     map <F7> <Esc>mz:%s/\s\+$//g<cr>`z
+\end{verbatim}
+
+Um detalhe importante
+
+\begin{verbatim}
+     mz ... marca a posição atual do cursor para retornar no final do comando
+     `z ... retorna à marca criada
+\end{verbatim}
+
+Se não fosse feito isto o cursor iria ficar na linha da última substituição!
+
+"Abre o vim-vim explorer
+
+\begin{verbatim}
+     map <F6> <Esc>:vne .<cr><bar>:vertical resize -30<cr><bar>:set nonu<cr>
+\end{verbatim}
+
+Podemos usar ``Expressões Regulares\footnote{\url{http://guia-er.sourceforge.net}}'' em
+buscas do Vim veja um exemplo para retirar todas as tags html
+
+\begin{verbatim}
+     "mapeamento para retirar tags html com Ctrl-Alt-t
+     nmap <C-M-t> :%s/<[^>]*>//g <cr>
+     " Quebra a linha atual no local do cursor com F2
+     nmap <F2> a<CR><Esc>
+     " join lines  -- Junta as linhas com Shift-F2
+     nmap <S-F2> A<Del><Space>
+\end{verbatim}
+
+Para mais detalhes sobre buscas acesse ``\ref{Buscas e substituições}
+na página \pageref{Buscas e substituições}''
+
+\section{Complementação com ``tab''}\label{Complementação com ``tab''}
+
+\begin{verbatim}
+     "Word completion
+     "Complementação de palavras
+     
+     set dictionary+=/usr/dict/words
+     set complete=.,w,k
+     
+     "------ complementação de palavras ----
+     "usa o tab em modo de inserção para completar palavras
+     
+     function! InsertTabWrapper(direction)
+        let col = col(``.'') - 1
+        if !col || getline(``.'')[col - 1] !~ '\k'
+           return ``>''
+        elseif ``d'' == a:direction
+           return ``>''
+        else
+           return ``>''
+        endif
+     endfunction
+     
+     inoremap <tab> <c-r>=InsertTabWrapper (``d'')<cr>
+     inoremap <s-tab> <c-r>=InsertTabWrapper (``d'')<cr>
+\end{verbatim}
+
+\section{Abreviações}\label{Abreviações}
+Também no \verb|.vimrc| você pode colocar abreviações, que são uma espécie de
+auto-texto para o Vim.
+
+\begin{verbatim}
+     iab slas Sérgio Luiz Araújo Silva
+     iab Linux GNU/Linux
+     iab linux GNU/Linux
+     
+     " Esta abreviação é legal para usar com o python
+     imap :<CR> :<CR><TAB>
+\end{verbatim}
+
+\section{Referências}
+\label{Referências}
+* \url{http://www.dicas-l.com.br/dicas-l/20050118.php}

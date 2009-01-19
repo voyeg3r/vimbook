@@ -1,0 +1,410 @@
+\chapter{Registros}
+\label{Registros}
+
+O Vim possui nove tipos de registros, cada tipo tem uma utilidade
+específica, por exemplo você pode usar um registro que guarda o último
+comando digitado, pode ainda imprimir dentro do texto o nome do
+próprio arquivo, vamos aos detalhes.
+
+\begin{itemize}
+   \item O registro sem nome ``''
+   \item 10 registros nomeados de ``9''
+   \item O registro de pequenas deleções "-
+   \item 26 registros nomeados de ``z'' ou de ``Z''
+   \item 4 registros somente leitura
+   \item O registro de expressões "=
+   \item Os registro de seleção e  "*, "+ and "~
+   \item O registro ``o''
+   \item Registro do último padrão de busca "/
+\end{itemize}
+
+\section{O registro sem nome ``''}
+\label{O registro sem nome ``''}
+
+Armazena o conteúdo de ações como:
+
+\begin{verbatim}
+     d ....... deleção
+     s ....... substituição
+     c ....... um outro tipo de modificação
+     x ....... apaga um caractere
+     yy ...... copia uma linha inteira
+\end{verbatim}
+
+Para acessar o conteúdo deste registro basta usar as letras ``{\tt p}'' ou ``{\tt P}'' que
+na verdade são comandos para colar abaixo da linha atual e acima da
+linha atual (em modo normal)
+
+\section{Registros nomeados de 0 a 9}
+\label{Registros nomeados de 0 a 9}
+
+O registro zero armazena o conteúdo da última cópia `yy', à partir do
+registro 1 vão sendo armazenadas as deleções sucessivas de modo que a
+mais recente deleção será armazenada no registro 1 e os registros vão
+sendo incrementados em direção ao nono.  Deleção menores que uma linha
+não são armazenadas nestes registros, caso em que o Vim usa o registro
+de pequenas deleções ou que se tenha especificado algum outro
+registro.
+
+\begin{verbatim}
+     :help registers
+\end{verbatim}
+
+\section{Registro de pequenas deleções}
+\label{Registro de pequenas deleções}
+Quando você {\em deleta} algo menor que uma linha o Vim armazena os dados deletados neste registro.
+
+\section{Registros nomeados de ``a até z'' ou ``A até Z''}
+\label{Registros nomeados de ``a até z'' ou ``A até Z''}
+Você pode armazenar uma linha em modo normal assim:
+
+\begin{verbatim}
+     "ayy
+\end{verbatim}
+
+Desse modo você guardou o conteúdo da linha no registro ``a'' caso
+queira armazenar mais uma linha no registro ``a'' use este comando
+
+\begin{verbatim}
+     "Add
+\end{verbatim}
+
+Neste outro caso apaguei a linha corrente adicionando-a ao final do registro ``a''.
+
+\begin{verbatim}
+     "ayip .. copia o parágrafo atual para o registro ``a''
+     "a ..... registro a
+     y ...... yank (copia)
+     ip ..... inner paragraph (este parágrafo)
+\end{verbatim}
+
+\section{Registros somente leitura ``: . \% \#''}
+\label{Registros somente leitura}
+
+\begin{verbatim}
+     ": ..... armazena o último comando
+     ". ..... armazena uma cópia do último texto inserido
+     "% ..... contém o nome do arquivo corrente
+     "# ..... contém o nome do arquivo alternativo
+\end{verbatim}
+
+Uma forma prática de usar registros em modo de inserção é usando
+\verb|Ctrl-r|
+
+
+\begin{verbatim}
+     Ctrl-r % .... insere o nome do arquivo atual
+     Ctrl-r : .... insere o último comando digitado
+     Ctrl-r / .... insere a última busca efetuada
+     Ctrl-r a .... insere o registro `a'
+\end{verbatim}
+
+Em modo de inserção você pode repetir a última inserção de texto
+simplesmente pressionando
+
+\begin{verbatim}
+     Ctrl-a
+\end{verbatim}
+
+\section{Registro de expressões}
+\label{Registro de expressões}
+
+\begin{verbatim}
+     "=
+\end{verbatim}
+
+Este registro na verdade é usado em algumas funções avançadas.
+
+\section{Registros de arrastar e mover}
+\label{Registros de arrastar e mover}
+
+O registro 
+\begin{verbatim}
+     "*
+\end{verbatim}
+ é responsável por armazenar o último texto selecionado (p.e., através do
+mouse). Já o registro 
+\begin{verbatim}
+     "+
+\end{verbatim}
+é o denominado ``área de transferência'', normalmente utilizado para se
+transferir conteúdos entre aplicações---este registro é preenchido, por
+exemplo, usando-se a típica combinação {\tt Ctrl-v} encontrada em muitas
+aplicações. Finalmente, o registro 
+\begin{verbatim}
+     "~
+\end{verbatim}
+armazena o texto colado pela operação mais recente de ``arrastar-e-soltar''
+({\em drag-and-drop}). 
+
+\section{Registro buraco negro "\_}
+\label{Registro buraco negro}
+Use este registro quando não quiser alterar os demais registros, por exemplo: se você deletar a linha atual,
+
+\begin{verbatim}
+     dd
+\end{verbatim}
+
+Esta ação irá colocar a linha atual no registro numerado 1, caso não
+queira alterar o conteúdo do registro 1 apague para o buraco negro
+assim:
+
+\begin{verbatim}
+     "_dd
+\end{verbatim}
+
+\section{Registros de buscas ``/''}
+\label{Registros de buscas ``/''}
+
+Se desejar inserir em uma substituição uma busca prévia, você poderia
+fazer assim em modo de comandos:
+
+\begin{verbatim}
+     :%s,<Ctrl-r>/,novo-texto,g
+\end{verbatim}
+
+Observação: veja que estou trocando o delimitador da busca para deixar
+claro o uso do registro de buscas ``/''
+
+\section{Manipulando registros}
+\label{Manipulando registros}
+
+\begin{verbatim}
+     :let @a=@_     : limpa o registro a
+     :let @a=``''   : limpa o registro a
+     :let @a=@"     : salva registro sem nome *N*
+     :let @*=@a     : copia o registro para o buffer de colagem
+     :let @*=@:     : copia o ultimo comando para o buffer de colagem
+     :let @*=@/     : copia a última busca para o buffer de colagem
+     :let @*=@%     : copia o nome do arquivo para o buffer de colagem
+     :reg           : mostra o conteúdo de todos os registros
+\end{verbatim}
+
+Em modo de inserção
+
+\begin{verbatim}
+     <C-R>-         : Insere o registro de pequenas deleções
+     <C-R>[0-9a-z]  : Insere registros 0-9 e a-z
+     <C-R>%         : Insere o nome do arquivo
+     <C-R>=somevar  : Insere o conteúdo de uma variável
+\end{verbatim}
+
+
+Um exemplo: pré-carregando o nome do arquivo no registro \verb+n+.
+
+coloque em seu \verb+~/.vimrc+
+
+\begin{verbatim}
+     let @n=@%
+\end{verbatim}
+
+Como foi atribuído ao registro \verb+n+ o conteúdo de @\%, ou seja, o nome
+do arquivo, você pode fazer algo assim em modo de inserção:
+
+\begin{verbatim}
+     Ctrl-r n
+\end{verbatim}
+
+E o nome do arquivo será inserido
+
+\section{Listando os registros atuais}
+\label{Listando os registros atuais}
+Digitando o comando
+
+\begin{verbatim}
+     :reg
+\end{verbatim}
+
+ou ainda
+
+\begin{verbatim}
+     :ls
+\end{verbatim}
+
+O Vim mostrará os registros numerados e nomeados atualmente em uso
+
+\section{Listando arquivos abertos}
+\label{Listando arquivos abertos}
+Suponha que você abriu vários arquivos txt assim:
+
+\begin{verbatim}
+     vim *.txt
+\end{verbatim}
+
+Para listar os arquivos aberto faça:
+
+\begin{verbatim}
+     :buffers
+\end{verbatim}
+
+Usando o comando acima o Vim exibirá a lista de todos os arquivos
+abertos, após exibir a lista você pode escolher um dos arquivos da
+lista, algo como:
+
+\begin{verbatim}
+     :buf 3
+\end{verbatim}
+
+Para editar arquivos em sequência faça as alterações no arquivo atual
+e acesso o próximo assim:
+
+\begin{verbatim}
+     :wn
+\end{verbatim}
+
+O comando acima diz \verb|`grave' --> w|  e próximo \verb|`next' --> n|
+
+\section{Dividindo a janela com o próximo arquivo da lista de buffers}
+\label{Dividindo a janela com o próximo arquivo da lista de buffers}
+
+\begin{verbatim}
+     :sn
+\end{verbatim}
+
+O comando acima é uma abreviação de {\em split next}, ou seja, dividir e próximo.
+
+\section{Como colocar um pedaço de texto em um registro?}
+\label{Como colocar um pedaço de texto em um registro?}
+
+\begin{verbatim}
+     <Esc> ...... vai para o modo normal
+     "a10j ...... coloca no registro `a' as próximas 10 linhas `10j'
+\end{verbatim}
+
+Para usar você pode:
+
+\begin{verbatim}
+     <Esc> ...... para ter certeza que está em modo normal
+     "ap ........ registro a `paste', ou seja, cole
+\end{verbatim}
+
+Em modo de inserção faça:
+
+\begin{verbatim}
+     Ctrl-r a
+\end{verbatim}
+
+\section{Como criar um registro em modo visual?}
+\label{Como criar um registro em modo visual?}
+Inicie a seleção visual com o atalho
+
+\begin{verbatim}
+     Shift-v ..... seleciona linhas inteiras
+\end{verbatim}
+
+pressione a letra ``\verb|j|'' até chegar ao ponto desejado, agora faça
+
+\begin{verbatim}
+     "ay
+\end{verbatim}
+
+pressione ``\verb|v|'' para sair do modo visual
+
+\section{Como definir um registro no vimrc?}
+\label{Como definir um registro no vimrc?}
+
+Se você não sabe ainda como editar preferências no Vim
+leia antes o capítulo \ref{cha:Como editar preferências no Vim}. \\
+
+
+Você pode criar uma variável no vimrc assim:
+
+\begin{verbatim}
+     let var="foo" ...... define foo para var
+     echo var ........... mostra o valor de var
+\end{verbatim}
+
+Pode também dizer ao Vim algo como...
+
+\begin{verbatim}
+     :let @d=strftime("c")<Enter>
+\end{verbatim}
+
+Neste caso estou dizendo a ele que guarde na variável `d' at d,
+o valor da data do sistema `strftime(``c'')' ou então cole isto no
+vimrc:
+
+\begin{verbatim}
+     let @d=strftime("c")<cr>
+\end{verbatim}
+
+A diferença entre digitar diretamente um comando e adiciona-lo ao
+vimrc é que uma vez no vimrc o registro em questão estará sempre
+disponível, observe também as sutis diferenças, um {\tt Enter} inserido
+manualmente é apenas uma indicação de uma ação que você fará
+pressionando a tecla especificada, já o comando mapeado vira
+``\verb|<cr>|'', veja ainda que no vimrc os dois pontos ``\verb|:|''
+somem.
+
+Pode mapear tudo isto
+
+\begin{verbatim}
+     let @d=strftime("c")<cr>
+     imap ,d <cr-r>d
+     nmap ,d "dp
+\end{verbatim}
+
+As atribuições acima correspondem a:
+
+\begin{enumerate}
+ \item  Guarda a data na variável ``d''
+ \item  Mapeamento para o modo de inserção ``imap'' digite ,d
+ \item  Mapeamento para o modo normal ``nmap'' digite ,d
+\end{enumerate}
+
+E digitar ,d normalmente
+
+Desmistificando o strftime
+\begin{verbatim}
+     " d=dia m=mes Y=ano H=hora M=minuto c=data-completa
+     :h strftime ........ ajuda completa sobre o comando
+\end{verbatim}
+
+e inserir em modo normal assim:
+
+\begin{verbatim}
+     "dp
+\end{verbatim}
+
+ou usar em modo de inserção assim
+
+\begin{verbatim}
+     Ctrl-r d
+\end{verbatim}
+
+\section{Como selecionar blocos verticais de texto?}
+\label{Como selecionar blocos verticais de texto?}
+
+\begin{verbatim}
+     Ctrl-v
+\end{verbatim}
+
+agora use as letras h,l,k,j como setas de direção até finalizar
+podendo guardar a seleção em um registro que vai de ``a'' a ``z'' exemplo:
+
+\begin{verbatim}
+     "ay
+\end{verbatim}
+
+Em modo normal você pode fazer assim para guardar um parágrafo inteiro em um registro
+
+\begin{verbatim}
+     "ayip
+\end{verbatim}
+
+O comando acima quer dizer
+
+\begin{verbatim}
+     para o registro ``a'' ......  "a
+     copie ......................  ``y''
+     o parágrafo atual .......... ``inner paragraph''
+\end{verbatim}
+
+\section{Referências}
+\label{Referências}
+
+\begin{itemize}
+   \item \url{http://rayninfo.co.uk/vimtips.html}
+   \item \url{http://aprendolatex.wordpress.com}
+   \item \url{http://pt.wikibooks.org/wiki/Latex}
+\end{itemize}

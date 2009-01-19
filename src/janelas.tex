@@ -1,0 +1,87 @@
+\chapter{Trabalhando com Janelas}\label{cha:Trabalhando com janelas}
+
+O Vim trabalha com o conceito de múltiplos ``buffers''. Cada
+``buffer'' é um arquivo carregado para edição. Um ``buffer'' pode
+estar visível ou não, e é possível dividir a tela em janelas, de forma
+a visualizar mais de um ``buffer'' simultaneamente.
+
+\section{Dividindo a janela }
+Observação: \verb+Ctrl = ^+
+
+\begin{verbatim}
+     Ctrl-w-s   Divide a janela atual em duas (:split)
+     Ctrl-w-o   Faz a janela atual ser a única (:only)
+\end{verbatim}
+
+Caso tenha duas janelas e use o atalho acima \verb|^wo| lembre-se de salvar
+tudo ao fechar, pois apesar de a outra janela estar fechada o arquivo
+ainda estará carregado, portanto faça:
+
+\begin{verbatim}
+     :wall ... salva todos `write all'
+     :qall ... fecha todos `quite all'
+\end{verbatim}
+
+\section{Abrindo e fechando janelas }
+
+\begin{verbatim}
+     Ctrl-w-n   Abre uma nova janela acima
+     Ctrl-w-q   Fecha a janela atual
+     Ctrl-w-c   Fecha a janela atual (:close)
+\end{verbatim}
+
+\section{Manipulando janelas }
+
+\begin{verbatim}
+     Ctrl-w-w ... Alterna entre janelas
+     Ctrl-w-j ... desce uma janela `j'
+     Ctrl-w-k ... sobe  uma janela `k'
+     Ctrl-w-r ... Rotaciona janelas na tela
+     Ctrl-w-+ ... Aumenta o espaço da janela atual
+     Ctrl-w-- ... Diminui o espaço da janela atual
+\end{verbatim}
+
+\section{File Explorer }
+\label{File Explorer }
+Para abrir o gerenciador de arquivos do Vim use:
+
+\begin{verbatim}
+     :Vex ........... abre o file explorer verticalmente
+     :e .   ......... abre o file explorer na janela atual
+     após abrir chame a ajuda <F1>
+\end{verbatim}
+
+Para abrir o arquivo sob o cursor em nova janela coloque a linha abaixo no seu \verb|~/.vimrc|
+
+\begin{verbatim}
+     let g:netrw_altv = 1
+\end{verbatim}
+
+Caso queira pode mapear um atalho "no caso abaixo F2" para abrir o File Explorer.
+
+\begin{verbatim}
+     map <F2> <Esc>:Vex<cr>
+\end{verbatim}
+
+Maiores informações:
+
+\begin{verbatim}
+     :help buffers
+     :help windows
+\end{verbatim}
+
+\section{Dicas}
+Caso esteja editando um arquivo e nele houver referência a outro arquivo tipo:
+
+\begin{verbatim}
+     /etc/hosts
+\end{verbatim}
+
+Você pode usar este comando para abrir uma nova janela com o arquivo citado
+
+\begin{verbatim}
+     Ctrl-w f
+\end{verbatim}
+
+Mas lembre-se que posicionar o cursor sobre o nome do arquivo
+Veja também mapeamentos na seção \ref{Mapeamentos}.

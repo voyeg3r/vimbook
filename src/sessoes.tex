@@ -1,0 +1,131 @@
+\chapter{Salvando Sessões de Trabalho}
+\label{cha:Salvando Sessões de Trabalho}
+
+Suponha a situação em que um usuário está trabalhando em um projeto no qual
+vários arquivos são editados simultaneamente; quatro arquivos estão abertos,
+algumas macros foram criadas e variáveis que não constam no \verb|vimrc| foram
+definidas. Em uma situação normal, se o Vim for fechado a quase totalidade
+dessas informações se perde\footnote{Algumas informações, no entanto, são
+automaticamente armazenadas no arquivo {\tt viminfo}; veja {\tt :h viminfo} }; 
+para evitar isto uma sessão pode ser criada, gerando-se um
+``retrato do estado atual'', e então restaurada futuramente pelo
+usuário---na prática é como se o usuário não tivesse saído do editor. 
+
+Uma sessão do Vim guarda, portanto, uma série de informações sobre a edição
+corrente, de modo a permitir que o usuário possa restaurá-la quando desejar.
+Sessões são bastante úteis, por exemplo, para se alternar entre diferentes
+projetos, carregando-se rapidamente os arquivos e definições relativas a cada
+projeto.
+
+\section{O que uma sessão armazena?}
+
+Uma sessão é composta das seguintes informações:
+
+\begin{itemize}
+ \item Mapeamentos globais
+ \item Variáveis globais
+ \item Arquivos abertos incluindo a lista de {\it buffers}
+ \item Diretório corrente ({\tt :h curdir})
+ \item Posição e tamanho das janelas (o leiaute) 
+\end{itemize}
+
+\section{Criando sessões}
+\label{sec:Criando sessões}
+
+Sessões são criadas através do comando \verb|:mksession|:
+
+\begin{verbatim}
+     :mksession sessao.vim .... cria a sessão e armazena-a em sessao.vim
+     :mksession! sessao.vim ... salva a sessão e sobrescreve-a em sessao.vim
+\end{verbatim}
+
+\section{Restaurando sessões}
+
+Após gravar sessões, elas podem ser carregadas ao iniciar o Vim:
+
+\begin{verbatim}
+     vim -S sessao.vim
+\end{verbatim}
+
+ou então de dentro do próprio Vim (no modo de comando):
+
+\begin{verbatim}
+     :so sessao.vim
+\end{verbatim}
+
+Após restaurar a sessão, o nome da sessão corrente é acessível através de uma
+variável interna ``\verb+v:this_session+''; caso queira-se exibir na linha de
+comando o nome da sessão ativa (incluindo o caminho), faz-se:
+
+\begin{verbatim}
+     :echo v:this_session
+\end{verbatim}
+
+Podemos fazer mapeamentos para atualizar a sessão atual e exibir detalhes da
+mesma:
+
+\begin{verbatim}
+     "mapeamento para gravar sessão
+     nmap <F4> :wa<Bar>exe "mksession! " . v:this_session<CR>:so ~/sessions/
+
+     "mapeamento para exibir a sessão ativa
+     map <s-F4> <esc>:echo v:this_session<cr>
+\end{verbatim}
+
+\section{Viminfo}\label{sec:Viminfo}
+
+Se o Vim for fechado e iniciado novamente, normalmente perderá uma 
+porção considerável de informações. A diretiva {\tt viminfo} pode ser usada
+para memorizar estas informações.
+
+\begin{itemize}
+\item Histórico da linha de comando
+\item Histórico de buscas
+\item Histórico de entradas {\em input-line history}
+\item Conteúdo de registros não vazios
+\item Marcas de vários arquivos
+\item Último padrão de busca/substituição 
+\item A lista de buffers
+\item Variáveis globais
+\end{itemize}
+
+Deve-se colocar no arquivo de configuração algo como:
+	
+\begin{verbatim}
+set viminfo=%,'50,\"100,/100,:100,n
+\end{verbatim}
+
+Algumas opões da diretiva ``viminfo''
+
+\begin{description}
+\item [!] Quando incluido salva e restaura variáveis globais (variáveis
+com letra maiúscula) e que não contém letras em minúsculo como MATENHAISTO.
+
+\item ["] Número máximo de linhas salvas para cada registro.
+
+\item [\%] Quando incluido salva e restaura a lista de buffers. Caso o Vim seja 
+iniciado com um nome como argumento, a lista de {\em buffers} não é restaurada. {\em Buffers} sem
+nome e {\em buffers} de ajuda não são armazenados no ``viminfo''.
+                                      
+\item ['] Número máximo de arquivos recém editados.
+
+\item [/] Máximo de itens do histórico de buscas.
+
+\item [:] Máximo de itens do histórico da linha de comando
+
+\item [<] Número máximo de linhas salvas por cada registro, se zero
+os registros não serão salvos. Quando não incluido, todas as linhas são salvas.
+
+\end{description}
+
+Para ver mais opções sobre o arquivo ``viminfo'' leia {\tt :h viminfo}.
+
+Pode-se também usar um arquivo de ``Sessão''. A diferença é que ``viminfo'' não 
+depende do local de trabalho (escopo).
+
+Quando o arquivo ``viminfo'' existe e não está vazio, as informações novas
+são combinadas com as existentes. A opção ``viminfor'' é uma string contendo
+informações sobre o que deve ser armazenado, e contém limites de o quanto 
+vai ser armazenado para cada item.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
