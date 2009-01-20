@@ -1,0 +1,8 @@
+#summary Como instalar o LaTeX
+#labels latex
+
+= Introduction =
+Nas distribuições baseadas no debian
+{{{
+apt-get install texlive texlive-latex-extra texlive-math-extra texlive-pstricks texlive-science latex-beamer
+}}}
