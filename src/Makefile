@@ -15,7 +15,7 @@ MAKE = make
 
 ########################################################################
 
-$(DOC).pdf: $(DOC).tex
+$(DOC).pdf: $(DOC).tex *.tex
 	$(TEX) $(DOC).tex && $(TEX) $(DOC)
 
 clean:
