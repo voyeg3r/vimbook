@@ -7,6 +7,21 @@ $ ctags -R -f ~/.vim/tags/python.ctags /usr/lib/python2.5/
 and then in your .vimrc
 
 set tags+=$HOME/.vim/tags/python.ctags
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+inoremap <Nul> <C-x><C-o>
+
+syn match pythonError "^\s*def\s\+\w\+(.*)\s*$" display
+syn match pythonError "^\s*class\s\+\w\+(.*)\s*$" display
+syn match pythonError "^\s*for\s.*[^:]$” display
+syn match pythonError “^\s*except\s*$” display
+syn match pythonError “^\s*finally\s*$” display
+syn match pythonError “^\s*try\s*$” display
+syn match pythonError “^\s*else\s*$” display
+syn match pythonError “^\s*else\s*[^:].*” display
+syn match pythonError “^\s*if\s.*[^\:]$” display
+syn match pythonError “^\s*except\s.*[^\:]$” display
+syn match pythonError “[;]$” display
+syn keyword pythonError         do
 }}}
 
 ==Como arrumar um parágrafo==
