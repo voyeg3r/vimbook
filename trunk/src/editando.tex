@@ -651,3 +651,32 @@ Decompondo o comando acima temos:
 A combinação \verb|Ctrl-v| é utilizada para inserir caracteres de controle na
 sua forma literal, prevenindo-se assim a interpretação destes neste exato
 momento.
+
+\subsection{Comentando rapidamente um trecho}
+
+Tomando como exemplo um trecho de código como abaixo:
+
+\begin{verbatim}
+     1   input{introducao}
+	 2   input{capitulo1}
+	 3   input{capitulo2}
+	 4   input{capitulo3}
+	 5   input{capitulo4}
+	 6   input{capitulo5}
+	 7   input{capitulo6}
+	 8   input{capitulo7}
+	 9   input{capitulo8}
+\end{verbatim}
+
+Se desejamos comentar da linha 4 até a linha 9 podemos fazer:
+	
+\begin{verbatim}
+     posicionar o cursor no começo da linha 4
+     Ctrl-v ........... inicia seleção por blocos
+	 5j ............... extende a selção até o fim
+	 Shift-i .......... inicia inserção especial
+	 % ................ insere comentário (LaTeX)
+	 Esc .............. sai do modo de inserção
+\end{verbatim}
+
+
