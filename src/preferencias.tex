@@ -896,14 +896,17 @@ auto-texto para o Vim.
 \section{Evitando arquivos de backup no disco}
 \label{Evitando arquivos de backup no disco}
 
-Talvez você pode ter notado alguns arquivos com o mesmo nome dos arquivos que você editou e um
-til (\textasciitilde) no final. Esses arquivos são backups que o Vim gera antes de sobreescrever o arquivo.
-Se você deseja que esse backup seja feito enquanto o arquivo esteja sendo escrito, porém não 
-quer manter o arquivo após terminar, utilize no seu \verb|.vimrc|:
+Nota-se em algumas situações que existem alguns arquivos com o mesmo nome dos arquivos que foram editados, porém com um
+til (\textasciitilde) no final. Esses arquivos são {\em backups} que o Vim gera antes de sobreescrever os arquivos, e podem
+desde ocupar espaço significativo no disco rígido até representar falha de segurança, como por exemplo arquivos 
+{\tt .php\textasciitilde} que não são interpretados pelo servidor web e expoem o código-fonte.
+
+Se desejado que esses {\em backups} sejam feitos enquanto os arquivos estejam sendo escritos, porém não 
+mantidos após terminar a escrita, utiliza-se no \verb|.vimrc|:
 
 \begin{verbatim}
-	set nobackup
-	set writebackup
+     set nobackup
+     set writebackup
 \end{verbatim}
 
 Fonte: \url{http://eustaquiorangel.com/posts/520}
