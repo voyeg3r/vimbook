@@ -72,7 +72,20 @@ em:
 
 Adicionar marcadores ({\em labels}) às seções de um documento \LaTeX
 \begin{verbatim}
-     .s/^\(\\section\)\({.*}\)/\1\2\r\\label\2
+     :.s/^\(\\section\)\({.*}\)/\1\2\r\\label\2
+     
+     : ........... comando
+     / ........... inicia padrão de busca
+     ^ ........... começo de linha
+     \(palavra\) . agrupa um trecho
+     \(\\section\) agrupa `section'
+     \\ .......... torna \ literal
+     { ........... chave literal
+     .* .......... qualquer caractere em qualquer quantidade
+     } ........... chave literal
+     / ........... finaliza parão de busca
+     \1 .......... repeter o grupo 1 \(\\section\) 
+     \2 .......... repete o grupo 2 \({.*\}\)
 \end{verbatim}
 
 \section{Criando seções \LaTeX}\label{Criando seções latex}
