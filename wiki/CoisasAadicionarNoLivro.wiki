@@ -1,5 +1,11 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+==Como arrumar um parágrafo==
+{{{
+em modo normal gqap
+}}}
+
+
 {{{
 Diretório do google sobre o vim (fontes de pesquisa)
 http://directory.google.com/Top/Computers/Software/Editors/Vi/
