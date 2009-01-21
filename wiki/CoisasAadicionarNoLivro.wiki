@@ -1,5 +1,13 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+==python no vim==
+{{{
+$ ctags -R -f ~/.vim/tags/python.ctags /usr/lib/python2.5/
+and then in your .vimrc
+
+set tags+=$HOME/.vim/tags/python.ctags
+}}}
+
 ==Como arrumar um parágrafo==
 {{{
 em modo normal gqap
