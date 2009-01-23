@@ -1,38 +1,42 @@
 \chapter{Como Editar Preferências no Vim}\label{cha:Como editar preferências no Vim}
-O arquivo de preferências do Vim é ``vimrc'', um arquivo oculto que
-pode ser criado no {\em profile} do usuário.
+
+O arquivo de preferências do Vim é nomeado {\tt vimrc}, um arquivo oculto que
+normalmente encontra-se no diretório de trabalho ({\em home}) do usuário:
 
 \begin{verbatim}
      ~/.vimrc
-     /home/seuusuario/.vimrc
+     /home/usuario/.vimrc
 \end{verbatim}
 
-Caso use o Windows o arquivo é:
+No sistema operacional Windows o arquivo costuma ser:
 
 \begin{verbatim}
      ~\_vimrc
-     c:\documents and settings\seuusuario\_vimrc
+     c:\documents and settings\usuario\_vimrc
 \end{verbatim}
 
-\section{Onde colocar plugins e temas de cor}
+\section{Onde colocar {\em plugins} e temas de cor}
 \label{Onde colocar plugins e temas de cor}
 
-No Windows procure ou crie uma pasta chamada ``vimfiles'' que fica em
+No Windows deve haver uma pasta chamada {\tt vimfiles} (caso não exista
+deve-se criá-la), que fica em
 
 \begin{verbatim}
-     c:\documents and settings\seuusuario\
+     c:\documents and settings\usuario\vimfiles
 \end{verbatim}
 
-No GNU/Linux procure ou crie uma pasta chamada .vim que deve ficar em
+No GNU/Linux a pasta de arquivos do Vim é chamada {\tt .vim}, comumente
+armazenada em
 
 \begin{verbatim}
      /home/user/.vim
 \end{verbatim}
 
-Nesta pasta '.vim' ou `vimfiles' deve haver pastas tipo
+Tanto em {\tt .vim} como {\tt vimfiles} encontram-se usualmente as seguintes
+pastas:
 
 \begin{verbatim}
-     vimfiles
+     vimfiles ou .vim
         |
         +--color
         |
@@ -43,35 +47,47 @@ Nesta pasta '.vim' ou `vimfiles' deve haver pastas tipo
         +--plugin
 \end{verbatim}
 
-Na seção Plugins \ref{Plugins} página \pageref{Plugins}
-estão descritos alguns plugins interessantes!
+Os {\em plugins}, como se pode deduzir, devem ser colocados no diretório
+denominado {\tt plugin}.
+
+Na seção Plugins~\ref{Plugins} (p. \pageref{Plugins}) estão descritos alguns
+{\em plugins} para o Vim.
 
 \section{Comentários }
 \label{Comentários }
+
+Comentários são linhas que são ignoradas pelo interpretador Vim e servem
+normalmente para descrição de comandos e ações, deixando portanto mais legível
+e didático o arquivo de configuração. Uma linha é um comentário se seu
+primeiro caractere é uma aspas ("):
 
 \begin{verbatim}
      " linhas começadas com aspas são comentários
      " e portanto serão ignoradas pelo Vim
 \end{verbatim}
 
-Ao fazer modificações comente usando aspas duplas no começo da linha,
-os comentários lhe ajudarão mais tarde, pois à medida que o seu vimrc
-cresce podem aparecer dúvidas sobre o que determinado trecho faz :)
+Recomenda-se usar comentários ao adicionar ou modificar comandos no arquivo
+{\tt vimrc}, pois assim torna-se mais fácil futuras leituras e modificações
+neste arquivo.
 
+\section{Efetivação das alterações no {\tt vimrc}}
+\label{Efetivação das alterações no vimrc}
 
-As alterações no vimrc só será efetivadas na próxima vez que o Vim for aberto
-a não ser que você faça um mapeamento para recarregar, mais adiante você verá isto
-por enquanto faça
+As alterações no {\tt vimrc} só serão efetivadas na próxima vez que o Vim for
+aberto, a não ser que o recarregamento do arquivo de configuração seja
+instruído explicitamente:
 
 \begin{verbatim}
      :source ~/vimrc ....... se estiver no GNU/Linux
-     :source ~/_vimrc ...... caso use o sitema virótico
-	 :so arquivo ........... so é uma abreviação de `source'
+     :source ~/_vimrc ...... caso use o Windows
+     :so arquivo ........... 'so' é uma abreviação de `source'
 \end{verbatim}
 
-\section{``Set''}
-\label{``Set''}
-Os comandos `set' podem ser colocados no \verb|.vimrc|:
+\section{{\em Set}}
+\label{Set}
+
+Os comandos {\tt set}, responsáveis por atribuir valores à variáveis,
+ podem ser colocados no \verb|.vimrc|:
 
 \begin{verbatim}
      set nu
@@ -188,7 +204,7 @@ O Vim colocará no comando
 \end{verbatim}
 
 Bastando pressionar \verb|<Enter>|.
-Observação: esta macro prévia pode ficar no vimrc ou ser digitada em comando ``:''
+Observação: esta macro prévia pode ficar no {\tt vimrc} ou ser digitada em comando ``:''
 
 
 \begin{verbatim}
@@ -279,7 +295,7 @@ abrir o Vim a menos que você coloque isto dentro do mesmo
 \end{verbatim}
 
 Agora basta pressionar ``\verb|<F12>|'' em modo normal e as alterações passam a valer
-instantaneamente, e para chamar o vimrc basta usar.
+instantaneamente, e para chamar o {\tt vimrc} basta usar.
 
 \begin{verbatim}
      ,v
