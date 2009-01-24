@@ -928,6 +928,50 @@ mantidos após terminar a escrita, utiliza-se no \verb|.vimrc|:
 
 Fonte: \url{http://eustaquiorangel.com/posts/520}
 
+\section{Mantendo apenas um Gvim aberto}
+\label{Mantenddo apenas um Gvim aberto}
+
+Essa dica destina-se apenas à versâo do Vim que roda no ambiente gráfico, ou seja, o Gvim, pois ela faz uso
+de alguns recursos que só funcionam nessse ambiente. A meta é criar um comando que vai abrir os arquivos indicados
+em abas novas sempre na janela já existente. 
+
+Para isso deve-se definir um {\em script} que esteja no seu path do sistema 
+(e que possa ser executado de alguma forma por programas do tipo {\em launcher} no modo gráfico) que vai ser utilizado 
+sempre que quisermos abrir nossos arquivos dessa maneira. Para efeito do exemplo, o nome do arquivo será {\tt tvim} 
+(de {\em tabbed vim}), porém pode ser nomeado com o nome que for conveniente.
+
+A única necessidade para essa dica funcionar é a versão do Vim ter suporte para o argumento {\tt --serverlist},
+o que deve ser garantido nas versões presentes na época em que esse documento foi escrito. Para fazer uma simples
+verificaçâo se o comando está disponível, deve ser digitado em um terminal:
+
+\begin{verbatim}
+     vim --serverlist
+     gvim --serverlist
+\end{verbatim}
+
+Se ambos os comandos acima resultaram em erro, o procedimento não poderá ser implementado. Do contrário, deve-se
+utilizar o comando que teve um retorno válido ({\tt vim} ou {\tt gvim}) para a criar o {\em script}. Supondo que foi o 
+comando {\tt gvim} que não retornou um erro, criamos o {\em script} da seguinte forma:
+
+\begin{verbatim}
+     #!/bin/bash
+     if [ $# -ne 1 ]
+     then
+        echo "Sem arquivos para editar."
+        exit
+     fi
+     gvim --servername $(gvim --serverlist | head -1) --remote-tab $1
+\end{verbatim}
+
+Desse modo, se for digitado {\tt tvim} sem qualquer argumento, é exibida a mensagem de erro, do contrário,
+o arquivo é aberto na cópia corrente do Gvim, em uma nova aba, por exemplo:
+
+\begin{verbatim}
+tvim .vimrc
+\end{verbatim}
+
+Fonte: \url{http://eustaquiorangel.com/posts/477}
+
 \section{Referências}
 \label{Referências}
 * \url{http://www.dicas-l.com.br/dicas-l/20050118.php}
