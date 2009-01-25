@@ -472,6 +472,44 @@ extensão .sh
      au BufNewFile,BufRead *.sh if getline(1) == "" | normal ,sh
 \end{verbatim}
 
+\subsubsection{Exemplo prático de automandos}
+\label{sub:Exemplo prático de automandos}
+
+Há situações em que é necessária a uniformização de ações, por exmeplo em
+códigos python deve-se manter um padrão para a indentação, se será com espaços
+ou tabulações, não se pode misturar os dois pois o interpretador dará erro.
+Outra situação em que misturar espaços com tabulações ocasiona erros é em
+códiogs \LaTeX, ao compilar o documento a formatação não sai como você previa.
+Até que se perceba o erro leva um tempo.  Para configurar o vim de forma que
+ele detecte este tipo de erro ao entrar no arquivo
+
+\begin{verbatim}
+     au! VimEnter * match ErrorMsg /^\t\+/
+
+     " explicação para o autocomando acima
+     au! ............... automaticamente
+     VimEnter .......... ao entrar no vim
+     * ................. para qualquer tipo de arquivo
+     match ErrorMsg .... destaque como erro
+     / ................. inicio de um padrão
+     ^ ................. começo de linha
+     \t ................ tabulação
+     \+ ................ uma vez ou mais
+     / ................. fim do padrão de buscas
+\end{verbatim}
+
+Para evitar que este erro se repita, ou seja, que sejam 
+adicionados no começo de linha tabulações no lugar de espaços
+coloque no ~/.vimrc
+
+\begin{verbatim}
+     set expandtab
+\end{verbatim}
+
+É perfeitamente possível um autocomando que faça direto 
+a substituição de tabulações por espaços, mas neste caso não 
+é recomandado que o autocomando se aplique a todos os tipos de aquivos.
+
 
 \section{Funções}
 \label{sec:Funções}

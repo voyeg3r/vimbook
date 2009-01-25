@@ -184,7 +184,7 @@ Você pode fazer a ordenação em um intervalo assim:
 O comando acima diz: Ordene numericamente da linha 1 até a linha 15
 
 Podemos ordenar à partir de uma coluna:
-	
+
 \begin{verbatim}
      :sort /.*\%8v/   ..... ordena à partir do 8º caractere
 \end{verbatim}
@@ -250,7 +250,7 @@ Podemos inverter a lógica do comando global \verb+g+:
 
 
 Não delete as linhas contendo padrão, ou seja, delete tudo menos as linhas
-contendo a palavra `padrão'. Para ler mais sobre o comando ``global'' utilizado 
+contendo a palavra `padrão'. Para ler mais sobre o comando ``global'' utilizado
 nesta seção veja o capítulo \ref{sec:O comando global ``g''}.
 
 \begin{verbatim}
@@ -513,7 +513,7 @@ Para ir para o arquivo anterior
      :bp
 \end{verbatim}
 
-Caso existam modificações no arquivo você terá que salvar antes, veja: 
+Caso existam modificações no arquivo você terá que salvar antes, veja:
 
 \begin{verbatim}
      :wn
@@ -584,20 +584,20 @@ dia-a-dia pois você pode coloca-las dentro dos comentários!
 Seja o seguinte texto:
 
 \begin{verbatim}
-1  este é um texto novo
-2  este é um texto novo
-3  este é um texto novo
-4  este é um texto novo
-5  este é um texto novo
-6  este é um texto novo
-7  este é um texto novo
-8  este é um texto novo
-9  este é um texto novo
-10 este é um texto novo
+     1  este é um texto novo
+     2  este é um texto novo
+     3  este é um texto novo
+     4  este é um texto novo
+     5  este é um texto novo
+     6  este é um texto novo
+     7  este é um texto novo
+     8  este é um texto novo
+     9  este é um texto novo
+     10 este é um texto novo
 \end{verbatim}
 
 Suponha que queira-se apagar ``é um texto'' da linha 5 até o fim (linha 10). Isto pode ser feito
-assim: 
+assim:
 
 \begin{verbatim}
      :5,$ normal 0wd3w
@@ -657,26 +657,26 @@ momento.
 Tomando como exemplo um trecho de código como abaixo:
 
 \begin{verbatim}
-     1   input{introducao}
-	 2   input{capitulo1}
-	 3   input{capitulo2}
-	 4   input{capitulo3}
-	 5   input{capitulo4}
-	 6   input{capitulo5}
-	 7   input{capitulo6}
-	 8   input{capitulo7}
-	 9   input{capitulo8}
+  1   input{capitulo1}
+  2   input{capitulo1}
+  3   input{capitulo2}
+  4   input{capitulo3}
+  5   input{capitulo4}
+  6   input{capitulo5}
+  7   input{capitulo6}
+  8   input{capitulo7}
+  9   input{capitulo8}
 \end{verbatim}
 
 Se desejamos comentar da linha 4 até a linha 9 podemos fazer:
-	
+
 \begin{verbatim}
-     posicionar o cursor no começo da linha 4
-     Ctrl-v ........... inicia seleção por blocos
-	 5j ............... extende a selção até o fim
-	 Shift-i .......... inicia inserção especial
-	 % ................ insere comentário (LaTeX)
-	 Esc .............. sai do modo de inserção
+  posicionar o cursor no começo da linha 4
+  Ctrl-v ........... inicia seleção por blocos
+  5j ............... extende a selção até o fim
+  Shift-i .......... inicia inserção especial
+  % ................ insere comentário (LaTeX)
+  Esc .............. sai do modo de inserção
 \end{verbatim}
 
 
