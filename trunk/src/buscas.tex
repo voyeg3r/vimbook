@@ -62,6 +62,20 @@ Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
     
 \begin{verbatim}
      :%s/\v\d{5}(\D+)\d{3}/\1/
+
+     " explicação do comando acima
+     : ......... comando
+     % ......... em todo arquivo
+     s ......... substitua
+     / ......... inicia padrão de busca
+     \v ........ use very magic mode
+     \d ........ dígitos
+     {5} ....... 5 vezes (grupo 1)
+     \D ........ seguido de não dígitos
+     \d ........ novamente dígitos
+     {3} ....... três vezes (grupo 2)
+     / ......... inicio da substituição
+     \1 ........ insere o grupo 1
 \end{verbatim}               
 
 Para aprender mais sobre Expressões Regulares leia:
