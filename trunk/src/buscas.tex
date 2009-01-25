@@ -37,6 +37,33 @@ Posiciona o cursor três linhas após a ocorrência da palavra ``teste'' \\
      /\s\+$ ...... localiza espaços no final da linha 
 \end{verbatim}
 
+\subsection{Evitando escapes ao usar Expressões regulares}
+
+O Vim possui um modo chamado ``{\em very magic}'' para uso em expressões
+regulares que evita o uso excessivo de escapes, alternativas etc. Usando apenas
+uma opção: veja ``\verb+:h /\v+''.
+
+Por exemplo, você tem um trecho com dígitos + texto + digitos
+e quer manter só os dígitos finais.
+
+\begin{verbatim}
+     12345aaa678
+     12345bbb678
+     12345aac678
+\end{verbatim}
+
+Sem a opção ``{\em very magic}'' você teria que fazer assim:
+    
+\begin{verbatim}
+     :%s/\d\{5\}\(\D\+\)\d\{3\}/\1/
+\end{verbatim}
+
+Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
+    
+\begin{verbatim}
+     :%s/\v\d{5}(\D+)\d{3}/\1/
+\end{verbatim}               
+
 Para aprender mais sobre Expressões Regulares leia:
 
 \begin{enumerate}
