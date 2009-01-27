@@ -202,5 +202,38 @@ O plugin pode ser obtido no seguinte endereço:
 para instala-lo basta copiar para o diretorio 
 {\tt ~/.vim/plugin}.
 
+\section{sec:O plugin EasyGrep}
+\label{sec:O plugin EasyGrep}
+
+Usuários de sistemas {\em Unix Like}\footnote{Sistemas da família Unix tipo o Linux}, já
+conhecem o poder do comando {\em Grep}, usando este comando procuramos palavras dentro 
+de arquivos, este plugin simplifica a tarefa de usar o grep, além de permitir a utilização
+da versão do Grep nativa do Vim {\em vimgrep}, assim usuários do Windows também podem usar 
+o grep. Um comando grep funciona mais ou menos assim:
+
+\begin{verbatim}
+     grep [opções] "padrão" /caminho
+\end{verbatim}
+
+Mas no caso do plugin {\em EasyGrep} fica assim:
+
+\begin{verbatim}
+     :Grep foo  ........ procura pela palavra 'foo'
+     :GrepOptions ...... exibe as opções de uso do plugin
+\end{verbatim}
+
+\subsection{Obtendo e instalando o plugin {\em EasyGrep}?}
+O plugin pode ser obtido no seguinte endereço: 
+``\url{http://www.vim.org/scripts/script.php?script_id=2438#0.9}'', já sua instalação
+é simples, basta copiar o arquivo obtido no link acima para a pasta:
+   
+\begin{verbatim}
+     ~/.vim/plugin .......... no caso do linux
+     ~/vimfiles/plugin ...... no caso do windows
+\end{verbatim}
+
+Um vídeo de exemplo (na verdade uma animação gif)
+\url{http://downloads.veryspeedy.net/vim/EasyGrep.gif}
+
 
 
