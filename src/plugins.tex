@@ -235,3 +235,28 @@ O plugin pode ser obtido no seguinte endereço:
 Um vídeo de exemplo (na verdade uma animação gif)
 \url{http://downloads.veryspeedy.net/vim/EasyGrep.gif}
 
+\section{sec:O plugin {\em SearchComplete}}
+\label{sec:O plugin {\em SearchComplete}}
+
+Para que o vim complete opções de busca ``com a tecla <tab>'', digita-se uma
+palavra parcialmente e o plugin atua, exibindo palavras que tem 
+o mesmo início, por exemplo:
+
+\begin{verbatim}
+     /merca<tab>
+     /mercado
+     /mercantil
+     /mercadológico
+\end{verbatim}
+
+Cada vez que se pressiona a tecla {\tt <tab>} o cursor saltará para 
+a próxima ocorrência daquele fragmento de palavra.
+
+\subsection{Como instalar o plugin {\em SearchComplete}}
+Pode-se obte-lo no seguinte endereço: ``\url{http://www.vim.org/scripts/script.php?script_id=474}'', 
+e para instala-lo basta copia-lo para a pasta apropriada:
+    
+\begin{verbatim}
+     ~/vimfiles/plugin .......... no windows
+     ~/.vim/plugin .............. no Gnu/Linux
+\end{verbatim}
