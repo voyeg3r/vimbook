@@ -248,10 +248,15 @@ Podemos inverter a lógica do comando global \verb+g+:
      :g!/padrão/d
 \end{verbatim}
 
-
 Não delete as linhas contendo padrão, ou seja, delete tudo menos as linhas
-contendo a palavra `padrão'. Para ler mais sobre o comando ``global'' utilizado
-nesta seção veja o capítulo \ref{sec:O comando global ``g''}.
+contendo a palavra `padrão'. 
+
+\begin{verbatim}
+     :v/padrão/d
+\end{verbatim}
+
+A opção acima equivale a ``\verb+:g!/padrão/d+''.  Para ler mais sobre
+o comando ``global'' utilizado nesta seção veja o capítulo~\ref{sec:O comando global ``g''}.
 
 \begin{verbatim}
      :7,10copy $
