@@ -481,7 +481,7 @@ ou tabulações, não se pode misturar os dois pois o interpretador retornará u
 Outra situação em que misturar espaços com tabulações ocasiona erros é em
 códiogs \LaTeX, ao compilar o documento a formatação não sai como você previa.
 Até que se perceba o erro leva um tempo.  Para configurar o vim de forma que
-ele detecte este tipo de erro ao entrar no arquivo
+ele detecte este tipo de erro ao entrar no arquivo:
 
 \begin{verbatim}
      au! VimEnter * match ErrorMsg /^\t\+/
