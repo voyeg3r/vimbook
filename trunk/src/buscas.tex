@@ -85,6 +85,51 @@ Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
      \1 ........ insere o grupo 1
 \end{verbatim}               
 
+\subsubsection{Classes {\em POSIX} para uso em Expressões Regulares}
+
+Ao fazer-mos substituições em textos poderemos nos deparar com
+erros, pois [a-z] não inclui caracteres acentuados, as classes
+{\em POSIX} são a solução para este problema:
+
+\begin{verbatim}
+     [:lower:] ...... letras minúsculas incluindo acentos
+     [:upper:] ...... letras maiúsculas incluindo acentos
+     [:punct:] ...... ponto, virgula, colchete, etc
+\begin{verbatim}
+
+Para usar estas classes fazemos:
+
+\begin{verbatim}
+     :%s/[[:lower:]]/\U&/g
+
+     Explicando o comando acima:
+     : ....... modo de comando
+     % ....... em todo o arquivo atual
+     s ....... substitua
+     / ....... inicia o padrão a ser buscado
+     [ ....... inicia um grupo
+     [: ...... inicia uma classe POSIX
+     lower ... letras minúsculas
+     :] ...... termina a classe POSIX
+     ] ....... termina o grupo
+     / ....... inicia substituição
+     \U ...... para maiúsculo
+     & ....... correponde ao que foi buscado
+\end{verbatim}
+
+Nem todas as classes {\em POSIX} conseguem pegar caracteres 
+acentuados, portanto deve-se habilitar o destaque colrido para
+buscas usando:
+    
+\begin{verbatim}
+     :set hlsearch .... destaque colorido para buscas
+     :set incsearch ... busca incremental
+\end{verbatim}
+
+Dessa forma podemos terar nossas buscas antes de fazer 
+uma substituição.
+
+
 Para aprender mais sobre Expressões Regulares leia:
 
 \begin{itemize}
