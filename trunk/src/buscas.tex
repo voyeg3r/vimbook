@@ -49,8 +49,8 @@ O Vim possui um modo chamado ``{\em very magic}'' para uso em expressões
 regulares que evita o uso excessivo de escapes, alternativas etc. Usando apenas
 uma opção: veja ``\verb+:h /\v+''.
 
-Por exemplo, você tem um trecho com dígitos + texto + digitos
-e quer manter só os dígitos finais.
+Em um trecho com dígitos + texto + digitos
+no qual se deseja manter só os dígitos finais.
 
 \begin{verbatim}
      12345aaa678
@@ -58,7 +58,7 @@ e quer manter só os dígitos finais.
      12345aac678
 \end{verbatim}
 
-Sem a opção ``{\em very magic}'' você teria que fazer assim:
+Sem a opção ``{\em very magic}'' faría-mos:
     
 \begin{verbatim}
      :%s/\d\{5\}\(\D\+\)\d\{3\}/\1/
