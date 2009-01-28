@@ -237,6 +237,12 @@ Para rolar uma página de cada vez (em modo normal)
      :jumps ...... exibe a lista de saltos
      Ctrl-i ... salta para a posição mais recente
      Ctrl-o ... salta para a posição mais antiga
+     '0 ....... abre o último arquivo editado
+     '1 ....... abre o penúltimo arquivo editado
+     gd ....... pula para a difinição de uma variável
+     } ........ pula para o fim do parágrafo
+     10| ...... pula para a coluna 10
+     [i ....... pula para definição de variável sob o cursor
 \end{verbatim}
 
 Observação: lembre-se
@@ -246,60 +252,7 @@ Observação: lembre-se
      ^I ... equivale a Ctrl-I
 \end{verbatim}
 
-
-Retroceder na lista de saltos, incluindo outros arquivos,
-
-\begin{verbatim}
-     ^o
-\end{verbatim}
-
-Avançar na lista de saltos
-
-\begin{verbatim}
-     ^i
-\end{verbatim}
-
-Abrir o último arquivo editado:
-
-\begin{verbatim}
-     '0
-\end{verbatim}
-
-Abrir o penúltimo arquivo editado
-
-\begin{verbatim}
-     '1
-\end{verbatim}
-
-Para pular para uma definição de função (para mais detalhes veja :h gd)
-
-\begin{verbatim}
-     gd
-\end{verbatim}
-
-Para pular para o fim do parágrafo faça
-
-\begin{verbatim}
-     }
-\end{verbatim}
-
-Para pular para a coluna 10 da linha atual
-
-\begin{verbatim}
-     10|
-\end{verbatim}
-
-Pular para definição de uma variável
-
-\begin{verbatim}
-     [i   ........ Mostra a definição mais próxima de uma variável
-\end{verbatim}
-
-O atalho acima é útil quando se está programando, se estiver num
-trecho de código pode visualizar o conteúdo das variáveis que foram
-definidas acima
-
-Você pode abrir vários arquivos tipo \verb|*.txt| e fazer
+Você pode abrir vários arquivos tipo \verb|vim *.txt| e fazer
 algo como gravar e ir para o próximo arquivo com o comando a
 seguir:
 
