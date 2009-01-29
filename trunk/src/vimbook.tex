@@ -40,7 +40,6 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
      \renewcommand{\headrulewidth}{0pt}
      }
 
-\newcommand{\titulo}{\Huge \sc Pequeno guia do Vim}
 
 \newcommand{\dica}[1]{{{\large \ding{42}}}}
 
@@ -50,19 +49,25 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 \begin{document}
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{titlepage}
+\thispagestyle{empty}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[bb=100 0 500 716]{img/capa.png}
+    %\includegraphics[scale=0.5]{img/capa.png}
+    %\includegraphics[width=\paperwidth,height=\paperheight]{img/capa.png}
+\end{figure}
+\clearpage
+%\cleardoublepage
+%\end{titlepage}
+
 %%%%%%%%%%%%%%%%%%%% Título do documento %%%%%%%%%%%%%%%%%%%%%%%
-\begin{titlepage}
- \begin{flushleft}
-   \vspace{2mm}
-   \vspace{2mm}
-   \vspace{2mm}
- \end{flushleft}
-   %\vspace{2cm}
+\thispagestyle{empty}
+%\begin{titlepage}
 \begin{center}
-   \rule{12cm}{1mm} \\ \vspace{2mm}
-   {\LARGE{\bf{\titulo}}} \\
-   \vspace{-1mm}
-   \rule{12cm}{1mm} \\
+
+{\Huge \sc o editor de texto Vim}
 
 % logo do Vim
   \vspace{2cm}
@@ -70,15 +75,12 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
     \center
     \includegraphics{img/vimlogo.png}
     \label{logodovim}
-    %\caption{Logo do Vim}
 \end{figure}
-% fim da imagem
 
-   \vspace{3cm}
+   \vspace{5cm}
    \begin{flushright}
    \begin{minipage}[t]{8cm}
-          ``Um guia simples, com exemplos de comandos
-          para uso no dia-a-dia. A idéia é que este
+          ``Um livro escrito em português sobre o editor de texto {\bf Vim}. A idéia é que este
           material cresça e torne-se uma referência confiável
           e prática. Use este livro nos termos da {\em Licença de Documentação Livre GNU} (GFDL).'' \\
           \par Este trabalho está em constante aprimoramento, e é fruto da
@@ -95,10 +97,11 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 
    {\small Versão gerada em \\ \bf \today}
 \end{center}
-\end{titlepage}
+%\end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
+\thispagestyle{empty}
 
 \begin{center}
 {\Huge \bf Autores}
@@ -119,6 +122,8 @@ $\vdots$ & $\vdots$ \\
 
 \newpage
 \tableofcontents
+
+\setcounter{page}{0} %reset the page counter
 
 \input{intro}
 
