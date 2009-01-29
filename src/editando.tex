@@ -304,6 +304,17 @@ arquivo recém editado, neste caso usa-se o atalho
 cuja função é alternar entre o arquivo atual e o último editado. Para retornar
 ao outro arquivo basta portanto pressionar \verb|Ctrl-6| novamente.
 
+\section{Lendo um arquivo para a linha atual}
+\label{sec:Lendo um arquivo para a linha atual}
+
+Se desejamos inserir na linha atual um arquivo qualquer fazemos:
+
+\begin{verbatim}
+	 :r /caminho/para/arquivo.txt .. insere o arquivo na linha atual
+	 :0r arquivo ................... insere o arquivo na primeira linha
+\end{verbatim}
+
+
 \section{Incrementando números em modo normal}\label{Incrementando números em modo normal}
 Posicione o cursor sobre um número e pressione
 
