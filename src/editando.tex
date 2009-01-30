@@ -16,6 +16,24 @@ Ou ainda abrir na linha que contém um determinado padrão?
 Obs: caso o padrão tenha espaços no nome coloque entre parênteses ou
 use escape ``$\backslash$'' a fim de não obter erro.
 
+\section{Usando o grep interno do vim}
+\label{sec:Usando o grep interno do vim}
+
+Se queremos editar um arquivo que contenha a palavra ``inusitada'':
+
+\begin{verbatim}
+    :vimgrep /\cinusitada/ *
+    \c ......... a opção `\c' torna a busca insensível ao case
+\end{verbatim}
+
+Obs: o vim busca à partir do diretório atual, podemos saber 
+em que diretório estamos ou mudar assim:
+
+\begin{verbatim}
+    :pwd ........... exibe o diretório atual
+    :cd /diretório   muda de diretório
+\end{verbatim}
+
 \section{Deletando uma parte do texto}\label{Deletando uma parte do texto}
 
 O comando ``d'' remove o conteúdo para a memória.
