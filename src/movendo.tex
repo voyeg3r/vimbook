@@ -61,6 +61,7 @@ Para ir para linhas específicas digite
 \begin{verbatim}
      :n<Enter>  ..... vai para linha ``n''
      ngg ............ vai para linha ``n''
+     nG ............. vai para linha ``n''
 \end{verbatim}
 
 onde ``\verb|n|'' corresponde ao número da linha.
@@ -74,6 +75,7 @@ Para retornar ao modo normal pressione \verb|<Esc>| ou use \verb|Ctrl-[|
      gg .... vai para o início do arquivo
      G ..... vai para o final do arquivo
      0 ..... vai para o início da linha
+     ^ ..... vai para o primeiro caractere da linha (ignora espaços)
      $ ..... vai para o final da linha
      yG .... copia da linha atual até o final do arquivo
      25gg .. salta para a linha 25
@@ -90,13 +92,16 @@ Para retornar ao modo normal pressione \verb|<Esc>| ou use \verb|Ctrl-[|
      gv .... repete a última seleção visual e posiciona o cursor neste local
      gf .... abre o arquivo sob o cursor
      gd .... salta para declaração de variável sob o cursor
-     gD .... salta para declaraçao (global) de variável sob o cursor
-     w ...... move para o início da próxima palavra
-     W ...... pula para próxima palavra (desconsidera hífens)
-     E ...... pula para o final da próxima palavra (desconsidera hifens)
-     e ...... move o cursor para o final da próxima palavra
-     zt ..... movo o cursor para o topo da página
-     zm ..... move o cursor para o meio da página
+     gD .... salta para declaração (global) de variável sob o cursor
+     w ..... move para o início da próxima palavra
+     W ..... pula para próxima palavra (desconsidera hífens)
+     E ..... pula para o final da próxima palavra (desconsidera hifens)
+     e ..... move o cursor para o final da próxima palavra
+     zt .... movo o cursor para o topo da página
+     zm .... move o cursor para o meio da página
+     zz .... move a página de modo com que o cursor fique no centro
+     n ..... move o cursor para a próxima ocorrência da busca
+     N ..... move o cursor para a ocorrência anterior da busca
 \end{verbatim}
 
 \section{Copiar e Deletar}\label{sec:Copiar e Deletar}
@@ -106,6 +111,9 @@ Deletar está associado à letra ``\verb|d|''.
 \begin{verbatim}
      dd .... deleta linha atual
      D ..... deleta restante da linha
+     d$ ..... deleta restante da linha
+	 d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
+	 d0 .... deleta do cursor ao início da linha
 \end{verbatim}
 
 
@@ -119,6 +127,8 @@ Copiar está associado à letra ``\verb|y|''.
 \begin{verbatim}
      yy .... copia a linha atual
      Y ..... copia a linha atual
+     ye .... copia do cursor ao fim da palavra
+     yb .... copia do começo da palavra ao cusor
 \end{verbatim}
 
 A maioria dos comandos do Vim pode ser precedida por um quantificador:
@@ -159,6 +169,8 @@ O que foi deletado ou copiado pode ser colado:
 \begin{verbatim}
      p .... cola o que foi copiado ou deletado abaixo
      P .... cola o que foi copiado ou deletado acima
+     [p ... cola o que foi copiado ou deletado antes do cursor
+     ]p ... cola o que foi copiado ou deletado após o cursor
 \end{verbatim}
 
 Caso tenha uma estrutura como abaixo:
@@ -189,8 +201,8 @@ Quando definimos uma variável tipo
      var = `teste'
 \end{verbatim}
 
-e em algum ponto do documento houver referência a esta variável e
-quiser-mos ver seu conteúdo fazemos
+e em algum ponto do documento houver referência a esta variável e se
+desejar ver seu conteúdo fazemos
 
 \begin{verbatim}
      [i

@@ -95,6 +95,15 @@ espaços coloque o trecho abaixo no seu arquivo de configuração do Vim
      nnoremap <space> @=((foldclosed(line(".")) < 0) ? 'zc' : 'zo')<CR>
 \end{verbatim}
 
+Para abrir e fechar as dobras utilizando o clique do mouse, basta
+acrescentar na configuração do seu \verb|.vimrc|:
+
+\begin{verbatim}
+     set foldcolumn=2
+\end{verbatim}
+
+o que adiciona uma coluna ao lado da coluna de enumera��o das linhas.
+
 \section{Criando dobras usando o modo visual}
 \label{Criando folders usando o modo visual}
 Para iniciar a seleção visual
