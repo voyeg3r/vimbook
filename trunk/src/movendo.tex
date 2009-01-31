@@ -1,11 +1,9 @@
 \chapter{Movendo-se no Documento}\label{cha:Movendo-se no Documento}
 
-Antes de mergulharmos mais a fundo nas teclas e atalhos de
-movimentação vamos recapitular um pouco do que foi visto: \\
-
-
-
-Estando em modo normal
+A fim de facilitar o entendimento acerca das teclas e atalhos de movimentação,
+faz-se útil uma breve recapitulação de conceitos relacionados. Para se entrar
+em modo de inserção, estando em modo normal, pode-se pressionar qualquer uma
+das teclas abaixo:
 
 \begin{verbatim}
      i ..... entra no modo de inserção antes do caractere atual
@@ -17,13 +15,10 @@ Estando em modo normal
      <Esc> . sai do modo de inserção
 \end{verbatim}
 
-Uma vez no modo de inserção todas as letras são, assim como nos outros
-editores simples letras, mas lebre-se a tecla mágica para sair do modo
-de inserção é: \verb+<Esc>+.
-
-\begin{verbatim}
-     <Esc> .... lhe leva para o modo normal
-\end{verbatim}
+Uma vez no modo de inserção todas as teclas são efetivamente, assim como nos
+outros editores simples, caracteres que constituem o conteúdo do texto sendo
+digitado.  Para sair do modo de inserção e retornar ao modo normal digita-se
+\verb+<Esc>+ ou \verb+Ctrl-[+.
 
 As letras h, k, l, j funcionam como setas:
 
@@ -33,15 +28,14 @@ As letras h, k, l, j funcionam como setas:
         j
 \end{verbatim}
 
-Ou seja, a letra ``k'' é usada para subir no texto, a letra ``j'' para
-descer, a letra ``h'' para mover-se para a esquerda e a letra ``l''
-para mover-se para a direita. A idéia é que se consiga ir para
-qualquer lugar do texto sem tirar as mãos do teclado.
-
-
+Ou seja, a letra ``k'' é usada para subir no texto, a letra ``j'' para descer,
+a letra ``h'' para mover-se para a esquerda e a letra ``l'' para mover-se para
+a direita. A idéia é que se consiga ir para qualquer lugar do texto sem tirar
+as mãos do teclado, sendo portando alternativas para as setas de movimentação
+usuais do teclado.
 
 \section{Big words}
-\label{Big word's}
+\label{Big words}
 
 Para o Vim ``{\em{palavras-separadas-por-hífen}}'' são consideradas em separado, portanto se você usar,
 em modo normal ``\verb+w+'' avançar entre as palavras ele pulará uma de
@@ -111,9 +105,9 @@ Deletar está associado à letra ``\verb|d|''.
 \begin{verbatim}
      dd .... deleta linha atual
      D ..... deleta restante da linha
-     d$ ..... deleta restante da linha
-	 d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
-	 d0 .... deleta do cursor ao início da linha
+     d$ .... deleta restante da linha
+     d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
+     d0 .... deleta do cursor ao início da linha
 \end{verbatim}
 
 
