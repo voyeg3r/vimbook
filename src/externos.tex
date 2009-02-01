@@ -96,6 +96,23 @@ O comando {\tt cwindow} abrirá uma janela em um {\em split} horizontal com a
 listagem de erros e {\em warnings}.  Você poderá navegar pela lista usando os
 cursores e ir diretamente para o arquivo e linha da ocorrência.
 
+Modificando o compilador, o comando {\tt make} pode mudar sua ação.
+
+\begin{verbatim}
+	:compiler javac
+	:compiler gcc
+	:compiler php
+\end{verbatim}
+
+Note que {\em php} não tem um compilador. Logo, quando executado, o {\tt make} irá verificar
+por erros de sintaxes.
+
+\begin{verbatim}
+	:compiler
+\end{verbatim}
+
+O comando acima lista todos os compiladores suportados.
+
 \section{Grep}
 
 Do mesmo jeito que você usa {\tt grep} na sua linha de comando você pode usar

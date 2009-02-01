@@ -27,7 +27,10 @@ Posiciona o cursor três linhas após a ocorrência da palavra ``teste'' \\
      /\<casa\> 
 \end{verbatim}
 
-A busca acima localiza `{\tt casa}' mas não `{\tt casamata}'.
+A busca acima localiza `{\tt casa}' mas não `{\tt casamento}'. Em expressões
+regulares, \< e \> são representadas por \b, que representa, por sua vez, borda
+de palavras. Ou seja, `{\tt casa,}`, `{\tt casa!}` seriam localizado, visto que sinais
+de pontuação não fazem parte da palavra.
 
 
 \section{Usando ``Expressões Regulares'' em buscas}
@@ -91,7 +94,7 @@ Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
 
 \subsubsection{Classes {\em POSIX} para uso em Expressões Regulares}
 
-Ao fazer-mos substituições em textos poderemos nos deparar com
+Ao fazermos substituições em textos poderemos nos deparar com
 erros, pois [a-z] não inclui caracteres acentuados, as classes
 {\em POSIX} são a solução para este problema, pois adequam o 
 sistema ao idioma local, esta é a mágica implementada por estas classes.
@@ -302,7 +305,7 @@ Selecione o bloco de código, por exemplo
 
 \begin{verbatim}
      vip  ..... visual ``inner paragraph'' (selecione este parágrafo)
-     =  ....... corrija a indentação do que selecionei :)
+     =  ....... corrija a indentação do bloco de texto selecionado
 \end{verbatim}
 
 \section{Usando o file explorer}
@@ -579,6 +582,12 @@ Apagar as linhas que contém {\em Line commented}
 
 \begin{verbatim}
      :g/Line commented/d
+\end{verbatim}
+
+Apagar todas as linhas comentadas
+
+\begin{verbatim}
+      :g/^\s*#/d
 \end{verbatim}
 
 Copiar determinado padrão para um registro
