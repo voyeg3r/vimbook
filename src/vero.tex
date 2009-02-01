@@ -3,6 +3,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Verificação Ortográfica}
+\label{cha:vero}
+
+\vimhelp{spell}
 
 O Vim possui um recurso nativo de verificação ortográfica ({\em spell}) em
 tempo de edição, apontando palavras e expressões desconhecidas---usualmente
@@ -15,6 +18,7 @@ dicionário. Não encontrando-a, a palavra é marcada como desconhecida
 caso esteja de fato grafada corretamente.
 
 \section{Habilitando a verificação ortográfica}
+\vimhelp{spell, spelllang}
 
 A verificação ortográfica atua em uma linguagem (dicionário) por vez,
 portanto, sua efetiva habilitação depende da especificação desta linguagem.
@@ -54,6 +58,7 @@ para a língua inglesa ({\tt en}), basta:
 \end{verbatim}
 
 \subsection{Habilitação automática na inicialização}
+\vimhelp{autocmd, Filetype, BufNewFile, BufRead}
 
 Às vezes torna-se cansativo a digitação explícita do comando de habilitação da
 verificação ortográfica sempre quando desejada.  Seria conveniente se o Vim
@@ -115,6 +120,7 @@ portanto descompactá-lo com qualquer utilitário compatível com este formato,
 por exemplo, o comando {\tt unzip}.
 
 \subsubsection{Conversão do dicionário}
+\vimhelp{mkspell}
 
 Após a descompactação, os arquivos \verb|pt_BR.aff| e \verb|pt_BR.dic|,
 encontrados no subdiretório {\tt dictionaries/}, serão usados para a criação
@@ -145,6 +151,7 @@ invocação do comando {\tt mkspell}:
 \end{verbatim}
 
 \subsubsection{Instalação do(s) dicionário(s) gerado(s)}
+\vimhelp{runtimepath}
 
 Finalmente, o dicionário gerado---ou os dicionários, dependendo do uso ou não
 de codificações diferentes---deve ser copiado para o subdiretório {\tt spell/}

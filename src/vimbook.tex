@@ -27,6 +27,28 @@ breaklinks=true,hyperindex,linkcolor=blue,anchorcolor=black,citecolor=green,
 filecolor=magenta,menucolor=red,pagecolor=red,urlcolor=cyan,bookmarks=true,
 bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 
+% Comando \vimhelp
+% Uso: \vimhelp{termo_1, termo_2, ..., termo_n}
+%      onde termo_i é um argumento válido para o comando :help do Vim, isto é,
+%      ':help termo_i' precisa abrir o help para o termo_i.
+%
+% Exemplo de uso: 
+%   \chapter{Verificação Ortográfica}
+%   \vimhelp{spell, spelllang}
+%
+%   Será impresso mais ou menos assim:
+%
+%   Verificação Ortográfica
+%                                                          :h spell, spelllang
+%
+% O comando \vimhelp indica ao leitor como buscar ajuda dentro do próprio Vim
+% para o assunto em questão. Uso indicado para capítulos e seções.
+\newcommand{\vimhelp}[1]{\nopagebreak\par\addvspace{-1.5ex}%
+     \vskip -\parskip\noindent{%
+     \begin{flushright}\tiny \textbf{:h} \textsf{#1}\end{flushright}}\par\nopagebreak%
+     \addvspace{1ex plus 0.8ex minus 0.2ex}% 
+     \vskip -\parskip\noindent\ignorespaces}
+
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
