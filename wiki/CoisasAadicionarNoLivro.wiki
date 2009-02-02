@@ -48,7 +48,6 @@ Escrever sobre o comando
  :dig
 }}}
 
-==Dividir o documento em capítulos e criar um branch==
 
 ==Adicionar seção ou capítulo sobre vimdiff==
 {{{
