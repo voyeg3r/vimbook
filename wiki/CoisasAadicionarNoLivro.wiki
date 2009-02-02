@@ -1,10 +1,5 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
-==Busca parcial==
-
-{{{
-  /\<casa\>  ..... combina com 'casa' mas não 'casamata'
-}}}
 
 ==python no vim==
 fonte: http://blog.sontek.net/2008/05/11/python-with-a-modular-ide-vim/
