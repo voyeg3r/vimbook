@@ -132,9 +132,8 @@ como abaixo:
      ...
 \end{verbatim}
 
-Acompanhe os passos para a criação de uma macro
-que lhe permitira fazer uma sequência de quantas linhas 
-quizer com o incremento proposto acima.
+Acompanhe os passos para a criação de uma macro que lhe permitira fazer uma
+sequência de quantas linhas quiser com o incremento proposto acima.
 
 \begin{verbatim}
      <Esc>  ......... sai do modo de inserção
@@ -267,7 +266,7 @@ O Vim mostrará os registros numerados e nomeados atualmente em uso
 
 \section{Listando arquivos abertos}
 \label{Listando arquivos abertos}
-Suponha que você abriu vários arquivos txt assim:
+Suponha que você abriu vários arquivos {\tt txt} assim:
 
 \begin{verbatim}
      vim *.txt
@@ -296,7 +295,7 @@ e acesso o próximo assim:
 
 O comando acima diz \verb|`grave' --> w|  e próximo \verb|`next' --> n|
 
-\section{Dividindo a janela com o próximo arquivo da lista de buffers}
+\section{Dividindo a janela com o próximo arquivo da lista de {\em buffers}}
 \label{Dividindo a janela com o próximo arquivo da lista de buffers}
 
 \begin{verbatim}
@@ -342,14 +341,14 @@ pressione a letra ``\verb|j|'' até chegar ao ponto desejado, agora faça
 
 pressione ``\verb|v|'' para sair do modo visual
 
-\section{Como definir um registro no vimrc?}
+\section{Como definir um registro no {\tt vimrc}?}
 \label{Como definir um registro no vimrc?}
 
 Se você não sabe ainda como editar preferências no Vim
 leia antes o capítulo \ref{cha:Como editar preferências no Vim}. \\
 
 
-Você pode criar uma variável no vimrc assim:
+Você pode criar uma variável no {\tt vimrc} assim:
 
 \begin{verbatim}
      let var="foo" ...... define foo para var
@@ -364,18 +363,18 @@ Pode também dizer ao Vim algo como...
 
 Neste caso estou dizendo a ele que guarde na variável `d' at d,
 o valor da data do sistema `strftime(``c'')' ou então cole isto no
-vimrc:
+{\tt vimrc}:
 
 \begin{verbatim}
      let @d=strftime("c")<cr>
 \end{verbatim}
 
-A diferença entre digitar diretamente um comando e adiciona-lo ao
-vimrc é que uma vez no vimrc o registro em questão estará sempre
+A diferença entre digitar diretamente um comando e adicioná-lo ao
+{\tt vimrc} é que uma vez no {\tt vimrc} o registro em questão estará sempre
 disponível, observe também as sutis diferenças, um {\tt Enter} inserido
 manualmente é apenas uma indicação de uma ação que você fará
 pressionando a tecla especificada, já o comando mapeado vira
-``\verb|<cr>|'', veja ainda que no vimrc os dois pontos ``\verb|:|''
+``\verb|<cr>|'', veja ainda que no {\tt vimrc} os dois pontos ``\verb|:|''
 somem.
 
 Pode mapear tudo isto
@@ -396,7 +395,7 @@ As atribuições acima correspondem a:
 
 E digitar ,d normalmente
 
-Desmistificando o strftime
+Desmistificando o {\tt strftime}
 \begin{verbatim}
      " d=dia m=mes Y=ano H=hora M=minuto c=data-completa
      :h strftime ........ ajuda completa sobre o comando
