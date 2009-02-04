@@ -24,7 +24,7 @@ repetir a busca em sentido oposto ``\verb+N+''.
 Posiciona o cursor três linhas após a ocorrência da palavra ``teste'' \\
 
 \begin{verbatim}
-     /\<casa\> 
+     /\<casa\>
 \end{verbatim}
 
 A busca acima localiza `{\tt casa}' mas não `{\tt casamento}'. Em expressões
@@ -39,15 +39,15 @@ de pontuação não fazem parte da palavra.
      / ........... inicia uma busca (modo normal)
      \%x69 ....... código da letra `i'
      /\%x69 ...... localiza a letra `i' - hexadecimal 069
-     
+
      \d .......... localiza números
      ^ ........... começo de linha
      $ ........... final de linha
      \+ .......... um ou mais
      /^\d\+$ ..... localiza somente dígitos
-     
+
      \s .......... localiza espaços
-     /\s\+$ ...... localiza espaços no final da linha 
+     /\s\+$ ...... localiza espaços no final da linha
 \end{verbatim}
 
 \subsection{Evitando escapes ao usar Expressões regulares}
@@ -66,13 +66,13 @@ no qual se deseja manter só os dígitos finais.
 \end{verbatim}
 
 Sem a opção ``{\em very magic}'' faríamos:
-    
+
 \begin{verbatim}
      :%s/\d\{5\}\(\D\+\)\d\{3\}/\1/
 \end{verbatim}
 
 Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
-    
+
 \begin{verbatim}
      :%s/\v\d{5}(\D+)\d{3}/\1/
 
@@ -90,13 +90,13 @@ Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
      {3} ....... três vezes (grupo 2)
      / ......... inicio da substituição
      \1 ........ insere o grupo 1
-\end{verbatim}               
+\end{verbatim}
 
 \subsubsection{Classes {\em POSIX} para uso em Expressões Regulares}
 
 Ao fazermos substituições em textos poderemos nos deparar com
 erros, pois [a-z] não inclui caracteres acentuados, as classes
-{\em POSIX} são a solução para este problema, pois adequam o 
+{\em POSIX} são a solução para este problema, pois adequam o
 sistema ao idioma local, esta é a mágica implementada por estas classes.
 
 \begin{verbatim}
@@ -125,16 +125,16 @@ Para usar estas classes fazemos:
      & ....... correponde ao que foi buscado
 \end{verbatim}
 
-Nem todas as classes {\em POSIX} conseguem pegar caracteres 
+Nem todas as classes {\em POSIX} conseguem pegar caracteres
 acentuados, portanto deve-se habilitar o destaque colorido para
 buscas usando:
-    
+
 \begin{verbatim}
      :set hlsearch .... destaque colorido para buscas
      :set incsearch ... busca incremental
 \end{verbatim}
 
-Dessa forma podemos testar nossas buscas antes de fazer 
+Dessa forma podemos testar nossas buscas antes de fazer
 uma substituição.
 
 
@@ -142,8 +142,8 @@ Para aprender mais sobre Expressões Regulares leia:
 
 \begin{itemize}
   \item \url{http://guia-er.sourceforge.net}
-  \item :help regex
-  \item :help pattern
+  \item {\tt :help regex}
+  \item {\tt :help pattern}
 \end{itemize}
 
     Um meio mais rápido para encontrar a próxima ocorrência de uma palavra sob o
@@ -170,9 +170,9 @@ pode ser obtido pelo seguinte mapeamento:
 \begin{verbatim}
      :map ,t <Esc>:.s/^\(\s\+\)\(.*\)/\r\1\2\r/g<cr>
 \end{verbatim}
-     
+
 Explicando:
-     
+
 \begin{verbatim}
      : ................ entra no modo de comando
      map ,t ........... mapeia ,t para a função desejada
@@ -212,17 +212,17 @@ Na seção \ref{cha:Como editar preferências no Vim} há um código para a barr
 status que faz com que a mesma exiba o código do caractere sob o cursor na
 seção \ref{Função para barra de status}. Outra dica: O caractere de final de linha
 do Windows/DOS pode ser inserido com a seguinte combinação de teclas:
-    
+
 \begin{verbatim}
      i ............ entra em modo de inserção
-     Ctrl-v Ctrl-m  insere o simbolo ^M (terminador de linha DOS) 
+     Ctrl-v Ctrl-m  insere o simbolo ^M (terminador de linha DOS)
 \end{verbatim}
 
 \section{Trabalhando com registradores}
 \label{Trabalhando com registradores}
 
 Pode-se guardar trechos do que foi copiado ou apagado para
-registros distintos (área de trasnferência múltipla).  
+registros distintos (área de trasnferência múltipla).
 Os registros são indicados por aspas seguido por uma letra.
 Exemplos: {\tt "a}, {\tt "b}, {\tt "c}, etc.
 
@@ -444,9 +444,9 @@ incluindo quebras de linha. Buscará as três sequências:
 
 \begin{verbatim}
      Hello World
-     
+
      Hello    World
-     
+
      Hello
      World
 \end{verbatim}
@@ -526,12 +526,12 @@ buscando um padrão e gravando em outro arquivo
      :'a,'b g/^Error/ . w >> errors.txt
 \end{verbatim}
 
-Apenas imprimir linhas que contém determinada palavra, isto é útil 
-quando você quer ter uma visão sobre um determina aspecto 
+Apenas imprimir linhas que contém determinada palavra, isto é útil
+quando você quer ter uma visão sobre um determina aspecto
 do seu arquivo vejamos:
 
 \begin{verbatim}
-     :set nu ..... habilita numeração 
+     :set nu ..... habilita numeração
      :g/Error/p .. apenas mostra as linhas correspondentes
 \end{verbatim}
 
