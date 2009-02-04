@@ -230,6 +230,7 @@ Podemos ordenar à partir de uma coluna:
 
 \section{Substituindo tabulações por espaços}
 \label{sec:Substituindo tabulações por espaços}
+\vimhelp{expandtab, retab}
 
 Se houver necessidade\footnote{Em códigos python por exemplo não se pode
 misturar espaços e tabulações} de trocar tabulações por espaços
@@ -238,6 +239,26 @@ fazemos assim:
 \begin{verbatim}
 	 :set expandtab
 	 :retab
+\end{verbatim}
+
+Para fazer o contrário usamos algo como:
+
+\begin{verbatim}
+    :%s/\s\{4,}/<pressiona-se ctrl-i>/g
+    <Crl-i>...... insere uma tabulação
+
+    Explicando
+    : ............ comando
+    % ............ em todo arquivo 
+    s ............ substitua 
+    / ............ padrão de busca
+    \s ........... localiza espaço
+    \{4,} ........ quatro vezes
+    / ............ inicio da substituição
+    <Ctrl-i> ..... pressione Ctrl-i para inserir <Tab>
+    / ............ fim da substituição
+    g ............ global
+
 \end{verbatim}
 
 
@@ -554,33 +575,17 @@ Onde ``m'' cria a marca e ``A'' (maiúsculo) define uma marca ``A'' acessível a
      'A
 \end{verbatim}
 
-Isto fará o Vim dar um salto até a marca A mesmo que esteja em outro
-arquivo, mesmo que você tenha acabado de fecha-lo. Para abrir vários
-arquivos uma solução seria:
+Isto fará o Vim dar um salto até a marca A mesmo que esteja em outro arquivo,
+mesmo que você tenha acabado de fecha-lo. Para abrir e editar vários arquivos
+do vim fazemos:
 
 \begin{verbatim}
-     vim *.txt
+     vim *.txt ......... abre todos os arquivos `txt'
+     :bn ............... vai para o próximo da lista
+     :bp ............... volta para o arquivo anterior
+     :wn ............... salva e vai para o próximo
+     :wp ............... salva e vai para o prévio
 \end{verbatim}
-
-Para ir para o próximo arquivo:
-
-\begin{verbatim}
-     :bn
-\end{verbatim}
-
-Para ir para o arquivo anterior
-
-\begin{verbatim}
-     :bp
-\end{verbatim}
-
-Caso existam modificações no arquivo você terá que salvar antes, veja:
-
-\begin{verbatim}
-     :wn
-\end{verbatim}
-
-O comando acima diz: grave e vá para o próximo!
 
 
 \subsection{Abrindo o último arquivo rapidamente}
