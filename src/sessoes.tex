@@ -76,11 +76,11 @@ mesma:
      map <s-F4> <esc>:echo v:this_session<cr>
 \end{verbatim}
 
-\section{Viminfo}\label{sec:Viminfo}
+\section{{\tt Viminfo}}\label{sec:Viminfo}
 
-Se o Vim for fechado e iniciado novamente, normalmente perderá uma 
-porção considerável de informações. A diretiva {\tt viminfo} pode ser usada
-para memorizar estas informações.
+Se o Vim for fechado e iniciado novamente, normalmente perderá uma porção
+considerável de informações. A diretiva {\tt viminfo} pode ser usada para
+memorizar estas informações.
 
 \begin{itemize}
 \item Histórico da linha de comando
@@ -89,7 +89,7 @@ para memorizar estas informações.
 \item Conteúdo de registros não vazios
 \item Marcas de vários arquivos
 \item Último padrão de busca/substituição 
-\item A lista de buffers
+\item A lista de {\em buffers}
 \item Variáveis globais
 \end{itemize}
 
@@ -99,17 +99,17 @@ Deve-se colocar no arquivo de configuração algo como:
 set viminfo=%,'50,\"100,/100,:100,n
 \end{verbatim}
 
-Algumas opões da diretiva ``viminfo''
+Algumas opões da diretiva {\tt viminfo}:
 
 \begin{description}
-\item [!] Quando incluido salva e restaura variáveis globais (variáveis
+\item [!] Quando incluído salva e restaura variáveis globais (variáveis
 com letra maiúscula) e que não contém letras em minúsculo como MATENHAISTO.
 
 \item ["] Número máximo de linhas salvas para cada registro.
 
-\item [\%] Quando incluido salva e restaura a lista de buffers. Caso o Vim seja 
+\item [\%] Quando incluído salva e restaura a lista de {\em buffers}. Caso o Vim seja 
 iniciado com um nome como argumento, a lista de {\em buffers} não é restaurada. {\em Buffers} sem
-nome e {\em buffers} de ajuda não são armazenados no ``viminfo''.
+nome e {\em buffers} de ajuda não são armazenados no {\tt viminfo}.
                                       
 \item ['] Número máximo de arquivos recém editados.
 
@@ -118,17 +118,17 @@ nome e {\em buffers} de ajuda não são armazenados no ``viminfo''.
 \item [:] Máximo de itens do histórico da linha de comando
 
 \item [<] Número máximo de linhas salvas por cada registro, se zero
-os registros não serão salvos. Quando não incluido, todas as linhas são salvas.
+os registros não serão salvos. Quando não incluído, todas as linhas são salvas.
 
 \end{description}
 
-Para ver mais opções sobre o arquivo ``viminfo'' leia {\tt :h viminfo}.
+Para ver mais opções sobre o arquivo {\tt viminfo} leia {\tt :h viminfo}.
 
-Pode-se também usar um arquivo de ``Sessão''. A diferença é que ``viminfo'' não 
+Pode-se também usar um arquivo de ``Sessão''. A diferença é que {\tt viminfo} não 
 depende do local de trabalho (escopo).
 
-Quando o arquivo ``viminfo'' existe e não está vazio, as informações novas
-são combinadas com as existentes. A opção ``viminfor'' é uma string contendo
+Quando o arquivo {\tt viminfo} existe e não está vazio, as informações novas
+são combinadas com as existentes. A opção {\tt viminfo} é uma string contendo
 informações sobre o que deve ser armazenado, e contém limites de o quanto 
 vai ser armazenado para cada item.
 
