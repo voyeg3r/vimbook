@@ -226,6 +226,7 @@ registros distintos (área de trasnferência múltipla). Para isso usamos
 ``registros''.  Os registros são indicados por aspas seguido por uma letra.
 Exemplos: {\tt "a}, {\tt "b}, {\tt "c}, etc.
 
+
 Como copiar o texto para um registrador? É simples: basta especificar
 o nome do registrador antes:
 
@@ -419,6 +420,13 @@ ativa-las em modo de comando precedendo-as com dois pontos, assim:
      :set ignorecase<Enter>
 \end{verbatim}
 
+Substituições com confirmação:
+
+\begin{verbatim}
+     :%s/word/palavra/c ..... o `c' no final habilita a confirmação
+\end{verbatim}
+
+
 Procurando palavras repetidas
 
 \begin{verbatim}
@@ -454,23 +462,13 @@ Buscar linhas de até 30 caracteres de comprimento
      .  ..... representa qualquer caractere
 \end{verbatim}
 
-Apaga todas as tags html/xml de um arquivo
 
 \begin{verbatim}
-     :%s/<[^>]*>//g
+     :%s/<[^>]*>//g ... apaga tags html/xml
+     :%g/^$/d ......... apaga linhas vazias
+     :%s/^[\ \t]*\n//g  apagarlinhas vazias
 \end{verbatim}
 
-Apaga linhas vazias
-
-\begin{verbatim}
-     :%g/^$/d
-\end{verbatim}
-
-Ou
-
-\begin{verbatim}
-     :%s/^[\ \t]*\n//g
-\end{verbatim}
 
 Remover duas ou mais linhas vazias entre parágrafos diminuindo para
 uma só linha vazia.
