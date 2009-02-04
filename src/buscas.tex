@@ -56,7 +56,7 @@ O Vim possui um modo chamado ``{\em very magic}'' para uso em expressões
 regulares que evita o uso excessivo de escapes, alternativas etc. Usando apenas
 uma opção: veja ``\verb+:h /\v+''.
 
-Em um trecho com dígitos + texto + digitos
+Em um trecho com dígitos + texto + dígitos
 no qual se deseja manter só os dígitos finais.
 
 \begin{verbatim}
@@ -65,7 +65,7 @@ no qual se deseja manter só os dígitos finais.
      12345aac678
 \end{verbatim}
 
-Sem a opção ``{\em very magic}'' faría-mos:
+Sem a opção ``{\em very magic}'' faríamos:
     
 \begin{verbatim}
      :%s/\d\{5\}\(\D\+\)\d\{3\}/\1/
@@ -126,7 +126,7 @@ Para usar estas classes fazemos:
 \end{verbatim}
 
 Nem todas as classes {\em POSIX} conseguem pegar caracteres 
-acentuados, portanto deve-se habilitar o destaque colrido para
+acentuados, portanto deve-se habilitar o destaque colorido para
 buscas usando:
     
 \begin{verbatim}
@@ -432,7 +432,7 @@ Multilinha
 \end{verbatim}
 
 Buscará `World', separado por qualquer número de espaços,
-incluindo quebras de linha. Buscará as três seqüências:
+incluindo quebras de linha. Buscará as três sequências:
 
 \begin{verbatim}
      Hello World
