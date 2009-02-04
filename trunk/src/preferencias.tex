@@ -124,7 +124,8 @@ ou digitados como comandos:
      set nobackup   "evita a criação de arquivos de backup
      set cul        "abreviação de cursor line (destaca linha atual)
      set ve=all     "permite mover o cursor para áreas onde não há texto
-     set ttyfast    "envia mais caracteres ao terminal, melhorando o redraw de janelas.
+     set ttyfast    "envia mais caracteres ao terminal, melhorando o 
+                    "redraw de janelas.
      set columns=88 "determina a largura da janela.
      set mousemodel=popup "exibe o conteúdo de folders e sugestões spell
      set viminfo=%,'50,\"100,/100,:100,n  "guarda informações sobre buffers ...
@@ -309,9 +310,9 @@ instantaneamente, e para chamar o {\tt vimrc} basta usar.
 
 
 Os mapeamentos abaixo são úteis
-para quem escreve códigos html, permitem inserir caracteres reservados do html
-usando uma barra invertida para proteger os mesmos, o Vim substituirá os "barra
-alguma coisa" pelo caractere correspondente.
+para quem escreve códigos HTML, permitem inserir caracteres reservados do HTML
+usando uma barra invertida para proteger os mesmos, o Vim substituirá os ``barra
+alguma coisa'' pelo caractere correspondente.
 
 \begin{verbatim}
      inoremap \&amp; &amp;amp;
@@ -348,7 +349,7 @@ mapeamento
 \end{verbatim}
 
 É um mapeamento para o modo normal que faz com que a combinação de
-teclas Shift-F11 limpe o ``registro`' de buscas
+teclas \verb|Shift-F11| limpe o ``registro'' de buscas
 
 \subsection{Destacar palavra sob o cursor }
 \label{Destacar palavra sob o cursor }
@@ -357,7 +358,7 @@ teclas Shift-F11 limpe o ``registro`' de buscas
      nmap <s-f> :let @/=">"<CR>
 \end{verbatim}
 
-O atalho acima `s-f' corresponde a Shift-f
+O atalho acima \verb|s-f| corresponde a \verb|Shift-f|.
 
 \subsection{Remover linhas em branco duplicadas }
 \label{Remover linhas em branco duplicadas }
@@ -413,7 +414,7 @@ Podemos fazer mapeamentos globais ou que funcionam em apenas um modo:
      imap - apenas no modo de Inserção
 \end{verbatim}
 
-Mover linhas com {\tt Ctrl-(seta abaixo)} ou {\tt Ctrl-(seta acima)}:
+Mover linhas com {\tt Ctrl-$\downarrow$} ou {\tt Ctrl-$\uparrow$}:
 
 \begin{verbatim}
      " tem que estar em modo normal!
@@ -437,7 +438,8 @@ Salvando com uma tecla de função:
      " MinusculasMaiusculas: converte a primeira letra de cada
      " frase para MAIÚSCULAS
      nmap ,mm :%s/\C\([.!?][])"']*\($\|[ ]\)\_s*\)\(\l\)/\1\U\3/g<CR>
-     " caso queira confirmação coloque uma letra ``c'' no final da linha acima:
+     " Caso queira confirmação coloque uma letra ``c'' no final da 
+     " linha acima:
      " (...) \3/gc<CR>
 \end{verbatim}
 
@@ -459,32 +461,34 @@ Veja um exemplo:
 \end{verbatim}
 
 No exemplo acima o Vim aplica autocomandos para arquivos novos
-``BufNewfile'' ou existentes ``BufReadd'' do tipo `txt' e para estes tipos
-carrega um arquivo de syntax, ou seja, um esquema de cores específico.
+(``BufNewfile'') ou existentes (``BufRead'') terminados em \verb|txt|, e para
+estes tipos carrega um arquivo de {\em syntax}, ou seja, um esquema de cores
+específico.
 
 \begin{verbatim}
      " http://aurelio.net/doc/vim/txt.vim    coloque em ~/.vim/syntax
      au BufNewFile,BufRead *.txt source ~/.vim/syntax/txt.vim
 \end{verbatim}
 
-Para arquivos do tipo txt `*.txt' use um arquivo de syntax em particular
+Para arquivos do tipo texto (\verb|*.txt|) use um arquivo de {\em syntax} em
+particular.
 
-O autocomando abaixo coloca um cabeçalho para scripts `bash' caso a
+O autocomando abaixo coloca um cabeçalho para {\em scripts} {\tt bash} caso a
 linha 1 esteja vazia, observe que os arquivos em questão tem que ter a
-extensão .sh
+extensão \verb|.sh|.
 
 \begin{verbatim}
      au BufNewFile,BufRead *.sh if getline(1) == "" | normal ,sh
 \end{verbatim}
 
-\subsection{Exemplo prático de automandos}
-\label{sub:Exemplo prático de automandos}
+\subsection{Exemplo prático de autocomandos}
+\label{sub:Exemplo prático de autocomandos}
 
-Há situações em que é necessária a uniformização de ações, por exmeplo em
-códigos python deve-se manter um padrão para a indentação, se será com espaços
+Há situações em que é necessária a uniformização de ações, por exemplo em
+códigos Python deve-se manter um padrão para a indentação, se será com espaços
 ou tabulações, não se pode misturar os dois pois o interpretador retornará um erro.
 Outra situação em que misturar espaços com tabulações ocasiona erros é em
-códiogs \LaTeX, ao compilar o documento a formatação não sai como você previa.
+códigos \LaTeX, ao compilar o documento a formatação não sai como você previa.
 Até que se perceba o erro leva um tempo.  Para configurar o vim de forma que
 ele detecte este tipo de erro ao entrar no arquivo:
 
@@ -511,9 +515,9 @@ coloque no \textasciitilde/.vimrc
      set expandtab
 \end{verbatim}
 
-É perfeitamente possível um autocomando que faça direto 
-a substituição de tabulações por espaços, mas neste caso não 
-é recomandado que o autocomando se aplique a todos os tipos de aquivos.
+É perfeitamente possível um autocomando que faça direto a substituição de
+tabulações por espaços, mas neste caso não é recomendado que o autocomando se
+aplique a todos os tipos de aquivos.
 
 
 \section{Funções}
@@ -597,7 +601,7 @@ pode colocar esta função no seu \verb|.vimrc|
      nmap <silent> <M-Up> :call ScrollOtherWindow(``p'')<CR>
 \end{verbatim}
 
-Esta função é acionada com o atalho `alt' + setas acima e abaixo
+Esta função é acionada com o atalho {\tt Alt-$\uparrow$} e {\tt Alt-$\downarrow$}.
 
 \subsection{Função para numerar linhas}\label{Função para numerar linhas}
 link para a dica: \url{http://vim.wikia.com/wiki/Number_a_group_of_lines}
@@ -899,10 +903,10 @@ Se não fosse feito isto o cursor iria ficar na linha da última substituição!
 \end{verbatim}
 
 Podemos usar ``Expressões Regulares\footnote{\url{http://guia-er.sourceforge.net}}'' em
-buscas do Vim veja um exemplo para retirar todas as tags html
+buscas do Vim veja um exemplo para retirar todas as tags HTML
 
 \begin{verbatim}
-     "mapeamento para retirar tags html com Ctrl-Alt-t
+     "mapeamento para retirar tags HTML com Ctrl-Alt-t
      nmap <C-M-t> :%s/<[^>]*>//g <cr>
      " Quebra a linha atual no local do cursor com F2
      nmap <F2> a<CR><Esc>
