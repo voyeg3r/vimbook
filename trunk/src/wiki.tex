@@ -1,12 +1,12 @@
 \chapter{Um Wiki para o Vim}\label{cha:Um Wiki para o Vim}
 
-É inegável a facilidade que um wiki nos traz, os documentos são
+É inegável a facilidade que um Wiki nos traz, os documentos são
 indexados e linkados de forma simples. Já pesquisei uma porção de
-wikis e, para uso pessoal recomendo o potwiki.  O ``linkk'' do potwiki é:
+Wikis e, para uso pessoal recomendo o Potwiki.  O ``link'' do Potwiki é:
 \url{http://www.vim.org/scripts/script.php?script_id=1018}.
-O potwiki é um wiki completo para o Vim, funciona localmente embora
+O Potwiki é um Wiki completo para o Vim, funciona localmente embora
 possa ser aberto remotamente via ssh\footnote{Sistema de acesso remoto}.
-Para criar um ``link'' no potwiki basta usar WikiNames, são nomes
+Para criar um ``link'' no Potwiki basta usar WikiNames, são nomes
 iniciados com letra maiúscula e que contenham outra letra em maiúsculo
 no meio. \\
 
@@ -15,7 +15,7 @@ Ao baixar o arquivo salve em \verb|~/.vim/plugin|. \\
 
 
 
-Mais ou menos na linha 53 do potwiki \verb|~/.vim/plugin/potwiki.vim| você
+Mais ou menos na linha 53 do Potwiki \verb|~/.vim/plugin/potwiki.vim| você
 define onde ele guardará os arquivos, no meu caso
 \verb|/home/docs/textos/wiki|. a linha ficou assim:
 
@@ -32,9 +32,9 @@ Outra forma de indicar a página inicial seria colocar no seu .virmc
 \section{Como usar}
 \label{Como usar}
 
-O potwiki trabalha com WikiWords, ou seja, palavras iniciadas com
+O Potwiki trabalha com WikiWords, ou seja, palavras iniciadas com
 letras em maiúsculo e que tenham outra letra em maiúsculo no meio (sem
-espaços). Para inicir o potwiki abra o Vim e pressione \verb|\ww|.
+espaços). Para iniciar o Potwiki abra o Vim e pressione \verb|\ww|.
 
 \begin{verbatim}
      <Leader> é igual a \   - veja :help leader
@@ -50,8 +50,8 @@ espaços). Para inicir o potwiki abra o Vim e pressione \verb|\ww|.
 \end{verbatim}
 
 \section{Salvamento automático para o Wiki }
-\label{Salvamento automático para o wiki }
-Procure por uma seção {\em autowrite} no manual do potwiki
+\label{Salvamento automático para o Wiki }
+Procure por uma seção {\em autowrite} no manual do Potwiki
 
 \begin{verbatim}
      :help potwiki
@@ -65,20 +65,20 @@ O valor que está em zero deverá ficar em 1
 
 \section{Dicas}
 \label{Dicas}
-Como eu mantenho o meu wiki oculto ``.wiki'' criei um ``link'' para a pasta de textos
+Como eu mantenho o meu Wiki oculto ``.wiki'' criei um ``link'' para a pasta de textos
 
 \begin{verbatim}
      ln -s ~/.wiki /home/sergio/docs/textos/wiki
 \end{verbatim}
 
 Vez por outra entro na pasta \verb|~/docs/textos/wiki| e crio um
-pacote tar.gz e mando para ``web'' como forma de manter um ``backup''.
+pacote {\tt tar.gz} e mando para ``web'' como forma de manter um ``backup''.
 
 \section{Problemas com codificação de caracteres}
 \label{Problemas com codificação de caracteres}
 
 Atualmente uso o Ubuntu em casa e ele já usa utf-8. Ao restaurar meu
-``backup'' do wiki no Kurumin os caracteres ficaram meio estranhos,
+``backup'' do Wiki no Kurumin os caracteres ficaram meio estranhos,
 daí fiz:
 
 \begin{verbatim}
