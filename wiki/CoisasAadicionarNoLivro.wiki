@@ -1,5 +1,8 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+Na seção 9.1 tem um erro 
+consta "odena" ao invés de "ordena" (no momento não estou podendo 
+editar o código fonte)
 
 ==python no vim==
 fonte: http://blog.sontek.net/2008/05/11/python-with-a-modular-ide-vim/
