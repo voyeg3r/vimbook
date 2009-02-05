@@ -1,4 +1,11 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
+
+{{{
+Estive lendo sobre como renderizar melhor o pdf
+procurando no google por: "latex better render pdf"
+http://www.cc.gatech.edu/gvu/ccg/resources/latex2pdf.html
+}}}
+
 {{{
 Na seção 9.1 tem um erro 
 consta "odena" ao invés de 
