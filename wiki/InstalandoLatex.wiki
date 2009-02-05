@@ -1,5 +1,5 @@
 #summary Como instalar o LaTeX
-#labels latex
+#labels latex,install
 
 = Introduction =
 Nas distribuições baseadas no debian
