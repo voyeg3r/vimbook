@@ -4,6 +4,7 @@
 Estive lendo sobre como renderizar melhor o pdf
 procurando no google por: "latex better render pdf"
 http://www.cc.gatech.edu/gvu/ccg/resources/latex2pdf.html
+http://www.softwarelivre.ufsc.br/pipermail/gufsc/2004-October/000738.html
 }}}
 
 {{{
