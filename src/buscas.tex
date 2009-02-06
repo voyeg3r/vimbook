@@ -57,7 +57,7 @@ regulares que evita o uso excessivo de escapes, alternativas etc. Usando apenas
 uma opção: veja ``\verb+:h /\v+''.
 
 Em um trecho com dígitos + texto + dígitos
-no qual se deseja manter só os dígitos finais.
+no qual se deseja manter só as letras.
 
 \begin{verbatim}
      12345aaa678
@@ -83,13 +83,15 @@ Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
      / ......... inicia padrão de busca
      \v ........ use very magic mode
      \d ........ dígitos
-     {5} ....... 5 vezes (grupo 1)
+     {5} ....... 5 vezes 
+     ( ........ inicia um grupo
      \D ........ seguido de não dígitos
+     )  ........ fecha um grupo     
      + ......... uma ou mais vezes
      \d ........ novamente dígitos
-     {3} ....... três vezes (grupo 2)
+     {3} ....... três vezes 
      / ......... inicio da substituição
-     \1 ........ insere o grupo 1
+     \1 ........ referencia o grupo 1
 \end{verbatim}
 
 \subsubsection{Classes {\em POSIX} para uso em Expressões Regulares}
