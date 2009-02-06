@@ -610,16 +610,38 @@ Copiar linhas que contém um padrão e a linha subsequente para o final
      :g/padrão/;+1 copy $
 \end{verbatim}
 
-Deletar linhas que não contenham um padrão
+Deletar linhas que não contenham um padrão:
 
 \begin{verbatim}
      :v/dicas/d  ..... deleta linhas que não contenham `dicas'
 \end{verbatim}
 
-Incrementar números no começo da linha
+Incrementar números no começo da linha:
 
 \begin{verbatim}
      :.,20g/^\d/exe "normal! \<c-a>"
+\end{verbatim}
+
+Sublinhar linhas começadas com {\em Chapter}:
+
+\begin{verbatim}
+     :g/^Chapter/t.|s/./-/g
+
+     : ........ comando
+     g ........ global
+     / ........ inicio de um padrão
+     ^ ........ começo de linha
+     Chapter .. palavra literal
+     / ........ fim do parão
+     t ........ copia
+     . ........ linha atual
+     s ........ substitua
+     / ........ inicio de um padrão
+     . ........ qualquer caractere
+     / ........ início da substituição
+     - ........ por traço
+     / ........ fim da substituição
+     g ........ em todas as ocorrências
 \end{verbatim}
 
 \section{Dicas }
