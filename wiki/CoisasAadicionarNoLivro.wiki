@@ -1,6 +1,16 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
 {{{
+ESTE TRECHO (COM POSSÍVEIS MODIFICAÇÕES) VENHA A FAZER PARTE DO 
+CAPÍTULO SOBRE A LINGUAGEM DE SCRIPT DO VIM
+Quando nos acostumamos um pouco com o vim percebemos que, diferentemente
+da maioria dos editores ele possui uma linguagem de programação própria, 
+é bem verdade que alguns processadores de texto suportam macros e escripts
+como é o caso do Microsoft Word\circledR, mas sua "linguagem de programação"
+ interna, não é nada amigável. 
+}}}
+
+{{{
 Estive lendo sobre como renderizar melhor o pdf
 procurando no google por: "latex better render pdf"
 http://www.cc.gatech.edu/gvu/ccg/resources/latex2pdf.html
