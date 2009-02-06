@@ -332,6 +332,29 @@ Da linha 7 até a linha 10 copie para o final
 Veja mais sobre edição no modo de comando na seção ``\ref{Buscas e
 substituições} Buscas e substituições''.
 
+\subsubsection{Gerando sequências}
+Para inserir uma sequência de 1 a 10 à partir da linha inicial ``zero'' fazemos:
+
+\begin{verbatim}
+     :0put =range(1,10)
+\end{verbatim}
+
+Caso queira inserir sequências como esta:
+
+\begin{verbatim}
+     192.168.0.1
+     192.168.0.2
+     192.168.0.3
+     192.168.0.4
+     192.168.0.5
+\end{verbatim}
+
+Usamos este comando:
+
+\begin{verbatim}
+     :for i in range(1,5) | .put ='192.168.0.'.i | endfor
+\end{verbatim}
+
 \section{O arquivo alternativo}
 \label{O arquivo alternativo}
 
