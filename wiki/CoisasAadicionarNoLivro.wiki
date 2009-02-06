@@ -1,7 +1,7 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
 {{{
-ESTE TRECHO (COM POSSÍVEIS MODIFICAÇÕES) VENHA A FAZER PARTE DO 
+ESTE TRECHO (COM POSSÍVEIS MODIFICAÇÕES) TALVEZ VENHA A FAZER PARTE DO 
 CAPÍTULO SOBRE A LINGUAGEM DE SCRIPT DO VIM
 Quando nos acostumamos um pouco com o vim percebemos que, diferentemente
 da maioria dos editores ele possui uma linguagem de programação própria, 
