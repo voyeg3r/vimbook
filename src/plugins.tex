@@ -278,4 +278,43 @@ complementos, bastando pressionar {\tt <Enter>} para aceitar as sugestões.
 Neste {\em link}:``\url{http://www.vim.org/scripts/script.php?script_id=1879}'', você pode
 fazer o {\em download} do plugin.
 
+\section{O plugin {\em Ctags}}
+\label{sec:O Plugin Ctags}
 
+{\em Ctags} em si é um programa externo que indexa arquivos de código fonte. Ele lê e parseia
+o código fonte em busca de identificadores, declaraçőes de funçăo, variáveis e constrói seu 
+índex de referências cruzadas. Mas vamos ao plugin, mesmo por que năo estamos no CtagsBook.
+
+Primeiro precisamos ter o arquivos de tags. Para tal, usamos o comando:
+
+\begin{verbatim}
+    ctags -R <arquivos>
+\end{verbatim}
+
+Normalmente o parâmetro <arquvos> pode ser uma expressão regular do tipo *.[ch] e afins. Depois
+de obter o arquivo de tags, você já pode sair usando os atalhos do plugin para navegar pelo 
+código fonte. 
+
+Com o cursor em cima de um identificador, usando o atalho {\em ctrl+]} o cursor pula diretamente 
+para a sua declaração. O atalho {\em ctrl+o} volta o cursor para a posição inicial.
+
+Uma dica interessante, quando navegando por um código fonte muito extenso com vários diretórios, 
+é mapear o caminho dos arquivos usando o caminho absoluto deles no seu diretório de trabalho 
+deste jeito:
+
+\begin{verbatim}
+     find $(pwd) -regex ".*py$" | xargs ctags
+\end{verbatim}
+
+Assim você pode copiar o arquivo de tags para todos os diretórios e mesmo assim conseguir usar 
+os atalhos do plugin para navegar no código fonte.
+
+Pode-se obter o programa {\em Ctags} no seguinte endereço: 
+``\url{http://ctags.sourceforge.net/}''. O plugin de {\em Ctags} para o Vim está no endereço: 
+``\url{http://vim.sourceforge.net/scripts/script.php?script_id=12}'', 
+e para instalá-lo basta copiá-lo para a pasta apropriada:
+    
+\begin{verbatim}
+     ~/vimfiles/plugin .......... no windows
+     ~/.vim/plugin .............. no Gnu/Linux
+\end{verbatim}
