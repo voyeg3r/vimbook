@@ -18,10 +18,11 @@ Ou ainda abrir na linha que contém um determinado padrão?
 \end{verbatim}
 
 Obs: caso o padrão tenha espaços no nome coloque entre parênteses ou
-use escape ``$\backslash$'' a fim de não obter erro.
+use {\em escape} ``$\backslash$'' a fim de não obter erro.
 
-\section{Usando o grep interno do vim}
-\label{sec:Usando o grep interno do vim}
+\section{Usando o {\tt grep} interno do Vim}
+\label{sec:Usando o grep interno do Vim}
+\vimhelp{vimgrep}
 
 Se queremos editar um arquivo que contenha a palavra ``inusitada'':
 
@@ -30,7 +31,7 @@ Se queremos editar um arquivo que contenha a palavra ``inusitada'':
     \c ......... a opção `\c' torna a busca insensível ao case
 \end{verbatim}
 
-Obs: o vim busca à partir do diretório atual, podemos saber 
+Obs: o Vim busca à partir do diretório atual, podemos saber 
 em que diretório estamos ou mudar assim:
 
 \begin{verbatim}
@@ -39,6 +40,7 @@ em que diretório estamos ou mudar assim:
 \end{verbatim}
 
 \section{Deletando uma parte do texto}\label{Deletando uma parte do texto}
+\vimhelp{deleting}
 
 O comando ``d'' remove o conteúdo para a memória.
 
@@ -82,6 +84,7 @@ exemplo:
 \end{verbatim}
 
 \section{Copiando sem deletar}\label{Copiando sem deletar}
+\vimhelp{yank}
 
 O comando ``y'' ({\em yank}) permite copiar uma parte do texto para a memória sem deletar.
 Existe uma semelhança muito grande entre os comandos ``y'' e os comandos ``d'':
@@ -105,15 +108,18 @@ encontra-se o cursor, ou ``p'' para colar o texto na posição imediatamente
 após o cursor.
 
 \begin{verbatim}
-     vip .... adiciona seleção visual ao parágrafo atual `inner paragraph'
+     vip .... adiciona seleção visual ao parágrafo atual 
+              `inner paragraph'
      yip .... copia o parágrafo atual
-     yit .... copia a tag agual `inner tag' útil para arquivos html xml
+     yit .... copia a tag agual `inner tag' útil para arquivos 
+              HTML, XML, etc.
 \end{verbatim}
 
 \subsection{Usando a área de transferência {\em Clipboard}}
 
+Exemplos para o modo visual:
+
 \begin{verbatim}
-     Exemplos para o modo visual
      Ctrl-insert .... copia área selecionada 
      Shift-insert ... cola o que está no clipboard
      Ctrl-del ....... recorta para o clipboard
@@ -129,6 +135,7 @@ usando os comandos acima citados podemos usar outra alternativa.
 
 \section{Lista de alterações}
 \vimhelp{changelist, changes}
+
 O Vim mantém uma lista de alterações, para avançar nas alterações use
 
 \begin{verbatim}
@@ -148,9 +155,10 @@ Para visualizar a lista de alterações
 \end{verbatim}
 
 \section{Forçando a edição de um novo arquivo}\label{sec:Forçando a edição de um novo arquivo}
+\vimhelp{edit!}
 
 O Vim como qualquer outro editor é muito exigente no que se refere a alterações
-de arquivo.  Se você estiver editando um arquivo e desejar abandona-lo, o Vim
+de arquivo.  Se você estiver editando um arquivo e desejar abandoná-lo, o Vim
 perguntará se quer salvar alterações, se você estiver certo de que não quer
 salvar o arquivo atual e deseja imediatamente começar a editar um novo arquivo
 faça:
@@ -168,6 +176,7 @@ desejar ignorar todas as alterações feitas desde a abertura do arquivo
 
 
 \section{Ordenando}
+\vimhelp{sort}
 
 O Vim 7 passa a ter um comando de ordenação que também retira linhas
 duplicadas
@@ -214,7 +223,7 @@ Você pode fazer a ordenação em um intervalo assim:
      :1,15 sort n
 \end{verbatim}
 
-O comando acima diz: Ordene numericamente da linha 1 até a linha 15
+O comando acima diz ``{\em Ordene numericamente da linha 1 até a linha 15}''.
 
 Podemos ordenar à partir de uma coluna:
 
@@ -232,7 +241,7 @@ Podemos ordenar à partir de uma coluna:
 \label{sec:Substituindo tabulações por espaços}
 \vimhelp{expandtab, retab}
 
-Se houver necessidade\footnote{Em códigos python por exemplo não se pode
+Se houver necessidade\footnote{Em códigos Python por exemplo não se pode
 misturar espaços e tabulações} de trocar tabulações por espaços
 fazemos assim:
 
@@ -264,6 +273,7 @@ Para fazer o contrário usamos algo como:
 
 \section{Convertendo para maiúsculas}
 \label{sec:Convertendo para maiúsculas}
+\vimhelp{case}
 
 \begin{verbatim}
      gUU ....... converte a linha para maiúsculo
@@ -306,7 +316,7 @@ Cola o registro `a' na linha 56
      :g/padrão/d
 \end{verbatim}
 
-O comando acima deleta todas as linhas contendo a palavra `padrão'
+O comando acima deleta todas as linhas contendo a palavra `padrão'.
 
 Podemos inverter a lógica do comando global \verb+g+:
 
@@ -357,6 +367,7 @@ Usamos este comando:
 
 \section{O arquivo alternativo}
 \label{O arquivo alternativo}
+\vimhelp{Ctrl-6}
 
 É muito comum um usuário concluir a edição em um arquivo no Vim e
 inocentemente imaginar que não vai mais modificar qualquer coisa nele, então
@@ -378,6 +389,7 @@ ao outro arquivo basta portanto pressionar \verb|Ctrl-6| novamente.
 
 \section{Lendo um arquivo para a linha atual}
 \label{sec:Lendo um arquivo para a linha atual}
+\vimhelp{:read}
 
 Se desejamos inserir na linha atual um arquivo qualquer fazemos:
 
@@ -388,6 +400,8 @@ Se desejamos inserir na linha atual um arquivo qualquer fazemos:
 
 
 \section{Incrementando números em modo normal}\label{Incrementando números em modo normal}
+\vimhelp{Ctrl-a, Ctrl-x}
+
 Posicione o cursor sobre um número e pressione
 
 \begin{verbatim}
@@ -431,6 +445,7 @@ na página~\pageref{sec:Registro de expressões}.
 
 \section{Desfazendo}
 \label{Desfazendo}
+\vimhelp{undo}
 
 Se você cometer um erro, não se preocupe! Use o comando ``u'':
 
@@ -440,13 +455,7 @@ Se você cometer um erro, não se preocupe! Use o comando ``u'':
      Ctrl-r  ...... refazer
 \end{verbatim}
 
-Para mais ajuda sobre ``desfazer'':
-
-\begin{verbatim}
-     :help undo
-\end{verbatim}
-
-\subsection{Undo tree}
+\subsection{{\em Undo tree}}
 \label{Undo tree}
 
 Um novo recurso muito interessante foi adicionado ao Vim ``a partir da
@@ -508,15 +517,17 @@ Agora volte até a alteração 1 e use seguidas vezes:
      g+
 \end{verbatim}
 
-e / ou
+e/ou
 
 \begin{verbatim}
      g-
 \end{verbatim}
 
-Dessa forma você acessará todas as alterações ocorridas no texto!
+Dessa forma você acessará todas as alterações ocorridas no texto.
 
 \section{Salvando}
+\label{sec:Salvando}
+\vimhelp{writing}
 
 A maneira mais simples de salvar um arquivo, é usar o comando
 
@@ -553,14 +564,9 @@ Para sair do editor, salvando o arquivo atual, digite :x (ou :wq).
      :e! ........................... reinicia a edição ignorando alterações
 \end{verbatim}
 
-Para mais informações, digite:
-
-\begin{verbatim}
-     :help writing
-\end{verbatim}
-
 \section{Usando marcas}
 \label{sec:Usando marcas}
+\vimhelp{mark-motions}
 
 As marcas são um meio eficiente de se pular para um local no arquivo. Para
 criar uma,  estando em modo normal faça:
@@ -587,7 +593,8 @@ Para deletar de até a marca ``a'' (em modo normal)
      d'a
 \end{verbatim}
 
-\section{Marcas globais}
+\subsection{Marcas globais}
+
 Durante a edição de vários arquivos defina uma marca global com o comando
 
 \begin{verbatim}
@@ -602,7 +609,7 @@ Onde ``m'' cria a marca e ``A'' (maiúsculo) define uma marca ``A'' acessível a
 
 Isto fará o Vim dar um salto até a marca A mesmo que esteja em outro arquivo,
 mesmo que você tenha acabado de fecha-lo. Para abrir e editar vários arquivos
-do vim fazemos:
+do Vim fazemos:
 
 \begin{verbatim}
      vim *.txt ......... abre todos os arquivos `txt'
@@ -613,7 +620,8 @@ do vim fazemos:
 \end{verbatim}
 
 
-\subsection{Abrindo o último arquivo rapidamente}
+\section{Abrindo o último arquivo rapidamente}
+
 O Vim guarda um registro para cada arquivo editado veja
 mais no capítulo \ref{Registros} na página \pageref{Registros}.
 
@@ -636,10 +644,11 @@ editando da última vez
      gi
 \end{verbatim}
 
-Na seção \ref{Buscas e substituições} você encontra mais dicas de edição!
+Na seção \ref{Buscas e substituições} você encontra mais dicas de edição.
 
 
-\subsection{Modelines}\label{sec:Modelines}
+\section{Modelines}\label{sec:Modelines}
+\vimhelp{modeline}
 
 São um modo de guardar preferências no próprio arquivo, suas
 preferências viajam literalmente junto com o arquivo, basta usar em
@@ -743,7 +752,7 @@ A combinação \verb|Ctrl-v| é utilizada para inserir caracteres de controle na
 sua forma literal, prevenindo-se assim a interpretação destes neste exato
 momento.
 
-\subsection{Comentando rapidamente um trecho}
+\section{Comentando rapidamente um trecho}
 
 Tomando como exemplo um trecho de código como abaixo:
 
