@@ -1,5 +1,36 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+==Sugestões do Mitre para o livro==
+Meu caro,
+ me lembro de ter dito que ia lhe fazer uma lista de sugestões para o vimbook, tão logo ele saiu.
+ Pois bem, só hoje eu li o livro.
+ E ele mudou muito da primeira versão a versão atual. Ele realmente está crescendo de forma muito interessante e muito postiva. Meus parabéns.
+
+As muitas observações que eu possivelmente faria se tivesse lido a primeira versão resume-se agora a pouquíssimos detalhes nos primeiro capítulos do livro.
+Fique livre para usá-las a vontade tanto quando ignorá-las completamente.
+Me baseo na versão gerada em 4 de fevereiro de 2009. Que é a que está nesse e-mail.
+
+Bom, vamos lá;
+
+pág 4. - Início do item 1.6 - O que é um editor modal ? Nunca tinha ouvido falar disso. Só fui entender várias linhas depois. Talvez seja conveniente escrever que "ele é um editor com vários modos de operação" (é isso que significa modal, não é ?)
+
+pág 5. - quando fala do modo de inserção. Tem um momento que faz menção sobre a substituição de um único caracter ou a troca entre dois caracteres. Não fica claro, contudo, que esses sejam feitos em modo "normal" e não dentro do modo de inserção. Acho a questão óbvia para quem tem alguma experiência, mas talvez não seja tão óbvia para o iniciante;
+
+Curiosamente é o único ponto do livro q
+
+Eu senti falta no item 1.7 da menção ao funcionamente da tecla insert (não o i, mas o insert mesmo ..) que faz entrar no modo de inserção na posição atual do cursor. Também não vi menção ao modo de substituição (replace) que aparece caso aperte o insert duas vezes. Digo isso porque eu NUNCA usei "a" ou "i" ou qualquer outra variante para fazer o que o insert faz tão bem.
+
+OPINIÂO PESSOAL: Achei as dicas do capítulo 1 (item 1.9) um pouco confusas naquele ponto do documento. Talvez deixar as dicas iniciais simples ou em um apêndice seja a forma mais didática de abordar o detalhe.
+
+A mensagem inicial está abaixo, completada. Eu terminaria dizendo que fiquei impressionado com a qualidade do livro em termos de volume de informação. Não imaginava que dava para fazer tanta coisa, e olha que eu sabia que era possível fazer muita coisa.
+
+Eu diria que eu não uso o vim nem em um décimo do que seria possível fazer. O que eu espero agora conseguir melhorar.
+
+Quanto a críticas, eu diria apenas uma coisa. É um livro em desenvolvimento no quesito fluência. Muita informação, muito concentrado, as vezes falta fluência. Mas isso é algo que apenas a experiência das multiplas leituras pode melhorar. Eu pensei em alguma solução, e não vi nenhuma de forma clara e satisfatória. Mas talvez subdividir mais os itens ou dividir o conteúdo em avançado e básico. Nenhuma me pareceu uma dica plena... de forma que talvez o tempo seja a melhor forma de ver o todo...
+
+Um abraço e um muito obrigado pela contribuição dada ao conhecimento humando.
+J. F. Mitre
+
 {{{
 ESTE TRECHO (COM POSSÍVEIS MODIFICAÇÕES) TALVEZ VENHA A FAZER PARTE DO 
 CAPÍTULO SOBRE A LINGUAGEM DE SCRIPT DO VIM
