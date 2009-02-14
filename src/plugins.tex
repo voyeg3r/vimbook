@@ -338,3 +338,26 @@ para o mesmo, em seguida digita-se o caminho para o diretório do projeto, após
 digita-se `.' (ponto) como parâmetro, cria-se um filtro como {\tt *.py}.
 
 
+para criar uma entrada (acesso ao plugin) no meno do Gvim colocamos
+a seguinte linha no {\tt vimrc}.
+
+\begin{verbatim}
+     amenu &Projetos.togle <Plug>ToggleProject<cr>
+\end{verbatim}
+
+Pode-se definir um projeto manualmente assim:
+
+\begin{verbatim}
+     nome=~/docs/ CD=. filter="*.txt" {
+
+     }
+\end{verbatim}
+
+Ao recarregar o Vim pode-se abrir o {\em Plugin} ``{\em :Projetc}'' e 
+pressionar o atalho {\tt \\r} para que o mesmo gere um índice dos arquivos
+contidos no caminho indicado.
+   
+
+
+
+
