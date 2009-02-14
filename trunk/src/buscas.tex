@@ -212,6 +212,14 @@ substituição, veja mais adiante:
      :%s/\%x0d//g
 \end{verbatim}
 
+Outra forma de substituir o terminador de linha DOS para o terminador de linha 
+unix:
+
+\begin{verbatim}
+    :set ff=unix
+    :w
+\end{verbatim}
+
 Na seção \ref{cha:Como editar preferências no Vim} há um código para a barra de
 status que faz com que a mesma exiba o código do caractere sob o cursor na
 seção \ref{Função para barra de status}. Outra dica: O caractere de final de linha
