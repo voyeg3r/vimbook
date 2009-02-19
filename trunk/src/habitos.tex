@@ -100,10 +100,14 @@ Em modo normal você pode fazer
 
 O Vim pode abrir vários arquivos que contenham um determinado padrão.
 Um exemplo seria abrir dezenas de arquivos html e trocar a ocorrência
-{\tt bgcolor=``ffffff''} Para {\tt bgcolor=``eeeeee''} Usaríamos o seguinte comando:
+{\tt bgcolor=``ffffff''} Para {\tt bgcolor=``eeeeee''} Usaríamos a seguinte 
+sequência de comandos:
 
 \begin{verbatim}
-     vim *.html :bufdo :%s/bgcolor=``f''/bgcolor=``e''/g :wall :qall
+     vim *.html  .............................. abre os arquivos
+     :bufdo :%s/bgcolor=``f''/bgcolor=``e''/g   substituição
+     :wall .................................... salva todos
+     :qall .................................... fecha todos
 \end{verbatim}
 
 Ainda com relação à edição de vários arquivos poderia-mos abrir alguns
