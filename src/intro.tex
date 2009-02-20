@@ -212,72 +212,16 @@ modo de inserção, e para sair do modo de inserção sempre use \verb|<Esc>|.
 
 A tabela abaixo mostra uma referência rápida para os modos de operação do Vim,
 a seguir mais detalhes sobre cada um dos modos.
+\begin{tabular}{l|l}
+Modo & Descrição\tabularnewline
+\hline
+Normal & Neste modo podemos deletar, copiar e formatar - atalho <Esc>\tabularnewline
+Inserção & Digitação de texto - atalhos {}``i'',''a''.\tabularnewline
+Visual & Seleção de blocos verticais e linhas inteiras - atalhos {}``v'',''V''\tabularnewline
+Comando & Uma verdadeira linguagem de programação - atalho {}``:''\tabularnewline
+\end{tabular}
 
-\begin{description}
-
-\item [Normal] Neste modo podemos colar o que está no
- ``\verb|buffer|\footnote{No Vim a memória é chamada de {\em buffer}, assim como
- arquivos carregados.}'', uma espécie de área de transferência. Podemos ter um
- ``\verb|buffer|'' para cada letra do alfabeto, também é possível apagar linhas, e
- colocar trechos no ``\verb|buffer|''. Quando se inicia o Vim já estamos neste modo;
- caso esteja em outro modo basta pressionar ``\verb|<Esc>|''.  Para acessar:
-
-\begin{verbatim}
-     <Esc> ....... sai do modo de inserção
-     ^[ .......... Ctrl-[ também sai do modo de inserção
-\end{verbatim}
-
-Para substituir um único caractere você pode usar:
-
-\begin{verbatim}
-     r<char> ...... onde char pode ser qualquer caractere
-\end{verbatim}
-
-Para trocar caracteres de lugar faça:
-
-\begin{verbatim}
-     xp ........... troca letras de lugar
-\end{verbatim}
-
-Para ler mais sobre \verb|buffers| veja o capítulo \ref{Registros}.
-
-\item [Inserção]
-Neste modo é feita a inserção de texto. Para entrar neste modo basta
-pressionar a tecla ``\verb|i|'' ({\em insert}) ou ``\verb|c|'' ({\em change})
-ou tecla ``\verb|a|'' ({\em append}).  Para acessar este modo:  \verb+i,a,I,A,o,O+. Outra forma
-de acessar este modo é usando a tecla \verb+<Insert>+, ao pressionar uma vez
-entra no modo de inserção, se pressionar outra vez alterna para o modo replace, passando
-a substituir os caracteres subsequêntes.
-
-\item [Visual] Neste modo podemos selecionar blocos verticais de texto. É
-exibido um destaque visual. É uma das melhores formas de se copiar
-conteúdo no Vim.  Para acessar (a partir do modo normal):
-
-\begin{verbatim}
-     v ...... seleção de caracteres
-     v5j .... seleção visual para as pŕoximas 5 linhas
-     V ...... (maiúsculo) - seleção de linhas inteiras
-     Ctrl-v . Seleciona blocos de texto (use setas)
-\end{verbatim}
-
-\item [Comando] Neste modo digitamos comandos como o de salvar
-
-\begin{verbatim}
-     :w
-\end{verbatim}
-
-ou para ir para uma linha qualquer:
-
-\begin{verbatim}
-     :100 <Enter>
-\end{verbatim}
-
-para acessar
-\begin{verbatim}
-     :
-\end{verbatim}
-
-\end{description}
+Ao longo do estudo veremos detalhes de cada modo de operação!
 
 \section{Erros comuns}\label{sec:Erros comuns}
 
