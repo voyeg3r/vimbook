@@ -567,7 +567,7 @@ Para copiar linhas começadas com {\em Error} para o final do arquivo faça:
      :g/^Error/ copy $
 \end{verbatim}
 
-Obs: O comando {\em copy} pode ser abreviado `co' ou ainda você pode usar `t'
+Obs: O comando {\em copy} pode ser abreviado `{\tt co}' ou ainda você pode usar `{\tt t}'
 para mais detalhes leia:
 
 \begin{verbatim}
@@ -673,7 +673,7 @@ comando abaixo fará a substituição da ultima busca por casinha:
 
 Por vezes sabemos que aquela anotação foi feita, mas no momento esquecemos em qual
 arquivo está, no exemplo abaixo procuramos a palavra dicas à partir da nossa pasta pessoal
-pela palavra `dicas' em todos os arquivos com extensão `txt'.
+pela palavra `dicas' em todos os arquivos com extensão `{\tt txt}'.
 
 \begin{verbatim}
      ~/ ............ equivale a /home/user
@@ -702,15 +702,15 @@ De forma análoga podemos usar como referência um padrão qualquer
 \end{verbatim}
 
 O comando acima diz: à partir da linha que contém ``palavra'' incluindo as 10 próximas linhas
-mova ``m'' para a primeira linha ``0'', ou seja, antes da linha 1.
+mova `{\tt m}' para a primeira linha `0', ou seja, antes da linha 1.
 
 \section{Dicas das lista vi-br}
 
- Fonte: \url{http://groups.yahoo.com/group/vi-br/message/853}
+Fonte: \url{http://groups.yahoo.com/group/vi-br/message/853}
 
- Problema:
- Essa deve ser uma pergunta comum.
- Suponha o seguinte conteúdo de arquivo:
+Problema:
+Essa deve ser uma pergunta comum.
+Suponha o seguinte conteúdo de arquivo:
 
 \begin{verbatim}
      ... // várias linhas
@@ -734,15 +734,15 @@ Gostaria de um comando que mudasse para
      ... // várias linhas
 \end{verbatim}
 
- Ou seja, somasse 1 a cada um dos números entre os textos
- especificando como range as linhas i,i+4
+Ou seja, somasse 1 a cada um dos números entre os textos
+especificando como range as linhas i,i+4
 
 \begin{verbatim}
      :10,20! awk 'BEGIN{i=1}{if (match($0, ``+'')) print ``o''
      (substr($0, RSTART, RLENGTH) + i++) ``o'``}''
 \end{verbatim}
 
- Mas muitos sistemas não tem awk, e logo a melhor solução mesmo é usar o Vim:
+Mas muitos sistemas não tem awk, e logo a melhor solução mesmo é usar o Vim:
 
 \begin{verbatim}
      :let i=1 | 10,20 g/texto\d\+texto/s/\d\+/\=submatch(0)+i/ | let i=i+1
