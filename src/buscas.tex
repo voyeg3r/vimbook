@@ -503,7 +503,7 @@ Você pode criar um mapeamento e colocar no seu {\tt ~/.vimrc}
      map ,s <Esc>:%s/\(^\n\{2,}\)/\r/g<cr>
 \end{verbatim}
 
-No exemplo acima, ``,s'' é um mapeamento para reduzir linhas em branco
+No exemplo acima, `{\tt ,s}' é um mapeamento para reduzir linhas em branco
 sucessivas para uma só  \\
 
 
@@ -514,25 +514,25 @@ Remove não dígitos (não pega números)
 \end{verbatim}
 
 Remove final de linha DOS/Windows \verb|^M| que tem código hexadecimal igual a
-``0d''
+`{\tt 0d}'
 
 \begin{verbatim}
      :%s/\%x0d//g
 \end{verbatim}
 
-Troca palavras de lugar usando expressões regulares
+Troca palavras de lugar usando expressões regulares:
 
 \begin{verbatim}
      :%s/\(.\+\)\s\(.\+\)/\2 \1/
 \end{verbatim}
 
-Modificando todas as tags html para minúsculo
+Modificando todas as tags html para minúsculo:
 
 \begin{verbatim}
      :%s/<\([^>]*\)>/<\L\1>/g
 \end{verbatim}
 
-Move linhas 10 a 12 para além da linha 30
+Move linhas 10 a 12 para além da linha 30:
 
 \begin{verbatim}
      :10,12m30
@@ -540,7 +540,7 @@ Move linhas 10 a 12 para além da linha 30
 
 \section{O comando global ``g''}\label{sec:O comando global ``g''}
 
-Buscando um padrão e gravando em outro arquivo
+Buscando um padrão e gravando em outro arquivo:
 
 \begin{verbatim}
      :'a,'b g/^Error/ . w >> errors.txt
@@ -555,7 +555,7 @@ do seu arquivo vejamos:
      :g/Error/p .. apenas mostra as linhas correspondentes
 \end{verbatim}
 
-numerar linhas
+numerar linhas:
 
 \begin{verbatim}
      :let i=1 | g/^/s//\=i."\t"/ | let i=i+1
@@ -568,13 +568,13 @@ Para copiar linhas começadas com {\em Error} para o final do arquivo faça:
 \end{verbatim}
 
 Obs: O comando {\em copy} pode ser abreviado `co' ou ainda você pode usar `t'
-para mais detalhes leia
+para mais detalhes leia:
 
 \begin{verbatim}
      :h co
 \end{verbatim}
 
-Entre as linhas que contiverem ``fred'' e ``joe'' substitua
+Entre as linhas que contiverem ``fred'' e ``joe'' substitua:
 
 \begin{verbatim}
      :g/fred/,/joe/s/isto/aquilo/gic
@@ -584,19 +584,19 @@ As opções `gic' correspondem a {\em global}, {\em ignore case} e {\em
 confirm}, podendo ser omitidas deixando só o {\em global}. \\
 
 
-Pegar caracteres numéricos e jogar no final do arquivo?
+Pegar caracteres numéricos e jogar no final do arquivo:
 
 \begin{verbatim}
      :g/^\d\+.*/m $
 \end{verbatim}
 
-Inverter a ordem das linhas do arquivo?
+Inverter a ordem das linhas do arquivo:
 
 \begin{verbatim}
      :g/^/m0
 \end{verbatim}
 
-Apagar as linhas que contém {\em Line commented}
+Apagar as linhas que contém {\tt Line commented}:
 
 \begin{verbatim}
      :g/Line commented/d
@@ -608,13 +608,13 @@ Apagar todas as linhas comentadas
       :g/^\s*#/d
 \end{verbatim}
 
-Copiar determinado padrão para um registro
+Copiar determinado padrão para um registro:
 
 \begin{verbatim}
      :g/pattern/ normal "Ayy
 \end{verbatim}
 
-Copiar linhas que contém um padrão e a linha subsequente para o final
+Copiar linhas que contém um padrão e a linha subsequente para o final:
 
 \begin{verbatim}
      :g/padrão/;+1 copy $
@@ -662,7 +662,7 @@ Para colocar a última busca em uma substituição faça:
 \end{verbatim}
 
 A dupla barra corresponde ao ultimo padrão procurado, e portanto o
-comando abaixo fará a substituição da ultima busca por casinha
+comando abaixo fará a substituição da ultima busca por casinha:
 
 \begin{verbatim}
      :%s//casinha/g
