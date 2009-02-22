@@ -337,8 +337,8 @@ O Vim navega na árvore de diretórios com o comando
      vim .
 \end{verbatim}
 
-Use o ``j'' para descer e o ``k'' para subir ou Enter para editar o
-arquivo selecionado. Outra dica é pressionar F1 ao abrir o
+Use o `{\tt j}' para descer e o `{\tt k}' para subir ou {\tt Enter} para editar o
+arquivo selecionado. Outra dica é pressionar {\tt F1} ao abrir o
 FileExplorer do Vim, você encontra dicas adicionais sobre este modo de
 operação do Vim.
 
@@ -348,7 +348,7 @@ operação do Vim.
 \begin{verbatim}
      <tag> conteúdo da tag </tag>
      basta usar (em modo normal) as teclas
-     vit ............... visual ``inner tag | esta tag''
+     vit ............... visual `inner tag | esta tag'
 \end{verbatim}
 
 Este recurso também funciona com parênteses
@@ -364,7 +364,7 @@ Este recurso também funciona com parênteses
 \label{Substituições }
 
 Para fazer uma busca, certifique-se de que está em modo normal, em
-seguida digite use o comando ``s'', conforme será explicado.
+seguida digite use o comando `{\tt s}', conforme será explicado.
 
 Para substituir ``foo'' por ``bar'' na linha atual:
 
@@ -406,7 +406,7 @@ Busca usando alternativas:
      /end\(if\|while\|for\)
 \end{verbatim}
 
-Buscará ``if'', ``while'' e ``for''.  Observe que é necessário `escapar' os
+Buscará `{\tt if}', `{\tt while}' e `{\tt for}'.  Observe que é necessário `escapar' os
 caracteres \verb|\(|, \verb|\|| e \verb|\)|, caso contrário eles serão
 interpretados como caracteres comuns.
 
@@ -497,7 +497,7 @@ uma só linha vazia.
      :%s/\(^\n\{2,}\)/\r/g
 \end{verbatim}
 
-Você pode criar um mapeamento e colocar no seu ~/.vimrc
+Você pode criar um mapeamento e colocar no seu {\tt ~/.vimrc}
 
 \begin{verbatim}
      map ,s <Esc>:%s/\(^\n\{2,}\)/\r/g<cr>
