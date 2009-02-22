@@ -361,8 +361,8 @@ Pode também dizer ao Vim algo como...
      :let @d=strftime("c")<Enter>
 \end{verbatim}
 
-Neste caso estou dizendo a ele que guarde na variável `d' at d,
-o valor da data do sistema `strftime(``c'')' ou então cole isto no
+Neste caso estou dizendo a ele que guarde na variável `{\tt d}' at d,
+o valor da data do sistema `{\tt strftime("c")}' ou então cole isto no
 {\tt vimrc}:
 
 \begin{verbatim}
@@ -388,12 +388,12 @@ Pode mapear tudo isto
 As atribuições acima correspondem a:
 
 \begin{enumerate}
- \item  Guarda a data na variável ``d''
+ \item  Guarda a data na variável `{\tt d}'
  \item  Mapeamento para o modo de inserção ``{\tt imap}'' digite {\tt ,d}
  \item  Mapeamento para o modo normal ``{\tt nmap}'' digite {\tt ,d}
 \end{enumerate}
 
-E digitar ,d normalmente
+E digitar {\tt ,d} normalmente
 
 Desmistificando o {\tt strftime}
 \begin{verbatim}
@@ -420,8 +420,8 @@ ou usar em modo de inserção assim:
      Ctrl-v
 \end{verbatim}
 
-agora use as letras h,l,k,j como setas de direção até finalizar
-podendo guardar a seleção em um registro que vai de ``a'' a ``z'' exemplo:
+agora use as letras {\tt h,l,k,j} como setas de direção até finalizar
+podendo guardar a seleção em um registro que vai de `{\tt a}' a `{\tt z}' exemplo:
 
 \begin{verbatim}
      "ay
@@ -436,9 +436,9 @@ Em modo normal você pode fazer assim para guardar um parágrafo inteiro em um r
 O comando acima quer dizer
 
 \begin{verbatim}
-     para o registro ``a'' ......  "a
-     copie ......................  ``y''
-     o parágrafo atual .......... ``inner paragraph''
+     para o registro `a' ......  "a
+     copie ......................  `y'
+     o parágrafo atual .......... `inner paragraph'
 \end{verbatim}
 
 \section{Referências}
