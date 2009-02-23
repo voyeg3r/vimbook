@@ -24,15 +24,15 @@ use {\em escape} ``$\backslash$'' a fim de não obter erro.
 \label{sec:Usando o grep interno do Vim}
 \vimhelp{vimgrep}
 
-Se queremos editar um arquivo que contenha a palavra ``inusitada'':
+Para editar todos os arquivos que contenham a palavra ``inusitada'':
 
 \begin{verbatim}
     :vimgrep /\cinusitada/ *
     a opção `\c' torna a busca insensível ao case
 \end{verbatim}
 
-Obs: o Vim busca à partir do diretório atual, podemos saber 
-em que diretório estamos ou mudar assim:
+Obs: o Vim busca à partir do diretório atual, para se descobrir 
+o diretório atual ou mudá-lo:
 
 \begin{verbatim}
     :pwd ........... exibe o diretório atual
@@ -74,7 +74,7 @@ texto em uma outra posição. Outros comandos:
      d/casa/+1 - deleta até a linha após a palava casa
 \end{verbatim}
 
-Se você trocar a letra `d' nos comandos acima por `c' de {\em change}
+Trocando a letra `d' nos comandos acima por `c' de {\em change}
 (``mudança'') ao invés de deletar será feita uma mudança de conteúdo.  Por
 exemplo:
 \vimhelp{change}
@@ -151,17 +151,15 @@ O Vim mantém uma lista de alterações, veremos agora como usar este recurso.
 \vimhelp{edit!}
 
 O Vim como qualquer outro editor é muito exigente no que se refere a alterações
-de arquivo.  Se você estiver editando um arquivo e desejar abandoná-lo, o Vim
-perguntará se quer salvar alterações, se você estiver certo de que não quer
-salvar o arquivo atual e deseja imediatamente começar a editar um novo arquivo
-faça:
+de arquivo.  Ao tentar abandonar um arquivo editado e não salvo, o Vim irá se certificar
+da ação. Para abrir um novo arquivo sem salvar o antigo:
 
 \begin{verbatim}
      :enew!
 \end{verbatim}
 
-O comando acima é uma abreviação de {\em edit new}. De modo similar você pode
-desejar ignorar todas as alterações feitas desde a abertura do arquivo:
+O comando acima é uma abreviação de {\em edit new}. De modo similar pode-se
+ignorar todas as alterações feitas desde a abertura do arquivo:
 
 \begin{verbatim}
      :e!
@@ -407,6 +405,7 @@ Posicione o cursor sobre um número e pressione
 \begin{verbatim}
      Ctrl-y ......... repete linha acima
      Ctrl-e ......... repete linha abaixo
+     
      Ctrl-x Ctrl-l .. repete linhas inteiras
      Ctrl-a ......... repete a última inserção
 \end{verbatim}
@@ -607,6 +606,7 @@ do Vim fazemos:
      vim *.txt ......... abre todos os arquivos `txt'
      :bn ............... vai para o próximo da lista
      :bp ............... volta para o arquivo anterior
+     :ls ............... lista todos os arquivos abertos
      :wn ............... salva e vai para o próximo
      :wp ............... salva e vai para o prévio
 \end{verbatim}
@@ -749,26 +749,26 @@ momento.
 Tomando como exemplo um trecho de código como abaixo:
 
 \begin{verbatim}
-  1   input{capitulo1}
-  2   input{capitulo1}
-  3   input{capitulo2}
-  4   input{capitulo3}
-  5   input{capitulo4}
-  6   input{capitulo5}
-  7   input{capitulo6}
-  8   input{capitulo7}
-  9   input{capitulo8}
+     1   input{capitulo1}
+     2   input{capitulo2}
+     3   input{capitulo3}
+     4   input{capitulo4}
+     5   input{capitulo5}
+     6   input{capitulo6}
+     7   input{capitulo7}
+     8   input{capitulo8}
+     9   input{capitulo9}
 \end{verbatim}
 
 Se desejamos comentar da linha 4 até a linha 9 podemos fazer:
 
 \begin{verbatim}
-  posicionar o cursor no começo da linha 4
-  Ctrl-v ........... inicia seleção por blocos
-  5j ............... extende a selção até o fim
-  Shift-i .......... inicia inserção no começo da linha
-  % ................ insere comentário (LaTeX)
-  Esc .............. sai do modo de inserção
+     posicionar o cursor no começo da linha 4
+     Ctrl-v ........... inicia seleção por blocos
+     5j ............... extende a selção até o fim
+     Shift-i .......... inicia inserção no começo da linha
+     % ................ insere comentário (LaTeX)
+     Esc .............. sai do modo de inserção
 \end{verbatim}
 
 

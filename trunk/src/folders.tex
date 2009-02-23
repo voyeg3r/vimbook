@@ -37,11 +37,11 @@ O Vim tem seis modos {\em fold}, são eles:
 
 \begin{itemize}
 \item Sintaxe ({\em syntax})
-\item Indentação ({\em indent})
+\item Identação ({\em indent})
 \item Marcas ({\em marker})
-\item Manual
+\item Manual ({\em manual})
 \item Diferenças ({\em diff})
-\item expresões ({\em Expressões Regulares})
+\item Expressões Regulares ({\em expr})
 \end{itemize}
 
 Para determinar o tipo de dobra faça
@@ -71,24 +71,25 @@ começo da linha este recurso chama-se {\em modeline}, leia mais na seção
 \section{Manipulando dobras }\label{Manipulando dobras }
 
 \begin{verbatim}
-     zo .......... abre a dobra
-     zO .......... abre a dobra, recursivamente
-     za .......... abre/fecha (alterna) a dobra
-     zA .......... abre/fecha (alterna) a dobra, recursivamente
-     zR .......... abre todas as dobras do arquivo atual
-     zc .......... fecha uma dobra
-     zC .......... fecha a dobra abaixo do cursor, recursivamente
-     zfap ........ cria uma dobra para o parágrafo `ap' atual
-     zf/casa ..... cria uma dobra até a palavra casa
-     zf'a ........ cria uma dobra até a marca `a'
-     zd .......... apaga a dobra (não o seu conteúdo)
-     zj .......... move para o início da próxima dobra
-     zk .......... move para o final da dobra anterior
-     [z .......... move o cursor para início da dobra aberta
-     ]z .......... move o cursor para o fim da dobra aberta
-     zi .......... desabilita ou habilita as dobras
-     zm, zr ...... diminui/aumenta nível da dobra `fdl'
-     :set fdl=0 .. nível da dobra 0 (foldlevel)
+     zo ................ abre a dobra
+     zO ................ abre a dobra, recursivamente
+     za ................ abre/fecha (alterna) a dobra
+     zA ................ abre/fecha (alterna) a dobra, recursivamente
+     zR ................ abre todas as dobras do arquivo atual
+     zc ................ fecha uma dobra
+     zC ................ fecha a dobra abaixo do cursor, recursivamente
+     zfap .............. cria uma dobra para o parágrafo `ap' atual
+     zf/casa ........... cria uma dobra até a palavra casa
+     zf'a .............. cria uma dobra até a marca `a'
+     zd ................ apaga a dobra (não o seu conteúdo)
+     zj ................ move para o início da próxima dobra
+     zk ................ move para o final da dobra anterior
+     [z ................ move o cursor para início da dobra aberta
+     ]z ................ move o cursor para o fim da dobra aberta
+     zi ................ desabilita ou habilita as dobras
+     zm, zr ............ diminui/aumenta nível da dobra `fdl'
+     :set fdl=0 ........ nível da dobra 0 (foldlevel)
+     :set foldcolumn=4 . mostra uma coluna ao lado da enumeração de linhas com as dobras
 \end{verbatim}
 
 Para abrir e fechar as dobras usando a barra de

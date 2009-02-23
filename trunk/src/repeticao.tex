@@ -126,9 +126,9 @@ e quer que ele fique assim:
      #include "stdlib.h"
 \end{verbatim}
 
-Não podemos simplesmente executar repetidas vezes um comando do Vim, pois
-precisamos incluir texto tanto no começo quanto no fim da linha?  É necessário
-mais de um comando para isso.  É aí que entram as macros. Podemos gravar até 26
+Não é possível simplesmente executar repetidas vezes um comando do Vim, pois
+é preciso incluir texto tanto no começo quanto no fim da linha?  É necessário
+mais de um comando para isso.  É aí que entram as macros. Pode-se gravar até 26
 macros, já que elas são guardadas nos registros do Vim, que são identificados
 pelas letras do alfabeto. Para começar a gravar uma macro no registro `a',
 digitamos
@@ -137,10 +137,10 @@ digitamos
      qa
 \end{verbatim}
 
-No modo Normal. Tudo o que for digitado a partir daí será gravado no
-registro `a' até que terminemos com o comando
+No modo Normal. Tudo o que for digitado a partir de então, será gravado no
+registro `a' até que seja concluído com o comando
 \verb|<Esc>q| novamente (no modo Normal). Assim,
-podemos solucionar nosso problema:
+soluciona-se o problema:
 
 \begin{verbatim}
      <Esc> ....... para garantir que estamos no modo normal
@@ -155,7 +155,7 @@ podemos solucionar nosso problema:
      q ........... para a gravação da macro
 \end{verbatim}
 
-Agora você só precisa posicionar o cursor na primeira letra de uma linha como esta
+Agora só é preciso posicionar o cursor na primeira letra de uma linha como esta
 
 \begin{verbatim}
      stdio.h
@@ -170,26 +170,26 @@ usando o comando \verb|@a|. Para executar quatro vezes, digite:
 
 Este comando executa quatro vezes o conteúdo do registro `a'.
 
-Caso tenha executado a macro uma vez pode repeti-la com o comando
+Caso tenha sido executada, a macro pode ser repetida com o comando
 
 \begin{verbatim}
      @@
 \end{verbatim}
 
 \section{Repetindo substituições }
-Se você fizer uma substituição em um intervalo como abaixo
+Caso seja feito uma substituição em um intervalo como abaixo
 
 \begin{verbatim}
      :5,32s/isto/aquilo/g
 \end{verbatim}
 
-Pode repetir esta substituição em qualquer linha que estiver apenas usando este símbolo
+Pode-se repetir esta substituição em qualquer linha que estiver apenas usando este símbolo
 
 \begin{verbatim}
      &
 \end{verbatim}
 
-O Vim substituirá na linha corrente `isto' por `aquilo'. Podemos
+O Vim substituirá na linha corrente `isto' por `aquilo'. Podendo
 repetir a última substituição globalmente assim:
    
 \begin{verbatim}
@@ -229,10 +229,10 @@ bem como ser usado para testar um esquema de cor:
 
 \section{Usando o comando {\tt bufdo}}\label{Usando o comando bufdo}
 
-Com o comando {\tt :bufdo} podemos executar um comando em um
-conjunto de arquivos de forma rápida. No exemplo a seguir, abriremos
-todos os arquivos HTML do diretório atual, efetuarei uma substituição
-e em seguida salvo todos.
+Com o comando {\tt :bufdo}, pode-se executar um comando em um
+conjunto de arquivos de forma rápida. No exemplo a seguir, serão abertos
+todos os arquivos HTML do diretório atual, será efetuado uma substituição
+e em seguida serão todos salvos.
 
 \begin{verbatim}
      vim *.html
