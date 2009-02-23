@@ -97,13 +97,13 @@ Os registradores `{\tt a-z}' são uma espécie de área de transferência múlti
 Você deve estar em modo normal e então digitar uma aspa dupla e uma
 das 26 letras do alfabeto, em seguida uma ação por exemplo, `y'
 (copiar) `d' (apagar). Depois, mova o cursor para a linha
-desejada e cole com "rp, onde `r' corresponde ao
+desejada e cole com \verb+"rp+, onde `{\tt r}' corresponde ao
 registrador para onde o trecho foi copiado.
 
 \begin{verbatim}
-     "ayy ... copia a linha atual para o registrador ``a''
-     "ap  ... cola o conteúdo do registrador ``a'' abaixo
-     "bdd ... apaga a linha atual para o registrador ``b''
+     "ayy ... copia a linha atual para o registrador `a'
+     "ap  ... cola o conteúdo do registrador `a' abaixo
+     "bdd ... apaga a linha atual para o registrador `b'
 \end{verbatim}
 
 \section{Macros: gravando comandos}\label{Macros: gravando comandos}
@@ -130,7 +130,7 @@ Não podemos simplesmente executar repetidas vezes um comando do Vim, pois
 precisamos incluir texto tanto no começo quanto no fim da linha?  É necessário
 mais de um comando para isso.  É aí que entram as macros. Podemos gravar até 26
 macros, já que elas são guardadas nos registros do Vim, que são identificados
-pelas letras do alfabeto. Para começar a gravar uma macro no registro ``a'',
+pelas letras do alfabeto. Para começar a gravar uma macro no registro `a',
 digitamos
 
 \begin{verbatim}
@@ -138,7 +138,7 @@ digitamos
 \end{verbatim}
 
 No modo Normal. Tudo o que for digitado a partir daí será gravado no
-registro ``a'' até que terminemos com o comando
+registro `a' até que terminemos com o comando
 \verb|<Esc>q| novamente (no modo Normal). Assim,
 podemos solucionar nosso problema:
 
@@ -161,14 +161,14 @@ Agora você só precisa posicionar o cursor na primeira letra de uma linha como 
      stdio.h
 \end{verbatim}
 
-E executar a macro do registro ``a'' quantas vezes for necessário,
+E executar a macro do registro `a' quantas vezes for necessário,
 usando o comando \verb|@a|. Para executar quatro vezes, digite:
 
 \begin{verbatim}
      4@a
 \end{verbatim}
 
-Este comando executa quatro vezes o conteúdo do registro ``a''.
+Este comando executa quatro vezes o conteúdo do registro `a'.
 
 Caso tenha executado a macro uma vez pode repeti-la com o comando
 
@@ -189,7 +189,7 @@ Pode repetir esta substituição em qualquer linha que estiver apenas usando est
      &
 \end{verbatim}
 
-O Vim substituirá na linha corrente ``isto'' por ``aquilo''. Podemos
+O Vim substituirá na linha corrente `isto' por `aquilo'. Podemos
 repetir a última substituição globalmente assim:
    
 \begin{verbatim}
