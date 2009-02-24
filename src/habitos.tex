@@ -105,7 +105,7 @@ sequência de comandos:
 
 \begin{verbatim}
      vim *.html  .............................. abre os arquivos
-     :bufdo :%s/bgcolor=``f''/bgcolor=``e''/g   substituição
+     :bufdo :%s/bgcolor=`ffffff'/bgcolor=`eeeeee'/g   substituição
      :wall .................................... salva todos
      :qall .................................... fecha todos
 \end{verbatim}
@@ -117,7 +117,7 @@ arquivos txt e mudar de um para o outro assim:
      :wn
 \end{verbatim}
 
-O ``w'' significa gravar e o ``n'' significa {\em next}, ou seja, gravaria-mos
+O `{\tt w}' significa gravar e o `{\tt n}' significa {\em next}, ou seja, gravaria-mos
 o que foi modificado no arquivo atual e mudaríamos para o próximo.
 
 Veja também: \ref{cha:Movendo-se no Documento}
@@ -126,7 +126,7 @@ Veja também: \ref{cha:Movendo-se no Documento}
 \label{Não digite duas vezes}
 
 \begin{itemize}
-\item O Vim complementa com ``tab''. Veja mais na seção \ref{Complementação com ``tab''} na página \pageref{Complementação com ``tab''}.
+\item O Vim complementa com `{\tt tab}'. Veja mais na seção \ref{Complementação com ``tab''} na página \pageref{Complementação com ``tab''}.
 \item Use macros. Detalhes na seção \ref{Macros: gravando comandos}
 página \pageref{Macros: gravando comandos}.
 \item Use abreviações coloque abreviações como abaixo em seu \verb|~/.vimrc|. Veja mais na seção \ref{Abreviações}.
@@ -138,7 +138,7 @@ página \pageref{Macros: gravando comandos}.
      iab linux GNU/Linux
 \end{verbatim}
 
-No modo de inserção você pode usar
+No modo de inserção você pode usar:
 
 \begin{verbatim}
      Ctrl-y  ........ copia caractere a caractere a linha acima
@@ -146,14 +146,14 @@ No modo de inserção você pode usar
      Ctrl-x Ctrl-l .. completa linhas inteiras
 \end{verbatim}
 
-Para um trecho muito copiado coloque o seu conteúdo em um registrador
+Para um trecho muito copiado coloque o seu conteúdo em um registrador:
 
 \begin{verbatim}
-     "ayy ... copia a linha atual para o registrador ``a''
-     "ap  ... cola o registrador ``a''
+     "ayy ... copia a linha atual para o registrador `a'
+     "ap  ... cola o registrador `a'
 \end{verbatim}
 
-Crie abreviações para erros comuns no seu arquivo de configuração (~/.vimrc)
+Crie abreviações para erros comuns no seu arquivo de configuração (~/.vimrc):
 
 \begin{verbatim}
      iabbrev teh the
@@ -172,12 +172,10 @@ uma melhor visualização do conteúdo. Mais detalhes no capítulo
 \section{Use autocomandos}
 \label{Use autocomandos}
 
-No arquivo de configuração do Vim \verb|~/.vimrc| você pode criar comandos
-automáticos que serão executados diante de uma determinada
-circunstância
-
-O comando abaixo será executado em qualquer arquivo existente, posicionando o
-cursor no último local editado
+No arquivo de configuração do Vim \verb|~/.vimrc| pode-se pode criar comandos
+automáticos que serão executados diante de uma determinada circunstância. 
+O comando abaixo será executado em qualquer arquivo existente, ao abrir o mesmo, 
+posicionando o cursor no último local editado:
 
 \begin{verbatim}
      "autocmd BufEnter * lcd %:p:h
@@ -188,10 +186,10 @@ cursor no último local editado
 \end{verbatim}
 
 
-Grupo de comandos para arquivos do tipo ``html''. Observe que o
-autocomando carrega um arquivo de configuração do Vim exclusivo para o
-tipo html/htm e no caso de arquivos novos ``BufNewFile'' ele já cria um
-esqueleto puxando do endereço indicado.
+Grupo de comandos para arquivos do tipo `{\tt html}'. Observe que o autocomando
+carrega um arquivo de configuração do Vim exclusivo para o tipo {\tt html/htm}
+e no caso de arquivos novos `{\tt BufNewFile}' ele já cria um esqueleto puxando
+do endereço indicado:
 
 \begin{verbatim}
      augroup html
@@ -215,10 +213,11 @@ O Vim pode navegar em pastas assim:
      vim .
 \end{verbatim}
 
-Você pode usar ``j'' e ``k'' para navegar e {\tt Enter} para editar o arquivo
-selecionado
+Você pode usar `{\tt j}' e `{\tt k}' para navegar e {\tt Enter} para editar o arquivo
+selecionado:
 
-\section{Torne as boas práticas um hábito }\label{Torne as boas práticas um hábito }
+\section{Torne as boas práticas um hábito }
+\label{Torne as boas práticas um hábito }
 
 Para cada prática produtiva procure adquirir um hábito e mantenha-se
 atento ao que pode ser melhorado. Imagine tarefas complexas, procure
