@@ -286,14 +286,13 @@ qualquer em modo de inserção ou comando, veja:
 \begin{verbatim}
      " mostra o nome do arquivo com o caminho
      map <F2> :echo expand("%:p")
-     
      " insere um texto qualquer
      imap <F2> Nome de uma pessoa
 \end{verbatim}
 
 A única diferença nos mapeamentos acima é que o mapeamento para modo
-de inserção começa com ``i'', assim como para o modo ``comando'' ``:'' começa
-com ``c'' no caso \verb|cmap|.
+de inserção começa com `{\tt i}', assim como para o modo ``comando'' `{\tt :}' começa
+com `{\tt c}' no caso `{\tt cmap}'.
 
 \subsection{Recarregando o arquivo de configuração}
 \label{sec:Recarregando o arquivo de configuração}
@@ -353,8 +352,8 @@ ativada. O ``\verb|<cr>|'' ao final representa um {\tt Enter}.
 
 \subsection{Limpando o ``registro'' de buscas}\label{Limpando o ``registro'' de buscas}
 
-A cada busca, se a opção `hls' estiver habilitada o Vim faz um
-destaque colorido, mas se você quiser limpar pode fazer este
+A cada busca, se a opção `{\tt hls}'\footnote{hls é uma abreviação de hightlight search}
+estiver habilitada o Vim faz um destaque colorido, mas se você quiser limpar pode fazer este
 mapeamento
 
 \begin{verbatim}
@@ -461,9 +460,8 @@ Salvando com uma tecla de função:
 \vimhelp{autocmd.txt}
 
 Autocomandos habilitam comandos automáticos para situações
-específicas. Se você deseja que seja executada uma determinada ação ao
-iniciar um novo arquivo o seu autocomando deverá ser mais ou menos
-assim:
+específicas. Para executar determinada ação ao
+iniciar um novo arquivo o autocomando deverá obedecer este padrão:
 
 \begin{verbatim}
      au BufNewFile tipo ação
