@@ -501,7 +501,7 @@ Há situações em que é necessária a uniformização de ações, por exemplo,
 códigos Python deve-se manter um padrão para a indentação, ou será com espaços
 ou será com tabulações, não se pode misturar os dois pois o interpretador retornaria um erro.
 Outra situação em que misturar espaços com tabulações ocasiona erros é em
-códigos \LaTeX, ao compilar o documento a formatação não sai como você previa.
+códigos \LaTeX, ao compilar o documento a formatação não sai como desejado.
 Até que se perceba o erro leva um tempo.  Para configurar o vim de forma que
 ele detecte este tipo de erro ao entrar no arquivo:
 
@@ -522,7 +522,7 @@ ele detecte este tipo de erro ao entrar no arquivo:
 
 Para evitar que este erro se repita, ou seja, que sejam 
 adicionados no começo de linha tabulações no lugar de espaços
-coloque no \textasciitilde/.vimrc
+adiciona-se ao \textasciitilde/.vimrc
 
 \begin{verbatim}
      set expandtab
@@ -531,7 +531,6 @@ coloque no \textasciitilde/.vimrc
 É perfeitamente possível um autocomando que faça direto a substituição de
 tabulações por espaços, mas neste caso não é recomendado que o autocomando se
 aplique a todos os tipos de aquivos.
-
 
 \section{Funções}
 \label{sec:Funções}
