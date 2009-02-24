@@ -22,8 +22,8 @@ No sistema operacional Windows o arquivo costuma ser:
 \section{Onde colocar {\em plugins} e temas de cor}
 \label{Onde colocar plugins e temas de cor}
 
-No Windows deve haver uma pasta chamada {\tt vimfiles} (caso não exista
-deve-se criá-la), que fica em
+No Windows deve haver uma pasta chamada `{\tt vimfiles}' (caso não exista
+deve-se criá-la), que fica em:
 
 \begin{verbatim}
      c:\documents and settings\usuario\vimfiles
@@ -141,6 +141,7 @@ set cul .................. "simplificação de `cursorline'
 set ttyfast .............. "melhora o redraw de janelas.
 set columns=88 ........... "deixa a janela com 88 colunas.
 set mousemodel=popup ..... "exibe o conteúdo de folders e sugestões spell
+set viminfo=%,'50,\"100,/100,:100,n "armazena opções (buffers)
 \end{verbatim}
 
 O comando \verb|gqap| ajusta o parágrafo atual em modo normal
@@ -956,7 +957,7 @@ na página \pageref{Buscas e substituições}''
 \end{verbatim}
 
 \section{Abreviações}\label{Abreviações}
-Também no \verb|.vimrc| você pode colocar abreviações, que são uma espécie de
+Também no {\tt \textasciitilde/.vimrc} pode-se colocar abreviações, que são uma espécie de
 auto-texto para o Vim.
 
 \begin{verbatim}
@@ -971,10 +972,12 @@ auto-texto para o Vim.
 \section{Evitando arquivos de backup no disco}
 \label{Evitando arquivos de backup no disco}
 
-Nota-se em algumas situações que existem alguns arquivos com o mesmo nome dos arquivos que foram editados, porém com um
-til (\textasciitilde) no final. Esses arquivos são {\em backups} que o Vim gera antes de sobreescrever os arquivos, e podem
-desde ocupar espaço significativo no disco rígido até representar falha de segurança, como por exemplo arquivos 
-{\tt .php\textasciitilde} que não são interpretados pelo servidor web e expoem o código-fonte.
+Nota-se em algumas situações que existem alguns arquivos com o mesmo nome dos
+arquivos que foram editados, porém com um til (\textasciitilde) no final. Esses
+arquivos são {\em backups} que o Vim gera antes de sobreescrever os arquivos, e
+podem desde ocupar espaço significativo no disco rígido até representar falha
+de segurança, como por exemplo arquivos {\tt .php\textasciitilde} que não são
+interpretados pelo servidor web e expoem o código-fonte.
 
 Se desejado que esses {\em backups} sejam feitos enquanto os arquivos estejam sendo escritos, porém não 
 mantidos após terminar a escrita, utiliza-se no \verb|.vimrc|:
@@ -989,27 +992,32 @@ Fonte: \url{http://eustaquiorangel.com/posts/520}
 \section{Mantendo apenas um Gvim aberto}
 \label{Mantenddo apenas um Gvim aberto}
 
-Essa dica destina-se apenas à versâo do Vim que roda no ambiente gráfico, ou seja, o Gvim, pois ela faz uso
-de alguns recursos que só funcionam nessse ambiente. A meta é criar um comando que vai abrir os arquivos indicados
-em abas novas sempre na janela já existente. 
+Essa dica destina-se apenas à versâo do Vim que roda no ambiente gráfico, ou
+seja, o Gvim, pois ela faz uso de alguns recursos que só funcionam nessse
+ambiente. A meta é criar um comando que vai abrir os arquivos indicados em abas
+novas sempre na janela já existente. 
 
-Para isso deve-se definir um {\em script} que esteja no seu path do sistema 
-(e que possa ser executado de alguma forma por programas do tipo {\em launcher} no modo gráfico) que vai ser utilizado 
-sempre que quisermos abrir nossos arquivos dessa maneira. Para efeito do exemplo, o nome do arquivo será {\tt tvim} 
-(de {\em tabbed vim}), porém pode ser nomeado com o nome que for conveniente.
+Para isso deve-se definir um {\em script} que esteja no seu path do sistema (e
+que possa ser executado de alguma forma por programas do tipo {\em launcher} no
+modo gráfico) que vai ser utilizado sempre que quisermos abrir nossos arquivos
+dessa maneira. Para efeito do exemplo, o nome do arquivo será {\tt tvim} (de
+{\em tabbed vim}), porém pode ser nomeado com o nome que for conveniente.
 
-A única necessidade para essa dica funcionar é a versão do Vim ter suporte para o argumento {\tt --serverlist},
-o que deve ser garantido nas versões presentes na época em que esse documento foi escrito. Para fazer uma simples
-verificaçâo se o comando está disponível, deve ser digitado em um terminal:
+A única necessidade para essa dica funcionar é a versão do Vim ter suporte para
+o argumento {\tt --serverlist}, o que deve ser garantido nas versões presentes
+na época em que esse documento foi escrito. Para fazer uma simples verificaçâo
+se o comando está disponível, deve ser digitado em um terminal:
 
 \begin{verbatim}
      vim --serverlist
      gvim --serverlist
 \end{verbatim}
 
-Se ambos os comandos acima resultaram em erro, o procedimento não poderá ser implementado. Do contrário, deve-se
-utilizar o comando que teve um retorno válido ({\tt vim} ou {\tt gvim}) para a criar o {\em script}. Supondo que foi o 
-comando {\tt gvim} que não retornou um erro, criamos o {\em script} da seguinte forma:
+Se ambos os comandos acima resultaram em erro, o procedimento não poderá ser
+implementado. Do contrário, deve-se utilizar o comando que teve um retorno
+válido ({\tt vim} ou {\tt gvim}) para a criar o {\em script}. Supondo que foi o
+comando {\tt gvim} que não retornou um erro, criamos o {\em script} da seguinte
+forma:
 
 \begin{verbatim}
      #!/bin/bash
@@ -1021,8 +1029,9 @@ comando {\tt gvim} que não retornou um erro, criamos o {\em script} da seguinte
      gvim --servername $(gvim --serverlist | head -1) --remote-tab $1
 \end{verbatim}
 
-Desse modo, se for digitado {\tt tvim} sem qualquer argumento, é exibida a mensagem de erro, do contrário,
-o arquivo é aberto na cópia corrente do Gvim, em uma nova aba, por exemplo:
+Desse modo, se for digitado {\tt tvim} sem qualquer argumento, é exibida a
+mensagem de erro, do contrário, o arquivo é aberto na cópia corrente do Gvim,
+em uma nova aba, por exemplo:
 
 \begin{verbatim}
 tvim .vimrc
