@@ -592,13 +592,14 @@ Durante a edição de vários arquivos defina uma marca global com o comando
      mA
 \end{verbatim}
 
-Onde ``m'' cria a marca e ``A'' (maiúsculo) define uma marca ``A'' acessível a qualquer momento com o comando
+Onde `{\tt m}' cria a marca e `{\tt A}' (maiúsculo) define uma marca `{\tt A}'
+acessível a qualquer momento com o comando:
 
 \begin{verbatim}
      'A
 \end{verbatim}
 
-Isto fará o Vim dar um salto até a marca `A' mesmo que esteja em outro arquivo,
+Isto fará o Vim dar um salto até a marca `{\tt A}' mesmo que esteja em outro arquivo,
 mesmo que você tenha acabado de fecha-lo. Para abrir e editar vários arquivos
 do Vim fazemos:
 
@@ -630,7 +631,7 @@ Bom, já que abrimos o nosso último arquivo editado com o comando
 \end{verbatim}
 
 podemos, e provavelmente o faremos, editar no mesmo ponto em que estávamos
-editando da última vez
+editando da última vez:
 
 \begin{verbatim}
      gi
@@ -651,8 +652,8 @@ como:
      # vim:ft=sh:
 \end{verbatim}
 
-OBS: Você deve colocar um espaço entre a palavra `vim' e a primeira
-coluna, ou seja, a palavra `vim' deve vir precedida de um espaço, daí
+OBS: Você deve colocar um espaço entre a palavra `{\tt vim}' e a primeira
+coluna, ou seja, a palavra `{\tt vim}' deve vir precedida de um espaço, daí
 em diante cada opção fica assim:
 
 \begin{verbatim}
@@ -666,9 +667,9 @@ mesmo indicar no {\em modeline} algo como:
      # vim:ft=txt:nu:
 \end{verbatim}
 
-Apesar de usar a extensão `{\tt sh}' o Vim reconhecerá este arquivo como `txt', e
+Apesar de usar a extensão `{\tt sh}' o Vim reconhecerá este arquivo como `{\tt txt}', e
 caso eu não tenha habilitado a numeração, ainda assim o Vim usará por causa da
-opção `nu'.  Portanto o uso de {\em modelines} pode ser um grande recurso para o seu
+opção `{\tt nu}'.  Portanto o uso de {\em modelines} pode ser um grande recurso para o seu
 dia-a-dia pois você pode coloca-las dentro dos comentários!
 
 \section{Edição avançada de linhas}
@@ -688,8 +689,8 @@ Seja o seguinte texto:
      10 este é um texto novo
 \end{verbatim}
 
-Suponha que queira-se apagar ``{\tt é um texto}'' da linha 5 até o fim (linha 10). Isto pode ser feito
-assim:
+Suponha que queira-se apagar ``{\tt é um texto}'' da linha 5 até o fim (linha
+10). Isto pode ser feito assim:
 
 \begin{verbatim}
      :5,$ normal 0wd3w
@@ -698,11 +699,11 @@ assim:
 Explicando o comando acima:
 
 \begin{verbatim}
-     :5,$ .... indica o intervalo que é da linha 5 até o fim ``$''
+     :5,$ .... indica o intervalo que é da linha 5 até o fim `$'
      normal .. executa em modo normal
      0 ....... move o cursor para o começo da linha
      w ....... pula uma palavra
-     d3w ..... apaga 3 palavras ``w''
+     d3w ..... apaga 3 palavras `w'
 \end{verbatim}
 
 Obs: É claro que um comando de substituição simples
@@ -714,7 +715,7 @@ Obs: É claro que um comando de substituição simples
 Resolveria neste caso, mas a vantagem do método anterior é que
 é válido para três palavras, sejam quais forem.\\
 
-Também é possível empregar comandos de inserção (como {\em i} ou {\em a}) e
+Também é possível empregar comandos de inserção como `{\em i}' ou `{\em a}' e
 retornar ao modo normal, bastando para isso usar o recurso \verb|Ctrl-v Esc|,
 de forma a simular o acionamento da tecla \verb|Esc| (saída do modo de
 inserção). Por exemplo, suponha agora que deseja-se mudar a frase ``{\em este
@@ -728,7 +729,7 @@ assim:
 Decompondo o comando acima temos:
 
 \begin{verbatim}
-     :5,$ .... indica o intervalo que é da linha 5 até o fim ``$''
+     :5,$ .... indica o intervalo que é da linha 5 até o fim `$'
      normal .. executa em modo normal
      0 ....... move o cursor para o começo da linha
      2w ...... pula duas palavras (vai para a palavra "é")
