@@ -57,24 +57,27 @@ registro.
 
 \section{Registro de pequenas deleções}
 \label{Registro de pequenas deleções}
-Quando você {\em deleta} algo menor que uma linha o Vim armazena os dados deletados neste registro.
+
+Quando se {\em deleta} algo menor que uma linha o Vim armazena os dados
+deletados neste registro.
 
 \section{Registros nomeados de ``a até z'' ou ``A até Z''}
 \label{Registros nomeados de ``a até z'' ou ``A até Z''}
-Você pode armazenar uma linha em modo normal assim:
+Pode-se armazenar uma linha em modo normal assim:
 
 \begin{verbatim}
      "ayy
 \end{verbatim}
 
-Desse modo você guardou o conteúdo da linha no registro ``a'' caso
-queira armazenar mais uma linha no registro ``a'' use este comando
+Desse modo o Vim guarda o conteúdo da linha no registro `{\tt a}' caso
+queira armazenar mais uma linha no registro `{\tt a}' use este comando:
 
 \begin{verbatim}
      "Add
 \end{verbatim}
 
-Neste outro caso apaguei a linha corrente adicionando-a ao final do registro ``a''.
+Neste caso a linha corrente é apagada `{\tt dd}' e  adicionada ao final do
+registro ``a''.
 
 \begin{verbatim}
      "ayip .. copia o parágrafo atual para o registro ``a''
@@ -93,7 +96,7 @@ Neste outro caso apaguei a linha corrente adicionando-a ao final do registro ``a
      "# ..... contém o nome do arquivo alternativo
 \end{verbatim}
 
-Uma forma prática de usar registros em modo de inserção é usando
+Uma forma prática de usar registros em modo de inserção é usando:
 \verb|Ctrl-r|
 
 
@@ -104,8 +107,8 @@ Uma forma prática de usar registros em modo de inserção é usando
      Ctrl-r a .... insere o registro `a'
 \end{verbatim}
 
-Em modo de inserção você pode repetir a última inserção de texto
-simplesmente pressionando
+Em modo de inserção pode-se repetir a última inserção de texto
+simplesmente pressionando:
 
 \begin{verbatim}
      Ctrl-a
@@ -118,8 +121,12 @@ simplesmente pressionando
      "=
 \end{verbatim}
 
-Este registro na verdade é usado em algumas funções avançadas. Veja 
-um vídeo demonstrando sua utilização aqui: \url{http://vimeo.com/2967392}.
+O registro de expressões permite efetuar calculos diretamente no editor, usando
+o atalho ``{\tt Ctrl-r =}'' {\em no modo de inserção}, o editor mostrará um
+sinal de igualdade na barra de status e o usuário digita então uma expressão
+matemática como uma multiplicação ``{\tt 6*9}'' e em seguida pressiona {\tt
+Enter} para que o editor finalise a operação.  Veja um vídeo demonstrando sua
+utilização aqui: \url{http://vimeo.com/2967392}.
 
 
 Para entender melhor como funciona o registro de expressões
