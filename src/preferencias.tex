@@ -956,16 +956,26 @@ na página \pageref{Buscas e substituições}''.
 \end{verbatim}
 
 \section{Abreviações}\label{Abreviações}
-Também no {\tt \textasciitilde/.vimrc} pode-se colocar abreviações, que são uma espécie de
-auto-texto para o Vim.
+
+Também no {\tt \textasciitilde/.vimrc} pode-se colocar abreviações, que são uma
+espécie de auto-texto para o Vim. O seu funcionamento consiste de três campos,
+o primeiro é o modo no qual a abreviação funcionará, o segundo é a palavra que
+irá disparar a abreviação e o terceiro campo é a abreviação propriamente dita.
+Por exemplo se queremos que em modo de comando a palavra `salvar' funcione para
+salvar os arquivos adiciona-se a seguinte abreviação ao `vimrc'. 
+
+\begin{verbatim}
+    cab salvar w
+\end{verbatim}
+
+Abaixo abreviações para o modo de inserção:
 
 \begin{verbatim}
      iab slas Sérgio Luiz Araújo Silva
      iab Linux GNU/Linux
      iab linux GNU/Linux
-     
-     " Esta abreviação é legal para usar com o python
-     imap :<CR> :<CR><TAB>
+     %" Esta abreviação é legal para usar com o python
+     %imap :<CR> :<CR><TAB>
 \end{verbatim}
 
 \section{Evitando arquivos de backup no disco}
