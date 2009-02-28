@@ -238,16 +238,11 @@ Observação: esta macro prévia pode ficar no {\tt vimrc} ou ser digitada em co
 \section{Mapeamentos}\label{Mapeamentos}
 \vimhelp{key-mapping, mapping}
 
-Mapeamentos permitem criar atalhos de teclas para quase tudo. Tudo depende de
-sua criatividade e do quanto conhece o Vim. 
-
-
-\subsection{Notas sobre mapeamentos}\label{Notas sobre mapeamentos}
-Mapeamentos são um ponto importante do Vim, com eles podemos controlar
-ações com quaisquer teclas, mas antes temos que saber que:
-
-Para criar mapeamentos, precisamos conhecer a maneira de representar
-as teclas e combinações. Alguns exemplos:
+Mapeamentos permitem criar atalhos de teclas para quase tudo. Tudo depende da
+criatividade do usuário e do quanto conhece o Vim, com eles podemos controlar ações
+com quaisquer teclas, mas antes temos que saber que para criar mapeamentos,
+precisamos conhecer a maneira de representar as teclas e combinações. Alguns
+exemplos:
 
 \begin{verbatim}
      tecla ....... tecla mapeada
@@ -289,9 +284,9 @@ qualquer em modo de inserção ou comando, veja:
      imap <F2> Nome de uma pessoa
 \end{verbatim}
 
-A única diferença nos mapeamentos acima é que o mapeamento para modo
-de inserção começa com `{\tt i}', assim como para o modo ``comando'' `{\tt :}' começa
-com `{\tt c}' no caso `{\tt cmap}'.
+A única diferença nos mapeamentos acima é que o mapeamento para modo de
+inserção começa com `{\tt i}', assim como para o modo ``comando'' `{\tt :}'
+começa com `{\tt c}' no caso `{\tt cmap}'.
 
 \subsection{Recarregando o arquivo de configuração}
 \label{sec:Recarregando o arquivo de configuração}
@@ -318,12 +313,10 @@ instantaneamente, e para chamar o {\tt vimrc} basta usar.
      ,v
 \end{verbatim}
 
-
-
-Os mapeamentos abaixo são úteis
-para quem escreve códigos HTML, permitem inserir caracteres reservados do HTML
-usando uma barra invertida para proteger os mesmos, o Vim substituirá os ``barra
-alguma coisa'' pelo caractere correspondente.
+Os mapeamentos abaixo são úteis para quem escreve códigos HTML, permitem
+inserir caracteres reservados do HTML usando uma barra invertida para proteger
+os mesmos, o Vim substituirá os ``barra alguma coisa'' pelo caractere
+correspondente.
 
 \begin{verbatim}
      inoremap \&amp; &amp;amp;
@@ -336,7 +329,6 @@ O termo {\em inoremap} significa: em modo de inserção não remapear, ou seja
 ele mapeia o atalho e não permite que o mesmo seja remapeado, e o
 mapeamento só funciona em modo de inserção, isso significa que um atalho
 pode ser mapeado para diferentes modos de operação. \\
-
 
 Veja este outro mapeamento:
 
