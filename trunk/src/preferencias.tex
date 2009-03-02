@@ -409,17 +409,23 @@ Por acaso este é um padrão portanto tente usar assim pra ver se funciona
 \subsection{Mapeamento para Calcular expressões}
 \label{Mapeamento para Calcular expressões}
 
-Os mapeamentos abaixo exibem o resultado das quatro operações básicas da
-matemática. O primeiro para o modo normal (posiciona-se o cursor no primeiro
-caractere da expressão tipo {\tt 5*9} e em seguida pressiona-se {\tt Shift-F1},
-o segundo {\em em modo insert}, após digitada a expressão pressiona-se o mesmo
-atalho, no caso {\tt Shift-F1}.
+Os mapeamentos abaixo exibem o resultado das quatro operações básicas (soma,
+subtração, multiplicação e divisão). O primeiro para o modo normal no qual
+posiciona-se o cursor no primeiro caractere da expressão tipo ``{\tt 5*9}'' e em
+seguida pressiona-se ``{\tt Shift-F1}'', o segundo para o modo {\em insert} em que, após
+digitada a expressão pressiona-se o mesmo atalho.
 
 \begin{verbatim}
     " calculadora
     map <s-f1> <esc>0"myEA=<c-r>=<c-r>m<enter><esc>
     imap <s-f1> <space><esc>"myBEa=<c-r>=<c-r>m<enter><del>
 \end{verbatim}
+
+Para efetuar calculos com maior precisão e também resolver problemas como
+potências raizes, logaritmos pode-se mapear comandos externos, como a
+biblioteca matemática da linguagem de programação python. Neste link:
+\url{http://vim.wikia.com/wiki/Scientific_calculator} há um manual que ensina a
+realizar este procedimento.
 
 
 \subsection{Mapeamentos globais}
