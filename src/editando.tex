@@ -450,7 +450,7 @@ expressões}.
 \label{Desfazendo}
 \vimhelp{undo}
 
-Se você cometer um erro, não se preocupe! Use o comando ``u'':
+Se você cometer um erro, não se preocupe! Use o comando `{\tt u}':
 
 \begin{verbatim}
      u ............ desfazer
@@ -492,7 +492,7 @@ de inserção)
          print i  <Esc>
 \end{verbatim}
 
-\item [Passo 4] - pressione ``u'' duas vezes (você voltará ao passo 1)
+\item [Passo 4] - pressione `{\tt u}' duas vezes (você voltará ao passo 1)
 \item [Passo 5] - Na linha 2 digite
 
 \begin{verbatim}
@@ -532,14 +532,14 @@ Dessa forma você acessará todas as alterações ocorridas no texto.
 \label{sec:Salvando}
 \vimhelp{writing}
 
-A maneira mais simples de salvar um arquivo, é usar o comando
+A maneira mais simples de salvar um arquivo, é usar o comando:
 
 \begin{verbatim}
      :w
 \end{verbatim}
 
 
-Para especificar um novo nome para o arquivo, simplesmente digite
+Para especificar um novo nome para o arquivo, simplesmente digite:
 
 \begin{verbatim}
      :w! >> ``file''
@@ -553,8 +553,9 @@ Também existe o comando
      :saveas nome
 \end{verbatim}
 
-salva o arquivo com um novo nome e muda para esse novo arquivo (o arquivo original não é apagado).
-Para sair do editor, salvando o arquivo atual, digite {\tt :x} (ou {\tt :wq}).
+salva o arquivo com um novo nome e muda para esse novo arquivo (o arquivo
+original não é apagado).  Para sair do editor, salvando o arquivo atual, digite
+{\tt :x} (ou {\tt :wq}).
 
 \begin{verbatim}
      :w ............................ salva
@@ -572,25 +573,26 @@ Para sair do editor, salvando o arquivo atual, digite {\tt :x} (ou {\tt :wq}).
 \vimhelp{mark-motions}
 
 As marcas são um meio eficiente de se pular para um local no arquivo. Para
-criar uma,  estando em modo normal faça:
+criar uma,  estando em modo normal faz-se:
 
 \begin{verbatim}
      ma
 \end{verbatim}
 
-Onde ``m'' indica a criação de uma marca e ``a'' é o nome da marca. Para pular para a marca ``a'' faça:
+Onde `{\tt m}' indica a criação de uma marca e `{\tt a}' é o nome da marca.
+Para pular para a marca `{\tt a}':
 
 \begin{verbatim}
      `a
 \end{verbatim}
 
-Para voltar ao ponto do último salto
+Para voltar ao ponto do último salto:
 
 \begin{verbatim}
      ''
 \end{verbatim}
 
-Para deletar de até a marca ``a'' (em modo normal)
+Para deletar de até a marca `{\tt a}' (em modo normal):
 
 \begin{verbatim}
      d'a
@@ -598,7 +600,8 @@ Para deletar de até a marca ``a'' (em modo normal)
 
 \subsection{Marcas globais}
 
-Durante a edição de vários arquivos defina uma marca global com o comando
+Durante a edição de vários arquivos pode-se definir uma marca global com o
+comando:
 
 \begin{verbatim}
      mA
