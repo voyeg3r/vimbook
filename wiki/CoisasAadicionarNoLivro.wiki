@@ -1,5 +1,8 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+Como fazer o vim reconhecer automaticamente o compilador?
+* [http://vim.wikia.com/wiki/Autoselect_the_right_compiler_using_the_filetype]
+
 ==Sugestões do Mitre para o livro==
 Meu caro,
  me lembro de ter dito que ia lhe fazer uma lista de sugestões para o vimbook, tão logo ele saiu.
