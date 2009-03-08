@@ -158,8 +158,8 @@ testar se a versão do Vim tem suporte ao python ``\verb+:version+'', em seguida
 colocam-se os mapeamentos no ``.vimrc''.
 
 \begin{verbatim}
-     command! -nargs=+ Calc :py print 
-     py from math import *
+     :command! -nargs=+ Calc :py print <args>
+     :py from math import *
 \end{verbatim}
 
 Feito isto pode-se usar o comando ``{\tt :Calc}'' como visto abaixo:
