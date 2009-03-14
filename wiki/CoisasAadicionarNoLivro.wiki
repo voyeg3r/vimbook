@@ -1,5 +1,7 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+Na página  69 juntar os últimos parágrafos
+
 ==Inclusão de uma seção enumerate==
 na seção: 10.2.1 Dicionáario português segundo o acordo ortográfico
 vou colocar oportunamente um ambiente 'enumerate'.
