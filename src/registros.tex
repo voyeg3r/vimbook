@@ -8,7 +8,7 @@
 O Vim possui nove tipos de registros, cada tipo tem uma utilidade específica,
 por exemplo você pode usar um registro que guarda o último comando digitado,
 pode ainda imprimir dentro do texto o nome do próprio arquivo, armazenar
-porções distintas de texto (área de transferênciamúltipla) etc. Vamos aos
+porções distintas de texto (área de transferência múltipla) etc. Vamos aos
 detalhes.
 
 \begin{itemize}
@@ -43,7 +43,7 @@ linha atual (em modo normal)
 \section{Registros nomeados de 0 a 9}
 \label{Registros nomeados de 0 a 9}
 
-O registro zero armazena o conteúdo da última cópia `yy', à partir do
+O registro zero armazena o conteúdo da última cópia `{\tt yy}', à partir do
 registro 1 vão sendo armazenadas as deleções sucessivas de modo que a
 mais recente deleção será armazenada no registro 1 e os registros vão
 sendo incrementados em direção ao nono.  Deleção menores que uma linha
@@ -55,8 +55,8 @@ registro.
      :help registers
 \end{verbatim}
 
-\section{Registro de pequenas deleções}
-\label{Registro de pequenas deleções}
+\section{Registro de pequenas deleções "-}
+\label{Registro de pequenas deleções "-}
 
 Quando se {\em deleta} algo menor que uma linha o Vim armazena os dados
 deletados neste registro.
@@ -114,8 +114,8 @@ simplesmente pressionando:
      Ctrl-a
 \end{verbatim}
 
-\section{Registro de expressões}
-\label{sec:Registro de expressões}
+\section{Registro de expressões "=}
+\label{sec:Registro de expressões "=}
 
 \begin{verbatim}
      "=
@@ -129,9 +129,8 @@ Enter} para que o editor finalise a operação.  Veja um vídeo demonstrando sua
 utilização aqui: \url{http://vimeo.com/2967392}.
 
 
-Para entender melhor como funciona o registro de expressões
-tomemos um exemplo. Digamos que queremos fazer uma sequência
-como abaixo:
+Para entender melhor como funciona o registro de expressões tomemos um exemplo.
+Para fazer uma sequência como abaixo:
 
 \begin{verbatim}
      linha 1 tem o valor 150,
@@ -140,8 +139,8 @@ como abaixo:
      ...
 \end{verbatim}
 
-Acompanhe os passos para a criação de uma macro que lhe permitira fazer uma
-sequência de quantas linhas quiser com o incremento proposto acima.
+Acompanhe os passos para a criação de uma macro permite fazer uma
+sequência de quantas linhas forem necessárias com o incremento proposto acima.
 
 \begin{verbatim}
      <Esc>  ......... sai do modo de inserção
@@ -193,7 +192,9 @@ armazena o texto colado pela operação mais recente de ``arrastar-e-soltar''
 
 \section{Registro buraco negro "\_}
 \label{Registro buraco negro}
-Use este registro quando não quiser alterar os demais registros, por exemplo: se você deletar a linha atual,
+
+Use este registro quando não quiser alterar os demais registros, por exemplo:
+se você deletar a linha atual,
 
 \begin{verbatim}
      dd
@@ -224,23 +225,23 @@ claro o uso do registro de buscas ``/''
 \label{Manipulando registros}
 
 \begin{verbatim}
-     :let @a=@_     : limpa o registro a
-     :let @a=``''   : limpa o registro a
-     :let @a=@"     : salva registro sem nome *N*
-     :let @*=@a     : copia o registro para o buffer de colagem
-     :let @*=@:     : copia o ultimo comando para o buffer de colagem
-     :let @*=@/     : copia a última busca para o buffer de colagem
-     :let @*=@%     : copia o nome do arquivo para o buffer de colagem
-     :reg           : mostra o conteúdo de todos os registros
+     :let @a=@_   ... limpa o registro a
+     :let @a=``'' ... limpa o registro a
+     :let @a=@"   ... salva registro sem nome *N*
+     :let @*=@a   ... copia o registro para o buffer de colagem
+     :let @*=@:   ... copia o ultimo comando para o buffer de colagem
+     :let @*=@/   ... copia a última busca para o buffer de colagem
+     :let @*=@%   ... copia o nome do arquivo para o buffer de colagem
+     :reg         ... mostra o conteúdo de todos os registros
 \end{verbatim}
 
 Em modo de inserção
 
 \begin{verbatim}
-     <C-R>-         : Insere o registro de pequenas deleções
-     <C-R>[0-9a-z]  : Insere registros 0-9 e a-z
-     <C-R>%         : Insere o nome do arquivo
-     <C-R>=somevar  : Insere o conteúdo de uma variável
+     <C-R>-   ....... Insere o registro de pequenas deleções
+     <C-R>[0-9a-z] .. Insere registros 0-9 e a-z
+     <C-R>%        .. Insere o nome do arquivo
+     <C-R>=somevar .. Insere o conteúdo de uma variável
 \end{verbatim}
 
 
