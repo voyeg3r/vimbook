@@ -1,5 +1,6 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+==alterações sugeridas em 4 de abril de 2009==
 Na tabela contida na página 14 adicionar as letras 'o' e 'O' como atalhos
 para entar no modo de inserção.
 
