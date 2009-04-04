@@ -1,5 +1,8 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+Na tabela contida na página 14 adicionar as letras 'o' e 'O' como atalhos
+para entar no modo de inserção.
+
 Na página  69 juntar os últimos parágrafos
 
 ==Inclusão de uma seção enumerate==
