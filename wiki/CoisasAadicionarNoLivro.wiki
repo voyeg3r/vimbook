@@ -7,6 +7,8 @@ para entar no modo de inserção.
 Abrir mais espaço antes e depois da tabela 
 
 Na página  69 juntar os últimos parágrafos
+"kp      - print macro k 
+
 
 ==Inclusão de uma seção enumerate==
 na seção: 10.2.1 Dicionáario português segundo o acordo ortográfico
