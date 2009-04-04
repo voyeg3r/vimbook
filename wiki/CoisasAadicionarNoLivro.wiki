@@ -114,11 +114,4 @@ Escrever sobre o comando
 }}}
 
 
-==Adicionar seção ou capítulo sobre vimdiff==
-{{{
-  vimdiff -o arquivo1 arquivo2 .... exibe diferenças um acima do outro
-  ]c .............................. mostra próxima diferença
-  vim -d .......................... mostra diferença entre dois arquivos
-}}}
-
 Voltar para TableOfContents
