@@ -98,7 +98,7 @@ Já com a opção ``{\em very magic}'' ``\verb+\v+'' usa-se bem menos escapes:
      \1 ........ referencia o grupo 1
 \end{verbatim}
 
-Analizando o exemplo anterior, a linha de raciocínio foi a de ``manter o texto entre os
+Analisando o exemplo anterior, a linha de raciocínio foi a de ``manter o texto entre os
 dígitos'', o que pode ser traduzido, em uma outra forma de raciocínio, como ``remover os
 dígitos''.
 
@@ -244,7 +244,7 @@ substituição, veja mais adiante:
 \end{verbatim}
 
 Uma forma mais prática de substituir o terminador de linha DOS para o
-terminador de linha unix:
+terminador de linha Unix:
 
 \begin{verbatim}
     :set ff=unix
@@ -268,7 +268,7 @@ do Windows/DOS pode ser inserido com a seguinte combinação de teclas:
 \label{Trabalhando com registradores}
 
 Pode-se guardar trechos do que foi copiado ou apagado para
-registros distintos (área de trasnferência múltipla).
+registros distintos (área de transferência múltipla).
 Os registros são indicados por aspas seguido por uma letra.
 Exemplos: {\tt "a}, {\tt "b}, {\tt "c}, etc.
 
@@ -368,7 +368,7 @@ Selecione o bloco de código, por exemplo
      ggVG= .... corrige a identação do arquivo inteiro
 \end{verbatim}
 
-\section{Usando o file explorer}
+\section{Usando o File Explorer}
 \label{Usando o file explorer}
 O Vim navega na árvore de diretórios com o comando
 
@@ -381,7 +381,7 @@ arquivo selecionado. {\Large \ding{45}}  Pressionando {\tt F1} ao abrir o
 FileExplorer do Vim, você encontra dicas adicionais sobre este modo de
 operação do Vim.
 
-\section{Selecionando ou deletando conteúdo de tags html}
+\section{Selecionando ou deletando conteúdo de tags HTML}
 \label{Selecionando ou deletando conteúdo de tags html}
 
 \begin{verbatim}
@@ -565,7 +565,7 @@ Troca palavras de lugar usando expressões regulares:
      :%s/\(.\+\)\s\(.\+\)/\2 \1/
 \end{verbatim}
 
-Modificando todas as tags html para minúsculo:
+Modificando todas as tags HTML para minúsculo:
 
 \begin{verbatim}
      :%s/<\([^>]*\)>/<\L\1>/g
@@ -784,7 +784,7 @@ especificando como range as linhas i,i+4
      (substr($0, RSTART, RLENGTH) + i++) ``o'``}''
 \end{verbatim}
 
-Mas muitos sistemas não tem awk, e logo a melhor solução mesmo é usar o Vim:
+Mas muitos sistemas não tem {\tt awk}, e logo a melhor solução mesmo é usar o Vim:
 
 \begin{verbatim}
      :let i=1 | 10,20 g/texto\d\+texto/s/\d\+/\=submatch(0)+i/ | let i=i+1
