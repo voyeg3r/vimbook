@@ -193,6 +193,32 @@ Feito isto pode-se usar o comando ``{\tt :Calc}'' como visto abaixo:
      :Calc [x**2 for x in range(10)] 
 \end{verbatim}
 
+\section{Editando saídas do Shell}
+\label{src:Editando saídas do Shell}
+
+Muitas vezes, precisamos manipular saídas do shell antes de enviá-las por e-mail, reportar ao chefe ou até mesmo 
+salvá-las. Utilizando
+
+\begin{verbatim}
+     vim -
+     ou
+     gvim -
+\end{verbatim}
+
+a saída do Shell é redirecionada para o (G)Vim automaticamente, não sendo necessário redirecioná-la para um arquivo
+temporário e, logo após, abrí-lo para editá-lo e modificá-lo.
+
+\section{Log do Subversion}
+
+A variável de ambiente {\em \$SVN_EDITOR} pode ser usada para se especificar o caminho para o editor de texto de
+sua preferência, a fim de usá-lo na hora de dar um {\em commit} usando o {\em subversion}.
+
+\begin{verbatim}
+     export SVN_EDITOR=/usr/bin/vim
+     svn commit
+\end{verbatim}
+
+Será aberto uma sessão no Vim, que depois de salva, será usada para LOG do commit.
 
 \section{Referências}
 
