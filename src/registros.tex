@@ -342,14 +342,19 @@ são complicados de se colocar em uma busca ou substituição, nestes casos
 pode-se usar os seguintes comandos:
 
 \begin{verbatim}
-    "ayl ............... copia para o registro `a' o caractere sob o cursor
-    :%s/<c-r>a/char .... subsitui o conteúdo do registro `a' por char
+    "ayl ............. copia para o registro `a' o caractere sob o cursor
+    :%s/<c-r>a/char .. subsitui o conteúdo do registro `a' por char
 \end{verbatim}
 
-Copiar em {\em modo normal} um único caractere usando `{\tt yl}' é também útil
-para copiar por exemplo um caractere de comentário do `\verb+bash -- #+' e 
-adicionar ao início da linha corrente usando `{\tt P}', bastando que o cursor
-esteja no primeiro caractere da linha.
+Pode-se ainda usar esta técnica para copiar rapidamente comentários 
+do `\verb|bash -- #|' em {\em modo normal} usando o atalho `{\tt 0yljP}'.
+
+\begin{verbatim}
+    0 ............... posiciona o cursor no início a linha
+    yl .............. copia o caractere sob o cursor
+    j ............... desce uma linha
+    P ............... cola o caractere copiado
+\end{verbatim}
 
 \section{Como criar um registro em modo visual?}
 \label{Como criar um registro em modo visual?}
