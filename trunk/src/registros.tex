@@ -324,18 +324,32 @@ O comando acima é uma abreviação de {\em split next}, ou seja, dividir e pró
      "a10j ...... coloca no registro `a' as próximas 10 linhas `10j'
 \end{verbatim}
 
-Para usar você pode:
+Pode-se fazer:
 
 \begin{verbatim}
      <Esc> ...... para ter certeza que está em modo normal
      "ap ........ registro a `paste', ou seja, cole
 \end{verbatim}
 
-Em modo de inserção faça:
+Em modo de inserção faz-se:
 
 \begin{verbatim}
      Ctrl-r a
 \end{verbatim}
+
+{\Large {\ding{45}} Há situações em que se tem caracteres não `{\tt ascii}' que
+são complicados de se colocar em uma busca ou substituição, nestes casos
+pode-se usar os seguintes comandos:
+
+\begin{verbatim}
+    "ayl ............... copia para o registro `a' o caractere sob o cursor
+    :%s/<c-r>a/char .... subsitui o conteúdo do registro `a' por char
+\end{verbatim}
+
+Copiar em {\em modo normal} um único caractere usando `{\tt yl}' é também útil
+para copiar por exemplo um caractere de comentário do `\verb+bash -- #r+' e 
+adicionar ao início da linha corrente usando `{\tt P}', bastando que o cursor
+esteja no primeiro caractere da linha.
 
 \section{Como criar um registro em modo visual?}
 \label{Como criar um registro em modo visual?}
