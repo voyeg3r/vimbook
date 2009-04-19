@@ -362,6 +362,34 @@ pressionar o atalho $\backslash$r para que o mesmo gere um índice dos arquivos
 contidos no caminho indicado.
    
 
+\section{O plugin pydiction}
+\label{sec:O plugin pydiction}
+
+Um que completa códigos python assim:
+
+\begin{verbatim}
+    import sys
+    sys.<tab>
+\end{verbatim}
+
+O plugin contém dois arquivos:
+
+\begin{enumerate}
+    \item {\tt pydiction.py} deve ser colocado no {\tt path}
+    \item {\tt pydiction} deve ser colocado em um lugar de sua preferência
+\end{enumerate}
+
+Deve-se adicionar algumas linhas do {\tt .vimrc}.
+No exemplo abaixo o dicionário é adicionado ao diretório {\tt ~/.vim/dict}
+\begin{verbatim}
+if has("autocmd")
+    autocmd FileType python set complete+=k/.vim/dict/pydiction isk+=.,(
+endif " has("autocmd") 
+\end{verbatim}
+
+Pode-se obter o plugin no seguinte endereço: \url{http://www.vim.org/scripts/script.php?script\_id=850}
+
+
 
 
 
