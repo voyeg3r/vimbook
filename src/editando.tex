@@ -331,7 +331,9 @@ Não delete as linhas contendo padrão, ou seja, delete tudo menos as linhas
 contendo a palavra `padrão'. 
 
 \begin{verbatim}
-     :v/padrão/d
+     :v/padrão/d ......... apaga linhas que não contenham `padrão'
+     :v/\S/d ............. apaga linhas vazias
+     \S .................. significa `sem string'
 \end{verbatim}
 
 A opção acima equivale a ``\verb+:g!/padrão/d+''.  Para ler mais sobre
