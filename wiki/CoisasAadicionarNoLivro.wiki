@@ -1,5 +1,7 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+tip: http://vim.wikia.com/wiki/VimTip478
+
 ==anotações do dia 21 de abril==
 {{{
  >i{  ........... indenta o conteúdo do bloco atual (posicione sobre { de abertura)
