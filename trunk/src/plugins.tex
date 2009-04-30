@@ -389,7 +389,13 @@ endif " has("autocmd")
 
 Pode-se obter o plugin no seguinte endereço: \url{http://www.vim.org/scripts/script.php?script\_id=850}
 
+\section{Atualizando a documentação dos plugins}
+\label{sec:Atualizando a documentação dos plugins}
+\vimhelp{helptags}
 
+Caso seja adicionado algum arquivo de documentação em em `\verb+~/.vim/doc+' pode-se
+gerar novamente as tags ``links'' para navegação de ajuda.
 
-
-
+\begin{verbatim}
+   :helptags $VIMRUNTIME/doc
+\end{verbatim}
