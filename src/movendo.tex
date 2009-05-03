@@ -47,7 +47,7 @@ tecla J e H para a movimentação.
 \label{Big words}
 
 Para o Vim ``{\em{palavras-separadas-por-hífen}}'' são consideradas em separado, portanto se você usar,
-em modo normal ``\verb+w+'' avançar entre as palavras ele pulará uma de
+em modo normal ``\verb+w+'' para avançar entre as palavras ele pulará uma de
 cada vez, no entanto se usar ``\verb+W+''
 em maiúsculo (como visto) ele pulará a ``a-palavra-inteira'' :)
 
@@ -81,7 +81,7 @@ pressione \verb|<Esc>| ou use \verb|Ctrl-[| (\verb|^[|).
      yG .... copia da linha atual até o final do arquivo
      25gg .. salta para a linha 25
      '' .... salta para a linha da última posição em que o cursor estava
-     fx .... para primeria ocorrência de x
+     fx .... para primeira ocorrência de x
      tx .... Para ir para uma letra antes de x
      Fx .... Para ir para ocorrência anterior de x
      Tx .... Para ir para uma letra após o último x
@@ -161,9 +161,9 @@ Podemos pular sentenças:
 
 \begin{verbatim}
      ) .... pula uma sentença para frente
-     ( .... pula uma sentença para tráz
+     ( .... pula uma sentença para trás
      } .... pula um parágrafo para frente
-     { .... pula um parágrafo para tráz
+     { .... pula um parágrafo para trás
      y) ... copia uma sentença para frente
      d} ... deleta um parágrafo para frente
 \end{verbatim}
@@ -192,7 +192,7 @@ mover o cursor até sua definição basta posicionar o cursor sobre a palavra
      gd
 \end{verbatim}
 
-Se a variável for global, ou seja, estive fora do documento
+Se a variável for global, ou seja, estiver fora do documento
 (provavelmente em outro) use:
 
 \begin{verbatim}
