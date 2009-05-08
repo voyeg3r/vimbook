@@ -1,5 +1,11 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+Voltar no tempo 1 minuto
+:eariler 1m
+
+indentar em modo normal, use duas vezes igualdade
+ 
+
 tip: http://vim.wikia.com/wiki/VimTip478
 
 ==anotações do dia 21 de abril==
