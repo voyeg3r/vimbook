@@ -1,5 +1,16 @@
 #summary Espaço temporário para propostas de inclusões e alterações no livro.
 
+Iniciando o vim em modo fullscreen
+
+If you want to start in fullscreen mode add this to your vimrc:
+source: http://amix.dk/blog/viewEntry/19403
+{{{
+if has("gui_running")
+  set fuoptions=maxvert,maxhorz
+  au GUIEnter * set fullscreen
+endif
+}}}
+
 Voltar no tempo 1 minuto
 {{{
 :eariler 1m
