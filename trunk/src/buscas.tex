@@ -609,14 +609,20 @@ Para copiar linhas começadas com {\em Error} para o final do arquivo faça:
      :g/^Error/ copy $
 \end{verbatim}
 
-Obs: O comando {\em copy} pode ser abreviado `{\tt co}' ou ainda você pode usar `{\tt t}'
-para mais detalhes leia:
+Obs: O comando {\em copy} pode ser abreviado `{\tt co}' ou ainda pode-se usar `{\tt t}'
+para mais detalhes:
 
 \begin{verbatim}
      :h co
 \end{verbatim}
 
-Entre as linhas que contiverem ``fred'' e ``joe'' substitua:
+Como adicionar um padrão copiado com `{\tt yy}' após um determinado padrão?
+
+\begin{verbatim}
+    :g/padrao/+put!
+\end{verbatim}
+
+Entre as linhas que contiverem `{\tt fred}' e `{\tt joe}' substitua:
 
 \begin{verbatim}
      :g/fred/,/joe/s/isto/aquilo/gic
