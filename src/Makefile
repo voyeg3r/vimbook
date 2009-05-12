@@ -9,14 +9,16 @@ DOC = vimbook
 
 ############################### PROGRAMS ###############################
 
-TEX = latex
+TEX = pdflatex
 RM = rm -f
 MAKE = make 
 
 ########################################################################
 
-$(DOC).pdf: $(DOC).tex *.tex
-	$(TEX) $(DOC).tex && $(TEX) $(DOC)
+$(DOC).pdf:
+	$(TEX) $(DOC).tex
+	makeindex $(DOC).idx
+	$(TEX) $(DOC).tex
 
 clean:
 	$(RM) $(DOC).aux $(DOC).log
@@ -32,6 +34,7 @@ clean:
 	$(RM) $(DOC).tex~
 	$(RM) $(DOC).bib~
 	$(RM) Makefile~
+	$(RM) *.ind *.ilg *.idx
 	$(RM) texput.log core
 
 show: $(DOC).pdf
