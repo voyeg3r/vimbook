@@ -268,7 +268,6 @@ o mesmo início, por exemplo:
 
 Cada vez que se pressiona a tecla {\tt <tab>} o cursor saltará para 
 a próxima ocorrência daquele fragmento de palavra.
-
 Pode-se obter o plugin {\em SearchComplete} no seguinte 
 \href{http://www.vim.org/scripts/script.php?script\_id=474}{endereço}, 
 e para instalá-lo basta copiá-lo para a pasta apropriada:
@@ -302,12 +301,11 @@ Primeiro precisamos ter o arquivos de tags. Para tal, usamos o comando:
     ctags -R <arquivos>
 \end{verbatim}
 
-Normalmente o parâmetro <arquvos> pode ser uma expressão regular do tipo *.[ch] e afins. Depois
-de obter o arquivo de tags, você já pode sair usando os atalhos do plugin para navegar pelo 
-código fonte. 
-
-Com o cursor em cima de um identificador, usando o atalho `\verb|ctrl+]|' o cursor pula diretamente 
-para a sua declaração. O atalho `\verb|ctrl+o|' volta o cursor para a posição inicial.
+Normalmente o parâmetro <arquvos> pode ser uma expressão regular do tipo *.[ch]
+e afins. Depois de obter o arquivo de tags, você já pode sair usando os atalhos
+do plugin para navegar pelo código fonte.  Com o cursor em cima de um
+identificador, usando o atalho `\verb|ctrl+]|' o cursor pula diretamente para a
+sua declaração. O atalho `\verb|ctrl+o|' volta o cursor para a posição inicial.
 
 Uma dica interessante, quando navegando por um código fonte muito extenso com vários diretórios, 
 é mapear o caminho dos arquivos usando o caminho absoluto deles no seu diretório de trabalho 
