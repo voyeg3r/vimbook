@@ -7,28 +7,51 @@
 %	
 % A copy of the license is included in the file called "COPYING".
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[10pt,a4paper,openany]{book}
 \usepackage[utf8]{inputenc} %se for usar no windows mude esta linha
 \usepackage[portuges]{babel}
-\usepackage[pdftex]{color,graphicx}
+
 \usepackage[T1]{fontenc} %fonte computer modern
 \usepackage{ae}
+
+\usepackage{graphicx}                       % permite inserir figuras
+\usepackage{subfigure}                      % suporte a subfiguras
+\usepackage{longtable}                      % tabelas longas
+\usepackage{color}                          % suporte a cor
+\usepackage{multirow}                       % suporte a múltiplas colunas
+
 \usepackage{url}
 \RequirePackage{enumerate} %extensão para o pacote enumerate
 \usepackage{marvosym} % gera alguns símbolos
-\usepackage{hyperref} % gera os links no pdf
 \usepackage{pifont} % simbolos de setas
-\usepackage{hyperref}
 \usepackage{fancyhdr}
 
 \usepackage{makeidx} % inserir índice remissivo
 \makeindex
 
-\hypersetup{backref=true,pdfpagemode=UseOutlines,colorlinks=true,a5paper,
-breaklinks=true,hyperindex,linkcolor=blue,anchorcolor=black,citecolor=green,
-filecolor=magenta,menucolor=red,pagecolor=red,urlcolor=cyan,bookmarks=true,
-bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
+% Suporte a apendices
+\usepackage{appendix}
+
+\usepackage{hyperref} % gera os links no pdf
+\hypersetup{
+backref=true,
+pdfpagemode=UseOutlines,
+colorlinks=true,
+a5paper,
+breaklinks=true,
+hyperindex,
+linkcolor=blue,
+anchorcolor=black,
+citecolor=green,
+filecolor=magenta,
+menucolor=red,
+pagecolor=red,
+urlcolor=cyan,
+bookmarks=true,
+bookmarksopen=false,
+pdfpagelayout=SinglePage,
+pdfpagetransition=Dissolve
+}
 
 % Comando \vimhelp
 % Uso: \vimhelp{termo_1, termo_2, ..., termo_n}
@@ -66,7 +89,6 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
      \fancyhead{}
      \renewcommand{\headrulewidth}{0pt}
      }
-
 
 \newcommand{\dica}[1]{{{\large \ding{42}}}}
 
@@ -142,7 +164,7 @@ bookmarksopen=false,pdfpagelayout=SinglePage,pdfpagetransition=Dissolve}
 \bf Eustáquio Rangel & \tt <eustaquiorangel@gmail.com> \\
 \bf Eduardo Otubo & \tt <eduardo.otubo@gmail.com> \\
 \bf Gustavo Dutra & \tt <gustavotkg@gmail.com> \\
-\bf J.F.Mitre & \tt jfmitre@gmail.com \\
+\bf João Felipe Mitre & \tt <jfmitre@gmail.com> \\
 $\vdots$ & $\vdots$ \\
 
 \end{tabular}
@@ -154,37 +176,50 @@ $\vdots$ & $\vdots$ \\
 
 \setcounter{page}{0} %reset the page counter
 
-\input{intro}
+\include{intro}
+\include{movendo}
+\include{editando}
+\include{folders}
+\include{registros}
+\include{buscas}
+\include{janelas}
+\include{repeticao}
+\include{externos}
+\include{vero}
+\include{sessoes}
+\include{preferencias}
+\include{wiki}
+\include{habitos}
+\include{plugins}
+\include{referencias}
 
-\input{movendo}
+%\nocite{*} % Se descomentado, todas as referências do arquivo 
+            % de bibliografia serão adicionadas ao texto, mesmo 
+            % se não forem citados.
+\fancyhf{} 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries Referências Bibliográficas}
+\fancyhead[RE]{\bfseries Referências Bibliográficas}
+% Estilo de Blibliografia
+% coppe-unsrt é o estilo COPPE de referência baseado
+% em código numérico.
+% Uma mistura de ABNT com algo indefinido.
+\bibliographystyle{coppe-unsrt}
+\bibliography{bibliografia}
 
-\input{editando}
+% Incluindo os apêndices
+% \backmatter % se descomentado, remove a expressão "Apêndice LETRA" 
+\fancyhf{} 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\appendix
+\include{colaboradores}
 
-\input{folders}
-
-\input{registros}
-
-\input{buscas}
-
-\input{janelas}
-
-\input{repeticao}
-
-\input{externos}
-
-\input{vero}
-
-\input{sessoes}
-
-\input{preferencias}
-
-\input{wiki}
-
-\input{habitos}
-
-\input{plugins}
-
-\input{referencias}
-
+% índice
+\fancyhf{} 
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries Índice}
+\fancyhead[RE]{\bfseries Índice}
 \printindex
 \end{document}
