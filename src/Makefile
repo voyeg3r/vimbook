@@ -17,6 +17,8 @@ MAKE = make
 
 $(DOC).pdf:
 	$(TEX) $(DOC).tex
+	bibtex $(DOC).aux
+	$(TEX) $(DOC).tex
 	makeindex $(DOC).idx
 	$(TEX) $(DOC).tex
 
@@ -34,8 +36,11 @@ clean:
 	$(RM) $(DOC).tex~
 	$(RM) $(DOC).bib~
 	$(RM) Makefile~
-	$(RM) *.ind *.ilg *.idx
+	$(RM) *.ind *.ilg *.idx *.aux
 	$(RM) texput.log core
 
-show: $(DOC).pdf
+show:	$(DOC).pdf
 	evince $(DOC).pdf
+
+shownew:	clean	$(DOC).pdf
+		evince $(DOC).pdf
