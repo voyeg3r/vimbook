@@ -55,6 +55,18 @@ a que está atualmente instalada:
      :ver
 \end{verbatim}
 
+\section{Atualizando a documentação dos plugins}
+\label{sec:Atualizando a documentação dos plugins}
+\vimhelp{helptags}
+
+Caso seja adicionado algum arquivo de documentação em `\verb+~/.vim/doc+' pode-se 
+gerar novamente as tags ``links'' para navegação de ajuda.
+
+\begin{verbatim}
+    :helptags $VIMRUNTIME/doc
+\end{verbatim}
+
+
 \section{Plugin para \LaTeX}
 \label{Plugin para LaTeX}
 
