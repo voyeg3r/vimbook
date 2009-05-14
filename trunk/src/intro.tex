@@ -41,7 +41,40 @@ marcação, possui mapeamento para teclas, macros, abreviações, busca por
 {\em{Expressões
 Regulares}}\index{expressões regulares}\footnote{Expressões Regulares - 
 \url{http://guia-er.sourceforge.net/guia-er.html}}, entre outras facilidades.
-Conta com uma comunidade bastante atuante e é, ao lado do
+
+% NOTA: não estou convencido sobre a relevância desse conteúdo, fica pelo menos
+% como um o primeiro exemplo.
+% referenciando a figura. O til serve para evitar que o número fique 
+% em um linha e o nome em outro.
+% toda referência é feita antes de inserir a figura.
+A figura~\ref{fig:vimedittex} mostra o vim sendo usando para editar o arquivo
+o desse livro sobre vim.
+
+% Inserindo apenas uma figura
+% A opção [htp] é o melhor conjunto para livros, pois evita que a figura
+% se afaste muito do texto onde é citado.
+\begin{figure}[htp]
+  % centralizando a figura
+  \centering 
+  % especficiando a figura
+  % a figura não precisa ter extensão
+  % width : define o tamanho lateral
+  %         use a unidade que conhecer, px, m, mm, cm, in, etc.
+  %         usar apenas essa opção assegura que a proporção seja mantida.
+  %         é possível especificar a outra dimensão ou uma fator global, 
+  %         exemplos estão comentados, para height (altura) e scale (escala)
+  % tudo que está entre colchetes é opcional, e existem muitas opções para 
+  % esse campo, mas o que está abaixo é suficiente em 90 % dos casos
+  \includegraphics[width=9cm]{img/vimedittex} % 9 cm de lado
+  %\includegraphics[height=7cm]{img/vimedittex} % 7 cm de altura
+  %\includegraphics[scale=0.4]{img/vimedittex} % 40 % do tamanho real
+  % legenda da figura, a legenda vem depois da figura.
+  \caption{Usando o vim para editar o código em \LaTeX}
+  % rotulado essa figura, é usando por \ref{} para citar a figura.
+  \label{fig:vimedittex}
+\end{figure}
+
+O Vim conta com uma comunidade bastante atuante e é, ao lado do
 Emacs\footnote{Emacs - \url{http://www.gnu.org/software/emacs/}}, um dos editores mais usados
 nos sistemas GNU/Linux\footnote{O kernel Linux sem os programas GNU não
 serviria para muita coisa.}, embora esteja também disponível em outros sistemas,
