@@ -1,3 +1,4 @@
+#summary Referências sobre como escrever em LaTeX
 Escrever o básico em LaTeX é muito fácil. Especialmente porque não requer quase nenhum conhecimento sobre a linguagem em si. É apenas texto. Mas a verdade é que todos os autores desejam fazer algo além de texto puro. Usar negrito, itálico, títulos, etc.
 
 Para tal segue algumas referências existentes na internet:
