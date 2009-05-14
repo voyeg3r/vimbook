@@ -106,6 +106,7 @@ ou digitados como comandos:
 % ESTE TRECHO NÃO PODE FICAR INDENTADO POIS SE ASSIM O FOR  %%
 % ELE NÃO CABERÁ NA PÁGINA!!!!                              %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\index{cores!esquemas}
 \begin{verbatim}
 set number ............... "mostra numeração de linhas
 set nu ................... "simplificação de `number'
@@ -490,7 +491,7 @@ Veja um exemplo:
 
 No exemplo acima o Vim aplica autocomandos para arquivos novos
 ``{\tt BufNewfile}'' ou existentes ``{\tt BufRead}'' terminados em \verb|txt|, e para
-estes tipos carrega um arquivo de {\em syntax}, ou seja, um esquema de cores
+estes tipos carrega um arquivo de {\em syntax}\index{syntax}, ou seja, um esquema de cores
 específico.
 
 \begin{verbatim}
@@ -634,6 +635,7 @@ Esta função é acionada com o atalho {\tt Alt-$\uparrow$} e {\tt Alt-$\downarr
 link para a dica: \url{http://vim.wikia.com/wiki/Number_a_group_of_lines}
 
 \subsection{Função para trocar o esquema de cores}
+\index{cores!esquemas}
 
 \begin{verbatim}
      function! <SID>SwitchColorSchemes()
