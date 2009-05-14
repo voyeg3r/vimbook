@@ -144,40 +144,36 @@ set mousemodel=popup ..... "exibe o conteúdo de folders e sugestões spell
 set viminfo=%,'50,\"100,/100,:100,n "armazena opções (buffers)
 \end{verbatim}
 
-O comando \verb|gqap| ajusta o parágrafo atual em modo normal
+\section{Ajustando o parágrafos em modo normal} % (fold)
+\label{sec:Ajustando o parágrafos em modo normal}
+\index{parágrafo!ajustar}
+
+O comando `\verb|gqap|' ajusta o parágrafo atual em modo normal. 
+{\Large {\ding{45}}} usando a opção `{\tt :set nojoinspaces}' o vim 
+colocará dois espaços após o ponto final ao se ajustar os parágrafos.
+geralmente usamos `\verb+^I+' para representar uma tabulação        
+<Tab>, e `\verb+$+' para indicar o fim de linha. Mas é possível     
+customizar essas opções. sintaxe:                          
 
 \begin{verbatim}
-     " * coloca 2 espaços após o . quando usando o gq
-     "set nojoinspaces
-     " ****************************************************************
-     " *                                                              *
-     " *   geralmente usamos ^I para representar uma tabulação        *
-     " *   <Tab>, e $ para indicar o fim de linha. Mas é possível     *
-     " *   customizar essas opções. sintaxe:                          *
-     " *                                                              *
-     " *   set listchars=key:string,key:string                        *
-     " *                                                              *
-     " *                                                              *
-     " * - eol:{char}                                                 *
-     " *                                                              *
-     " *     Define o caracter a ser posto depois do fim da linha     *
-     " *                                                              *
-     " * - tab:{char1}{char2}                                         *
-     " *                                                              *
-     " *     O tab é mostrado pelo primeiro caracter {char1} e        *
-     " *     seguido por {char2}                                      *
-     " *                                                              *
-     " * - trail:{char}                                               *
-     " *                                                              *
-     " *     Esse caracter representa os espaços em branco.           *
-     " *                                                              *
-     " * - extends:{char}                                             *
-     " *                                                              *
-     " *    Esse caracter representa o início do fim da linha         *
-     " *    sem quebrá-la                                             *
-     " *    Está opção funciona com a opção nowrap habilitada         * 
-     " *                                                              *
-     " ****************************************************************
+    
+     set listchars=key:string,key:string                        
+
+      - eol:{char} 
+      Define o caracter a ser posto depois do fim da linha  
+
+      - tab:{char1}{char2} 
+      O tab é mostrado pelo primeiro caracter {char1} e     
+      seguido por {char2}                                   
+
+      - trail:{char}                                            
+      Esse caracter representa os espaços em branco.        
+                                                                
+      - extends:{char}                                          
+      Esse caracter representa o início do fim da linha      
+      sem quebrá-la                                          
+      Está opção funciona com a opção nowrap habilitada       
+                                                                
      "exemplo 1:
      "set listchars=tab:>-,trail:.,eol:#,extends:@
      
@@ -194,6 +190,8 @@ O comando \verb|gqap| ajusta o parágrafo atual em modo normal
      Caso esteja usando o gvim pode setar um esquema de cores
      set colo desert
 \end{verbatim}
+
+% fim da seção Ajustando o parágrafos em modo normal
 
 \section{Exibindo caracteres invisíveis}
 \label{Exibindo caracteres invisíveis}
