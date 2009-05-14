@@ -3,7 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Introdução}
-
+%
 A edição de texto é uma das tarefas mais frequentemente executadas por seres
 humanos em ambientes computacionais, em qualquer nível. Usuários finais,
 administradores de sistemas, programadores de software, desenvolvedores {\em
@@ -22,12 +22,13 @@ Tamanha é a frequência e onipresença da tarefa de edição de texto que a
 eficiência, flexibilidade e o repertório de ferramentas de editores de texto
 tornam-se quesitos críticos para se atingir {\em produtividade} e {\em
 conforto} na edição de textos.
-
+%
 % falar da não trivialidade do aprendizado (curva de aprendizado), mas também
 % da eficiência e produtividade a médio/longo prazo
 
-O ``Vim''\index{vim} é um editor de texto extremamente configurável, criado para
-permitir a edição de forma eficiente, tornando-a produtiva e confortável. 
+O ``\href{http://www.vim.org}{Vim}''\footnote{Vim - \url{http://www.vim.org}}
+\index{vim} é um editor de texto extremamente configurável, criado para permitir a
+edição de forma eficiente, tornando-a produtiva e confortável. 
 Também é uma aprimoração do editor ``Vi'', um tradicional programa dos
 sistemas Unix. Possui uma série de mudanças em relação a este último. O
 próprio slogan do Vim é {\em Vi IMproved}, ou seja, {\em Vi Melhorado}.  O Vim
@@ -38,61 +39,64 @@ Desenvolvimento.}''.
 Ele é capaz de reconhecer mais de 500 sintaxes de linguagens de programação e
 marcação, possui mapeamento para teclas, macros, abreviações, busca por
 {\em{Expressões
-Regulares}}\index{expressões regulares}\footnote{http://guia-er.sourceforge.net/guia-er.html}, entre
-outras facilidades. Conta com uma comunidade bastante atuante e é, ao lado do
-Emacs\footnote{http://www.gnu.org/software/emacs/}, um dos editores mais usados
+Regulares}}\index{expressões regulares}\footnote{Expressões Regulares - 
+\url{http://guia-er.sourceforge.net/guia-er.html}}, entre outras facilidades.
+Conta com uma comunidade bastante atuante e é, ao lado do
+Emacs\footnote{Emacs - \url{http://www.gnu.org/software/emacs/}}, um dos editores mais usados
 nos sistemas GNU/Linux\footnote{O kernel Linux sem os programas GNU não
 serviria para muita coisa.}, embora esteja também disponível em outros sistemas,
-como o Windows e o Macintosh. O site oficial do Vim é \url{http://www.vim.org}.
+como o Windows e o Macintosh. %O site oficial do Vim é \url{http://www.vim.org}.
 
-\section{Instalação do Vim}
-\index{vim!instalar}
+\section{Instalação do Vim}\index{vim!instalar}
 \vimhelp{install}
-
+%
 \subsection{Instalação no Windows}
-
-Há uma versão gráfica do Vim disponível para vários sistemas, incluindo o Windows;
-esta versão pode ser encontrada em \url{http://www.vim.org/download.php#pc}. 
+%
+Há uma versão gráfica do Vim disponível para vários sistemas operacionais, incluindo o Windows;
+esta versão pode ser encontrada no \href{http://www.vim.org/download.php#pc}{site
+oficial}. 
 Para instalá-lo basta baixar o instalador no link indicado e dispará-lo com um
 duplo clique (este procedimento requer privilégios de administrador).
 
 \subsection{Instalação no GNU/Linux}
-
+%
 A maioria das distribuições GNU/Linux traz o Vim em seus repositórios, sendo
 que é bastante comum o Vim já vir incluído na instalação típica da distribuição.
 A forma de instalação preferível depende do Vim:
 \begin{itemize}
 \item Já vir instalado por {\em default} -- neste caso nada precisa ser feito.
 
-\item Estar disponível no repositório mas não instalado -- em distribuições
-derivadas da Debian GNU/Linux\footnote{http://www.debian.org/index.pt.html},
+\item Estar disponível no repositório, mas não instalado -- em distribuições
+derivadas da Debian GNU/Linux\footnote{Debian GNU/Linux - \url{http://www.debian.org/index.pt.html}},
 a instalação do Vim através dos repositórios é usualmente executada
 digitando-se {\tt `apt-get install vim'}\footnote{Recomenda-se também instalar
 a documentação em HTML do Vim: {\tt `apt-get install vim-doc'}} em um {\em terminal} (este procedimento
 requer privilégios de administrador e, tipicamente, conexão com a internet).
 
-\item Não estar disponível no repositório da distribuição -- cenário
-improvável, mas
-nas sua ocorrência o Vim pode ser instalado através da compilação do
-código-fonte; basta seguir as instruções em \url{http://www.vim.org/download.php}.
+\item Não estar disponível no repositório da distribuição -- cenário {\em muito}
+improvável, mas nas sua ocorrência o Vim pode ser instalado através da compilação do
+código-fonte; basta seguir as instruções do \href{http://www.vim.org/download.php}{site oficial}.
 
 \end{itemize}
 
 \section{Dicas iniciais}\label{Dicas iniciais}
-
+%
 Ao longo do livro alguns comandos ou dicas podem estar duplicados, o que
 é útil devido ao contexto e também porque o aprendizado por saturação
 é um ótimo recurso. Ao perceber uma dica duplicada, antes de
-reclamar veja se já sabe o que está sendo passado. Contudo dicas e sugestões serão bem vindas! \\
+reclamar veja se já sabe o que está sendo passado. Contudo dicas e sugestões serão bem vindas! 
 
-Para chamar\index{iniciar} o Vim digite num terminal:
-
+Para abrir um arquivo\index{iniciar} com Vim digite num terminal:
+%
 \begin{verbatim}
      vim texto.txt
 \end{verbatim}
+onde {\tt texto.txt} é o nome do arquivo que deseja-se criar ou editar.
+
+Em algumas distribuições, pode-se usar o comando {\tt vi} ao invés de {\tt vim}.
 
 \section{Ajuda integrada}
-
+%
 O Vim possui uma ajuda\index{ajuda}\index{manual} integrada muito completa, são mais
 de 100 arquivos somando milhares de linhas. O único inconveniente é não haver ainda
 tradução para o português, sendo o inglês seu idioma oficial; entretanto, as explicações
@@ -104,14 +108,14 @@ Obs: No Vim quase todos os comandos podem ser abreviados, no caso
 comando só pode ser abreviado até o ponto em que este nome mais curto não
 coincida com o nome de algum outro comando existente.  Para chamar a ajuda do
 Vim pressione \verb|<Esc>| e em seguida:
-
+%
 \begin{verbatim}
      :help .... versão longa, ou
      :h ....... versão abreviada
 \end{verbatim}
-
-Ou simplesmente:
-
+%
+ou simplesmente:
+%
 \begin{verbatim}
      <F1>
 \end{verbatim}
@@ -125,6 +129,7 @@ de desespero pode-se digitar:
 \end{verbatim}
 
 \section{Em caso de erros }\label{Em caso de erros }
+%
 Recarregue\index{em caso de erros} o arquivo que está sendo editado assim:
 
 \begin{verbatim}
@@ -151,7 +156,7 @@ ou tente gravar e sair forçado, com
 \end{verbatim}
 
 \section{Como interpretar atalhos e comandos}\label{Como interpretar atalhos e comandos}
-
+%
 A tecla ``\verb|<Ctrl>|''\index{tecla {\tt ctrl}} é representada na maioria dos manuais e na ajuda
 pelo caractere ``\verb|^|'' circunflexo, ou seja, o atalho \verb|Ctrl-L| aparecerá assim:
 \begin{verbatim}
@@ -167,7 +172,6 @@ Para saber mais sobre como usar atalhos\index{atalhos}\index{mapeamento} no Vim 
 a seção \ref{Mapeamentos} na página \pageref{Mapeamentos} e para ler sobre o arquivo 
 de configuração veja o capítulo \ref{cha:Como editar preferências no Vim} na página
 \pageref{cha:Como editar preferências no Vim}.
-
 
 \section{Modos de operação}\label{Modos de operação}
 
