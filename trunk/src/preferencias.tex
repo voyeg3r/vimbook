@@ -343,9 +343,10 @@ ativada. O ``\verb|<cr>|'' ao final representa um {\tt Enter}.
 
 \subsection{Limpando o ``registro'' de buscas}\label{Limpando o ``registro'' de buscas}
 
-A cada busca, se a opção `{\tt hls}'\footnote{hls é uma abreviação de hightlight search}
-estiver habilitada o Vim faz um destaque colorido, mas se você quiser limpar pode fazer este
-mapeamento
+A cada busca, se a opção `{\tt hls}'\footnote{hls é uma abreviação de
+hightlight search} estiver habilitada o Vim faz um destaque colorido, para
+desabilitar esta opção pode-se criar um mapeamento qualquer, no caso abaixo
+usando a combinação de teclas ``\verb|<S-F11>|''>
 
 \begin{verbatim}
      nno <S-F11> <Esc>:let @/=""<CR>
