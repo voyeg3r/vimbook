@@ -363,6 +363,17 @@ teclas \verb|Shift-F11| limpe o ``registro'' de buscas
 
 O atalho acima \verb|s-f| corresponde a \verb|Shift-f|.
 
+\subsection{Contar ocorrências de uma palavra} % (fold)
+\label{sub:Contar ocorrências de uma palavra}
+
+\begin{verbatim}
+     " contagem de ocorrências de uma palavra (case sensitive)
+     nmap <F4> :%s/\(<c-r>=expand("<cword>")<cr>\)//gn<cr>
+\end{verbatim}
+
+% subsection Contar ocorrências de uma pala (end)
+
+
 \subsection{Remover linhas em branco duplicadas }
 \label{Remover linhas em branco duplicadas }
 
