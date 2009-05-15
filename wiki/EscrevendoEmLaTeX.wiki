@@ -15,6 +15,9 @@ Para tal segue algumas referências existentes na internet:
  * LaTeX (Página pessoal do `pinho`) - http://www.ime.eb.br/~pinho/pessoal/latex/
   * Rico em links para todos os níveis de usuário LaTeX
 
+ * Página LaTeX do Sadao - http://www.dm.ufscar.br/~sadao/latex/index.php?lang=pt
+  * Busque pelos exemplos latex é o que existe de mais proveitoso nesse material.
+
  * LaTeX-demo - http://biquinho.furg.br/tex-br/doc/LaTeX-demo/
   * Para um texto com um número maior de recursos, sugiro a leitura do material LaTeX-demo. Ele é dividido em duas partes:
    *O código fonte:
