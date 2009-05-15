@@ -368,8 +368,8 @@ O atalho acima \verb|s-f| corresponde a \verb|Shift-f|.
 \label{sub:Contar ocorrências de uma palavra}
 
 \begin{verbatim}
-     " contagem de ocorrências de uma palavra (case sensitive)
-     nmap <F4> :%s/\(<c-r>=expand("<cword>")<cr>\)//gn<cr>
+     " contagem de ocorrências de uma palavra (case insensitive)
+     nmap <F4> :%s/\c\(<c-r>=expand("<cword>")<cr>\)//gn<cr>
 \end{verbatim}
 
 % subsection Contar ocorrências de uma pala (end)
