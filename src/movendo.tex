@@ -10,7 +10,7 @@ A fim de facilitar o entendimento acerca das teclas e atalhos de movimentação,
 faz-se útil uma breve recapitulação de conceitos relacionados. Para se entrar
 em modo de inserção, estando em modo normal, pode-se pressionar qualquer uma
 das teclas abaixo:
-
+\index{modos de operação}
 \begin{verbatim}
      i ..... entra no modo de inserção antes do caractere atual
      I ..... entra no modo de inserção no começo da linha
@@ -21,64 +21,56 @@ das teclas abaixo:
      <Esc> . sai do modo de inserção
 \end{verbatim}
 
+\index{movendo-se!entre caracteres}
 Uma vez no modo de inserção todas as teclas são exatamente como nos outros
 editores simples, caracteres que constituem o conteúdo do texto sendo digitado.
 Para sair do modo de inserção e retornar ao modo normal digita-se \verb+<Esc>+
 ou \verb+Ctrl-[+. As letras {\tt h}, {\tt k}, {\tt l}, {\tt j} funcionam como
 setas:
 
-\index{movendo-se}
+% A imagem que está aqui: http://www.linuxconfig.org/Vim_Tutorial
+% ficaria muito boa no lugar desse verbatim abaixo.
+% Apenas não a coloquei porque ela está em inglês e acho que não cabe.
+% Fica como sugestão para alguém que saiba usar o gimp melhor que eu.
 \begin{verbatim}
         k
      h     l
         j
 \end{verbatim}
-
-Ou seja, a letra `{\tt k}' é usada para subir no texto, a letra `{\tt j}' para descer,
+ou seja, a letra `{\tt k}' é usada para subir no texto, a letra `{\tt j}' para descer,
 a letra `{\tt h}' para mover-se para a esquerda e a letra `{\tt l}' para mover-se para
 a direita. A ideia é que se consiga ir para qualquer lugar do texto sem tirar
 as mãos do teclado, sendo portanto alternativas para as setas de movimentação
 usuais do teclado. Ao invés de manter os quatro dedos sobre H, J, K e L, é aconselhável 
 manter o padrão de digitação com o indicador da mão esquerda sobre a tecla F e o da mão
 direita sobre a letra J, sendo que seu indicador da mão direita vai alternar entre a
-tecla J e H para a movimentação.
+tecla J e H para a movimentação. 
 
-\section{Big words}
-\label{Big words}
-
-Para o Vim ``{\em{palavras-separadas-por-hífen}}'' são consideradas em separado, portanto se você usar,
-em modo normal ``\verb+w+'' para avançar entre as palavras ele pulará uma de
-cada vez, no entanto se usar ``\verb+W+''
-em maiúsculo (como visto) ele pulará a ``a-palavra-inteira'' :)
-
-\begin{verbatim}
-     E .... pula para o final de palavras com hifen
-     B .... pula palavras com hifen (retrocede)
-     W .... pula palavras hifenizadas (começo)
-\end{verbatim}
-
-
-
+\index{movendo-se!entre linhas}
 Para ir para linhas específicas `{\em em modo normal}' digite:
-
 \begin{verbatim}
      :n<Enter>  ..... vai para linha `n'
      ngg ............ vai para linha `n'
      nG ............. vai para linha `n'
 \end{verbatim}
-
 onde ``\verb|n|'' corresponde ao número da linha.  Para retornar ao modo normal
 pressione \verb|<Esc>| ou use \verb|Ctrl-[| (\verb|^[|).
 
-\section{Os saltos}\label{Os saltos}
-
+%\section{Os saltos}\label{Os saltos}
+% a idéia é simplificar.
+% sections demais prejudica o entendimento
+% misturar o comando básico com o avançado afasta o usuário iniciante.
+% eliminar o comando avançado afasta o usuário avançado
+% O ideal é separar o básico (mais comum) do avançado (pouco comum para quem apenas edita texto) 
+\index{movendo-se!efetuando saltos}
+No vim é possível realizar diversos tipos de movimentos, também conhecidos como saltos no 
+documento. A lista abaixo aponta o comandos de salto típicos.
 \begin{verbatim}
      gg .... vai para o início do arquivo
      G ..... vai para o final do arquivo
      0 ..... vai para o início da linha
      ^ ..... vai para o primeiro caractere da linha (ignora espaços)
      $ ..... vai para o final da linha
-     yG .... copia da linha atual até o final do arquivo
      25gg .. salta para a linha 25
      '' .... salta para a linha da última posição em que o cursor estava
      fx .... para primeira ocorrência de x
@@ -86,12 +78,7 @@ pressione \verb|<Esc>| ou use \verb|Ctrl-[| (\verb|^[|).
      Fx .... Para ir para ocorrência anterior de x
      Tx .... Para ir para uma letra após o último x
      * ..... Próxima ocorrência de palavra sob o cursor
-     % ..... localiza parênteses correspondente
      `' .... salta exatamente para a posição em que o cursor estava
-     d$ .... deleta do ponto atual até o final da linha
-     gi .... entra em modo de inserção no ponto da última edição
-     gv .... repete a última seleção visual e posiciona o cursor neste local
-     gf .... abre o arquivo sob o cursor
      gd .... salta para declaração de variável sob o cursor
      gD .... salta para declaração (global) de variável sob o cursor
      w ..... move para o início da próxima palavra
@@ -103,28 +90,57 @@ pressione \verb|<Esc>| ou use \verb|Ctrl-[| (\verb|^[|).
      zz .... move a página de modo com que o cursor fique no centro
      n ..... move o cursor para a próxima ocorrência da busca
      N ..... move o cursor para a ocorrência anterior da busca
-     o ..... letra `o', alterna extremos de seleção visual
 \end{verbatim}
 
+Também é possível efetuar saltos e fazer algo mais ao mesmo tempo, a lista abaixo aponta 
+algumas dessas possibilidades. % Na verdade nenhum desses comandos são apenas movimentos. 
+% Deixar aqui é interessante, mas não misturar com a lista acima
+\begin{verbatim}     
+     gv .... repete a última seleção visual e posiciona o cursor neste local
+     % ..... localiza parênteses correspondente
+     o ..... letra `o', alterna extremos de seleção visual
+     yG .... copia da linha atual até o final do arquivo
+     d$ .... deleta do ponto atual até o final da linha
+     gi .... entra em modo de inserção no ponto da última edição
+     gf .... abre o arquivo sob o cursor
+\end{verbatim}
+
+%\section{Big words}\label{Big words}
+\index{movendo-se!em palavras grandes}\index{movendo-se!big words}
+Para o Vim ``{\em{palavras-separadas-por-hífen}}'' são consideradas em separado, portanto se você usar,
+em modo normal ``\verb+w+'' para avançar entre as palavras ele pulará uma de
+cada vez, no entanto se usar ``\verb+W+''
+em maiúsculo (como visto) ele pulará a ``a-palavra-inteira'' :)
+
+\begin{verbatim}
+     E .... pula para o final de palavras com hifen
+     B .... pula palavras com hifen (retrocede)
+     W .... pula palavras hifenizadas (começo)
+\end{verbatim}
+
+% Esse assunto que condiz com o título do capítulo
+% que tal migrar para o capítulo de edição de documentos ?
 \section{Copiar e Deletar}\label{sec:Copiar e Deletar}
 \vimhelp{delete, d}
+\index{deletar}
+No modo normal, ato de deletar ou eliminar o texto está associado
+à letra ``\verb|d|''. No modo de inserção as teclas usuais também 
+funcionam.
 
-Deletar está associado à letra ``\verb|d|''.
-
+% é interessante manter a descrição no mesmo comando
+% evita que alguém pense que são diferente, vide d$ aqui e acima.
 \begin{verbatim}
      dd .... deleta linha atual
      D ..... deleta restante da linha
-     d$ .... deleta restante da linha
+     d$ .... deleta do ponto atual até o final da linha
      d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
      d0 .... deleta do cursor ao início da linha
 \end{verbatim}
-
 
 %``Dica'': Você pode combinar o comando de deleção ``\verb+d+'' com o
 {\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
 comando de movimento (considere o modo normal) para apagar até a
 próxima vírgula use: ``\verb+df,+''. \\
-
 
 Copiar está associado à letra ``\verb|y|''.
 
@@ -135,6 +151,7 @@ Copiar está associado à letra ``\verb|y|''.
      yb .... copia do começo da palavra ao cursor
 \end{verbatim}
 
+% pode ficar aqui. 
 A maioria dos comandos do Vim pode ser precedida por um quantificador:
 
 \begin{verbatim}
@@ -157,6 +174,8 @@ A maioria dos comandos do Vim pode ser precedida por um quantificador:
      y5j .... copia 5 linhas
 \end{verbatim}
 
+% seria legal mudar lá para cima, na região de movimento
+% e lembrar que pode correlacionar a função com o y e d
 Podemos pular sentenças:
 
 \begin{verbatim}
@@ -168,8 +187,9 @@ Podemos pular sentenças:
      d} ... deleta um parágrafo para frente
 \end{verbatim}
 
+% faz lembrar que o melhor seria que a seção fosse:
+% copiar, colar e deletar
 O que foi deletado ou copiado pode ser colado:
-
 \begin{verbatim}
      p .... cola o que foi copiado ou deletado abaixo
      P .... cola o que foi copiado ou deletado acima
@@ -177,6 +197,7 @@ O que foi deletado ou copiado pode ser colado:
      ]p ... cola o que foi copiado ou deletado após o cursor
 \end{verbatim}
 
+% muito deslocado, isso é movimentar no arquivo ? Parece que sim.
 Caso tenha uma estrutura como abaixo:
 
 \begin{verbatim}
@@ -186,7 +207,7 @@ Caso tenha uma estrutura como abaixo:
 
 E tiver uma referência qualquer para a função \verb+pot+ e desejar
 mover o cursor até sua definição basta posicionar o cursor sobre a palavra
-\verb+pot+ e pressionar (em modo normal)
+\verb+pot+ e pressionar (em modo normal):
 
 \begin{verbatim}
      gd
@@ -236,6 +257,7 @@ outro detalhe para voltar ao último ponto em que você estava
      ''
 \end{verbatim}
 
+% isso é movimentar, e movimentar diferente...
 \section{Paginando}
 \label{Paginando}
 
@@ -299,6 +321,7 @@ Ou para o último
      :la[st]
 \end{verbatim}
 
+% idem, movimentar no arquivo e movimentar de forma avançada.
 \section{Usando marcadores}
 \label{Usando marcadores}
 
@@ -311,7 +334,8 @@ pressiona-se então a tecla ``\verb+m+'' seguida de uma das letras do alfabeto:
      `a ....... move o cursor para a marca `a'
 \end{verbatim}
 
-\section{Marcas globais}
+% Isso abaixo é uma subsection da section usando marcadores.
+\subsection{Marcas globais}
 \label{Marcas globais}
 Marcas globais são marcas que permitem pular de um arquivo a outro.
 Para criar uma marca global use a letra que designa a marca em
