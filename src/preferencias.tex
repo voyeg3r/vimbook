@@ -369,7 +369,7 @@ O atalho acima \verb|s-f| corresponde a \verb|Shift-f|.
 
 \begin{verbatim}
      " contagem de ocorrências de uma palavra (case insensitive)
-     nmap <F4> :%s/\c\(<c-r>=expand("<cword>")<cr>\)//gn<cr>
+     nmap <F4> <esc>mz:%s/\c\(<c-r>=expand("<cword>")<cr>\)//gn<cr>`z
 \end{verbatim}
 
 % subsection Contar ocorrências de uma pala (end)
