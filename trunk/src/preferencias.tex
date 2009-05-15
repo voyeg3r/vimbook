@@ -371,7 +371,7 @@ O atalho acima \verb|s-f| corresponde a \verb|Shift-f|.
      " contagem de ocorrências de uma palavra (case insensitive)
      " busca somente ocorrências exatas
      nmap <F4> <esc>mz:%s/\c\<\(<c-r>=expand("<cword>")<cr>\)\>//gn<cr>`z
-     " busca não parcial
+     " busca parcial, ou seja acha palavra como parte de outra
      nmap <s-F4> <esc>mz:%s/\c\(<c-r>=expand("<cword>")<cr>\)//gn<cr>`z
 \end{verbatim}
 
