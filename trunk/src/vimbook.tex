@@ -8,38 +8,35 @@
 % A copy of the license is included in the file called "COPYING".
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[10pt,a4paper,openany]{book}
-\usepackage[utf8]{inputenc} %se for usar no windows mude esta linha
-\usepackage[portuges]{babel}
+\usepackage[utf8]{inputenc}		% se for usar no windows mude esta linha
+\usepackage[portuges]{babel}	% idioma utilizado
 
-\usepackage[T1]{fontenc} %fonte computer modern
-\usepackage{ae}
+\usepackage[T1]{fontenc}		% fonte computer modern
+\usepackage{ae}					% pacote de fontes
 
-\usepackage{graphicx}                       % permite inserir figuras
-\usepackage{subfigure}                      % suporte a subfiguras
-\usepackage{longtable}                      % tabelas longas
-\usepackage{color}                          % suporte a cor
-\usepackage{multirow}                       % suporte a múltiplas colunas
+\usepackage{graphicx}			% permite inserir figuras
+\usepackage{subfigure}			% suporte a subfiguras
+\usepackage{longtable}			% tabelas longas
+\usepackage{color}				% suporte a cor
+\usepackage{multirow}			% suporte a múltiplas colunas
 
-\usepackage{url}
-\RequirePackage{enumerate} %extensão para o pacote enumerate
-\usepackage{marvosym} % gera alguns símbolos
-\usepackage{pifont} % simbolos de setas
-\usepackage{fancyhdr}
+\RequirePackage{enumerate}		% extensão para o pacote enumerate
+\usepackage{marvosym}			% gera alguns símbolos
+\usepackage{pifont}				% simbolos de setas
+\usepackage{fancyhdr}			% pacote para personalizar o layout
 
-\usepackage{makeidx} % inserir índice remissivo
-\makeindex
+\usepackage{makeidx}			% inserir índice remissivo
+\makeindex						% construindo arquivo .idx
 
-% Suporte a apendices
-\usepackage{appendix}
+\usepackage{appendix}			% suporte a apendices
 
-\usepackage{hyperref} % gera os links no pdf
+\usepackage{url}				% inserir urls
+\usepackage{hyperref}			% gera os links no pdf
 \hypersetup{
-backref=true,
 pdfpagemode=UseOutlines,
 colorlinks=true,
 a5paper,
 breaklinks=true,
-hyperindex,
 linkcolor=blue,
 anchorcolor=black,
 citecolor=green,
@@ -47,11 +44,10 @@ filecolor=magenta,
 menucolor=red,
 pagecolor=red,
 urlcolor=cyan,
-bookmarks=true,
 bookmarksopen=false,
 pdfpagelayout=SinglePage,
 pdfpagetransition=Dissolve
-}
+}								% configurando o hyperref
 
 % Comando \vimhelp
 % Uso: \vimhelp{termo_1, termo_2, ..., termo_n}
@@ -75,13 +71,14 @@ pdfpagetransition=Dissolve
      \addvspace{1ex plus 0.8ex minus 0.2ex}% 
      \vskip -\parskip\noindent\ignorespaces}
 
+% Defininindo o estilo de página
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
-\fancyhf{}
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[LO]{\bfseries\rightmark}
-\fancyhead[RE]{\bfseries\leftmark}
+\fancyhf{}                              % eliminando a configuração anterior
+\fancyhead[LE,RO]{\bfseries\thepage}	% núm. a esq. na pág. da esq. e a direita em contrário
+\fancyhead[LO]{\bfseries\rightmark}		% para página da esquerda, o título fica a direita
+\fancyhead[RE]{\bfseries\leftmark}		% para página da direita, o título fica a esquerda
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.0pt}
 \addtolength{\headheight}{2.5pt}    % 0.5pt
@@ -90,20 +87,21 @@ pdfpagetransition=Dissolve
      \renewcommand{\headrulewidth}{0pt}
      }
 
-\newcommand{\dica}[1]{{{\large \ding{42}}}}
+\newcommand{\dica}[1]{{{\large \ding{42}}}}	% inserir imagem para dica, provido por pifont
 
 \setlength{\parindent}{0em}
 \setlength{\parskip}{5pt plus 1pt minus 1pt} 
 
 \begin{document}
-\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,}
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}	% extensões de imagens
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CAPA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\begin{titlepage}
 \thispagestyle{empty}
 \begin{figure}[htp]
     \centering
-    \includegraphics[bb=100 0 500 716]{img/capa.png}
+    % o ideal seria o viewport no lugar de bb
+    \includegraphics[bb=100 0 500 716]{img/capa.png}	
     %\includegraphics[scale=0.5]{img/capa.png}
     %\includegraphics[width=\paperwidth,height=\paperheight]{img/capa.png}
 \end{figure}
@@ -144,7 +142,7 @@ pdfpagetransition=Dissolve
 
    \vspace{3cm}
 
-   {\small Versão gerada em \\ \bf \today}
+   {\small Versão gerada em \\ \bf \today} % especifica a versão do PDF pelo dia que o gerou.
 \end{center}
 %\end{titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,15 +156,13 @@ pdfpagetransition=Dissolve
 \vspace{2cm}
 
 \begin{tabular}{cc}
-
-\bf Sérgio Luiz Araújo Silva & \tt <voyeg3r@gmail.com> \\
-\bf Douglas Adriano Augusto & \tt <daaugusto@gmail.com>\\
-\bf Eustáquio Rangel & \tt <eustaquiorangel@gmail.com> \\
-\bf Eduardo Otubo & \tt <eduardo.otubo@gmail.com> \\
-\bf Gustavo Dutra & \tt <gustavotkg@gmail.com> \\
-\bf João Felipe Mitre & \tt <jfmitre@gmail.com> \\
-$\vdots$ & $\vdots$ \\
-
+\bf Sérgio Luiz Araújo Silva 	& \tt <voyeg3r@gmail.com> 			\\
+\bf Douglas Adriano Augusto 	& \tt <daaugusto@gmail.com>			\\
+\bf Eustáquio Rangel 			& \tt <eustaquiorangel@gmail.com> 	\\
+\bf Eduardo Otubo 				& \tt <eduardo.otubo@gmail.com> 	\\
+\bf Gustavo Dutra 				& \tt <gustavotkg@gmail.com> 		\\
+\bf João Felipe Mitre 			& \tt <jfmitre@gmail.com> 			\\
+$\vdots$ 						& $\vdots$ 							\\
 \end{tabular}
 
 \end{center}
@@ -196,6 +192,7 @@ $\vdots$ & $\vdots$ \\
 %\nocite{*} % Se descomentado, todas as referências do arquivo 
             % de bibliografia serão adicionadas ao texto, mesmo 
             % se não forem citados.
+% Redefinindo o estilo de topo de página
 \fancyhf{} 
 \fancyhead[LE,RO]{\bfseries\thepage}
 \fancyhead[LO]{\bfseries Referências Bibliográficas}
@@ -209,11 +206,24 @@ $\vdots$ & $\vdots$ \\
 
 % Incluindo os apêndices
 % \backmatter % se descomentado, remove a expressão "Apêndice LETRA" 
+% colocando de volta o estilo de topo de página.
+% \fancyhf{} 
+% \fancyhead[LE,RO]{\bfseries\thepage}
+% \fancyhead[LO]{\bfseries\rightmark}
+% \fancyhead[RE]{\bfseries\leftmark}
+% \appendix
+% \include{sem_anexos_reais_no_momento}
+
+% Anexo, que não é anexo, é uma página dos finalmentes.
+% Da forma que está abaixo, fica uma homenagem mais agradável
+\clearpage
+% Estilo de topo
 \fancyhf{} 
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[LO]{\bfseries\rightmark}
-\fancyhead[RE]{\bfseries\leftmark}
-\appendix
+% É visualmente mais agradável sem
+% \fancyhead[LE,RO]{\bfseries\thepage}
+% \fancyhead[LO]{\bfseries Colaboradores}
+% \fancyhead[RE]{\bfseries Colaboradores}
+% Inclui a lista de colaboradores, conscientes e inconscientes. 
 \include{colaboradores}
 
 % índice
@@ -221,5 +231,6 @@ $\vdots$ & $\vdots$ \\
 \fancyhead[LE,RO]{\bfseries\thepage}
 \fancyhead[LO]{\bfseries Índice}
 \fancyhead[RE]{\bfseries Índice}
+% é a última coisa do livro
 \printindex
 \end{document}
