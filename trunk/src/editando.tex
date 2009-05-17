@@ -4,9 +4,8 @@
 
 \chapter{Editando}
 \label{Editando}
-
-A principal função de um editor de textos é editar textos. Parece óbvio,
-mas em meio a inúmeros recursos extras essa simples e crucial função
+\index{editando}A principal função de um editor de textos é editar textos. 
+Parece óbvio, mas em meio a inúmeros recursos extras essa simples e crucial função
 perde-se entre todos os demais.
 
 \section{Abrindo o arquivo para a edição}
@@ -18,11 +17,12 @@ Como visto, para abrir um arquivo\index{iniciar} com Vim, digite em um terminal:
 \end{verbatim}
 onde {\tt texto.txt} é o nome do arquivo que deseja-se criar ou editar.
 
-Caso deseje abrir o arquivo na linha 10, usa-se:
+Caso deseje abrir o arquivo na linha 10\index{iniciar!linha específica}, usa-se:
 \begin{verbatim}
      vim +10 /caminho/para/o/arquivo
 \end{verbatim}
-se quiser abrir o arquivo na linha que contém um determinado padrão, digite:
+se quiser abrir o arquivo na linha que contém um determinado padrão
+\index{iniciar!padrão específico}, digite:
 \begin{verbatim}
      vim +/padrão arquivo
 \end{verbatim}
@@ -47,18 +47,19 @@ qualquer uma das teclas abaixo:
      <Esc> . sai do modo de inserção
 \end{verbatim}
 
-Uma vez no modo de inserção todas as teclas são exatamente como nos outros
-editores simples, caracteres que constituem o conteúdo do texto sendo digitado.
+Uma vez no modo de inserção\index{modo de inserção} todas as teclas são exatamente 
+como nos outros editores simples, caracteres que constituem o conteúdo do texto 
+sendo digitado. 
 O que inclui as teclas de edição de caracteres.
 
-Para salvar o conteúdo escrito, digite a tecla \verb|<Esc>| para sair do modo 
-de inserção e digite o comando:
+Para salvar\index{salvar o texto} o conteúdo escrito, digite a tecla \verb|<Esc>| para 
+sair do modo de inserção e digite o comando:
 \begin{verbatim}
      :w 
 \end{verbatim}
 para gravar o conteúdo.
 
-Caso queira sair do editor, digite o comando:
+Caso queira sair do editor\index{fechar o programa}, digite o comando:
 \begin{verbatim}
      :q
 \end{verbatim}
@@ -101,8 +102,6 @@ No modo normal, ato de deletar ou eliminar o texto está associado
 à letra ``\verb|d|''. No modo de inserção as teclas usuais também 
 funcionam.
 
-% é interessante manter a descrição no mesmo comando
-% evita que alguém pense que são diferente, vide d$ aqui e acima.
 \begin{verbatim}
      dd .... deleta linha atual
      D ..... deleta restante da linha
@@ -111,12 +110,11 @@ funcionam.
      d0 .... deleta do cursor ao início da linha
 \end{verbatim}
 
-%``Dica'': Você pode combinar o comando de deleção ``\verb+d+'' com o
 {\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
 comando de movimento (considere o modo normal) para apagar até a
 próxima vírgula use: ``\verb+df,+''. \\
 
-Copiar está associado à letra ``\verb|y|''.
+\index{copiar}Copiar está associado à letra ``\verb|y|''.
 
 \begin{verbatim}
      yy .... copia a linha atual
@@ -125,7 +123,7 @@ Copiar está associado à letra ``\verb|y|''.
      yb .... copia do começo da palavra ao cursor
 \end{verbatim}
 
-O que foi deletado ou copiado pode ser colado:
+O que foi deletado ou copiado pode ser colado\index{colar}:
 \begin{verbatim}
      p .... cola o que foi copiado ou deletado abaixo
      P .... cola o que foi copiado ou deletado acima
@@ -136,7 +134,7 @@ O que foi deletado ou copiado pode ser colado:
 \subsection{Deletando uma parte do texto}\label{Deletando uma parte do texto}
 \vimhelp{deleting}
 
-O comando `{\tt d}' remove o conteúdo para a memória.
+\index{deletar}O comando `{\tt d}' remove o conteúdo para a memória.
 
 \begin{verbatim}
      x .... apaga o caractere sob o cursor
@@ -184,10 +182,10 @@ exemplo:
 \subsection{Copiando sem deletar}\label{Copiando sem deletar}
 \vimhelp{yank}
 
-O comando `{\tt y}' ({\em yank}) permite copiar uma parte do texto para a
-memória sem deletar.  Existe uma semelhança muito grande entre os comandos
-`{\tt y}' e os comandos `{\tt d}', um ativa a `cópia' e outro a `exclusão' 
-de conteúdo, suportando ambos quantificadores:
+\index{copiar}O comando `{\tt y}' ({\em yank}) permite copiar uma parte do 
+texto para a memória sem deletar.  Existe uma semelhança muito grande entre 
+os comandos `{\tt y}' e os comandos `{\tt d}', um ativa a `cópia' e outro a 
+`exclusão' de conteúdo, suportando ambos quantificadores:
 
 \begin{verbatim}
      yy  .... copia a linha atual (sinônimo: Y)
@@ -203,9 +201,9 @@ de conteúdo, suportando ambos quantificadores:
      yG  .... copia da posição atual até o final do arquivo
 \end{verbatim}
 
-Digite `{\tt P}' (p maiúsculo) para colar o texto recém copiado na posição onde
-encontra-se o cursor, ou `{\tt p}' para colar o texto na posição imediatamente
-após o cursor.
+Digite `{\tt P}' (p maiúsculo) para \index{colar}colar o texto recém copiado na p
+osição onde encontra-se o cursor, ou `{\tt p}' para colar o texto na posição 
+imediatamente após o cursor.
 
 \begin{verbatim}
      yi" .... copia trecho entre aspas (atual - inner)
@@ -219,7 +217,8 @@ após o cursor.
 \subsection{Usando a área de transferência {\em Clipboard}}
 \vimhelp{paste, clipboard, quoteplus}
 
-Exemplos para o modo visual:
+\index{copiar}\index{colar}\index{clipboard}
+\index{área de transferência}Exemplos para o modo visual:
 
 \begin{verbatim}
      Ctrl-insert .... copia área selecionada 
@@ -241,7 +240,7 @@ do texto}.
 use este comando `{\tt :set paste}'.
 
 \subsection{Removendo linhas duplicadas}
-
+\index{deletar!linhas duplicadas}
 \begin{verbatim}
      :sort u
 \end{verbatim}
@@ -249,7 +248,8 @@ use este comando `{\tt :set paste}'.
 \section{Forçando a edição de um novo arquivo}\label{sec:Forçando a edição de um novo arquivo}
 \vimhelp{edit!}
 
-O Vim como qualquer outro editor é muito exigente no que se refere a alterações
+\index{iniciar!novo arquivo}
+O Vim, como qualquer outro editor, é muito exigente no que se refere a alterações
 de arquivo.  Ao tentar abandonar um arquivo editado e não salvo, o Vim irá se certificar
 da ação. Para abrir um novo arquivo sem salvar o antigo:
 
@@ -264,11 +264,11 @@ ignorar todas as alterações feitas desde a abertura do arquivo:
      :e!
 \end{verbatim}
 
-\section{Ordenando}
+\section{Ordenando}\index{ordenando}
 \vimhelp{sort}
 
-O Vim 7 passa a ter um comando de ordenação que também retira linhas
-duplicadas
+O Vim, versão 7 ou superior, passa a ter um comando de ordenação que também 
+permite a retirada de linhas duplicadas, tal como foi apresentado.
 
 \begin{verbatim}
      :sort u ... ordena e retira linhas duplicadas
@@ -320,15 +320,15 @@ Podemos ainda ordenar à partir de uma coluna:
 \end{verbatim}
 
 \section{Usando o {\tt grep} interno do Vim}
-\label{sec:Usando o grep interno do Vim}
+\label{sec:Usando o grep interno do Vim}\index{grep}
 \vimhelp{vimgrep, lvimgrep}
 
 Para editar todos os arquivos que contenham a palavra ``inusitada'':
 
 \begin{verbatim}
     :vimgrep /\cinusitada/ *
-    a opção `\c' torna a busca insensível ao case
 \end{verbatim}
+a opção `\c' torna a busca indiferente a letras maiúsculas e minúsculas.
 
 Obs: o Vim busca à partir do diretório atual, para se descobrir 
 o diretório atual ou mudá-lo:
@@ -338,7 +338,7 @@ o diretório atual ou mudá-lo:
     :cd /diretório   muda de diretório
 \end{verbatim}
 
-\section{Lista de alterações}
+\section{Lista de alterações}\index{lista de alterações}\index{histórico}
 \vimhelp{changelist, changes}
 
 O Vim mantém uma lista de alterações, veremos agora como usar este recurso.
@@ -366,9 +366,14 @@ Para fazer o contrário usamos algo como:
 
 \begin{verbatim}
     :%s/\s\{4,}/<pressiona-se ctrl-i>/g
+\end{verbatim}
+onde
+\begin{verbatim}
     <Ctrl-i>...... insere uma tabulação
+\end{verbatim}
 
-    Explicando
+Explicando:
+\begin{verbatim}
     : ............ comando
     % ............ em todo arquivo 
     s ............ substitua 
@@ -379,9 +384,7 @@ Para fazer o contrário usamos algo como:
     <Ctrl-i> ..... pressione Ctrl-i para inserir <Tab>
     / ............ fim da substituição
     g ............ global
-
 \end{verbatim}
-
 
 \section{Convertendo para maiúsculas}
 \label{sec:Convertendo para maiúsculas}
