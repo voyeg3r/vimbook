@@ -5,14 +5,24 @@
 \chapter{Editando}
 \label{Editando}
 
-Que tal abrir um arquivo já na linha 10 por exemplo?
+A principal função de um editor de textos é editar textos. Parece óbvio,
+mas em meio a inúmeros recursos extras essa simples e crucial função
+perde-se entre todos os demais.
 
+\section{Abrindo o arquivo para a edição}
+Portanto, a primeira coisa a fazer é abrir um arquivo.
+Como visto, para abrir um arquivo\index{iniciar} com Vim, digite em um terminal:
+%
+\begin{verbatim}
+     vim texto.txt
+\end{verbatim}
+onde {\tt texto.txt} é o nome do arquivo que deseja-se criar ou editar.
+
+Caso deseje abrir o arquivo na linha 10, usa-se:
 \begin{verbatim}
      vim +10 /caminho/para/o/arquivo
 \end{verbatim}
-
-Ou ainda abrir na linha que contém um determinado padrão?
-
+se quiser abrir o arquivo na linha que contém um determinado padrão, digite:
 \begin{verbatim}
      vim +/padrão arquivo
 \end{verbatim}
@@ -20,26 +30,110 @@ Ou ainda abrir na linha que contém um determinado padrão?
 {\Large {\ding{45}}} Caso o padrão tenha espaços no nome coloque entre parênteses ou
 use {\em escape} ``$\backslash$'' a fim de não obter erro.
 
-\section{Usando o {\tt grep} interno do Vim}
-\label{sec:Usando o grep interno do Vim}
-\vimhelp{vimgrep, lvimgrep}
+\section{Escrevendo o texto}
+O Vim é um editor que possuí diferentes modos de edição. Entre eles está o modo
+de inserção, que é o modo onde escreve-se o texto naturalmente.
 
-Para editar todos os arquivos que contenham a palavra ``inusitada'':
-
+Para se entrar em modo de inserção, estando em modo normal, pode-se pressionar 
+qualquer uma das teclas abaixo:
+\index{modos de operação}
 \begin{verbatim}
-    :vimgrep /\cinusitada/ *
-    a opção `\c' torna a busca insensível ao case
+     i ..... entra no modo de inserção antes do caractere atual
+     I ..... entra no modo de inserção no começo da linha
+     a ..... entra no modo de inserção após o caractere atual
+     A ..... entra no modo de inserção no final da linha
+     o ..... entra no modo de inserção uma linha abaixo
+     O ..... entra em modo de inserção uma linha cima
+     <Esc> . sai do modo de inserção
 \end{verbatim}
 
-Obs: o Vim busca à partir do diretório atual, para se descobrir 
-o diretório atual ou mudá-lo:
+Uma vez no modo de inserção todas as teclas são exatamente como nos outros
+editores simples, caracteres que constituem o conteúdo do texto sendo digitado.
+O que inclui as teclas de edição de caracteres.
 
+Para salvar o conteúdo escrito, digite a tecla \verb|<Esc>| para sair do modo 
+de inserção e digite o comando:
 \begin{verbatim}
-    :pwd ........... exibe o diretório atual
-    :cd /diretório   muda de diretório
+     :w 
+\end{verbatim}
+para gravar o conteúdo.
+
+Caso queira sair do editor, digite o comando:
+\begin{verbatim}
+     :q
+\end{verbatim}
+caso tenha ocorrido modificações no arquivo desde que ele foi salvo pela última vez
+haverpa uma mensagem informando que o documento foi modificado e não foi salvo,
+ nesse caso, digite o comando: 
+\begin{verbatim}
+     :q! 
+\end{verbatim}
+para fechar o Vim {\bf sem salvar} as últimas modificações feitas.
+
+Caso queira salvar e sair do arquivo, digite o comando:
+\begin{verbatim}
+     :wq
 \end{verbatim}
 
-\section{Deletando uma parte do texto}\label{Deletando uma parte do texto}
+Nesse ponto, conhece-se o vim de forma suficiente para editar
+qualquer coisa nele. Daqui por diante o que existe são as formas de
+realizar a edição do arquivo com maior naturalidade e produtividade.
+
+O usuário iniciante do Vim pode cometer o erro de tentar decorar 
+todos os comandos que serão apresentados. {\bf Não faça isso}. Tentar decorar
+comando é exatamente o caminho contrário da naturalidade exigida por 
+um editor texto para aumentar a produtividade.
+
+Ao contrário, sugere-se que leia-se todo o conteúdo. Identifique 
+quais são as atividades de maior recorrência no estilo individual de 
+escrita e busque como realizar tais funções com mais fluência nesse
+editor. A prática levará ao uso de fluente desse comandos principais,
+abrindo espaço para os demais comandos.
+
+Isso não impede que o usuário experimente cada comando conforme for lendo.
+De fato, essa prática pode ajudar a selecionar as formas de edição que lhe
+são mais simpáticas ao uso.
+
+\section{Copiar, Colar e Deletar}\label{sec:CopiarColarEDeletar}
+\vimhelp{delete, d}
+\index{deletar}
+No modo normal, ato de deletar ou eliminar o texto está associado
+à letra ``\verb|d|''. No modo de inserção as teclas usuais também 
+funcionam.
+
+% é interessante manter a descrição no mesmo comando
+% evita que alguém pense que são diferente, vide d$ aqui e acima.
+\begin{verbatim}
+     dd .... deleta linha atual
+     D ..... deleta restante da linha
+     d$ .... deleta do ponto atual até o final da linha
+     d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
+     d0 .... deleta do cursor ao início da linha
+\end{verbatim}
+
+%``Dica'': Você pode combinar o comando de deleção ``\verb+d+'' com o
+{\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
+comando de movimento (considere o modo normal) para apagar até a
+próxima vírgula use: ``\verb+df,+''. \\
+
+Copiar está associado à letra ``\verb|y|''.
+
+\begin{verbatim}
+     yy .... copia a linha atual
+     Y ..... copia a linha atual
+     ye .... copia do cursor ao fim da palavra
+     yb .... copia do começo da palavra ao cursor
+\end{verbatim}
+
+O que foi deletado ou copiado pode ser colado:
+\begin{verbatim}
+     p .... cola o que foi copiado ou deletado abaixo
+     P .... cola o que foi copiado ou deletado acima
+     [p ... cola o que foi copiado ou deletado antes do cursor
+     ]p ... cola o que foi copiado ou deletado após o cursor
+\end{verbatim}
+
+\subsection{Deletando uma parte do texto}\label{Deletando uma parte do texto}
 \vimhelp{deleting}
 
 O comando `{\tt d}' remove o conteúdo para a memória.
@@ -87,7 +181,7 @@ exemplo:
      C ................ modifica até o final da linha
 \end{verbatim}
 
-\section{Copiando sem deletar}\label{Copiando sem deletar}
+\subsection{Copiando sem deletar}\label{Copiando sem deletar}
 \vimhelp{yank}
 
 O comando `{\tt y}' ({\em yank}) permite copiar uma parte do texto para a
@@ -146,16 +240,10 @@ do texto}.
 {\Large \ding{45}} Para evitar erros ao colar usando {\tt Shift-insert} 
 use este comando `{\tt :set paste}'.
 
-
-\section{Lista de alterações}
-\vimhelp{changelist, changes}
-
-O Vim mantém uma lista de alterações, veremos agora como usar este recurso.
+\subsection{Removendo linhas duplicadas}
 
 \begin{verbatim}
-     g, ................. avança na lista de alterações
-     g; ................. recua na lista de alterações
-     :changes ........... visualiza a lista de alterações
+     :sort u
 \end{verbatim}
 
 \section{Forçando a edição de um novo arquivo}\label{sec:Forçando a edição de um novo arquivo}
@@ -175,7 +263,6 @@ ignorar todas as alterações feitas desde a abertura do arquivo:
 \begin{verbatim}
      :e!
 \end{verbatim}
-
 
 \section{Ordenando}
 \vimhelp{sort}
@@ -232,10 +319,34 @@ Podemos ainda ordenar à partir de uma coluna:
      :sort /.*\%8v/   ..... ordena à partir do 8º caractere
 \end{verbatim}
 
-\section{Removendo linhas duplicadas}
+\section{Usando o {\tt grep} interno do Vim}
+\label{sec:Usando o grep interno do Vim}
+\vimhelp{vimgrep, lvimgrep}
+
+Para editar todos os arquivos que contenham a palavra ``inusitada'':
 
 \begin{verbatim}
-     :sort u
+    :vimgrep /\cinusitada/ *
+    a opção `\c' torna a busca insensível ao case
+\end{verbatim}
+
+Obs: o Vim busca à partir do diretório atual, para se descobrir 
+o diretório atual ou mudá-lo:
+
+\begin{verbatim}
+    :pwd ........... exibe o diretório atual
+    :cd /diretório   muda de diretório
+\end{verbatim}
+
+\section{Lista de alterações}
+\vimhelp{changelist, changes}
+
+O Vim mantém uma lista de alterações, veremos agora como usar este recurso.
+
+\begin{verbatim}
+     g, ................. avança na lista de alterações
+     g; ................. recua na lista de alterações
+     :changes ........... visualiza a lista de alterações
 \end{verbatim}
 
 \section{Substituindo tabulações por espaços}
@@ -282,7 +393,6 @@ Para fazer o contrário usamos algo como:
      gUiw ...... converte a palavra atual para maiúsculo
      ~ ......... altera o case do caractere atual
 \end{verbatim}
-
 
 \section{Editando em modo de comando}
 \label{sec:Editando em modo de comando}
@@ -441,7 +551,6 @@ Posicione o cursor sobre um número e pressione
      :20,/pat/m 5 .. move da linha `20' até `pat' para a linha 5
 \end{verbatim}
 
-
 \section{Uma calculadora diferente}
 \label{Uma calculadora diferente}
 
@@ -496,7 +605,6 @@ nos permitem acessar quaisquer alterações ocorridas no arquivo.
 
 Siga estes passos (para cada passo \verb|<Esc>|, ou seja, saia do modo
 de inserção)
-
 
 \begin{description}
 \item [Passo 1] - digite na linha 1 o seguinte texto
@@ -602,65 +710,6 @@ original não é apagado).  Para sair do editor, salvando o arquivo atual, digit
      :10,20 w! ~/Desktop/teste.txt . sava um trecho para outro arquivo
      :w! ........................... salvamento forçado
      :e! ........................... reinicia a edição ignorando alterações
-\end{verbatim}
-
-\section{Usando marcas}
-\label{sec:Usando marcas}
-\vimhelp{mark-motions}
-
-As marcas são um meio eficiente de se pular para um local no arquivo. Para
-criar uma,  estando em modo normal faz-se:
-
-\begin{verbatim}
-     ma
-\end{verbatim}
-
-Onde `{\tt m}' indica a criação de uma marca e `{\tt a}' é o nome da marca.
-Para pular para a marca `{\tt a}':
-
-\begin{verbatim}
-     `a
-\end{verbatim}
-
-Para voltar ao ponto do último salto:
-
-\begin{verbatim}
-     ''
-\end{verbatim}
-
-Para deletar de até a marca `{\tt a}' (em modo normal):
-
-\begin{verbatim}
-     d'a
-\end{verbatim}
-
-\subsection{Marcas globais}
-
-Durante a edição de vários arquivos pode-se definir uma marca global com o
-comando:
-
-\begin{verbatim}
-     mA
-\end{verbatim}
-
-Onde `{\tt m}' cria a marca e `{\tt A}' (maiúsculo) define uma marca `{\tt A}'
-acessível a qualquer momento com o comando:
-
-\begin{verbatim}
-     'A
-\end{verbatim}
-
-Isto fará o Vim dar um salto até a marca `{\tt A}' mesmo que esteja em outro arquivo,
-mesmo que você tenha acabado de fecha-lo. Para abrir e editar vários arquivos
-do Vim fazemos:
-
-\begin{verbatim}
-     vim *.txt ......... abre todos os arquivos `txt'
-     :bn ............... vai para o próximo da lista
-     :bp ............... volta para o arquivo anterior
-     :ls ............... lista todos os arquivos abertos
-     :wn ............... salva e vai para o próximo
-     :wp ............... salva e vai para o prévio
 \end{verbatim}
 
 

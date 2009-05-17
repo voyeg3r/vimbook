@@ -118,66 +118,8 @@ em maiúsculo (como visto) ele pulará a ``a-palavra-inteira'' :)
      W .... pula palavras hifenizadas (começo)
 \end{verbatim}
 
-% Esse assunto que condiz com o título do capítulo
-% que tal migrar para o capítulo de edição de documentos ?
-\section{Copiar e Deletar}\label{sec:Copiar e Deletar}
-\vimhelp{delete, d}
-\index{deletar}
-No modo normal, ato de deletar ou eliminar o texto está associado
-à letra ``\verb|d|''. No modo de inserção as teclas usuais também 
-funcionam.
-
-% é interessante manter a descrição no mesmo comando
-% evita que alguém pense que são diferente, vide d$ aqui e acima.
-\begin{verbatim}
-     dd .... deleta linha atual
-     D ..... deleta restante da linha
-     d$ .... deleta do ponto atual até o final da linha
-     d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
-     d0 .... deleta do cursor ao início da linha
-\end{verbatim}
-
-%``Dica'': Você pode combinar o comando de deleção ``\verb+d+'' com o
-{\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
-comando de movimento (considere o modo normal) para apagar até a
-próxima vírgula use: ``\verb+df,+''. \\
-
-Copiar está associado à letra ``\verb|y|''.
-
-\begin{verbatim}
-     yy .... copia a linha atual
-     Y ..... copia a linha atual
-     ye .... copia do cursor ao fim da palavra
-     yb .... copia do começo da palavra ao cursor
-\end{verbatim}
-
-% pode ficar aqui. 
-A maioria dos comandos do Vim pode ser precedida por um quantificador:
-
-\begin{verbatim}
-     5j ..... desce 5 linhas
-     d5j .... deleta as próximas 5 linhas
-     k ...... em modo normal sobe uma linha
-     5k ..... sobe 5 linhas
-     y5k .... copia 5 linhas (para cima)
-     w ...... pula uma palavra para frente
-     5w ..... pula 5 palavras
-     d5w .... deleta 5 palavras
-     b ...... retrocede uma palavra
-     5b ..... retrocede 5 palavras
-     fx ..... posiciona o cursor em ``x''
-     dfx .... deleta até o próximo ``x''
-     dgg .... deleta da linha atual até o começo do arquivo
-     dG ..... deleta até o final do arquivo
-     yG ..... copia até o final do arquivo
-     yfx .... copia até o próximo ``x''
-     y5j .... copia 5 linhas
-\end{verbatim}
-
-% seria legal mudar lá para cima, na região de movimento
-% e lembrar que pode correlacionar a função com o y e d
 Podemos pular sentenças:
-
+\index{movendo-se!entre sentenças}
 \begin{verbatim}
      ) .... pula uma sentença para frente
      ( .... pula uma sentença para trás
@@ -185,16 +127,6 @@ Podemos pular sentenças:
      { .... pula um parágrafo para trás
      y) ... copia uma sentença para frente
      d} ... deleta um parágrafo para frente
-\end{verbatim}
-
-% faz lembrar que o melhor seria que a seção fosse:
-% copiar, colar e deletar
-O que foi deletado ou copiado pode ser colado:
-\begin{verbatim}
-     p .... cola o que foi copiado ou deletado abaixo
-     P .... cola o que foi copiado ou deletado acima
-     [p ... cola o que foi copiado ou deletado antes do cursor
-     ]p ... cola o que foi copiado ou deletado após o cursor
 \end{verbatim}
 
 % muito deslocado, isso é movimentar no arquivo ? Parece que sim.
@@ -257,6 +189,28 @@ outro detalhe para voltar ao último ponto em que você estava
      ''
 \end{verbatim}
 
+A maioria dos comandos do Vim pode ser precedida por um quantificador:
+
+\begin{verbatim}
+     5j ..... desce 5 linhas
+     d5j .... deleta as próximas 5 linhas
+     k ...... em modo normal sobe uma linha
+     5k ..... sobe 5 linhas
+     y5k .... copia 5 linhas (para cima)
+     w ...... pula uma palavra para frente
+     5w ..... pula 5 palavras
+     d5w .... deleta 5 palavras
+     b ...... retrocede uma palavra
+     5b ..... retrocede 5 palavras
+     fx ..... posiciona o cursor em ``x''
+     dfx .... deleta até o próximo ``x''
+     dgg .... deleta da linha atual até o começo do arquivo
+     dG ..... deleta até o final do arquivo
+     yG ..... copia até o final do arquivo
+     yfx .... copia até o próximo ``x''
+     y5j .... copia 5 linhas
+\end{verbatim}
+
 % isso é movimentar, e movimentar diferente...
 \section{Paginando}
 \label{Paginando}
@@ -267,7 +221,6 @@ Para rolar uma página de cada vez (em modo normal)
      Ctrl-f
      Ctrl-b
 \end{verbatim}
-
 
 \begin{verbatim}
      :h jumps . ajuda sobre a lista de saltos
@@ -322,25 +275,84 @@ Ou para o último
 \end{verbatim}
 
 % idem, movimentar no arquivo e movimentar de forma avançada.
-\section{Usando marcadores}
-\label{Usando marcadores}
+\section{Usando marcas}
+\label{sec:UsandoMarcas}
+\vimhelp{mark-motions}
 
-No Vim podemos marcar o ponto em que o cursor está para poder retornar
-rapidamente, certifique-se de estar em modo normal, para tanto pressiona-se \verb+<Esc>+,
-pressiona-se então a tecla ``\verb+m+'' seguida de uma das letras do alfabeto:
+As marcas são um meio eficiente de se pular para um local no arquivo. Para
+criar uma,  estando em modo normal faz-se:
 
 \begin{verbatim}
-     ma ....... cria uma marca `a'
-     `a ....... move o cursor para a marca `a'
+     ma
 \end{verbatim}
 
-% Isso abaixo é uma subsection da section usando marcadores.
+Onde `{\tt m}' indica a criação de uma marca e `{\tt a}' é o nome da marca.
+Para pular para a marca `{\tt a}':
+
+\begin{verbatim}
+     `a
+\end{verbatim}
+
+Para voltar ao ponto do último salto:
+
+\begin{verbatim}
+     ''
+\end{verbatim}
+
+Para deletar de até a marca `{\tt a}' (em modo normal):
+
+\begin{verbatim}
+     d'a
+\end{verbatim}
+
 \subsection{Marcas globais}
-\label{Marcas globais}
-Marcas globais são marcas que permitem pular de um arquivo a outro.
-Para criar uma marca global use a letra que designa a marca em
-maiúsculo.
+
+Durante a edição de vários arquivos pode-se definir uma marca global com o
+comando:
 
 \begin{verbatim}
-     mA ....... cria uma marca global A
+     mA
 \end{verbatim}
+
+Onde `{\tt m}' cria a marca e `{\tt A}' (maiúsculo) define uma marca `{\tt A}'
+acessível a qualquer momento com o comando:
+
+\begin{verbatim}
+     'A
+\end{verbatim}
+
+Isto fará o Vim dar um salto até a marca `{\tt A}' mesmo que esteja em outro arquivo,
+mesmo que você tenha acabado de fecha-lo. Para abrir e editar vários arquivos
+do Vim fazemos:
+
+\begin{verbatim}
+     vim *.txt ......... abre todos os arquivos `txt'
+     :bn ............... vai para o próximo da lista
+     :bp ............... volta para o arquivo anterior
+     :ls ............... lista todos os arquivos abertos
+     :wn ............... salva e vai para o próximo
+     :wp ............... salva e vai para o prévio
+\end{verbatim}
+
+%\section{Usando marcadores}
+% \label{Usando marcadores}
+% 
+% No Vim podemos marcar o ponto em que o cursor está para poder retornar
+% rapidamente, certifique-se de estar em modo normal, para tanto pressiona-se \verb+<Esc>+,
+% pressiona-se então a tecla ``\verb+m+'' seguida de uma das letras do alfabeto:
+% 
+% \begin{verbatim}
+%      ma ....... cria uma marca `a'
+%      `a ....... move o cursor para a marca `a'
+% \end{verbatim}
+% 
+% % Isso abaixo é uma subsection da section usando marcadores.
+% \subsection{Marcas globais}
+% \label{Marcas globais}
+% Marcas globais são marcas que permitem pular de um arquivo a outro.
+% Para criar uma marca global use a letra que designa a marca em
+% maiúsculo.
+% 
+% \begin{verbatim}
+%      mA ....... cria uma marca global A
+% \end{verbatim}
