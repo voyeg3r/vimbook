@@ -153,9 +153,9 @@ O comando `\verb|gqap|' ajusta o parágrafo atual em modo normal.
 colocará dois espaços após o ponto final ao se ajustar os parágrafos.
 
 
-geralmente usamos `\verb+^I+' para representar uma tabulação        
-<Tab>, e `\verb+$+' para indicar o fim de linha. Mas é possível     
-customizar essas opções. sintaxe:                          
+geralmente usamos `\verb+^I+' para representar uma
+tabulação\index{parágrafo!tabulação} <Tab>, e `\verb+$+' para indicar o
+fim de linha. Mas é possível     customizar essas opções. sintaxe:                          
 
 \begin{verbatim}
     
@@ -202,15 +202,16 @@ customizar essas opções. sintaxe:
      :set list
 \end{verbatim}
 
-\section{Definindo macros previamente}
-\label{Definindo macros previamente}
+\section{Definindo registros previamente}
+\label{Definindo registros previamente}
 Definindo uma macro de nome \verb|s| para ordenar e retirar linhas duplicadas
+\index{registros!definindo previamente}
 
 \begin{verbatim}
      let @s=":sort u"
 \end{verbatim}
 
-Para executar a macro \verb|s| definida acima faça:
+Para executar o registro \verb|s| definido acima faça:
 
 \begin{verbatim}
      @s
@@ -222,8 +223,8 @@ O Vim colocará no comando
      :sort -u
 \end{verbatim}
 
-Bastando pressionar \verb|<Enter>|.
-Observação: esta macro prévia pode ficar no {\tt vimrc} ou ser digitada em comando ``:''
+Bastando pressionar \verb|<Enter>|.  Observação: Este registro prévio pode
+ficar no \texttt{vimrc} ou ser digitado em comando ``:''
 
 
 \begin{verbatim}
@@ -239,6 +240,7 @@ Observação: esta macro prévia pode ficar no {\tt vimrc} ou ser digitada em co
 
 \section{Mapeamentos}\label{Mapeamentos}
 \vimhelp{key-mapping, mapping, index}
+\index{mapeamentos}
 
 Mapeamentos permitem criar atalhos de teclas para quase tudo. Tudo depende da
 criatividade do usuário e do quanto conhece o Vim, com eles podemos controlar ações
@@ -286,11 +288,12 @@ qualquer em modo de inserção ou comando, veja:
 \end{verbatim}
 
 A única diferença nos mapeamentos acima é que o mapeamento para modo de
-inserção começa com `{\tt i}', assim como para o modo ``comando'' `{\tt :}'
-começa com `{\tt c}' no caso `{\tt cmap}'.
+inserção começa com `\texttt{i}', assim como para o modo ``comando'' `\texttt{:}'
+começa com `\texttt{c}' no caso `\texttt{cmap}'.
 
 \subsection{Recarregando o arquivo de configuração}
 \label{sec:Recarregando o arquivo de configuração}
+\index{vimrc!recarregando}
 
 Cada alteração no arquivo de configuração do Vim só terá efeito na próxima vez que você
 abrir o Vim a menos que você coloque isto dentro do mesmo
@@ -308,7 +311,7 @@ abrir o Vim a menos que você coloque isto dentro do mesmo
 \end{verbatim}
 
 Agora basta pressionar ``\verb|<F12>|'' em modo normal e as alterações passam a valer
-instantaneamente, e para chamar o {\tt vimrc} basta usar.
+instantaneamente, e para chamar o `\texttt{vimrc}' basta usar.
 
 \begin{verbatim}
      ,v
@@ -342,7 +345,8 @@ A exclamação ao final torna o comando booleano, ou seja, se a
 numeração estiver ativa será desabilitada, caso contrário será
 ativada. O ``\verb|<cr>|'' ao final representa um {\tt Enter}.
 
-\subsection{Limpando o ``registro'' de buscas}\label{Limpando o ``registro'' de buscas}
+\subsection{Limpando o ``registro'' de buscas}
+\label{Limpando o ``registro'' de buscas}
 
 A cada busca, se a opção `{\tt hls}'\footnote{hls é uma abreviação de
 hightlight search} estiver habilitada o Vim faz um destaque colorido, para
@@ -363,7 +367,7 @@ teclas \verb|Shift-F11| limpe o ``registro'' de buscas
      nmap <s-f> :let @/=">"<CR>
 \end{verbatim}
 
-O atalho acima \verb|s-f| corresponde a \verb|Shift-f|.
+O atalho acima `\verb|s-f|' corresponde a `\verb|Shift-f|'.
 
 \subsection{Contar ocorrências de uma palavra} % (fold)
 \label{sub:Contar ocorrências de uma palavra}
@@ -446,6 +450,8 @@ calculadora diferente} na página~ \pageref{Uma calculadora diferente}.
 
 
 \subsection{Mapeamentos globais}
+\label{sub:Mapeamentos globais}
+\index{mapeamentos!globais}
 
 
 Podemos fazer mapeamentos globais ou que funcionam em apenas um modo:
@@ -488,6 +494,7 @@ Salvando com uma tecla de função:
 \section{Autocomandos }
 \label{Autocomandos }
 \vimhelp{autocmd.txt}
+\index{autocomandos}
 
 Autocomandos habilitam comandos automáticos para situações
 específicas. Para executar determinada ação ao
@@ -564,6 +571,7 @@ aplique a todos os tipos de aquivos.
 
 \section{Funções}
 \label{sec:Funções}
+\index{funções}
 
 \subsection{Fechamento automático de parênteses}
 \label{sec:Fechamento automático de parênteses}
@@ -607,6 +615,7 @@ aplique a todos os tipos de aquivos.
 \end{verbatim}
 
 \subsection{Função para barra de status}\label{Função para barra de status}
+\index{barra de status}
 
 \begin{verbatim}
      set statusline=%F%m%r%h%w\
@@ -771,6 +780,7 @@ Redimensionar janelas
 
 \subsection{Função para gerar backup}
 \label{Função para gerar backup}
+\index{backup!função para gerar backup}
 
 A função abaixo é útil para ser usada quando você vai editar um arquivo
 gerando modificações significativas, assim você poderá restaurar o backup se necessário
@@ -790,6 +800,7 @@ invertida ``$\backslash$'', na dúvida ``{\tt :help <leader>}''.
 
 \section{Como adicionar o Python ao {\em path} do Vim?}
 \label{Como adicionar o Python ao path do Vim?}
+\index{python!path}
 
 Coloque o seguinte
 \href{http://vim.wikia.com/wiki/Automatically\_add\_Python\_paths\_to\_Vim\_path}{script}~\cite{PythonPath}
@@ -817,6 +828,7 @@ Isto lhe permite usar `{\tt gf}' ou {\tt Ctrl-w Ctrl-F} para abrir um arquivo so
 
 \section{Criando um menu}
 \label{Criando um menu}
+\index{menus}
 
 Como no Vim podemos ter infinitos comandos fica complicado memorizar tudo
 é aí que entram os menus, podemos colocar nossos plugins e atalhos favoritos
@@ -856,6 +868,7 @@ Caso haja espaços no nome a definir você pode fazer assim
 
 \section{Exemplo de menu}
 \label{Exemplo de menu}
+\index{menus!exemplos}
 
 \begin{verbatim}
      " cores
@@ -940,6 +953,7 @@ Para mais detalhes sobre buscas acesse o capítulo``\ref{cha:Buscas e substitui�
 na página \pageref{cha:Buscas e substituições}''.
 
 \section{Complementação com ``tab''}\label{Complementação com ``tab''}
+\index{tecla!tab}
 
 \begin{verbatim}
      "Word completion
