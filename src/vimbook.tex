@@ -13,25 +13,30 @@
 
 \usepackage[T1]{fontenc}		% fonte computer modern
 % se alguém ver alguma diferença, desabilite o comentário abaixo.
-%\usepackage{ae}				% pacote de fontes opcionais
+%\usepackage{ae}			% pacote de fontes opcionais
 
 \usepackage{graphicx}			% permite inserir figuras
 \usepackage{subfigure}			% suporte a subfiguras
+\usepackage{color}			% suporte a cor
+
 \usepackage{longtable}			% tabelas longas
-\usepackage{color}				% suporte a cor
 \usepackage{multirow}			% suporte a múltiplas colunas
+
+
+\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}	% novo comando para alinhamento de colunas
+\newcommand{\mr}[3]{\multirow{#1}{#2}{#3}}	% novo comando pára alinhamento de linhas 
 
 \RequirePackage{enumerate}		% extensão para o pacote enumerate
 \usepackage{marvosym}			% gera alguns símbolos
-\usepackage{pifont}				% simbolos de setas
+\usepackage{pifont}			% simbolos de setas
 \usepackage{fancyhdr}			% pacote para personalizar o layout
 
 \usepackage{makeidx}			% inserir índice remissivo
-\makeindex						% construindo arquivo .idx
+\makeindex				% construindo arquivo .idx
 
 \usepackage{appendix}			% suporte a apendices
 
-\usepackage{url}				% inserir urls
+\usepackage{url}			% inserir urls
 \usepackage{hyperref}			% gera os links no pdf
 \hypersetup{
 pdfpagemode=UseOutlines,
@@ -48,7 +53,7 @@ urlcolor=cyan,
 bookmarksopen=false,
 pdfpagelayout=SinglePage,
 pdfpagetransition=Dissolve
-}								% configurando o hyperref
+}				% configurando o hyperref
 
 % Comando \vimhelp
 % Uso: \vimhelp{termo_1, termo_2, ..., termo_n}
@@ -78,8 +83,8 @@ pdfpagetransition=Dissolve
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
 \fancyhf{}                              % eliminando a configuração anterior
 \fancyhead[LE,RO]{\bfseries\thepage}	% núm. a esq. na pág. da esq. e a direita em contrário
-\fancyhead[LO]{\bfseries\rightmark}		% para página da esquerda, o título fica a direita
-\fancyhead[RE]{\bfseries\leftmark}		% para página da direita, o título fica a esquerda
+\fancyhead[LO]{\bfseries\rightmark}	% para página da esquerda, o título fica a direita
+\fancyhead[RE]{\bfseries\leftmark}	% para página da direita, o título fica a esquerda
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.0pt}
 \addtolength{\headheight}{2.5pt}    % 0.5pt
