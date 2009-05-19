@@ -102,6 +102,7 @@ No modo normal, ato de deletar ou eliminar o texto está associado
 à letra ``\verb|d|''. No modo de inserção as teclas usuais também 
 funcionam.
 
+ORIGINAL
 \begin{verbatim}
      dd .... deleta linha atual
      D ..... deleta restante da linha
@@ -109,6 +110,45 @@ funcionam.
      d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
      d0 .... deleta do cursor ao início da linha
 \end{verbatim}
+
+Modificado Tipo 1:
+\begin{verbatim}
+     dd .... deleta linha atual
+     D ..... deleta restante da linha
+     d$ .... deleta do ponto atual até o final da linha
+     d^ .... deleta do cursor ao primeiro caractere não-nulo da 
+             linha
+     d0 .... deleta do cursor ao início da linha
+\end{verbatim}
+
+Modificado Tipo 2:
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\verb|dd| & deleta linha atual \\
+\verb|D|  & deleta restante da linha \\
+\verb|d$| & deleta do ponto atual até o final da linha \\
+\mr{2}{*}{\texttt{d\^}} &  deleta do cursor ao primeiro caractere não-nulo da \\
+                          & linha \\ 
+\verb|d0| & deleta do cursor ao início da linha \\ \hline
+\end{tabular}
+\end{center}
+\end{table} 
+
+Contudo, como a tabela acima não tem tamanho fixo na fonte para a descrição, pode-se fazer
+\begin{table}[htb]
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\verb|dd| & deleta linha atual \\
+\verb|D|  & deleta restante da linha \\
+\verb|d$| & deleta do ponto atual até o final da linha \\
+\verb|d^| & deleta do cursor ao primeiro caractere não-nulo da linha \\ 
+\verb|d0| & deleta do cursor ao início da linha \\ \hline
+\end{tabular}
+\end{center}
+\end{table} 
 
 {\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
 comando de movimento (considere o modo normal) para apagar até a
