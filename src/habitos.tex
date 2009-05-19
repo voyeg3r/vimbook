@@ -17,12 +17,13 @@ seu artigo.
 \section{Mova-se rapidamente no texto}
 \label{sec:Mova-se rapidamente no texto}
 
-O capítulo ``Movendo-se no Documento \ref{cha:Movendo-se no Documento} na
-página \pageref{cha:Movendo-se no Documento} mostra uma série de comandos para
+O capítulo \ref{cha:Movendo-se no Documento}, ``Movendo-se no Documento, 
+página~\pageref{cha:Movendo-se no Documento} mostra uma série de comandos para
 agilizar a navegação no texto. Memorizando estes comandos ganha-se tempo
 considerável, um exemplo simples em que o usuário está na linha 345 de um arquivo
 decide ver o conteúdo da linha 1 e em seguida voltar à linha 345:
 
+\index{movendo-se!entre linhas}
 \begin{verbatim}
      gg ....... vai para a linha 1
      '' ....... retorna ao último ponto em que estava
@@ -35,6 +36,7 @@ efetiva de documentos.
 \section{Use marcas}
 veja a seção \ref{sec:UsandoMarcas} na página \pageref{sec:UsandoMarcas}.
 
+\index{marcas}
 \begin{verbatim}
      ma ..... em modo normal cria uma marca `a'
      'a ..... move o cursor até a marca `a'
@@ -96,6 +98,7 @@ inverso use `N'.
 
 \section{Use quantificadores}
 \label{Use quantificadores}
+\index{qunatificadores}
 Em modo normal você pode fazer
 
 \begin{verbatim}
@@ -108,6 +111,7 @@ Em modo normal você pode fazer
 
 \section{Edite vários arquivos de uma só vez }
 \label{Edite vários arquivos de uma só vez }
+\index{editando!vários arquivos}
 
 O Vim pode abrir vários arquivos que contenham um determinado padrão.
 Um exemplo seria abrir dezenas de arquivos HTML e trocar a ocorrência
@@ -131,7 +135,9 @@ arquivos {\tt txt} e mudar de um para o outro assim:
 O `{\tt w}' significa gravar e o `{\tt n}' significa {\em next}, ou seja,
 gravaríamos o que foi modificado no arquivo atual e mudaríamos para o próximo.
 
-{\Large {\ding{45}}} Veja também ``Movendo-se no documento'', capítulo~\ref{cha:Movendo-se no Documento} página~\pageref{cha:Movendo-se no Documento}
+{\Large {\ding{45}}} Veja também ``Movendo-se no documento'',
+capítulo~\ref{cha:Movendo-se no Documento} página~\pageref{cha:Movendo-se no
+Documento}
 
 \section{Não digite duas vezes}
 \label{Não digite duas vezes}
@@ -175,6 +181,7 @@ As linhas acima criam uma abreviação para erro de digitação da palavra `the'
 e destaca textos que você abrir que contenham este erro.
 
 \section{Use dobras}\label{sec:Use folders}
+\index{folders}
 
 O Vim pode ocultar partes do texto que não estão sendo utilizadas permitindo
 uma melhor visualização do conteúdo. Mais detalhes no capítulo
@@ -183,6 +190,7 @@ uma melhor visualização do conteúdo. Mais detalhes no capítulo
 \section{Use autocomandos}
 \label{Use autocomandos}
 \vimhelp{autocmd.txt}
+\index{autocomandos}
 
 No arquivo de configuração do Vim \verb|~/.vimrc| pode-se pode criar comandos
 automáticos que serão executados diante de uma determinada circunstância. 
@@ -217,6 +225,7 @@ augroup end
 
 
 \section{Use o File Explorer}\label{Use o file explorer}
+\index{fileExplorer}
 
 O Vim pode navegar em pastas assim:
 
