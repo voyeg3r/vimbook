@@ -37,15 +37,15 @@ de inserção, que é o modo onde escreve-se o texto naturalmente.
 Para se entrar em modo de inserção, estando em modo normal, pode-se pressionar 
 qualquer uma das teclas abaixo:
 \index{modos de operação}
-\begin{verbatim}
-     i ..... entra no modo de inserção antes do caractere atual
-     I ..... entra no modo de inserção no começo da linha
-     a ..... entra no modo de inserção após o caractere atual
-     A ..... entra no modo de inserção no final da linha
-     o ..... entra no modo de inserção uma linha abaixo
-     O ..... entra em modo de inserção uma linha cima
-     <Esc> . sai do modo de inserção
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|i| & entra no modo de inserção antes do caractere atual \\
+     \verb|I| & entra no modo de inserção no começo da linha \\
+     \verb|a| & entra no modo de inserção após o caractere atual \\
+     \verb|A| & entra no modo de inserção no final da linha \\
+     \verb|o| & entra no modo de inserção uma linha abaixo \\
+     \verb|O| & entra em modo de inserção uma linha cima \\
+     \verb|<Esc>| & sai do modo de inserção \\
+\hline \end{tabular}\end{center}\end{table}
 
 Uma vez no modo de inserção\index{modo de inserção} todas as teclas são exatamente 
 como nos outros editores simples, caracteres que constituem o conteúdo do texto 
@@ -150,6 +150,14 @@ funcionam.
 \end{center}
 \end{table} 
 
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+ \verb|dd| & deleta linha atual \\
+ \verb|D|  & deleta restante da linha \\
+ \verb|d$| & deleta do ponto atual até o final da linha \\
+ \verb|d^| & deleta do cursor ao primeiro caractere não-nulo da linha \\
+ \verb|d0| & deleta do cursor ao início da linha \\
+\hline \end{tabular}\end{center}\end{table}
+
 {\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
 comando de movimento (considere o modo normal) para apagar até a
 próxima vírgula use: ``\verb+df,+''. \\
@@ -177,51 +185,49 @@ O que foi deletado ou copiado pode ser colado\index{colar}:
 \vimhelp{deleting}
 
 \index{deletar}O comando `{\tt d}' remove o conteúdo para a memória.
-
-\begin{verbatim}
-     x .... apaga o caractere sob o cursor
-     xp ... troca letras de lugar
-     ddp .. troca linhas de lugar
-     d5x .. apaga os próximos 5 caracteres
-     dd  .. apaga a linha atual
-     5dd .. apaga 5 linhas (também pode ser: d5d)
-     d5G .. apaga até a linha 5
-     dw  .. apaga uma palavra
-     5dw .. apaga 5 palavras (também pode ser: d5w)
-     dl  .. apaga uma letra (sinônimo: x)
-     5dl .. apaga 5 letras (também pode ser: d5l ou 5x)
-     d0  .. apaga até o início da linha
-     d^  .. apaga até o primeiro caractere da linha
-     d$  .. apaga até o final da linha (sinônimo: D)
-     dgg .. apaga até o início do arquivo
-     dG  .. apaga até o final do arquivo
-     D .... apaga o resto da linha
-     d% ... deleta até o próximo (,[,{
-     da" .. deleta aspas com conteúdo
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+    \verb|x| & apaga o caractere sob o cursor \\
+    \verb|xp| & troca letras de lugar \\
+     \verb|ddp| & troca linhas de lugar \\
+     \verb|d5x| & apaga os próximos 5 caracteres \\
+     \verb|dd| & apaga a linha atual \\
+     \verb|5dd| & apaga 5 linhas (também pode ser: \verb|d5d|) \\
+     \verb|d5G| & apaga até a linha 5 \\
+     \verb|dw|  & apaga uma palavra \\
+     \verb|5dw| & apaga 5 palavras (também pode ser: \verb|d5w|) \\
+     \verb|dl|  & apaga uma letra (sinônimo: \verb|x|) \\
+     \verb|5dl| & apaga 5 letras (também pode ser: \verb|d5l| ou \verb|5x|) \\
+     \verb|d0|  & apaga até o início da linha \\
+     \verb|d^|  & apaga até o primeiro caractere da linha \\
+     \verb|d$|  & apaga até o final da linha (sinônimo: \verb|D|) \\
+     \verb|dgg| & apaga até o início do arquivo \\
+     \verb|dG|  & apaga até o final do arquivo \\
+     \verb|D| & apaga o resto da linha \\
+     \verb|d%| & deleta até o próximo \verb|(,[,{| \\
+     \verb|da"| & deleta aspas com conteúdo \\
+\hline \end{tabular}\end{center}\end{table}
 
 Depois do texto ter sido colocado na memória, digite `{\tt p}' para `inserir' o
 texto em uma outra posição. Outros comandos:
 
-\begin{verbatim}
-     diw .. apaga palavra mesmo que não esteja posicionado no início
-     dip .. apaga o parágrafo atual
-     d4b .. apaga as quatro palavras anteriores
-     dfx .. apaga até o próximo ``x''
-     d/casa/+1 - deleta até a linha após a palavra casa
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|diw| & apaga palavra mesmo que não esteja posicionado no início\\
+     \verb|dip| & apaga o parágrafo atual\\
+     \verb|d4b| & apaga as quatro palavras anteriores\\
+     \verb|dfx| & apaga até o próximo ``x''\\
+     \verb|d/casa/+1| & deleta até a linha após a palavra casa\\
+\hline \end{tabular}\end{center}\end{table}
 
 Trocando a letra `{\tt d}' nos comandos acima por `{\tt c}' de {\em change}
 (``mudança'') ao invés de deletar será feita uma mudança de conteúdo.  Por
 exemplo:
 \vimhelp{change}
-
-\begin{verbatim}
-     ciw .............. modifica uma palavra
-     cip .............. modifica um parágrafo
-     cis .............. modifica uma sentença
-     C ................ modifica até o final da linha
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|ciw| & modifica uma palavra \\
+     \verb|cip| & modifica um parágrafo\\
+     \verb|cis| & modifica uma sentença\\
+     \verb|C| &  modifica até o final da linha\\
+\hline \end{tabular}\end{center}\end{table}
 
 \subsection{Copiando sem deletar}\label{Copiando sem deletar}
 \vimhelp{yank}
@@ -231,54 +237,52 @@ texto para a memória sem deletar.  Existe uma semelhança muito grande entre
 os comandos `{\tt y}' e os comandos `{\tt d}', um ativa a `cópia' e outro a 
 `exclusão' de conteúdo, suportando ambos quantificadores:
 
-\begin{verbatim}
-     yy  .... copia a linha atual (sinônimo: Y)
-     5yy .... copia 5 linhas (também pode ser: y5y ou 5Y)
-     y/pat .. copia até `pat'
-     yw  .... copia uma palavra
-     5yw .... copia 5 palavras (também pode ser: y5w)
-     yl  .... copia uma letra
-     5yl .... copia 5 letras (também pode ser: y5l)
-     y^  .... copia da posição atual até o início da linha (sinônimo: y0)
-     y$  .... copia da posição atual até o final da linha
-     ygg .... copia da posição atual até o início do arquivo
-     yG  .... copia da posição atual até o final do arquivo
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|yy|   & copia a linha atual (sinônimo: \verb|Y|)\\
+     \verb|5yy| &  copia 5 linhas (também pode ser: \verb|y5y| ou \verb|5Y|)\\
+     \verb|y/pat| &  copia até `pat'\\
+     \verb|yw|  & copia uma palavra\\
+     \verb|5yw| & copia 5 palavras (também pode ser: \verb|y5w|)\\
+     \verb|yl|  & copia uma letra\\
+     \verb|5yl| & copia 5 letras (também pode ser: \verb|y5l|)\\
+     \verb|y^| & copia da posição atual até o início da linha (sinônimo: \verb|y0|)\\
+     \verb|y$| & copia da posição atual até o final da linha\\
+     \verb|ygg| & copia da posição atual até o início do arquivo\\
+     \verb|yG| & copia da posição atual até o final do arquivo\\
+\hline \end{tabular}\end{center}\end{table}
 
 Digite `{\tt P}' (p maiúsculo) para \index{colar}colar o texto recém copiado na p
 osição onde encontra-se o cursor, ou `{\tt p}' para colar o texto na posição 
 imediatamente após o cursor.
 
-\begin{verbatim}
-     yi" .... copia trecho entre aspas (atual - inner)
-     vip .... seleção visual para parágrafo atual 
-              `inner paragraph'
-     yip .... copia o parágrafo atual
-     yit .... copia a tag agual `inner tag' útil para arquivos 
-              HTML, XML, etc.
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|yi"| & copia trecho entre aspas (atual - inner) \\
+     \verb|vip| & seleção visual para parágrafo atual `\textit{inner paragraph}'\\
+     \verb|yip| & copia o parágrafo atual\\
+     \verb|yit| & copia a tag agual `inner tag' útil para arquivos HTML, XML, etc.\\
+\hline \end{tabular}\end{center}\end{table}
 
-\subsection{Usando a área de transferência {\em Clipboard}}
+\subsection{Usando a área de transferência \textit{Clipboard}}
 \vimhelp{paste, clipboard, quoteplus}
 
 \index{copiar}\index{colar}\index{clipboard}
 \index{área de transferência}Exemplos para o modo visual:
 
-\begin{verbatim}
-     Ctrl-insert .... copia área selecionada 
-     Shift-insert ... cola o que está no clipboard
-     Ctrl-del ....... recorta para o clipboard
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|<Ctrl-Insert>| & copia área selecionada \\
+     \verb|<Shift-Insert>| & cola o que está no clipboard\\
+     \verb|<Ctrl-Del>| & recorta para o clipboard\\
+\hline \end{tabular}\end{center}\end{table}
 
 Caso obtenhamos erro ao colar textos da área de transferência usando os
 comandos acima citados podemos usar outra alternativa.  Os comandos abaixo
 preservam a indentação\footnote{Espaçamento entre o começo da linha e o início
 do texto}.
 
-\begin{verbatim}
-     "+p ............ cola preservando indentação
-     "+y ............ copia área selecionada
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|"+p| & cola preservando indentação\\
+     \verb|"+y| & copia área selecionada\\
+\hline \end{tabular}\end{center}\end{table}
 
 {\Large \ding{45}} Para evitar erros ao colar usando {\tt Shift-insert} 
 use este comando `{\tt :set paste}'.
@@ -313,11 +317,10 @@ ignorar todas as alterações feitas desde a abertura do arquivo:
 
 O Vim, versão 7 ou superior, passa a ter um comando de ordenação que também 
 permite a retirada de linhas duplicadas, tal como foi apresentado.
-
-\begin{verbatim}
-     :sort u ... ordena e retira linhas duplicadas
-     :sort n ... ordena numericamente
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:sort u| & ordena e retira linhas duplicadas\\
+     \verb|:sort n| & ordena numericamente\\
+\hline \end{tabular}\end{center}\end{table}
 
 Obs: a ordenação numérica é diferente da ordenação alfabética se em um
 trecho contendo algo como:
@@ -359,9 +362,9 @@ Você pode fazer a ordenação em um intervalo assim:
 O comando acima diz ``{\em Ordene numericamente da linha 1 até a linha 15}''.  
 Podemos ainda ordenar à partir de uma coluna:
 
-\begin{verbatim}
-     :sort /.*\%8v/   ..... ordena à partir do 8º caractere
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:sort /.*\%8v/| & ordena à partir do 8º caractere\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Usando o \texttt{grep} interno do Vim}
 \label{sec:Usando o grep interno do Vim}\index{grep}
@@ -377,21 +380,21 @@ a opção `\c' torna a busca indiferente a letras maiúsculas e minúsculas.
 Obs: o Vim busca à partir do diretório atual, para se descobrir 
 o diretório atual ou mudá-lo:
 
-\begin{verbatim}
-    :pwd ........... exibe o diretório atual
-    :cd /diretório   muda de diretório
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+    \verb|:pwd| & exibe o diretório atual\\
+    \verb|:cd /diretório| &   muda de diretório\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Lista de alterações}\index{lista de alterações}\index{histórico}
 \vimhelp{changelist, changes}
 
 O Vim mantém uma lista de alterações, veremos agora como usar este recurso.
 
-\begin{verbatim}
-     g, ................. avança na lista de alterações
-     g; ................. recua na lista de alterações
-     :changes ........... visualiza a lista de alterações
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|g,| &  avança na lista de alterações\\
+     \verb|g;| & recua na lista de alterações\\
+     \verb|:changes| & visualiza a lista de alterações\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Substituindo tabulações por espaços}
 \label{sec:Substituindo tabulações por espaços}
@@ -417,29 +420,29 @@ onde
 \end{verbatim}
 
 Explicando:
-\begin{verbatim}
-    : ............ comando
-    % ............ em todo arquivo 
-    s ............ substitua 
-    / ............ padrão de busca
-    \s ........... localiza espaço
-    \{4,} ........ quatro vezes
-    / ............ inicio da substituição
-    <Ctrl-i> ..... pressione Ctrl-i para inserir <Tab>
-    / ............ fim da substituição
-    g ............ global
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+    \verb|:| & comando\\
+    \verb|%| & em todo arquivo \\
+    \verb|s| & substitua \\
+    \verb|/| & padrão de busca\\
+    \verb|\s| & localiza espaço\\
+    \verb|\{4,}| & quatro vezes\\
+    \verb|/| & inicio da substituição\\
+    \verb|<Ctrl-i>| & pressione \verb|<Ctrl-i>| para inserir \verb|<Tab>|\\
+    \verb|/| & fim da substituição\\
+    \verb|g| & global\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Convertendo para maiúsculas}
 \label{sec:Convertendo para maiúsculas}
 \vimhelp{case}
 
-\begin{verbatim}
-     gUU ....... converte a linha para maiúsculo
-     guu ....... converte a linha para minúsculo
-     gUiw ...... converte a palavra atual para maiúsculo
-     ~ ......... altera o case do caractere atual
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|gUU| & converte a linha para maiúsculo\\
+     \verb|guu| & converte a linha para minúsculo\\
+     \verb|gUiw| &  converte a palavra atual para maiúsculo\\
+     \verb|~| & altera o case do caractere atual\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Editando em modo de comando}
 \label{sec:Editando em modo de comando}
@@ -458,7 +461,6 @@ O comando acima move `{\tt m}' da linha 10 até a linha 20 para o final \verb|$|
 \end{verbatim}
 
 Move as linhas contendo `palavra' para o começo (linha zero)
-
 
 \begin{verbatim}
      :10,20y a
@@ -487,11 +489,11 @@ Podemos inverter a lógica do comando global \verb+g+:
 Não delete as linhas contendo padrão, ou seja, delete tudo menos as linhas
 contendo a palavra `padrão'. 
 
-\begin{verbatim}
-     :v/padrão/d ......... apaga linhas que não contenham `padrão'
-     :v/\S/d ............. apaga linhas vazias
-     \S .................. significa `sem string'
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:v/padrão/d| & apaga linhas que não contenham `padrão'\\
+     \verb|:v/\S/d| & apaga linhas vazias\\
+     \verb|\S| & significa `sem \textit{string}'\\
+\hline \end{tabular}\end{center}\end{table}
 
 A opção acima equivale a ``\verb+:g!/padrão/d+''.  Para ler mais sobre
 o comando ``global'' utilizado nesta seção veja o capítulo~\ref{sec:O comando global ``g''}.
@@ -560,32 +562,31 @@ abrir o arquivo alternativo em nova janela usando-se o atalho:
 
 Se desejamos inserir na linha atual um arquivo qualquer fazemos:
 
-\begin{verbatim}
-	 :r /caminho/para/arquivo.txt .. insere o arquivo na linha atual
-	 :0r arquivo ................... insere o arquivo na primeira linha
-\end{verbatim}
-
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+	 \verb|:r /caminho/para/arquivo.txt| & insere o arquivo na linha atual\\
+	 \verb|:0r arquivo| & insere o arquivo na primeira linha\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Incrementando números em modo normal}\label{Incrementando números em modo normal}
 \vimhelp{Ctrl-a, Ctrl-x}
 
 Posicione o cursor sobre um número e pressione
-
-\begin{verbatim}
-     Ctrl-a ..... incrementa o número
-     Ctrl-x ..... decrementa o número
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+	 \verb|Ctrl-a| & incrementa o número\\
+	 \verb|Ctrl-x| & decrementa o número\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Repetindo a digitação de linhas}
 \label{Repetindo a digitação de linhas}
 
-\begin{verbatim}
-     " atalhos para o modo insert
-     Ctrl-y ......... repete linha acima
-     Ctrl-e ......... repete linha abaixo
-     Ctrl-x Ctrl-l .. repete linhas inteiras
-     Ctrl-a ......... repete a última inserção
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+% essa primeira linha me deu dúvidas, alguém favor corrigir parte técnica
+     \verb|"| & atalhos para o modo insert\\
+     \verb|Ctrl-y| & repete linha acima\\
+     \verb|Ctrl-e| & repete linha abaixo\\
+     \verb|Ctrl-x Ctrl-l| & repete linhas inteiras\\
+     \verb|Ctrl-a| & repete a última inserção\\
+\hline \end{tabular}\end{center}\end{table}
 
 {\Large \ding{45}} Para saber mais sobre repetição de comandos veja o capítulo
 \ref{Repetição de comandos}, na página \pageref{Repetição de comandos}.
@@ -593,10 +594,10 @@ Posicione o cursor sobre um número e pressione
 \section{Movendo um trecho de forma inusitada}
 \label{Movendo um trecho de forma inusitada}
 
-\begin{verbatim}
-     :20,30m 0 ..... move da linha `20' até `30' para o começo
-     :20,/pat/m 5 .. move da linha `20' até `pat' para a linha 5
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:20,30m 0| & move da linha `20' até `30' para o começo\\
+     \verb|:20,/pat/m 5| & move da linha `20' até `\verb|pat|' para a linha 5\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Uma calculadora diferente}
 \label{Uma calculadora diferente}
@@ -632,11 +633,11 @@ complexidade.
 
 Se você cometer um erro, não se preocupe! Use o comando `{\tt u}':
 
-\begin{verbatim}
-     u ............ desfazer
-     U ............ desfaz mudanças na última linha editada
-     Ctrl-r  ...... refazer
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|u| & desfazer\\
+     \verb|U| & desfaz mudanças na última linha editada\\
+     \verb|Ctrl-r| & refazer\\
+\hline \end{tabular}\end{center}\end{table}
 
 \subsection{{\em Undo tree}}
 \label{Undo tree}
@@ -713,11 +714,10 @@ Dessa forma você acessará todas as alterações ocorridas no texto.
 
 Se não bastasse tudo isto o vim pode voltar o arquivo ao estado 
 que estava há 10 minutos atrás, por exemplo:
-
-\begin{verbatim}
-    :ealier 10m ...... 10 minutos antes
-    :later 30s ....... avança 30 segundos
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+    \verb|:ealier 10m| & 10 minutos antes\\
+    \verb|:later 30s| & avança 30 segundos\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Salvando}
 \label{sec:Salvando}
@@ -748,16 +748,16 @@ salva o arquivo com um novo nome e muda para esse novo arquivo (o arquivo
 original não é apagado).  Para sair do editor, salvando o arquivo atual, digite
 {\tt :x} (ou {\tt :wq}).
 
-\begin{verbatim}
-     :w ............................ salva
-     :w `novonome' ................. salvar como
-     :wq  .......................... salva e sai'
-     :saveas nome .................. salvar como
-     :x ............................ salva se existirem modificações
-     :10,20 w! ~/Desktop/teste.txt . sava um trecho para outro arquivo
-     :w! ........................... salvamento forçado
-     :e! ........................... reinicia a edição ignorando alterações
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:w| & salva\\
+     \verb|:w `novonome'| & salvar como\\
+     \verb|:wq| & salva e sai\\
+     \verb|:saveas nome| & salvar como\\
+     \verb|:x| & salva se existirem modificações\\
+     \verb|:10,20 w! ~/Desktop/teste.txt | & sava um trecho para outro arquivo\\
+     \verb|:w!| & salvamento forçado\\
+     \verb|:e!| & reinicia a edição ignorando alterações\\
+\hline \end{tabular}\end{center}\end{table}
 
 
 \section{Abrindo o último arquivo rapidamente}
@@ -765,11 +765,11 @@ original não é apagado).  Para sair do editor, salvando o arquivo atual, digit
 O Vim guarda um registro para cada arquivo editado veja
 mais no capítulo \ref{Registros} na página \pageref{Registros}.
 
-\begin{verbatim}
-     '0 ........ abre o último arquivo editado
-     '1 ........ abre o penúltimo arquivo editado
-     Ctrl-6 .... abre o arquivo alternativo (booleano)
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|'0| &  abre o último arquivo editado\\
+     \verb|'1| & abre o penúltimo arquivo editado\\
+     \verb|Ctrl-6| & abre o arquivo alternativo (booleano)\\
+\hline \end{tabular}\end{center}\end{table}
 
 Bom, já que abrimos o nosso último arquivo editado com o comando
 
@@ -849,13 +849,13 @@ Suponha que queira-se apagar ``{\tt é um texto}'' da linha 5 até o fim (linha
 
 Explicando o comando acima:
 
-\begin{verbatim}
-     :5,$ .... indica o intervalo que é da linha 5 até o fim `$'
-     normal .. executa em modo normal
-     0 ....... move o cursor para o começo da linha
-     w ....... pula uma palavra
-     d3w ..... apaga 3 palavras `w'
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:5,$| & indica o intervalo que é da linha 5 até o fim `\verb|$|'\\
+     \verb|normal| & executa em modo normal\\
+     \verb|0| & move o cursor para o começo da linha\\
+     \verb|w| & pula uma palavra\\
+     \verb|d3w| & apaga 3 palavras `\verb|w|'\\
+\hline \end{tabular}\end{center}\end{table}
 
 Obs: É claro que um comando de substituição simples
 
@@ -878,18 +878,18 @@ assim:
 
 Decompondo o comando acima temos:
 
-\begin{verbatim}
-     :5,$ .... indica o intervalo que é da linha 5 até o fim `$'
-     normal .. executa em modo normal
-     0 ....... move o cursor para o começo da linha
-     2w ...... pula duas palavras (vai para a palavra "é")
-     i ....... entra no modo de inserção
-     não  .... insere a palavra "não" seguida de espaço " "
-     ^[ ...... sai do modo de inserção (através de Ctrl-v seguido de Esc)
-     $ ....... vai para o fim da linha
-     ciw ..... apaga a última palavra ("novo") e entra em modo de inserção
-     velho ... insere a palavra "velho" no lugar de "novo"
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:5,$| &  indica o intervalo que é da linha 5 até o fim `\verb|$|'\\
+     \verb|normal| &  executa em modo normal\\
+     \verb|0| &  move o cursor para o começo da linha\\
+     \verb|2w| &  pula duas palavras (vai para a palavra ``é'')\\
+     \verb|i| &  entra no modo de inserção\\
+     \verb|não | &  insere a palavra ``não'' seguida de espaço ``~''\\
+     \verb|^[| & sai do modo de inserção (através de Ctrl-v seguido de Esc)\\
+     \verb|$| &  vai para o fim da linha\\
+     \verb|ciw| &  apaga a última palavra (``novo'') e entra em modo de inserção\\
+     \verb|velho| &  insere a palavra ``velho'' no lugar de ``novo''\\
+\hline \end{tabular}\end{center}\end{table}
 
 A combinação \verb|Ctrl-v| é utilizada para inserir caracteres de controle na
 sua forma literal, prevenindo-se assim a interpretação destes neste exato
@@ -900,27 +900,26 @@ momento.
 Tomando como exemplo um trecho de código como abaixo:
 
 \begin{verbatim}
-     1   input{capitulo1}
-     2   input{capitulo2}
-     3   input{capitulo3}
-     4   input{capitulo4}
-     5   input{capitulo5}
-     6   input{capitulo6}
-     7   input{capitulo7}
-     8   input{capitulo8}
-     9   input{capitulo9}
+     1   \input{capitulo1}
+     2   \input{capitulo2}
+     3   \input{capitulo3}
+     4   \input{capitulo4}
+     5   \input{capitulo5}
+     6   \input{capitulo6}
+     7   \input{capitulo7}
+     8   \input{capitulo8}
+     9   \input{capitulo9}
 \end{verbatim}
 
-Se desejamos comentar da linha 4 até a linha 9 podemos fazer:
-
-\begin{verbatim}
-     posicionar o cursor no começo da linha 4
-     Ctrl-v ........... inicia seleção por blocos
-     5j ............... estende a seleção até o fim
-     Shift-i .......... inicia inserção no começo da linha
-     % ................ insere comentário (LaTeX)
-     Esc .............. sai do modo de inserção
-\end{verbatim}
+Se desejamos comentar da linha 4 até a linha 9, primeiramente, 
+posiciona-se o cursor no começo da linha 4, em seguida:
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|Ctrl-v|| &  inicia seleção por blocos\\
+     \verb|5j| & estende a seleção até o fim\\
+     \verb|Shift-i| & inicia inserção no começo da linha\\
+     \verb|%| & insere comentário (\LaTeX)\\
+     \verb|Esc| & sai do modo de inserção\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Comparando arquivos com o vimdiff}
 \label{sec:Comparando arquivos com o vimdiff}
@@ -931,11 +930,12 @@ O vim possui um modo para checagem de diferenças entre arquivos, é bastante
 útil especialmente para programadores, para saber quais
 são as diferenças entre dois arquivos faz-se:
 
-\begin{verbatim}
-    vimdiff arquivo1.txt arquivo2.txt ... exibe as diferenças
-    ]c .................................. mostra próxima diferença
-    vim -d .............................. outro modo de abrir o vimdiff mode
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+    \verb|vimdiff arquivo1.txt arquivo2.txt| & exibe as diferenças\\
+    \verb|]c| & mostra próxima diferença\\
+    \mr{2}{*}{\texttt{vim -d}} & outro modo de abrir o vimdiff \\
+                              & mode \\
+\hline \end{tabular}\end{center}\end{table}
 
 Para usuários do GNU/Linux é possível ainda checar diferenças remotamente assim:
 
