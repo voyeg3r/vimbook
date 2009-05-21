@@ -65,45 +65,45 @@ pressione \verb|<Esc>| ou use \verb|Ctrl-[| (\verb|^[|).
 \index{movendo-se!efetuando saltos}
 No vim é possível realizar diversos tipos de movimentos, também conhecidos como saltos no 
 documento. A lista abaixo aponta o comandos de salto típicos.
-\begin{verbatim}
-     gg .... vai para o início do arquivo
-     G ..... vai para o final do arquivo
-     0 ..... vai para o início da linha
-     ^ ..... vai para o primeiro caractere da linha (ignora espaços)
-     $ ..... vai para o final da linha
-     25gg .. salta para a linha 25
-     '' .... salta para a linha da última posição em que o cursor estava
-     fx .... para primeira ocorrência de x
-     tx .... Para ir para uma letra antes de x
-     Fx .... Para ir para ocorrência anterior de x
-     Tx .... Para ir para uma letra após o último x
-     * ..... Próxima ocorrência de palavra sob o cursor
-     `' .... salta exatamente para a posição em que o cursor estava
-     gd .... salta para declaração de variável sob o cursor
-     gD .... salta para declaração (global) de variável sob o cursor
-     w ..... move para o início da próxima palavra
-     W ..... pula para próxima palavra (desconsidera hífens)
-     E ..... pula para o final da próxima palavra (desconsidera hifens)
-     e ..... move o cursor para o final da próxima palavra
-     zt .... movo o cursor para o topo da página
-     zm .... move o cursor para o meio da página
-     zz .... move a página de modo com que o cursor fique no centro
-     n ..... move o cursor para a próxima ocorrência da busca
-     N ..... move o cursor para a ocorrência anterior da busca
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|gg| &  vai para o início do arquivo\\
+     \verb|G| &  vai para o final do arquivo\\
+     \verb|0| &  vai para o início da linha\\
+     \verb|^| &  vai para o primeiro caractere da linha (ignora espaços)\\
+     \verb|$| &  vai para o final da linha\\
+     \verb|25gg| &  salta para a linha 25\\
+     \verb|''| &  salta para a linha da última posição em que o cursor estava\\
+     \verb|fx| &  para primeira ocorrência de \verb|x|\\
+     \verb|tx| &  para ir para uma letra antes de \verb|x|\\
+     \verb|Fx| &  para ir para ocorrência anterior de \verb|x|\\
+     \verb|Tx| &  para ir para uma letra após o último \verb|x|\\
+     \verb|*| & próxima ocorrência de palavra sob o cursor\\
+     \verb|`'| &  salta exatamente para a posição em que o cursor estava\\
+     \verb|gd| &  salta para declaração de variável sob o cursor\\
+     \verb|gD| &  salta para declaração (global) de variável sob o cursor\\
+     \verb|w| &  move para o início da próxima palavra\\
+     \verb|W| &  pula para próxima palavra (desconsidera hífens)\\
+     \verb|E| & pula para o final da próxima palavra (desconsidera hifens)\\
+     \verb|e| &  move o cursor para o final da próxima palavra\\
+     \verb|zt| &  movo o cursor para o topo da página\\
+     \verb|zm| &  move o cursor para o meio da página\\
+     \verb|zz| &  move a página de modo com que o cursor fique no centro\\
+     \verb|n| &  move o cursor para a próxima ocorrência da busca\\
+     \verb|N| &  move o cursor para a ocorrência anterior da busca\\
+\hline \end{tabular}\end{center}\end{table}
 
 Também é possível efetuar saltos e fazer algo mais ao mesmo tempo, a lista abaixo aponta 
 algumas dessas possibilidades. % Na verdade nenhum desses comandos são apenas movimentos. 
 % Deixar aqui é interessante, mas não misturar com a lista acima
-\begin{verbatim}     
-     gv .... repete a última seleção visual e posiciona o cursor neste local
-     % ..... localiza parênteses correspondente
-     o ..... letra `o', alterna extremos de seleção visual
-     yG .... copia da linha atual até o final do arquivo
-     d$ .... deleta do ponto atual até o final da linha
-     gi .... entra em modo de inserção no ponto da última edição
-     gf .... abre o arquivo sob o cursor
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|gv| & repete a última seleção visual e posiciona o cursor neste local\\
+     \verb|%| &  localiza parênteses correspondente\\
+     \verb|o| &  letra `o', alterna extremos de seleção visual\\
+     \verb|yG| & copia da linha atual até o final do arquivo\\
+     \verb|d$| & deleta do ponto atual até o final da linha\\
+     \verb|gi| & entra em modo de inserção no ponto da última edição\\
+     \verb|gf| & abre o arquivo sob o cursor\\
+\hline \end{tabular}\end{center}\end{table}
 
 %\section{Big words}\label{Big words}
 \index{movendo-se!em palavras grandes}\index{movendo-se!big words}

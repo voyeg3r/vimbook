@@ -133,9 +133,9 @@ Abaixo segue a sintese dos comandos para salvar os arquivos.
      \verb|:w| & salva\\
      \verb|:w `novonome'| & salvar como\\
      \verb|:wq| & salva e sai\\
-     \verb|:saveas novonome| & salvar como (igual a \verb|:w `novonome'|``)\\
+     \verb|:saveas novonome| & salvar como (igual a \verb|:w `novonome'|)\\
      \verb|:x| & salva se existirem modificações\\
-     \verb|:10,20 w! ~/Desktop/teste.txt | & sava um trecho para outro arquivo\\
+     \verb|:10,20 w! ~/Desktop/teste.txt | & salva um trecho para outro arquivo\\
      \verb|:w!| & salvamento forçado\\
      \verb|:e!| & reinicia a edição ignorando alterações\\
      \verb|ZZ| & salva e sai (igual a \verb|:wq|)\\
@@ -183,18 +183,6 @@ funcionam.
 %\end{table} 
 %
 %Contudo, como a tabela acima não tem tamanho fixo na fonte para a descrição, pode-se fazer
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{ll}
-\hline
-\verb|dd| & deleta linha atual \\
-\verb|D|  & deleta restante da linha \\
-\verb|d$| & deleta do ponto atual até o final da linha \\
-\verb|d^| & deleta do cursor ao primeiro caractere não-nulo da linha \\ 
-\verb|d0| & deleta do cursor ao início da linha \\ \hline
-\end{tabular}
-\end{center}
-\end{table} 
 
 \begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
  \verb|dd| & deleta linha atual \\
@@ -206,7 +194,7 @@ funcionam.
 
 {\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
 comando de movimento (considere o modo normal) para apagar até a
-próxima vírgula use: ``\verb+df,+''. \\
+próxima vírgula use: ``\verb+df,+''. 
 
 \index{copiar}Copiar está associado à letra ``\verb|y|''.
 
@@ -738,7 +726,7 @@ considera cada inserção uma ação.  Agora usando o atalho de desfazer
 tradicional ``u'' e de refazer {\tt Ctrl-r} observe que não é mais possível
 acessar todas as alterações efetuadas. Em resumo, se você fizer uma
 nova alteração após um desfazer (alteração derivada) o comando refazer
-não mais vai ser possível para aquele momento. \\
+não mais vai ser possível para aquele momento. 
 
 Agora volte até a alteração 1 e use seguidas vezes:
 
