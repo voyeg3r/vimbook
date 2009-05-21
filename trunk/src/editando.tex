@@ -156,20 +156,22 @@ próxima vírgula use: ``\verb+df,+''. \\
 
 \index{copiar}Copiar está associado à letra ``\verb|y|''.
 
-\begin{verbatim}
-     yy .... copia a linha atual
-     Y ..... copia a linha atual
-     ye .... copia do cursor ao fim da palavra
-     yb .... copia do começo da palavra ao cursor
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|yy| & copia a linha atual \\
+     \verb|Y| & copia a linha atual \\
+     \verb|ye| & copia do cursor ao final da palavra \\
+     \verb|yb| & copia do começo da palavra ao cursor \\
+\hline \end{tabular}\end{center}\end{table}
+
 
 O que foi deletado ou copiado pode ser colado\index{colar}:
-\begin{verbatim}
-     p .... cola o que foi copiado ou deletado abaixo
-     P .... cola o que foi copiado ou deletado acima
-     [p ... cola o que foi copiado ou deletado antes do cursor
-     ]p ... cola o que foi copiado ou deletado após o cursor
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|p| & cola o que foi copiado ou deletado abaixo \\
+     \verb|P| & cola o que foi copiado ou deletado acima  \\
+     \verb|[p| & cola o que foi copiado ou deletado antes do cursor \\
+     \verb|]p| & cola o que foi copiado ou deletado depois do cursor \\ 
+\hline \end{tabular}\end{center}\end{table}
+
 
 \subsection{Deletando uma parte do texto}\label{Deletando uma parte do texto}
 \vimhelp{deleting}
