@@ -102,42 +102,42 @@ No modo normal, ato de deletar ou eliminar o texto está associado
 à letra ``\verb|d|''. No modo de inserção as teclas usuais também 
 funcionam.
 
-ORIGINAL
-\begin{verbatim}
-     dd .... deleta linha atual
-     D ..... deleta restante da linha
-     d$ .... deleta do ponto atual até o final da linha
-     d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
-     d0 .... deleta do cursor ao início da linha
-\end{verbatim}
-
-Modificado Tipo 1:
-\begin{verbatim}
-     dd .... deleta linha atual
-     D ..... deleta restante da linha
-     d$ .... deleta do ponto atual até o final da linha
-     d^ .... deleta do cursor ao primeiro caractere não-nulo da 
-             linha
-     d0 .... deleta do cursor ao início da linha
-\end{verbatim}
-
-Modificado Tipo 2:
-\begin{table}[htb]
-\begin{center}
-\begin{tabular}{ll}
-\hline
-\verb|dd| & deleta linha atual \\
-\verb|D|  & deleta restante da linha \\
-\verb|d$| & deleta do ponto atual até o final da linha \\
-\mr{2}{*}{\texttt{d\^}} &  deleta do cursor ao primeiro caractere não-nulo da \\
-                          & linha \\ 
-\verb|d0| & deleta do cursor ao início da linha \\ \hline
-\end{tabular}
-\end{center}
-\end{table} 
-
-Contudo, como a tabela acima não tem tamanho fixo na fonte para a descrição, pode-se fazer
-\begin{table}[htb]
+%ORIGINAL
+%\begin{verbatim}
+%     dd .... deleta linha atual
+%     D ..... deleta restante da linha
+%     d$ .... deleta do ponto atual até o final da linha
+%     d^ .... deleta do cursor ao primeiro caractere não-nulo da linha
+%     d0 .... deleta do cursor ao início da linha
+%\end{verbatim}
+%
+%Modificado Tipo 1:
+%\begin{verbatim}
+%     dd .... deleta linha atual
+%     D ..... deleta restante da linha
+%     d$ .... deleta do ponto atual até o final da linha
+%     d^ .... deleta do cursor ao primeiro caractere não-nulo da 
+%             linha
+%     d0 .... deleta do cursor ao início da linha
+%\end{verbatim}
+%
+%Modificado Tipo 2:
+%\begin{table}[htb]
+%\begin{center}
+%\begin{tabular}{ll}
+%\hline
+%\verb|dd| & deleta linha atual \\
+%\verb|D|  & deleta restante da linha \\
+%\verb|d$| & deleta do ponto atual até o final da linha \\
+%\mr{2}{*}{\texttt{d\^}} &  deleta do cursor ao primeiro caractere não-nulo da \\
+%                          & linha \\ 
+%\verb|d0| & deleta do cursor ao início da linha \\ \hline
+%\end{tabular}
+%\end{center}
+%\end{table} 
+%
+%Contudo, como a tabela acima não tem tamanho fixo na fonte para a descrição, pode-se fazer
+%\begin{table}[htb]
 \begin{center}
 \begin{tabular}{ll}
 \hline
@@ -194,6 +194,8 @@ O que foi deletado ou copiado pode ser colado\index{colar}:
      dgg .. apaga até o início do arquivo
      dG  .. apaga até o final do arquivo
      D .... apaga o resto da linha
+     d% ... deleta até o próximo (,[,{
+     da" .. deleta aspas com conteúdo
 \end{verbatim}
 
 Depois do texto ter sido colocado na memória, digite `{\tt p}' para `inserir' o
