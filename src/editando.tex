@@ -57,7 +57,7 @@ sair do modo de inserção e digite o comando:
 \begin{verbatim}
      :w 
 \end{verbatim}
-para gravar o conteúdo.
+para gravar o conteúdo. A seção seguinte irá detalhar as diversas opções de como salvar um texto.
 
 Caso queira sair do editor\index{fechar o programa}, digite o comando:
 \begin{verbatim}
@@ -94,6 +94,52 @@ abrindo espaço para os demais comandos.
 Isso não impede que o usuário experimente cada comando conforme for lendo.
 De fato, essa prática pode ajudar a selecionar as formas de edição que lhe
 são mais simpáticas ao uso.
+
+\section{Salvando o Texto}
+\label{sec:Salvando}
+\vimhelp{writing}
+
+Como mencionado, a forma mais simples de salvar um arquivo, é, 
+no modo normal, usar o comando:
+\begin{verbatim}
+     :w
+\end{verbatim}
+
+Para criar um novo arquivo com o conteúdo atual, digite:
+\begin{verbatim}
+     :w! >> ``/caminho/completo/file''
+\end{verbatim}
+O conteúdo será gravado no arquivo ``{\tt file}'' e você continuará no
+ arquivo original.
+
+Também existe o comando
+
+\begin{verbatim}
+     :saveas novonome
+\end{verbatim}
+
+e
+
+\begin{verbatim}
+     :w novonome
+\end{verbatim}
+salva o arquivo com um novo nome e muda para esse novo arquivo (o arquivo
+original não é apagado). 
+
+Para sair do editor, salvando o arquivo atual, digite {\tt :x} (ou {\tt :wq}).
+
+Abaixo segue a sintese dos comandos para salvar os arquivos.
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|:w| & salva\\
+     \verb|:w `novonome'| & salvar como\\
+     \verb|:wq| & salva e sai\\
+     \verb|:saveas novonome| & salvar como (igual a \verb|:w `novonome'|``)\\
+     \verb|:x| & salva se existirem modificações\\
+     \verb|:10,20 w! ~/Desktop/teste.txt | & sava um trecho para outro arquivo\\
+     \verb|:w!| & salvamento forçado\\
+     \verb|:e!| & reinicia a edição ignorando alterações\\
+     \verb|ZZ| & salva e sai (igual a \verb|:wq|)\\
+\hline \end{tabular}\end{center}\end{table}
 
 \section{Copiar, Colar e Deletar}\label{sec:CopiarColarEDeletar}
 \vimhelp{delete, d}
@@ -719,47 +765,6 @@ que estava há 10 minutos atrás, por exemplo:
     \verb|:later 30s| & avança 30 segundos\\
 \hline \end{tabular}\end{center}\end{table}
 
-\section{Salvando}
-\label{sec:Salvando}
-\vimhelp{writing}
-
-A maneira mais simples de salvar um arquivo, é usar o comando:
-
-\begin{verbatim}
-     :w
-\end{verbatim}
-
-
-Para especificar um novo nome para o arquivo, simplesmente digite:
-
-\begin{verbatim}
-     :w! >> ``file''
-\end{verbatim}
-
-O conteúdo será gravado no arquivo ``{\tt file}'' e você continuará no arquivo original.
-
-Também existe o comando
-
-\begin{verbatim}
-     :saveas nome
-\end{verbatim}
-
-salva o arquivo com um novo nome e muda para esse novo arquivo (o arquivo
-original não é apagado).  Para sair do editor, salvando o arquivo atual, digite
-{\tt :x} (ou {\tt :wq}).
-
-\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
-     \verb|:w| & salva\\
-     \verb|:w `novonome'| & salvar como\\
-     \verb|:wq| & salva e sai\\
-     \verb|:saveas nome| & salvar como\\
-     \verb|:x| & salva se existirem modificações\\
-     \verb|:10,20 w! ~/Desktop/teste.txt | & sava um trecho para outro arquivo\\
-     \verb|:w!| & salvamento forçado\\
-     \verb|:e!| & reinicia a edição ignorando alterações\\
-\hline \end{tabular}\end{center}\end{table}
-
-
 \section{Abrindo o último arquivo rapidamente}
 
 O Vim guarda um registro para cada arquivo editado veja
@@ -929,7 +934,7 @@ posiciona-se o cursor no começo da linha 4, em seguida:
 O vim possui um modo para checagem de diferenças entre arquivos, é bastante
 útil especialmente para programadores, para saber quais
 são as diferenças entre dois arquivos faz-se:
-
+% observe que foi necessário duas linhas nessa tabela
 \begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
     \verb|vimdiff arquivo1.txt arquivo2.txt| & exibe as diferenças\\
     \verb|]c| & mostra próxima diferença\\
