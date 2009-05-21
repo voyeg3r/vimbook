@@ -71,27 +71,28 @@ começo da linha este recurso chama-se {\em modeline}, leia mais na seção
 \section{Manipulando dobras }
 \label{Manipulando dobras }
 
-\begin{verbatim}
-     zo ................ abre a dobra
-     zO ................ abre a dobra, recursivamente
-     za ................ abre/fecha (alterna) a dobra
-     zA ................ abre/fecha (alterna) a dobra, recursivamente
-     zR ................ abre todas as dobras do arquivo atual
-     zc ................ fecha uma dobra
-     zC ................ fecha a dobra abaixo do cursor, recursivamente
-     zfap .............. cria uma dobra para o parágrafo `ap' atual
-     zf/casa ........... cria uma dobra até a palavra casa
-     zf'a .............. cria uma dobra até a marca `a'
-     zd ................ apaga a dobra (não o seu conteúdo)
-     zj ................ move para o início da próxima dobra
-     zk ................ move para o final da dobra anterior
-     [z ................ move o cursor para início da dobra aberta
-     ]z ................ move o cursor para o fim da dobra aberta
-     zi ................ desabilita ou habilita as dobras
-     zm, zr ............ diminui/aumenta nível da dobra `fdl'
-     :set fdl=0 ........ nível da dobra 0 (foldlevel)
-     :set foldcolumn=4 . mostra uma coluna ao lado da numeração
-\end{verbatim}
+\begin{table}[htb]\begin{center} \begin{tabular}{ll} \hline
+     \verb|zo| &  abre a dobra\\
+     \verb|zO| &  abre a dobra, recursivamente\\
+     \verb|za| &  abre/fecha (alterna) a dobra\\
+     \verb|zA| & abre/fecha (alterna) a dobra, recursivamente\\
+     \verb|zR| &  abre todas as dobras do arquivo atual\\
+     \verb|zc| &  fecha uma dobra\\
+     \verb|zC| &  fecha a dobra abaixo do cursor, recursivamente\\
+     \verb|zfap| &  cria uma dobra para o parágrafo `ap' atual\\
+     \verb|zf/casa| &  cria uma dobra até a palavra casa\\
+     \verb|zf'a| &  cria uma dobra até a marca `a'\\
+     \verb|zd| &  apaga a dobra (não o seu conteúdo)\\
+     \verb|zj| &  move para o início da próxima dobra\\
+     \verb|zk| &  move para o final da dobra anterior\\
+     \verb|[z| &  move o cursor para início da dobra aberta\\
+     \verb|]z| &  move o cursor para o fim da dobra aberta\\
+     \verb|zi| &  desabilita ou habilita as dobras\\
+     \verb|zm, zr| &  diminui/aumenta nível da dobra `fdl'\\
+     \verb|:set fdl=0| &  nível da dobra 0 (foldlevel)\\
+     \verb|:set foldcolumn=4| & mostra uma coluna ao lado da numeração\\
+\hline \end{tabular}\end{center}\end{table}
+
 
 Para abrir e fechar as dobras usando a barra de
 espaços coloque o trecho abaixo no seu arquivo de configuração do Vim
