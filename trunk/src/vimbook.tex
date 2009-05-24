@@ -98,6 +98,9 @@ pdfpagetransition=Dissolve
 \setlength{\parindent}{0em} % indentação dos parágrafos
 \setlength{\parskip}{5pt plus 1pt minus 1pt} 
 
+% Numeração romana para as páginas iniciais
+\pagenumbering{roman}
+
 \begin{document}
 \DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.eps}	% extensões de imagens
 
@@ -176,7 +179,11 @@ $\vdots$ 						& $\vdots$ 							\\
 \newpage
 \tableofcontents
 
-\setcounter{page}{0} %reset the page counter
+% Numeração arábica
+\clearpage
+\pagebreak
+\pagenumbering{arabic}
+% \setcounter{page}{0} %reset the page counter
 
 \include{intro}
 \include{editando}
