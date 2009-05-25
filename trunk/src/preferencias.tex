@@ -145,19 +145,16 @@ set mousemodel=popup ..... "exibe o conteúdo de folders e sugestões spell
 set viminfo=%,'50,\"100,/100,:100,n "armazena opções (buffers)
 \end{verbatim}
 
-\section{Detectando erros na configuração do vim} % (fold)
-\label{sec:Detectando erros na configuração do vim}
-\index{vimrc!ignorando}
 
-Se ao iniciar o vim obtivermos mensagens de erros e houver dúvida
-se o erro é no vim ou em sua configuração pode-se inicia-lo sem 
-que o mesmo carregue o arquivo o arquivo `\texttt{.vimrc}'.
+{\Large {\ding{45}}} Se ao iniciar o vim obtivermos mensagens de erros
+e houver dúvida se o erro é no vim ou em sua configuração, pode-se
+inicia-lo sem que o mesmo carregue o arquivo 
+`\texttt{.vimrc}'.  \index{vimrc!ignorando}
 
 \begin{verbatim}
     :vim -u NONE
 \end{verbatim}
 
-% end section Detectando erros na configuração do vim (end)
 
 \section{Ajustando parágrafos em modo normal} % (fold)
 \label{sec:Ajustando parágrafos em modo normal}
