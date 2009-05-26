@@ -6,7 +6,6 @@
 \label{cha:Folders}
 {\em Folders} são como dobras nas quais o Vim esconde partes do texto,
 algo assim:
-
 \begin{verbatim}
      +-- 10 linhas ---------------------------
 \end{verbatim}
@@ -17,13 +16,11 @@ texto tente usar dobras, isto permite uma visualização completa do
 texto.  Um modo de entender rapidamente como funcionam as dobras no
 Vim seria criando uma ``dobra'' para as próximas 10 (dez) linhas com o
 comando abaixo:
-
 \begin{verbatim}
      zf10j
 \end{verbatim}
 
 Você pode ainda criar uma seleção visual
-
 \begin{verbatim}
      Shift-v ............ seleção por linha
      j .................. desce linha
@@ -34,7 +31,6 @@ Você pode ainda criar uma seleção visual
 \section{Métodos de dobras }
 \label{Métodos de dobras }
 O Vim tem seis modos {\em fold}, são eles:
-
 \begin{itemize}
 \item Sintaxe ({\em syntax})
 \item Identação ({\em indent})
@@ -45,20 +41,17 @@ O Vim tem seis modos {\em fold}, são eles:
 \end{itemize}
 
 Para determinar o tipo de dobra faça
-
 \begin{verbatim}
      :set foldmethod=tipo
 \end{verbatim}
 
 onde o tipo pode ser um dos tipos listados acima, exemplo:
-
 \begin{verbatim}
      :set foldmethod=marker
 \end{verbatim}
 
 Outro modo para determinar o método de dobra seria colocando na última
 linha do seu arquivo algo assim:
-
 \begin{verbatim}
      vim:fdm=marker:fdl=0:
 \end{verbatim}
@@ -71,12 +64,14 @@ começo da linha este recurso chama-se {\em modeline}, leia mais na seção
 \section{Manipulando dobras }
 \label{Manipulando dobras }
 
+Os principais comandos relativos ao uso de dobras são:
 \begin{verbatim}
      zo ................ abre a dobra
      zO ................ abre a dobra, recursivamente
      za ................ abre/fecha (alterna) a dobra
      zA ................ abre/fecha (alterna) a dobra, recursivamente
      zR ................ abre todas as dobras do arquivo atual
+     zM ................ fecha todas as dobras do arquivo atual
      zc ................ fecha uma dobra
      zC ................ fecha a dobra abaixo do cursor, recursivamente
      zfap .............. cria uma dobra para o parágrafo `ap' atual
@@ -97,24 +92,21 @@ Para abrir e fechar as dobras usando a barra de
 espaços coloque o trecho abaixo no seu arquivo de configuração do Vim
 \verb|.vimrc| - veja o capítulo \ref{cha:Como editar preferências no Vim}, página
 \pageref{cha:Como editar preferências no Vim}.
-
 \begin{verbatim}
      nnoremap <space> @=((foldclosed(line(".")) < 0) ? 'zc' : 'zo')<CR>
 \end{verbatim}
 
-Para abrir e fechar as dobras utilizando o clique do mouse, basta
+% Alguém confira essa informações, porque é assim que funciona comigo
+Para abrir e fechar as dobras utilizando o clique do mouse no gvim, basta
 acrescentar na configuração do seu \verb|.vimrc|:
-
 \begin{verbatim}
      set foldcolumn=2
 \end{verbatim}
-
 o que adiciona uma coluna ao lado da coluna de enumeração das linhas.
 
 \section{Criando dobras usando o modo visual}
 \label{Criando folders usando o modo visual}
 Para iniciar a seleção visual
-
 \begin{verbatim}
      Esc ........ vai para o modo normal
      shift-v .... inicia seleção visual
@@ -123,9 +115,9 @@ Para iniciar a seleção visual
 \end{verbatim}
 
 Um modo inusitado de se criar dobras é:
-
 \begin{verbatim}
      Shift-v ..... inicia seleção visual
      /chapter/-2 . extende a seleção até /chapter -2 linhas
      zf .......... cria a dobra
 \end{verbatim}
+
