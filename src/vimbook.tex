@@ -16,6 +16,7 @@
 %\usepackage{ae}			% pacote de fontes opcionais
 
 \usepackage{graphicx}			% permite inserir figuras
+\usepackage{xy}                    % acho que é o pacote necessário para colocar as figuras das teclas
 \usepackage{subfigure}			% suporte a subfiguras
 \usepackage{color}			% suporte a cor
 
@@ -77,6 +78,10 @@ pdfpagetransition=Dissolve
      \addvspace{1ex plus 0.8ex minus 0.2ex}% 
      \vskip -\parskip\noindent\ignorespaces}
 
+% novo comando para teclas de atalho: para usar control-n faça --> \key{Ctrl}+\key{N} 
+%\newcommand{\key}[1]{\mbox{\rule[-8.5pt]{0pt}{18pt}}\rule{1pt}{0pt}\framebox[\width]{\vphantom{Yg}\hphantom{-}\texttt{#1}\hphantom{-}}\rule{1pt}{0pt}}
+\newcommand{\key}[1]{\rule[-5.5pt]{0pt}{16pt}\rule{1pt}{0pt}\raisebox{2.5pt}{\xymatrix@1{*+[F-:<2pt>]{\rule[-2.5pt]{0pt}{11pt}\hphantom{|}\texttt{#1}\hphantom{|}}}\rule{1pt}{0pt}}}
+
 % Defininindo o estilo de página
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -97,6 +102,10 @@ pdfpagetransition=Dissolve
 
 \setlength{\parindent}{0em} % indentação dos parágrafos
 \setlength{\parskip}{5pt plus 1pt minus 1pt} 
+
+
+\input xy
+\xyoption{all}
 
 % Numeração romana para as páginas iniciais
 \pagenumbering{roman}
