@@ -160,31 +160,31 @@ mouse também funciona, e para voltar use \key{ctrl}+\key{o} ou
 
 \section{Em caso de erros }\label{Em caso de erros }
 %
-Recarregue\index{em caso de erros} o arquivo que está sendo editado assim:
+Recarregue\index{em caso de erros} o arquivo que está sendo editado pressionando
+\key{Esc} e em seguida usando o comando `\texttt{:e}'.
+ou simplesmente inicie outro arquivo ignorando o atual, com o comando `\texttt{:enew!}',
+ou saia do arquivo sem modifica-lo, com `\texttt{:q!}'. Pode-se ainda tentar gravar
+forçado com o comando `\texttt{:wq!}'
 
-\begin{verbatim}
-     \key{Esc} .. para sair do modo de edição
-     :e! .... recarrega o arquivo sem qualquer edição
-\end{verbatim} % quando se quer continuar um texto abaixo de uma região, 
-               % não se pula linha para evitar parágrafo forçado
-               % comentário não é pular linha
-ou simplesmente inicie outro arquivo ignorando o atual, com
-\begin{verbatim}
-     :enew!
-\end{verbatim}
+% quando se quer continuar um texto abaixo de uma região, 
+% não se pula linha para evitar parágrafo forçado
+% comentário não é pular linha
+%\begin{verbatim}
+%     :enew!
+%\end{verbatim}
+%%
+%ou saia do arquivo sem modifica-lo, com
 %
-ou saia do arquivo sem modifica-lo, com
+%\begin{verbatim}
+     %:q! .... saída forçada, nada é alterado
+%\end{verbatim}
 %
-\begin{verbatim}
-     :q! .... saída forçada, nada é alterado
-\end{verbatim}
+%ou tente gravar e sair forçado, com
 %
-ou tente gravar e sair forçado, com
+%\begin{verbatim}
+%     :wq! ... tenta gravar e sair forçado
+%\end{verbatim}
 %
-\begin{verbatim}
-     :wq! ... tenta gravar e sair forçado
-\end{verbatim}
-
 \section{Como interpretar atalhos e comandos}\label{Como interpretar atalhos e comandos}
 %
 A tecla ``\verb|<Ctrl>|''\index{tecla!\texttt{<ctrl>}} é representada na maioria dos manuais e na ajuda
