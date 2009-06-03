@@ -15,26 +15,50 @@ o blog, escrever recados ou simplesmente trocar mensagens instantâneas pela
 internet. Administradores de sistemas editam arquivos de configuração, criam
 regras de segurança, editam {\em scripts} e manipulam saídas de comandos
 armazenados em arquivos de texto. Programadores desenvolvem códigos-fonte e a
-documentação de programas essencialmente em editores de texto.  Desenvolvedores {\em web}
-interagem com editores de texto para criarem {\em layout} e dinâmica de sites.
+documentação de programas essencialmente em editores de texto.  Desenvolvedores
+{\em web} interagem com editores de texto para criarem {\em layout} e dinâmica 
+de sites.
 
 Tamanha é a frequência e onipresença da tarefa de edição de texto que a
 eficiência, flexibilidade e o repertório de ferramentas de editores de texto
 tornam-se quesitos críticos para se atingir {\em produtividade} e {\em
 conforto} na edição de textos.
-%
+
 % falar da não trivialidade do aprendizado (curva de aprendizado), mas também
 % da eficiência e produtividade a médio/longo prazo
+% Mitre - adicionando essa sugestão acima... 
+%         requer revisão, quem o fizer, elimine esses comentários.
+Qualquer tarefa de aprendizado requer um certo esforço. Todo programa 
+introduz novos conceitos, opções e configurações que transformam o \textit{
+modus operanti} do usuário. Em princípio, quanto maior o esforço, maior o
+benefício. Quem quer apenas escrever textos, pode-se contentar com um editor
+básico, cuja as únicas opções são digitar o texto, abrir e salvar o documento 
+ou pode utilizar um editor que permita pré-configurar ações, formatar o 
+conteúdo, revisar a ortografia, etc, além da ação básica que é escrever textos.
+
+Qualquer usuário de computador pode abrir o primeiro tipo de editor e
+imediatamente começar a escrever, a curto prazo, sua ação terá consequências
+imediatas e não requer conhecimentos adicionais. Por outro lado, o esse usuário
+terá que fazer esforço para digitar o mesmos cabeçalho todos os dias. 
+
+O outro tipo de editor permite que o usuário pré-configure o cabeçalho do
+documento e todos os dias esse trecho já estará digitado. Em contrapartida, o
+usuário deve aprender como pré-configurar o editor. O que requer esforço para
+aprender a utilizar o programa escolhido. O benefício somente será observado a
+médio/longo prazo, quando o tempo ganho ao utilizar a configuração será
+superior ao tempo consumido aprendendo sobre o programa.
+% ---------------------
 
 O ``\href{http://www.vim.org}{Vim}''\footnote{Vim - \url{http://www.vim.org}}
-\index{vim} é um editor de texto extremamente configurável, criado para permitir a
-edição de forma eficiente, tornando-a produtiva e confortável. 
+\index{vim} é um editor de texto extremamente configurável, criado para
+permitir a edição de forma eficiente, tornando-a produtiva e confortável. 
 Também é uma aprimoração do editor ``Vi'', um tradicional programa dos
 sistemas Unix. Possui uma série de mudanças em relação a este último. O
 próprio slogan do Vim é {\em Vi IMproved}, ou seja, {\em Vi Melhorado}.  O Vim
 é tão conhecido e respeitado entre programadores, e tão útil para programação,
-que muitos o consideram uma verdadeira ``IDE\index{ide}\footnote{Ambiente Integrado de
-Desenvolvimento.}''.
+que muitos o consideram uma verdadeira ``IDE\index{ide} (\textit{Integrated 
+Development Environment}, em português, Ambiente Integrado de 
+Desenvolvimento''.
 
 Ele é capaz de reconhecer mais de 500 sintaxes de linguagens de programação e
 marcação, possui mapeamento para teclas, macros, abreviações, busca por
@@ -75,19 +99,20 @@ o desse livro sobre vim.
 \end{figure}
 
 O Vim conta com uma comunidade bastante atuante e é, ao lado do
-Emacs\footnote{Emacs - \url{http://www.gnu.org/software/emacs/}}, um dos editores mais usados
-nos sistemas GNU/Linux\footnote{O kernel Linux sem os programas GNU não
-serviria para muita coisa.}, embora esteja também disponível em outros sistemas,
-como o Windows e o Macintosh. %O site oficial do Vim é \url{http://www.vim.org}.
+Emacs\footnote{Emacs - \url{http://www.gnu.org/software/emacs/}}, um dos 
+editores mais usados nos sistemas GNU/Linux\footnote{O kernel Linux sem os 
+programas GNU não serviria para muita coisa.}, embora esteja também disponível
+em outros sistemas, como o Windows e o Macintosh. 
+%O site oficial do Vim é \url{http://www.vim.org}.
 
 \section{Instalação do Vim}\index{vim!instalar}
 \vimhelp{install}
 %
 \subsection{Instalação no Windows}
 %
-Há uma versão gráfica do Vim disponível para vários sistemas operacionais, incluindo o Windows;
-esta versão pode ser encontrada no \href{http://www.vim.org/download.php}{site
-oficial}~\cite{SiteOficialDownloads}. 
+Há uma versão gráfica do Vim disponível para vários sistemas operacionais, 
+incluindo o Windows; esta versão pode ser encontrada no 
+\href{http://www.vim.org/download.php}{site oficial}~\cite{SiteOficialDownloads}. 
 Para instalá-lo basta baixar o instalador no link indicado e dispará-lo com um
 duplo clique (este procedimento requer privilégios de administrador).
 
@@ -105,10 +130,21 @@ a instalação do Vim através dos repositórios é usualmente executada
 digitando-se {\tt `apt-get install vim'}\footnote{Recomenda-se também instalar
 a documentação em HTML do Vim: {\tt `apt-get install vim-doc'}} em um {\em terminal} (este procedimento
 requer privilégios de administrador e, tipicamente, conexão com a internet).
+ 
+Algumas distribuições GNU/Linux dividem o programa vim em vários pacotes. 
+Pacotes adicionais como \texttt{gvim} e \texttt{vim-enhanced}, entre outros,
+representam diferentes versões do mesmo aplicativo. O  \texttt{gvim} é a versão
+gráfica do Vim e o \texttt{vim-enhanced} é uma versão do vim compilada com um
+suporte interno ao Python\footnote{O Python (\url{http://www.python.org}) é uma
+linguagem de programação orientada a objetos muito comum no meio profissional e
+acadêmico}.
+A alternativa para resolver esse problema é buscar na documentação da 
+distribuição o que significa cada pacote.
 
 \item Não estar disponível no repositório da distribuição -- cenário {\em muito}
 improvável, mas nas sua ocorrência o Vim pode ser instalado através da compilação do
-código-fonte; basta seguir as instruções do \href{http://www.vim.org/download.php}{site oficial}~\cite{SiteOficialDownloads}.
+código-fonte; basta seguir as instruções do 
+\href{http://www.vim.org/download.php}{site oficial}~\cite{SiteOficialDownloads}.
 
 \end{itemize}
 
@@ -117,7 +153,9 @@ código-fonte; basta seguir as instruções do \href{http://www.vim.org/download
 Ao longo do livro alguns comandos ou dicas podem estar duplicados, o que
 é útil devido ao contexto e também porque o aprendizado por saturação
 é um ótimo recurso. Ao perceber uma dica duplicada, antes de
-reclamar veja se já sabe o que está sendo passado. Contudo dicas e sugestões serão bem vindas! 
+reclamar veja se já sabe o que está sendo passado. % Tem certeza que esse
+% comentário é necessário, parece ofensivo...
+Contudo dicas e sugestões serão bem vindas! 
 
 Para abrir um arquivo\index{iniciar} com Vim digite num terminal:
 %
@@ -188,22 +226,25 @@ Vim} na página \pageref{cha:Como editar preferências no Vim}.
 \section{Modos de operação}\label{Modos de operação}
 
 A tabela abaixo mostra uma referência rápida para os modos de operação\index{modos de operação}do Vim,
-a seguir mais detalhes sobre cada um dos modos. \newline
+a seguir mais detalhes sobre cada um dos modos. 
 
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Modo} & \textbf{Descrição} & \textbf{Atalho} \tabularnewline
 \hline \hline
-Normal\index{modo normal} & Neste modo podemos deletar, copiar e formatar & {\tt <Esc>}\tabularnewline
-\hline
-Inserção\index{modo de inserção} & Digitação de texto & {}{\tt i,a,I,A,o,O}\tabularnewline
-\hline
-Visual\index{modo visual} & Seleção de blocos verticais e linhas inteiras & {}{\tt V, v, Ctrl-v} \tabularnewline
-\hline
-Comando\index{modo de comando} & Uma verdadeira linguagem de programação & {}{\tt <Esc>:}\tabularnewline
-\hline
+Normal\index{modo normal} & Para deletar, copiar, formatar, etc & 
+                            {\tt <Esc>}\tabularnewline \hline
+                            %
+Inserção\index{modo de inserção} & Prioritariamente, digitação de texto &
+                            {}{\tt i,a,I,A,o,O}\tabularnewline \hline
+                            %
+Visual\index{modo visual} & Seleção de blocos verticais e linhas inteiras &
+                            {}{\tt V, v, Ctrl-v} \tabularnewline \hline
+                            %
+Comando\index{modo de comando} & Uma verdadeira linguagem de programação &
+                            {}{\tt <Esc>:}\tabularnewline \hline
+                            %
 \end{tabular}
-
 
 Em oposição à esmagadora maioria dos editores o Vim é um editor que trabalha
 com ``modos de operação (modo de inserção, modo normal, modo visual e etc)'', o

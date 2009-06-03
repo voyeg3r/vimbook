@@ -69,25 +69,31 @@ documento. A lista abaixo aponta o comandos de salto típicos.
      gg .... vai para o início do arquivo
      G ..... vai para o final do arquivo
      0 ..... vai para o início da linha
-     ^ ..... vai para o primeiro caractere da linha (ignora espaços)
+     ^ ..... vai para o primeiro caractere da linha (ignora 
+             espaços)
      $ ..... vai para o final da linha
      25gg .. salta para a linha 25
-     '' .... salta para a linha da última posição em que o cursor estava
+     '' .... salta para a linha da última posição em que o cursor
+             estava
      fx .... para primeira ocorrência de x
      tx .... Para ir para uma letra antes de x
      Fx .... Para ir para ocorrência anterior de x
      Tx .... Para ir para uma letra após o último x
      * ..... Próxima ocorrência de palavra sob o cursor
-     `' .... salta exatamente para a posição em que o cursor estava
+     `' .... salta exatamente para a posição em que o cursor
+             estava
      gd .... salta para declaração de variável sob o cursor
-     gD .... salta para declaração (global) de variável sob o cursor
+     gD .... salta para declaração (global) de variável sob o 
+             cursor
      w ..... move para o início da próxima palavra
      W ..... pula para próxima palavra (desconsidera hífens)
-     E ..... pula para o final da próxima palavra (desconsidera hifens)
+     E ..... pula para o final da próxima palavra (desconsidera 
+             hifens)
      e ..... move o cursor para o final da próxima palavra
      zt .... movo o cursor para o topo da página
      zm .... move o cursor para o meio da página
-     zz .... move a página de modo com que o cursor fique no centro
+     zz .... move a página de modo com que o cursor fique no 
+             centro
      n ..... move o cursor para a próxima ocorrência da busca
      N ..... move o cursor para a ocorrência anterior da busca
 \end{verbatim}
@@ -96,7 +102,8 @@ Também é possível efetuar saltos e fazer algo mais ao mesmo tempo, a lista ab
 algumas dessas possibilidades. % Na verdade nenhum desses comandos são apenas movimentos. 
 % Deixar aqui é interessante, mas não misturar com a lista acima
 \begin{verbatim}     
-     gv .... repete a última seleção visual e posiciona o cursor neste local
+     gv .... repete a última seleção visual e posiciona o cursor
+             neste local
      % ..... localiza parênteses correspondente
      o ..... letra `o', alterna extremos de seleção visual
      yG .... copia da linha atual até o final do arquivo

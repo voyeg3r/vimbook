@@ -221,7 +221,7 @@ claro o uso do registro de buscas ``/''. {\Large {\ding{45}}} Pode-se colocar
 um registro nomeado de `{\tt a-z}' assim:
 
 \begin{verbatim}
-    :%s/palavra/\=@a/g   ......... substitui palavra pelo registro `a'
+    :%s/palavra/\=@a/g ...... substitui palavra pelo registro `a'
     \=@a ......................... faz referência ao registro `a'
 \end{verbatim}
 
@@ -233,9 +233,12 @@ um registro nomeado de `{\tt a-z}' assim:
      :let @a=``'' ... limpa o registro a
      :let @a=@"   ... salva registro sem nome *N*
      :let @*=@a   ... copia o registro para o buffer de colagem
-     :let @*=@:   ... copia o ultimo comando para o buffer de colagem
-     :let @*=@/   ... copia a última busca para o buffer de colagem
-     :let @*=@%   ... copia o nome do arquivo para o buffer de colagem
+     :let @*=@:   ... copia o ultimo comando para o buffer de
+                      colagem
+     :let @*=@/   ... copia a última busca para o buffer de
+                      colagem
+     :let @*=@%   ... copia o nome do arquivo para o buffer de
+                      colagem
      :reg         ... mostra o conteúdo de todos os registros
 \end{verbatim}
 
@@ -328,7 +331,8 @@ O comando acima é uma abreviação de {\em split next}, ou seja, dividir e pró
 
 \begin{verbatim}
      <Esc> ...... vai para o modo normal
-     "a10j ...... coloca no registro `a' as próximas 10 linhas `10j'
+     "a10j ...... coloca no registro `a' as próximas 10 linhas
+                  `10j'
 \end{verbatim}
 
 Pode-se fazer:
@@ -344,17 +348,20 @@ Em modo de inserção faz-se:
      Ctrl-r a
 \end{verbatim}
 
-{\Large {\ding{45}}} Há situações em que se tem caracteres não `{\tt ascii}' que
-são complicados de se colocar em uma busca ou substituição, nestes casos
-pode-se usar os seguintes comandos:
+{\Large {\ding{45}}} Há situações em que se tem caracteres não 
+``\textit{ascii }'' que são complicados de se colocar em uma busca ou
+substituição, nestes casos pode-se usar os seguintes comandos:
 
 \begin{verbatim}
-    "ayl ............. copia para o registro `a' o caractere sob o cursor
-    :%s/<c-r>a/char .. subsitui o conteúdo do registro `a' por char
+    "ayl ............. copia para o registro `a' o caractere sob
+                       o cursor
+    :%s/<c-r>a/char .. subsitui o conteúdo do registro `a' por
+                       char
 \end{verbatim}
 
 Pode-se ainda usar esta técnica para copiar rapidamente comentários 
-do `\verb|bash -- #|' em {\em modo normal} usando o atalho `{\tt 0yljP}'.
+do ``\texttt{bash}'', representados pelo caracteres \texttt{\#},
+em {\em modo normal} usando o atalho ``\texttt{0yljP}''.
 
 \begin{verbatim}
     0 ............... posiciona o cursor no início a linha
@@ -376,14 +383,13 @@ pressione a letra ``\verb|j|'' até chegar ao ponto desejado, agora faça
 \begin{verbatim}
      "ay
 \end{verbatim}
-
-pressione ``\verb|v|'' para sair do modo visual
+pressione ``\verb|v|'' para sair do modo visual.
 
 \section{Como definir um registro no \texttt{vimrc}?}
 \label{Como definir um registro no vimrc?}
 
 Se você não sabe ainda como editar preferências no Vim
-leia antes o capítulo \ref{cha:Como editar preferências no Vim}. \\
+leia antes o capítulo \ref{cha:Como editar preferências no Vim}.
 
 
 Você pode criar uma variável no {\tt vimrc} assim:

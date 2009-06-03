@@ -5,8 +5,8 @@
 \chapter{Editando}
 \label{Editando}
 \index{editando}A principal função de um editor de textos é editar textos. 
-Parece óbvio, mas em meio a inúmeros recursos extras essa simples e crucial função
-perde-se entre todos os demais.
+Parece óbvio, mas em meio a inúmeros recursos extras essa simples e crucial
+função perde-se entre todos os demais.
 
 \section{Abrindo o arquivo para a edição}
 Portanto, a primeira coisa a fazer é abrir um arquivo.
@@ -163,7 +163,7 @@ funcionam.
 
 {\Large \ding{45}} Pode-se combinar o comando de deleção ``\verb+d+'' com o
 comando de movimento (considere o modo normal) para apagar até a
-próxima vírgula use: ``\verb+df,+''. \\
+próxima vírgula use: ``\verb+df,+''. 
 
 \index{copiar}Copiar está associado à letra ``\verb|y|''.
 
@@ -213,7 +213,8 @@ Depois do texto ter sido colocado na memória, digite `{\tt p}' para `inserir' o
 texto em uma outra posição. Outros comandos:
 
 \begin{verbatim}
-     diw .. apaga palavra mesmo que não esteja posicionado no início
+     diw .. apaga palavra mesmo que não esteja posicionado no 
+            início
      dip .. apaga o parágrafo atual
      d4b .. apaga as quatro palavras anteriores
      dfx .. apaga até o próximo ``x''
@@ -248,14 +249,15 @@ os comandos `{\tt y}' e os comandos `{\tt d}', um ativa a `cópia' e outro a
      5yw .... copia 5 palavras (também pode ser: y5w)
      yl  .... copia uma letra
      5yl .... copia 5 letras (também pode ser: y5l)
-     y^  .... copia da posição atual até o início da linha (sinônimo: y0)
+     y^  .... copia da posição atual até o início da linha
+              (sinônimo: y0)
      y$  .... copia da posição atual até o final da linha
      ygg .... copia da posição atual até o início do arquivo
      yG  .... copia da posição atual até o final do arquivo
 \end{verbatim}
 
-Digite `{\tt P}' (p maiúsculo) para \index{colar}colar o texto recém copiado na p
-osição onde encontra-se o cursor, ou `{\tt p}' para colar o texto na posição 
+Digite `{\tt P}' (p maiúsculo) para \index{colar}colar o texto recém copiado na
+posição onde encontra-se o cursor, ou `{\tt p}' para colar o texto na posição 
 imediatamente após o cursor.
 
 \begin{verbatim}
@@ -497,9 +499,9 @@ Não delete as linhas contendo padrão, ou seja, delete tudo menos as linhas
 contendo a palavra `padrão'. 
 
 \begin{verbatim}
-     :v/padrão/d ......... apaga linhas que não contenham `padrão'
-     :v/\S/d ............. apaga linhas vazias
-     \S .................. significa `sem string'
+     :v/padrão/d ........ apaga linhas que não contenham "padrão"
+     :v/\S/d ............ apaga linhas vazias
+     \S ................. significa "`em string"
 \end{verbatim}
 
 A opção acima equivale a ``\verb+:g!/padrão/d+''.  Para ler mais sobre
@@ -571,7 +573,8 @@ Se desejamos inserir na linha atual um arquivo qualquer fazemos:
 
 \begin{verbatim}
 	 :r /caminho/para/arquivo.txt .. insere o arquivo na linha atual
-	 :0r arquivo ................... insere o arquivo na primeira linha
+	 :0r arquivo ................... insere o arquivo na primeira 
+                                    linha
 \end{verbatim}
 
 
@@ -703,7 +706,7 @@ considera cada inserção uma ação.  Agora usando o atalho de desfazer
 tradicional ``u'' e de refazer {\tt Ctrl-r} observe que não é mais possível
 acessar todas as alterações efetuadas. Em resumo, se você fizer uma
 nova alteração após um desfazer (alteração derivada) o comando refazer
-não mais vai ser possível para aquele momento. \\
+não mais vai ser possível para aquele momento. 
 
 Agora volte até a alteração 1 e use seguidas vezes:
 
@@ -762,13 +765,17 @@ original não é apagado).  Para sair do editor, salvando o arquivo atual, digit
 
 \begin{verbatim}
      :w ............................ salva
-     :w `novonome' ................. salvar como
-     :wq  .......................... salva e sai'
+     :wq  .......................... salva e sai
+     :w nome ....................... salvar como
      :saveas nome .................. salvar como
-     :x ............................ salva se existirem modificações
-     :10,20 w! ~/Desktop/teste.txt . sava um trecho para outro arquivo
+     :sav nome ..................... mesmo que "saveas nome"
+     :x ............................ salva se existirem 
+                                     modificações
+     :10,20 w! ~/Desktop/teste.txt . salva um trecho para outro 
+                                     arquivo
      :w! ........................... salvamento forçado
-     :e! ........................... reinicia a edição ignorando alterações
+     :e! ........................... reinicia a edição ignorando 
+                                     alterações
 \end{verbatim}
 
 
@@ -897,9 +904,11 @@ Decompondo o comando acima temos:
      2w ...... pula duas palavras (vai para a palavra "é")
      i ....... entra no modo de inserção
      não  .... insere a palavra "não" seguida de espaço " "
-     ^[ ...... sai do modo de inserção (através de Ctrl-v seguido de Esc)
+     ^[ ...... sai do modo de inserção (através de Ctrl-v seguido 
+               de Esc)
      $ ....... vai para o fim da linha
-     ciw ..... apaga a última palavra ("novo") e entra em modo de inserção
+     ciw ..... apaga a última palavra ("novo") e entra em modo de 
+               inserção
      velho ... insere a palavra "velho" no lugar de "novo"
 \end{verbatim}
 
@@ -944,9 +953,10 @@ O vim possui um modo para checagem de diferenças entre arquivos, é bastante
 são as diferenças entre dois arquivos faz-se:
 
 \begin{verbatim}
-    vimdiff arquivo1.txt arquivo2.txt ... exibe as diferenças
-    ]c .................................. mostra próxima diferença
-    vim -d .............................. outro modo de abrir o vimdiff mode
+    vimdiff arquivo1.txt arquivo2.txt .. exibe as diferenças
+    ]c ................................. mostra próxima diferença
+    vim -d ............................. outro modo de abrir o 
+                                         vimdiff mode
 \end{verbatim}
 
 Para usuários do GNU/Linux é possível ainda checar diferenças remotamente assim:

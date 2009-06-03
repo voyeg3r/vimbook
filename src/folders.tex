@@ -69,18 +69,22 @@ Os principais comandos relativos ao uso de dobras são:
      zo ................ abre a dobra
      zO ................ abre a dobra, recursivamente
      za ................ abre/fecha (alterna) a dobra
-     zA ................ abre/fecha (alterna) a dobra, recursivamente
+     zA ................ abre/fecha (alterna) a dobra,
+                         recursivamente
      zR ................ abre todas as dobras do arquivo atual
      zM ................ fecha todas as dobras do arquivo atual
      zc ................ fecha uma dobra
-     zC ................ fecha a dobra abaixo do cursor, recursivamente
-     zfap .............. cria uma dobra para o parágrafo `ap' atual
+     zC ................ fecha a dobra abaixo do cursor, 
+                         recursivamente
+     zfap .............. cria uma dobra para o parágrafo `ap'
+                         atual
      zf/casa ........... cria uma dobra até a palavra casa
      zf'a .............. cria uma dobra até a marca `a'
      zd ................ apaga a dobra (não o seu conteúdo)
      zj ................ move para o início da próxima dobra
      zk ................ move para o final da dobra anterior
-     [z ................ move o cursor para início da dobra aberta
+     [z ................ move o cursor para início da dobra
+                         aberta
      ]z ................ move o cursor para o fim da dobra aberta
      zi ................ desabilita ou habilita as dobras
      zm, zr ............ diminui/aumenta nível da dobra `fdl'
@@ -90,11 +94,14 @@ Os principais comandos relativos ao uso de dobras são:
 
 Para abrir e fechar as dobras usando a barra de
 espaços coloque o trecho abaixo no seu arquivo de configuração do Vim
-\verb|.vimrc| - veja o capítulo \ref{cha:Como editar preferências no Vim}, página
-\pageref{cha:Como editar preferências no Vim}.
+(\verb|.vimrc|) - veja o capítulo \ref{cha:Como editar preferências no Vim},
+página \pageref{cha:Como editar preferências no Vim}.
 \begin{verbatim}
-     nnoremap <space> @=((foldclosed(line(".")) < 0) ? 'zc' : 'zo')<CR>
+     nnoremap <space> @=((foldclosed(line(".")) < 0) ?
+                          \ 'zc' : 'zo')<CR>
 \end{verbatim}
+A barra, \verb|\|, nesse comando representa o particionamento do comando em
+mais de uma linha.
 
 % Alguém confira essa informações, porque é assim que funciona comigo
 Para abrir e fechar as dobras utilizando o clique do mouse no gvim, basta
