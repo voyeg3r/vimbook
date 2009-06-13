@@ -727,38 +727,38 @@ Dessa forma você acessará todas as alterações ocorridas no texto.
 \label{Máquina do tempo}
 
 O Vim possui muitas formas para desfazer e refazer, e uma das mais interessantes é a máquina do tempo!
-Digamos que você esteja digitando um texto há alguns minutos e percebe que boa parte do que você inseriu
+A máquina do tempo é extremamente útil quando no meio de um texto se percebe que boa parte do que foi adicionado
 é inútil e que nos ultimos 10 minutos não há nada que se possa aproveitar. Utilizando a máquina do tempo
-você consegue eliminar os ultimos 10 minutos de texto inútil do seu documento facilmente, utilizando:
+é possível eliminar os últimos 10 minutos de texto inútil do seu documento facilmente, utilizando:
 
 \begin{verbatim}
     :earlier 10m
 \end{verbatim}
 
-Com isso você vai ter seu documento exatamente como ele estava 10 minutos atrás!
-Caso após a exclusão você perceba que excluiu um minuto a mais, você pode usar o mesmo padrão novamente para avançar no tempo:
+Com esse comando o documento ficará exatamente como ele estava 10 minutos atrás!
+Caso após a exclusão perceba-se que foi excluído um minuto a mais, é possível utilizar o mesmo padrão novamente para avançar no tempo:
          
 \begin{verbatim}
     :later 60s
 \end{verbatim}
                   
-Note que dessa vez estamos utilizando {\em later} ao invés de {\em earlier}, e passando segundos como argumento para viajar no tempo.
+Note que dessa vez foi utilizado {\em later} ao invés de {\em earlier}, e passando segundos como argumento para viajar no tempo.
 Portanto o comando acima avança 60 segundos no tempo.
 
-Para se ter uma idéia melhor de quanto se deve voltar, pode ser usado o comando:
+Para uma melhor visão de quanto se deve voltar, pode ser usado o comando:
                   
 \begin{verbatim}
     :undolist
 \end{verbatim}
                            
-O comando acima mostra a lista com as informações sobre Desfazer e Refazer. E com essas informações você pode voltar no tempo seguindo
+O comando acima mostra a lista com as informações sobre Desfazer e Refazer. E com essas informações pode-se voltar no tempo seguindo
 cada modificação:
 
 \begin{verbatim}
     :undo 3
 \end{verbatim}
                                     
-Com isso você vai regredir 3 modificações feitas no documento.
+Esse comando fará o documento regredir 3 modificações.
 
 \section{Salvando}
 \label{sec:Salvando}
