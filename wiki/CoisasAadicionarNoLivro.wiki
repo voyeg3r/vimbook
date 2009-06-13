@@ -11,10 +11,6 @@ if has("gui_running")
 endif
 }}}
 
-Voltar no tempo 1 minuto
-{{{
-:eariler 1m
-}}}
 indentar em modo normal, use duas vezes igualdade
  
 
