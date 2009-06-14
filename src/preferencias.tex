@@ -555,14 +555,16 @@ extensão `{\tt .sh}'.
 
 \subsection{Exemplo prático de autocomandos}
 \label{sub:Exemplo prático de autocomandos}
+\vimhelp{expandtab, retab}
 
 Há situações em que é necessária a uniformização de ações, por exemplo, em
 códigos Python deve-se manter um padrão para a indentação, ou será com espaços
-ou será com tabulações, não se pode misturar os dois pois o interpretador retornaria um erro.
-Outra situação em que misturar espaços com tabulações ocasiona erros é em
-códigos \LaTeX, ao compilar o documento a formatação não sai como desejado.
-Até que se perceba o erro leva um tempo.  Para configurar o vim de forma que
-ele detecte este tipo de erro ao entrar no arquivo:
+ou será com tabulações\index{parágrafo!tabulação}, não se pode misturar os dois
+pois o interpretador retornaria um erro.  Outra situação em que misturar
+espaços com tabulações ocasiona erros é em códigos \LaTeX, ao compilar o
+documento a formatação não sai como desejado.  Até que se perceba o erro leva
+um tempo.  Para configurar o vim de forma que ele detecte este tipo de erro ao
+entrar no arquivo:
 
 \begin{verbatim}
      au! VimEnter * match ErrorMsg /^\t\+/
@@ -580,7 +582,7 @@ ele detecte este tipo de erro ao entrar no arquivo:
 \end{verbatim}
 
 Para evitar que este erro se repita, ou seja, que sejam 
-adicionados no começo de linha tabulações no lugar de espaços
+adicionados no começo de linha espaços no lugar de tabulações
 adiciona-se ao \textasciitilde/.vimrc
 
 \begin{verbatim}
