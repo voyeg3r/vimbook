@@ -1013,7 +1013,8 @@ funcione para salvar os arquivos, adiciona-se a seguinte abreviação ao `{\tt
 \textasciitilde/.vimrc}'. 
 
 \begin{verbatim}
-    cab salvar w
+    cab salvar w<cr>
+    "<cr> corresponde ao <Enter>
 \end{verbatim}
 
 Abaixo abreviações para o modo de inserção:
@@ -1075,7 +1076,7 @@ se o comando está disponível, deve ser digitado em um terminal:
 
 Se ambos os comandos acima resultaram em erro, o procedimento não poderá ser
 implementado. Do contrário, deve-se utilizar o comando que teve um retorno
-válido ({\tt vim} ou {\tt gvim}) para a criar o {\em script}. Supondo que foi o
+válido ({\tt vim} ou {\tt gvim}) para criar o {\em script}. Supondo que foi o
 comando {\tt gvim} que não retornou um erro, criamos o {\em script} da seguinte
 forma:
 
