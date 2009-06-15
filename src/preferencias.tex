@@ -554,6 +554,18 @@ extensão `{\tt .sh}'.
      au BufNewFile,BufRead *.sh if getline(1) == "" | normal ,sh
 \end{verbatim}
 
+{\Large {\ding{45}}} Para configurar o vim de modo que o diretório corrente fique no \em{path} coloque 
+este código no \texttt{vimrc}.
+
+\begin{verbatim}
+     "fonte: wikia - wiki sobre o vim
+     if exists('+autochdir')
+       set autochdir
+     else
+       autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+     endif
+\end{verbatim}
+
 \subsection{Exemplo prático de autocomandos}
 \label{sub:Exemplo prático de autocomandos}
 \vimhelp{expandtab, retab}
