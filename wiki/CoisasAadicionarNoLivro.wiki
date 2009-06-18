@@ -11,6 +11,9 @@ if has("gui_running")
 endif
 }}}
 
+==Abrindo código de páginas web no gvim==
+http://vivaotux.blogspot.com/2009/06/exibindo-o-codigo-fonte-das-paginas-web.html
+
 indentar em modo normal, use duas vezes igualdade
  
 
