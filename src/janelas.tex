@@ -7,44 +7,85 @@
 O Vim trabalha com o conceito de múltiplos ``buffers''. Cada
 ``buffer'' é um arquivo carregado para edição. Um ``buffer'' pode
 estar visível ou não, e é possível dividir a tela em janelas, de forma
-a visualizar mais de um ``buffer'' simultaneamente.
+a visualizar mais de um ``buffer'' simultaneamente. 
 
-\section{Dividindo a janela }
-Observação: \verb+Ctrl = ^+
+\section{Modos de divisão da janela}
+
+Como foi dito acima, é possível visualizar mais de um buffer ao mesmo 
+tempo, e isso pode ser feito utilizando {\em tab} ou {\em split}.
+
+
+\subsection{Utilizando abas {\em tab}}
+
+A partir do Vim 7 foi disponibilizada a função de abrir arquivos em
+abas, portanto é possível ter vários ``buffers'' abertos em abas distintas
+e alternar entre elas facilmente. Os comandos para utilização das abas
+são:
 
 \begin{verbatim}
-     Ctrl-w-s   Divide a janela atual em duas (:split)
-     Ctrl-w-o   Faz a janela atual ser a única (:only)
-     Ctrl-w-n   Abre nova janela (:new)
-     Ctrl-w-q   Fecha a janela atual (:quit)
+     :tabnew ........... Abre uma nova tab
+     :tabprevious ...... Vai para a tab anterior
+     :tabnext .......... Vai para a próxima tab
 \end{verbatim}
 
-Caso tenha duas janelas e use o atalho acima \verb|^wo|, é recomendado salvar
-tudo ao fechar, pois apesar de a outra janela estar fechada o arquivo
-ainda estará carregado, portanto faça:
+
+\subsection{Utilizando split horizontal}
+
+Enquanto os comandos referentes a {\em tab} deixam a janela inteira disponível
+para o texto e apenas cria uma pequena aba na parte superior, o comando {\em split} 
+literamente divide a tela atual em duas para visualização simultânea
+dos ``buffers'' (seja ele o mesmo ou outro diferente).
+Esse é o split padrão do Vim mas pode ser alterado facilmente colocando a linha
+abaixo no seu \verb|~/.vimrc|:
 
 \begin{verbatim}
-     :wall ... salva todos `write all'
-     :qall ... fecha todos `quite all'
+     :set splitright .... Altera o estilo padrão do split de horizontal para vertical
 \end{verbatim}
+
+
+\subsection{Utilizando split vertical}
+
+O split vertical funciona da mesma maneira que o split horizontal,
+sendo a unica diferença o modo como a tela é dividida, pois nesse
+caso a tela é dividida verticalmente.
+
 
 \section{Abrindo e fechando janelas }
 
 \begin{verbatim}
-     Ctrl-w-n   Abre uma nova janela acima
-     Ctrl-w-q   Fecha a janela atual
-     Ctrl-w-c   Fecha a janela atual (:close)
+     Ctrl-w-s ........... Divide a janela atual em duas horizontalmente (:split)
+     Ctrl-w-v ........... Divide a janela atual em duas verticalmente (:vsplit)
+     Ctrl-w-o ........... Faz a janela atual ser a única (:only)
+     Ctrl-w-n ........... Abre nova janela (:new)
+     Ctrl-w-q ........... Fecha a janela atual (:quit)
+     Ctrl-w-c ........... Fecha a janela atual (:close)
 \end{verbatim}
+
+{\Large \ding{45}} Lembrando que o Vim considera todos os arquivos como ``buffers''
+portanto quando um arquivo é fechado, o que está sendo fechado é a visualização
+do mesmo, pois ele continua aberto no ``buffer''.
+
+
+\section{Salvando e saindo}
+É possível salvar todas as janelas facilmente, assim como sair tambem:
+
+\begin{verbatim}
+     :wall ............. salva todos `write all'
+     :qall ............. fecha todos `quit all'
+\end{verbatim}
+
 
 \section{Manipulando janelas }
 
 \begin{verbatim}
-     Ctrl-w-w ... Alterna entre janelas
-     Ctrl-w-j ... desce uma janela `j'
-     Ctrl-w-k ... sobe  uma janela `k'
-     Ctrl-w-r ... Rotaciona janelas na tela
-     Ctrl-w-+ ... Aumenta o espaço da janela atual
-     Ctrl-w-- ... Diminui o espaço da janela atual
+     Ctrl-w-w ......... Alterna entre janelas
+     Ctrl-w-j ......... desce uma janela `j'
+     Ctrl-w-k ......... sobe  uma janela `k'
+     Ctrl-w-l ......... move para a janela da direta `l'
+     Ctrl-w-h ......... move para a janela da direta `h'
+     Ctrl-w-r ......... Rotaciona janelas na tela
+     Ctrl-w-+ ......... Aumenta o espaço da janela atual
+     Ctrl-w-- ......... Diminui o espaço da janela atual
 \end{verbatim}
 
 \section{File Explorer }
@@ -53,9 +94,10 @@ ainda estará carregado, portanto faça:
 Para abrir o gerenciador de arquivos do Vim use:
 
 \begin{verbatim}
-     :Vex ........... abre o file explorer verticalmente
-     :Sex ........... abre o file explorer em nova janela
-     :e .   ......... abre o file explorer na janela atual
+     :Vex ............ abre o file explorer verticalmente
+     :Sex ............ abre o file explorer em nova janela
+     :Tex ............ abre o file explorer em nova aba
+     :e .............. abre o file explorer na janela atual
      após abrir chame a ajuda <F1>
 \end{verbatim}
 
