@@ -98,12 +98,12 @@ disponível livremente---dicionário de palavras para a língua portuguesa.
 
 \subsection{Dicionário português segundo o acordo ortográfico}
 
-A equipe do projeto {\tt BrOffice.org}\footnote{\url{http://www.broffice.org}}
-e seus colaboradores mantêm e disponibilizam livremente um grandioso dicionário
-de palavras da língua portuguesa. Além do expressivo número de termos, o
-dicionário contempla as mudanças ortográficas definidas pelo {\em Acordo
-Ortográfico}\footnote{\url{http://pt.wikipedia.org/wiki/Acordo_Ortográfico_de_1990}}
-que entraram em vigor no início de 2009.
+A equipe do projeto {\tt BrOffice.org} e seus colaboradores mantêm e
+disponibilizam livremente um grandioso dicionário de palavras da língua
+portuguesa. Além do expressivo número de termos, o dicionário contempla as
+mudanças ortográficas definidas pelo {\em Acordo
+Ortográfico}~\cite{wiki:acordo_ortografico} que entraram em vigor no início de
+2009.
 
 A instalação envolve três passos, são eles: 
 \begin{enumerate}
@@ -116,24 +116,27 @@ A instalação envolve três passos, são eles:
 \index{verificaçação ortográfica}
 
 O dicionário pode ser obtido no
-\href{http://www.broffice.org/verortografico/baixar}{site do br.office.org}~\cite{DicionarioBroffice}
-O arquivo baixado encontra-se compactado no formato {\tt Zip}, bastando
-portanto descompactá-lo com qualquer utilitário compatível com este formato,
-por exemplo, o comando {\tt unzip}.
+\href{http://www.broffice.org/verortografico/baixar}{site do
+br.office.org}~\cite{DicionarioBroffice}. O arquivo baixado encontra-se
+compactado no formato {\tt Zip}, bastando portanto descompactá-lo com qualquer
+utilitário compatível com este formato, por exemplo, o comando {\tt unzip}.
 
 \subsubsection{Conversão do dicionário}
 \vimhelp{mkspell}
 
 Após a descompactação, os arquivos \verb|pt_BR.aff| e \verb|pt_BR.dic|,
-encontrados no subdiretório {\tt dictionaries/}, serão usados para a criação
-dos dicionários no formato interno do Vim\footnote{O formato interno de dicionário
-do Vim assegura melhor desempenho, em termos de agilidade e consumo de
-memória, quando a verificação ortográfica do editor encontra-se em operação.}.
-A conversão propriamente dita é feita pelo próprio Vim através do comando {\tt
-mkspell}:
+extraídos no diretório corrente\footnote{Eventualmente, dependendo da versão
+do pacote de correção ortográfica, os arquivos de dicionário podem ser
+extraídos no subdiretório {\tt dictionaries} ou outro qualquer.}, serão usados
+para a criação dos dicionários no formato interno do Vim\footnote{O formato
+interno de dicionário do Vim assegura melhor desempenho, em termos de
+agilidade e consumo de memória, quando a verificação ortográfica do editor
+encontra-se em operação.}.  A conversão propriamente dita é feita pelo próprio
+Vim através do comando {\tt mkspell}:
 
 \begin{enumerate}
-\item Carrega-se o Vim a partir do diretório {\tt dictionaries/}
+\item Carrega-se o Vim a partir do diretório onde foram extraídos
+\verb|pt_BR.aff| e \verb|pt_BR.dic|
 \item O comando {\tt mkspell} é então executado como:
 \begin{verbatim}
      :mkspell pt pt_BR
@@ -141,11 +144,10 @@ mkspell}:
 \end{enumerate}
 
 O Vim então gera um arquivo de dicionário da forma
-\verb|pt.<codificação>.spl|, dentro de {\tt dictionaries/}, onde
-\verb|<codificação>| é a codificação de caracteres do sistema, normalmente
-\verb|utf-8| ou \verb|latin1|; caso queira-se um dicionário em uma codificação
-diferente da padrão será preciso ajustar a variável {\tt encoding} antes da
-invocação do comando {\tt mkspell}:
+\verb|pt.<codificação>.spl|, onde \verb|<codificação>| é a codificação de
+caracteres do sistema, normalmente \verb|utf-8| ou \verb|latin1|; caso
+queira-se um dicionário em uma codificação diferente da padrão será preciso
+ajustar a variável {\tt encoding} antes da invocação do comando {\tt mkspell}:
 
 \begin{verbatim}
      :set encoding=<codificação>
