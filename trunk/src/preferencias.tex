@@ -566,9 +566,12 @@ este código no `\texttt{vimrc}'.
      endif
 \end{verbatim}
 
-\subsection{Exemplo prático de autocomandos}
+\subsection{Exemplos práticos de autocomandos}
 \label{sub:Exemplo prático de autocomandos}
 \vimhelp{expandtab, retab}
+
+\subsubsection{Detectando indentação fora do padrão}
+\index{indentação}
 
 Há situações em que é necessária a uniformização de ações, por exemplo, em
 códigos Python deve-se manter um padrão para a indentação, ou será com espaços
@@ -605,6 +608,18 @@ adiciona-se ao \textasciitilde/.vimrc
 É perfeitamente possível um autocomando que faça direto a substituição de
 tabulações por espaços, mas neste caso não é recomendado que o autocomando se
 aplique a todos os tipos de aquivos.
+
+\subsubsection{Inserindo automaticamente modelos de documento}
+\index{documentos!modelos}
+
+Pode-se criar um autocomando para inserir um modelo de documento `html' por exemplo
+de forma automática, ou seja, se você criar um novo documento do tipo `html' o vim 
+colocará em seu conteúdo um modelo pre-definido.
+
+\begin{verbatim}
+     au BufNewFile *.html 0r ~/.vim/skel/skel.html
+\end{verbatim}
+
 
 \section{Funções}
 \label{sec:Funções}
