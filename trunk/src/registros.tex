@@ -217,12 +217,13 @@ fazer assim em modo de comandos:
 \end{verbatim}
 
 Observação: veja que estou trocando o delimitador da busca para deixar
-claro o uso do registro de buscas ``/''. {\Large {\ding{45}}} Pode-se colocar
+claro o uso do registro de buscas ``/''. {\Large {\ding{45}}} Pode-se usar
 um registro nomeado de `{\tt a-z}' assim:
 
 \begin{verbatim}
-    :%s/palavra/\=@a/g ...... substitui palavra pelo registro `a'
-    \=@a ......................... faz referência ao registro `a'
+    let @a="new"
+    :%s/old/\=@a/g ...... substitui 'old' por new
+    \=@a ................ faz referência ao registro `a'
 \end{verbatim}
 
 \section{Manipulando registros}
