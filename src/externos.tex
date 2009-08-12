@@ -211,7 +211,13 @@ salvá-las. Utilizando
 
 a saída do Shell é redirecionada para o (G)Vim automaticamente, não sendo
 necessário redirecioná-la para um arquivo temporário e, logo após, abrí-lo para
-editá-lo e modificá-lo.
+editá-lo e modificá-lo. Quem trabalha com sistemas de controle de versão como svn 
+pode visualizar as diferenças entre o código que está sendo editado e o que 
+está no repositório com sintaxe colorida desta forma:
+
+\begin{verbatim}
+    svn diff | view -
+\end{verbatim}
 
 Outra situação em que se pode combinar o vim com saidas do shell é com o
 comando `\verb|grep|'. Usando-se a opção `\verb|-l|' do grep listamos apenas os
