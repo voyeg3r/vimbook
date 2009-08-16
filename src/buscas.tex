@@ -611,6 +611,22 @@ numerar linhas:
      :let i=1 | g/^/s//\=i."\t"/ | let i=i+1
 \end{verbatim}
 
+Outro modo de inserir números de linha
+
+\begin{verbatim}
+    :%s/^/\=line('.').'  '
+
+    : ............ comando
+    % ............ em todo o arquivo
+    s ............ substituição
+    / ............ inicio da busca
+    ^ ........... começo de linha
+    / ........... inicio da substituição
+    \=line('.') .. corresponde ao nº da linha atual
+    .'  ' ........ concatena um espaço após o nº
+\end{verbatim}
+
+
 Para copiar linhas começadas com {\em Error} para o final do arquivo faça:
 
 \begin{verbatim}
