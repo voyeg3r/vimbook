@@ -1,14 +1,21 @@
 Arquivo:  leia-me
 Criado: Qui 08/Jan/2009 hs 20:32
  vim:nolist:
-Last Change: Ter 13 Jan 2009 13:05:02 BRT
+Last Change: Seg 19 Out 2009 14:45:12 BRT
 autor: groups.google.com.br/group.vimbook
 
 ==============================
 Onde obter o pdf mais recente:
 ==============================
 http://code.google.com/p/vimbook/downloads/list
-	
+
+Para os membros do projeto pode-se baixar a versão assim:
+
+heckout https://vimbook.googlecode.com/svn/trunk/ vimbook --username nomedousuario
+
+ a senha pode ser acessada neste link:
+
+http://code.google.com/hosting/settings
 
 ====================
 Para gerar o livro 
