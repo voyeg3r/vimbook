@@ -14,7 +14,7 @@ git clone git@github.com:voyeg3r/vimbook.git
 
 Você deve ter instalado o LaTeX e o mesmo deve usar codificação utf8.
 
-Para gerar o livreo em PDF entre no diretório `src` e execute o comando:
+Para gerar o livro em PDF entre no diretório `src` e execute o comando:
 
 ```
 make
